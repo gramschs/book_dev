@@ -4,6 +4,6 @@
 format: jb-book
 root: intro
 chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+- file: chapter_ml4ing/ml4ing_sec00.md
+  sections:
+  - file: chapter_ml4ing/ml4ing_sec01.md
