@@ -1,0 +1,581 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Was ist maschinelles Lernen? &#8212; DEVELOPMENT</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter_ml4ing/ml4ing_sec01';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Buch Maschinelles Lernen" href="ml4ing_sec00.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">DEVELOPMENT</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Willkommen
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="ml4ing_sec00.html">Buch Maschinelles Lernen</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Was ist maschinelles Lernen?</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/gramschs/book_dev" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter_ml4ing/ml4ing_sec01.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Was ist maschinelles Lernen?</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-wenig-geschichte">Ein wenig Geschichte</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maschinelles-lernen-algorithmen-daten">Maschinelles Lernen = Algorithmen + Daten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uberwachtes-lernen-supervised-learning">Überwachtes Lernen (Supervised Learning)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Regression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#klassifikation">Klassifikation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unuberwachtes-lernen-unsupervised-learning">Unüberwachtes Lernen (Unsupervised Learning)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verstarkendes-lernen-reinforcement-learning">Verstärkendes Lernen (Reinforcement Learning)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung">Zusammenfassung</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="was-ist-maschinelles-lernen">
+<h1>Was ist maschinelles Lernen?<a class="headerlink" href="#was-ist-maschinelles-lernen" title="Permalink to this headline">#</a></h1>
+<section id="lernziele">
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
+<div class="important admonition">
+<p class="admonition-title">Lernziele</p>
+<ul class="simple">
+<li><p>Sie wissen, wie langes es das Forschungsgebiet <strong>maschinelles Lernen</strong> gibt und warum es sich in den letzten beiden Jahrzehnten so stark entwickelt hat.</p></li>
+<li><p>Sie kennen Basis-Fachbegriffe des maschinellen Lernens wie <strong>Feature</strong>, <strong>Target</strong> und <strong>Label</strong>.</p></li>
+<li><p>Sie können anhand eines Beispiels erklären, was die Fachbegriffe</p>
+<ul>
+<li><p><strong>überwachtes Lernen</strong>,</p></li>
+<li><p><strong>unüberwachtes Lernen</strong> und</p></li>
+<li><p><strong>verstärkendes Lernen</strong>
+bedeuten.</p></li>
+</ul>
+</li>
+<li><p>Sie können beim überwachten Lernen zwischen <strong>Regression</strong> und <strong>Klassifikation</strong> unterscheiden.</p></li>
+</ul>
+</div>
+</section>
+<section id="ein-wenig-geschichte">
+<h2>Ein wenig Geschichte<a class="headerlink" href="#ein-wenig-geschichte" title="Permalink to this headline">#</a></h2>
+<p>Es ist ein weit verbreiteter Irrtum, dass die Forschungsgebiete “Künstliche
+Intelligenz” oder “maschinelles Lernen” neu sind und dem 21. Jahrhundert
+zuzuordnen sind. Tatsächlich hat bereits Arthur L. Samuel maschinelles Lernen
+beschreiben als</p>
+<blockquote>
+<div><p>»… ein Forschungsgebiet, das Computer in die Lage versetzen soll, zu lernen,
+ohne explizit darauf programmiert zu sein.« (Arthur L. Samuel, 1959)</p>
+</div></blockquote>
+<p>Dennoch ist richtig, dass beides sich vor allem in den letzten zwei Jahrzehnten
+revolutionär entwickelt hat. Dafür gibt es drei Gründe, wie im folgenden Video
+erklärt wird:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/l_HSWmxMRlU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Wir kürzen in dieser Vorlesung maschineller Lernen mit ML ab.</p>
+</section>
+<section id="maschinelles-lernen-algorithmen-daten">
+<h2>Maschinelles Lernen = Algorithmen + Daten<a class="headerlink" href="#maschinelles-lernen-algorithmen-daten" title="Permalink to this headline">#</a></h2>
+<p>Ein notwendiger Baustein des maschinellen Lernens sind Daten, am besten ganz,
+ganz viele! Aber selbst ein riesiger Haufen an Daten ist alleine wertlos. Erst
+durch Algorithmen, die in diesen Daten Muster finden, gewinnen wir neues Wissen,
+können Prozesse analysieren und Entscheidungen treffen.</p>
+<p>Was ist ein Algorithmus? In dem folgenden Video wird zuerst erklärt, was ein
+Algorithmus ist. Dann wird aufgezeigt, was so schwierig daran ist, einen
+Algorithmus zu entwickeln, der Katzenbilder von Hundebildern unterscheidet.
+Schauen Sie sich das Video an und beantowrten Sie folgende Fragen:</p>
+<ul class="simple">
+<li><p>Geben Sie drei Beispiele für Algorithmen.</p></li>
+<li><p>In dem Video wird der Fachbegriff “Feature” eingeführt. Was bedeutet der Begriff?</p></li>
+<li><p>Wie lautet der ML-Fachbegriff für Zielgröße?</p></li>
+<li><p>Erklären Sie in eigenen Worten, was der Fachbegriff “Labelling” bedeutet.</p></li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HmUzceKCI9I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Maschinelles Lernen wird in drei Kategorien eingeteilt:</p>
+<ul class="simple">
+<li><p>Überwachtes Lernen (Supervised Learning),</p></li>
+<li><p>Unüberwachtes Lernen (Unsupervised Learning) und</p></li>
+<li><p>Verstärkendes Lernen (Reinforcement Learning).</p></li>
+</ul>
+<p>Im Folgenden betrachten wir für jede der drei Kategorien typische Beispiele.</p>
+</section>
+<section id="uberwachtes-lernen-supervised-learning">
+<h2>Überwachtes Lernen (Supervised Learning)<a class="headerlink" href="#uberwachtes-lernen-supervised-learning" title="Permalink to this headline">#</a></h2>
+<p>Das überwachte Lernen wiederum wird in zwei Arten unterteilt:</p>
+<ul class="simple">
+<li><p>Regression und</p></li>
+<li><p>Klassifikation.</p></li>
+</ul>
+<p>Im letzten Video ist ein Klassifikationsproblem vorgestellt worden. Ein
+ML-Algorithmus sollte erkennen, ob das Bild einen Hund oder eine Katze zeigt.
+Sicherlich sind Ihnen aber auch schon Regressionsprobleme begegnet, bei denen
+numerische Werte prognostiziert werden sollen. Auf beide Problemarten gehen
+die beiden nächsten Videos ein:</p>
+<section id="regression">
+<h3>Regression<a class="headerlink" href="#regression" title="Permalink to this headline">#</a></h3>
+<p>Im folgenden Video wird erklärt, was der Fachbegriff <strong>Regression</strong> bedeutet.
+Welches Beispiel aus Ihrem Alltag oder Studium fällt Ihnen ein, das ebenfalls
+ein Regressionsproblem ist?</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NCCctUdfA3E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+<section id="klassifikation">
+<h3>Klassifikation<a class="headerlink" href="#klassifikation" title="Permalink to this headline">#</a></h3>
+<p>Zurück zu den Hunden und Katzen. Ist die Zielgröße nicht ein kontinuierlicher
+Wert, der durch Zahlen beschrieben werden kann, sondern versuchen wir, Klassen
+zu bilden, so handelt es sich um <strong>Klassifikation</strong>. Da wir zu den Eingangsdaten
+die Klassenbezeichnungen vorgeben, gehören Klassifikationsprobleme ebenso wie
+Regressionsprobleme zu den überwachten ML-Lernverfahren.</p>
+<p>Schauen Sie sich das nächste Video an.</p>
+<ul class="simple">
+<li><p>Welche Klassen werden genannt?</p></li>
+<li><p>Was sind die Features?</p></li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/g6zuVEDlAzo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Springen Sie am Ende noch einmal zum Zeitindex 2:45 min und betrachten Sie sich
+die gelabelten Datenpunkte. Welches Mischungsverhältnis und welche
+Ofentemperatur würden Sie wählen, um ein gutes Produkt herzustellen?</p>
+</section>
+</section>
+<section id="unuberwachtes-lernen-unsupervised-learning">
+<h2>Unüberwachtes Lernen (Unsupervised Learning)<a class="headerlink" href="#unuberwachtes-lernen-unsupervised-learning" title="Permalink to this headline">#</a></h2>
+<p>Unüberwachtes Lernen kommt in der Praxis seltener vor. Eine sehr populäre
+Methode des unüberwachten Lernens ist das <strong>Clustering</strong>. Welches Beispiel wird
+im folgenden Video für Clusterin vorgestellt?</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/P2Qwc63iCVQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+<section id="verstarkendes-lernen-reinforcement-learning">
+<h2>Verstärkendes Lernen (Reinforcement Learning)<a class="headerlink" href="#verstarkendes-lernen-reinforcement-learning" title="Permalink to this headline">#</a></h2>
+<p>Wir schließen unsere Übersicht der maschinellen Lernverfahren mit dem
+verstärkendem Lernen ab. Auch wenn es das Lernverfahren ist, mit dem wir
+Menschen lernen, werden wir in dieser Vorlesung nicht weiter darauf eingehen.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5HhQgFCQGIY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+<section id="zusammenfassung">
+<h2>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permalink to this headline">#</a></h2>
+<p>In diesem Abschnitt haben Sie die drei wichtigsten Kategorien des maschinellen
+Lernens kennengelernt: überwachtes Lernen, unüberwachtes Lernen und
+verstärkendes Lernen. Für die Ingenieurwissenschaften ist vor allem das
+überwachte Lernen von Bedeutung. Dabei unterscheiden wir zwischen überwachtem
+Lernen für diskrete Zielgrößen (= Klassen, Kategorien), das wir Klassifikation
+nennen, und überwachtem Lernen für kontinuierliche Zielgrößen, das wir
+Regression nennen.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapter_ml4ing"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ml4ing_sec00.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Buch Maschinelles Lernen</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-wenig-geschichte">Ein wenig Geschichte</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maschinelles-lernen-algorithmen-daten">Maschinelles Lernen = Algorithmen + Daten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uberwachtes-lernen-supervised-learning">Überwachtes Lernen (Supervised Learning)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Regression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#klassifikation">Klassifikation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unuberwachtes-lernen-unsupervised-learning">Unüberwachtes Lernen (Unsupervised Learning)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verstarkendes-lernen-reinforcement-learning">Verstärkendes Lernen (Reinforcement Learning)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung">Zusammenfassung</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Simone Gramsch
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
