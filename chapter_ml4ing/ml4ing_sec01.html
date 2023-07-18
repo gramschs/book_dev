@@ -65,6 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter_ml4ing/ml4ing_sec01';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Pandas anstatt Excel" href="chapter04/chapter04_sec00.html" />
     <link rel="prev" title="Buch Maschinelles Lernen" href="ml4ing_sec00.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -153,6 +154,12 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ml4ing_sec00.html">Buch Maschinelles Lernen</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Was ist maschinelles Lernen?</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chapter04/chapter04_sec00.html">Pandas anstatt Excel</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapter04/chapter04_sec01.html">Series und DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter04/chapter04_sec02.html">Arbeiten mit Tabellendaten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter04/chapter04_sec03.html">Statistik mit Pandas</a></li>
 </ul>
 </li>
 </ul>
@@ -340,6 +347,10 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="was-ist-maschinelles-lernen">
 <h1>Was ist maschinelles Lernen?<a class="headerlink" href="#was-ist-maschinelles-lernen" title="Permalink to this headline">#</a></h1>
+<p>KI (Künstliche Intelligenz) ist in aller Munde. Etwas seltener wird der Begriff
+<strong>maschinelles Lernen</strong> verwendet. Maschinelles Lernen, oft auch <strong>Machine
+Learning</strong> genannt, ist ein Teilgebiet der Künstlichen Intelligenz. Dieses
+Kapitel gibt eine Einführung in das Thema.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
 <div class="important admonition">
@@ -364,16 +375,20 @@ bedeuten.</p></li>
 <p>Es ist ein weit verbreiteter Irrtum, dass die Forschungsgebiete “Künstliche
 Intelligenz” oder “maschinelles Lernen” neu sind und dem 21. Jahrhundert
 zuzuordnen sind. Tatsächlich hat bereits Arthur L. Samuel maschinelles Lernen
-beschreiben als</p>
-<blockquote>
+beschrieben als</p>
+<blockquote class="epigraph">
 <div><p>»… ein Forschungsgebiet, das Computer in die Lage versetzen soll, zu lernen,
-ohne explizit darauf programmiert zu sein.« (Arthur L. Samuel, 1959)</p>
+ohne explizit darauf programmiert zu sein.«</p>
+<p>Arthur L. Samuel, 1959</p>
 </div></blockquote>
 <p>Dennoch ist richtig, dass beides sich vor allem in den letzten zwei Jahrzehnten
 revolutionär entwickelt hat. Dafür gibt es drei Gründe, wie im folgenden Video
 erklärt wird:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/l_HSWmxMRlU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<p>Wir kürzen in dieser Vorlesung maschineller Lernen mit ML ab.</p>
+<p>Wir kürzen in dieser Vorlesung maschinelles Lernen oft mit ML ab. Damit umgehen
+wir die Diskussion, warum Künstliche Intelligenz mit einem Großbuchstaben
+beginnt und maschinelles Lernen mit einem Kleinbuchstaben. Gleichzeitig ist das
+auch die gängige Abkürzung im englischen Sprachgebrauch.</p>
 </section>
 <section id="maschinelles-lernen-algorithmen-daten">
 <h2>Maschinelles Lernen = Algorithmen + Daten<a class="headerlink" href="#maschinelles-lernen-algorithmen-daten" title="Permalink to this headline">#</a></h2>
@@ -502,6 +517,15 @@ Regression nennen.</p>
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Buch Maschinelles Lernen</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="chapter04/chapter04_sec00.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Pandas anstatt Excel</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   

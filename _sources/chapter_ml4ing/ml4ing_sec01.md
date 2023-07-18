@@ -14,6 +14,11 @@ kernelspec:
 
 # Was ist maschinelles Lernen?
 
+KI (Künstliche Intelligenz) ist in aller Munde. Etwas seltener wird der Begriff
+**maschinelles Lernen** verwendet. Maschinelles Lernen, oft auch **Machine
+Learning** genannt, ist ein Teilgebiet der Künstlichen Intelligenz. Dieses
+Kapitel gibt eine Einführung in das Thema.
+
 ## Lernziele
 
 ```{admonition} Lernziele
@@ -33,10 +38,14 @@ kernelspec:
 Es ist ein weit verbreiteter Irrtum, dass die Forschungsgebiete "Künstliche
 Intelligenz" oder "maschinelles Lernen" neu sind und dem 21. Jahrhundert
 zuzuordnen sind. Tatsächlich hat bereits Arthur L. Samuel maschinelles Lernen
-beschreiben als
+beschrieben als
 
-> »... ein Forschungsgebiet, das Computer in die Lage versetzen soll, zu lernen,
-ohne explizit darauf programmiert zu sein.« (Arthur L. Samuel, 1959)
+```{epigraph}
+»... ein Forschungsgebiet, das Computer in die Lage versetzen soll, zu lernen,
+ohne explizit darauf programmiert zu sein.«
+
+Arthur L. Samuel, 1959
+```
 
 Dennoch ist richtig, dass beides sich vor allem in den letzten zwei Jahrzehnten
 revolutionär entwickelt hat. Dafür gibt es drei Gründe, wie im folgenden Video
@@ -44,7 +53,10 @@ erklärt wird:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/l_HSWmxMRlU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Wir kürzen in dieser Vorlesung maschineller Lernen mit ML ab.
+Wir kürzen in dieser Vorlesung maschinelles Lernen oft mit ML ab. Damit umgehen
+wir die Diskussion, warum Künstliche Intelligenz mit einem Großbuchstaben
+beginnt und maschinelles Lernen mit einem Kleinbuchstaben. Gleichzeitig ist das
+auch die gängige Abkürzung im englischen Sprachgebrauch.
 
 ## Maschinelles Lernen = Algorithmen + Daten
 
