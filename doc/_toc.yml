@@ -7,3 +7,9 @@ chapters:
 - file: chapter_ml4ing/ml4ing_sec00.md
   sections:
   - file: chapter_ml4ing/ml4ing_sec01.md
+- file: chapter_ml4ing/chapter04/chapter04_sec00.md
+  sections:
+  - file: chapter_ml4ing/chapter04/chapter04_sec01.ipynb
+  - file: chapter_ml4ing/chapter04/chapter04_sec02.ipynb
+  - file: chapter_ml4ing/chapter04/chapter04_sec03.ipynb
+
