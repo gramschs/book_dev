@@ -3,13 +3,156 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: chapter_ml4ing/ml4ing_sec00.md
-  sections:
-  - file: chapter_ml4ing/ml4ing_sec01.md
-- file: chapter_ml4ing/chapter04/chapter04_sec00.md
-  sections:
-  - file: chapter_ml4ing/chapter04/chapter04_sec01.ipynb
-  - file: chapter_ml4ing/chapter04/chapter04_sec02.ipynb
-  - file: chapter_ml4ing/chapter04/chapter04_sec03.ipynb
-
+parts:
+- caption: Grundlagen Python
+  chapters:
+  - file: chapter01/chapter01_sec00.md
+    sections:
+    - file: chapter01/chapter01_sec01.md
+    - file: chapter01/chapter01_sec02.md
+    - file: chapter01/chapter01_sec03.md
+    - file: chapter01/chapter01_sec04.md
+  - file: chapter02/chapter02_sec00.md
+    sections:
+    - file: chapter02/chapter02_sec01.md
+    - file: chapter02/chapter02_sec02.md
+    - file: chapter02/chapter02_sec03.md
+    - file: chapter02/chapter02_sec04.md
+  - file: chapter03/chapter03_sec00.md
+    sections:
+    - file: chapter03/chapter03_sec01.md
+    - file: chapter03/chapter03_sec02.md
+    - file: chapter03/chapter03_sec03.md
+    - file: chapter03/chapter03_sec04.md
+  - file: chapter04/chapter04_sec00.md
+    sections:
+    - file: chapter04/chapter04_sec01.md
+    - file: chapter04/chapter04_sec02.md
+    - file: chapter04/chapter04_sec03.md
+    - file: chapter04/chapter04_sec04.md
+  - file: chapter05/chapter05_sec00.md
+    sections:
+    - file: chapter05/chapter05_sec01.md
+    - file: chapter05/chapter05_sec02.md
+    - file: chapter05/chapter05_sec03.md
+    - file: chapter05/chapter05_sec04.md
+  - file: chapter06/chapter06_sec00.md
+    sections:
+    - file: chapter06/chapter06_sec01.md
+    - file: chapter06/chapter06_sec02.md
+    - file: chapter06/chapter06_sec03.md
+    - file: chapter06/chapter06_sec04.md 
+  - file: chapter07/chapter07_sec00.md
+    sections:
+    - file: chapter07/chapter07_sec01.md
+    - file: chapter07/chapter07_sec02.md
+    - file: chapter07/chapter07_sec03.md
+    - file: chapter07/chapter07_sec04.md
+- caption: Anwendungen Python 
+  chapters:
+  - file: chapter08/chapter08_sec00.md
+    sections:
+    - file: chapter08/chapter08_sec01.md
+    - file: chapter08/chapter08_sec02.md
+    - file: chapter08/chapter08_sec03.md
+    - file: chapter08/chapter08_sec04.md
+  - file: chapter09/chapter09_sec00.md
+    sections:
+    - file: chapter09/chapter09_sec01.md
+    - file: chapter09/chapter09_sec02.md
+    - file: chapter09/chapter09_sec03.md 
+    - file: chapter09/chapter09_sec04.md 
+    - file: chapter09/chapter09_sec05.md 
+  - file: chapter10/chapter10_sec00.md
+    sections:
+    - file: chapter10/chapter10_sec01.md
+    - file: chapter10/chapter10_sec02.md
+    - file: chapter10/chapter10_sec03.md 
+    - file: chapter10/chapter10_sec04.md 
+- caption: Maschinelles Lernen: Getting started
+  chapters:
+  - file: ml_chapter01/chapter01_sec00.md
+    sections:
+    - file: ml_chapter01/chapter01_sec01.md
+    - file: ml_chapter01/chapter01_sec02.md
+    - file: ml_chapter01/chapter01_sec03.md
+  - file: ml_chapter02/chapter02_sec00.md
+    sections:
+    - file: ml_chapter02/chapter02_sec01.md
+    - file: ml_chapter02/chapter02_sec02.md
+    - file: ml_chapter02/chapter02_sec03.md
+- caption: Datenexploration
+  chapters:
+  - file: ml_chapter03/chapter03_sec00.md
+    sections:
+    - file: ml_chapter03/chapter03_sec01.md
+    - file: ml_chapter03/chapter03_sec02.md
+    - file: ml_chapter03/chapter03_sec03.md
+    - file: ml_chapter03/chapter03_sec04.md
+  - file: ml_chapter04/chapter04_sec00.md
+    sections:
+    - file: ml_chapter04/chapter04_sec01.md
+    - file: ml_chapter04/chapter04_sec02.md
+    - file: ml_chapter04/chapter04_sec03.md
+    - file: ml_chapter04/chapter04_sec04.md
+  - file: ml_chapter05/chapter05_sec00.md
+    sections:
+    - file: ml_chapter05/chapter05_sec01.md
+    - file: ml_chapter05/chapter05_sec02.md
+    - file: ml_chapter05/chapter05_sec03.md
+    - file: ml_chapter05/chapter05_sec04.md
+- caption: ML-Verfahren
+  chapters:
+  - file: ml_chapter06/chapter06_sec00.md
+    sections:
+    - file: ml_chapter06/chapter06_sec01.md
+    - file: ml_chapter06/chapter06_sec02.md
+    - file: ml_chapter06/chapter06_sec03.md
+    - file: ml_chapter06/chapter06_sec04.md
+  - file: ml_chapter07/chapter07_sec00.md
+    sections: 
+    - file: ml_chapter07/chapter07_sec01.md
+    - file: ml_chapter07/chapter07_sec02.md
+    - file: ml_chapter07/chapter07_sec03.md
+    - file: ml_chapter07/chapter07_sec04.md
+  - file: ml_chapter08/chapter08_sec00.md
+    sections:
+    - file: ml_chapter08/chapter08_sec01.md
+    - file: ml_chapter08/chapter08_sec02.md
+    - file: ml_chapter08/chapter08_sec03.md
+    - file: ml_chapter08/chapter08_sec04.md
+  - file: ml_chapter09/chapter09_sec00.md
+    sections:
+    - file: ml_chapter09/chapter09_sec01.md
+    - file: ml_chapter09/chapter09_sec02.md
+    - file: ml_chapter09/chapter09_sec03.md
+    - file: ml_chapter09/chapter09_sec04.md
+  - file: ml_chapter10/chapter10_sec00.md
+    sections:
+    - file: ml_chapter10/chapter10_sec01.md
+    - file: ml_chapter10/chapter10_sec02.md
+    - file: ml_chapter10/chapter10_sec03.md
+    - file: ml_chapter10/chapter10_sec04.md
+  - file: ml_chapter11/chapter11_sec00.md
+    sections:
+    - file: ml_chapter11/chapter11_sec01.md   
+    - file: ml_chapter11/chapter11_sec03.md 
+    - file: ml_chapter11/chapter11_sec04.md 
+  - file: ml_chapter12/chapter12_sec00.md
+    sections:
+    - file: ml_chapter12/chapter12_sec01.md  
+    - file: ml_chapter12/chapter12_sec02.md   
+    - file: ml_chapter12/chapter12_sec03.md  
+    - file: ml_chapter12/chapter12_sec04.md   
+  - file: ml_chapter13/chapter13_sec00.md
+    sections:
+    - file: ml_chapter13/chapter13_sec01.md
+    - file: ml_chapter13/chapter13_sec02.md
+- caption: Extras 
+  chapters:
+  - file: ml_chapter14/chapter14_sec00.md
+    sections:
+      - file: ml_chapter14/chapter14_sec01.md
+      - file: ml_chapter14/chapter14_sec02.md
+      - file: ml_chapter14/chapter14_sec03.md
+ 
