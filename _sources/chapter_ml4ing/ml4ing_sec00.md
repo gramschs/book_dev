@@ -1,4 +1,0 @@
-# Buch Maschinelles Lernen
-
-TODO
-
