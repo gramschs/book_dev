@@ -69,7 +69,7 @@ parts:
     - file: chapter10/chapter10_sec02.md
     - file: chapter10/chapter10_sec03.md 
     - file: chapter10/chapter10_sec04.md 
-- caption: Maschinelles Lernen: Getting started
+- caption: Maschinelles Lernen - Getting started
   chapters:
   - file: ml_chapter01/chapter01_sec00.md
     sections:
