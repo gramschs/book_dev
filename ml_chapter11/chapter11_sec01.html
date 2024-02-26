@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>11.1 Decision Tree (Entscheidungsbaum) &#8212; DEVELOPMENT</title>
+    <title>11.1 Entscheidungsbäume (Decision Trees) &#8212; DEVELOPMENT</title>
   
   
   
@@ -19,15 +19,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -35,17 +35,18 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/my_styles.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -71,7 +72,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="11.2 Random Forests" href="chapter11_sec03.html" />
     <link rel="prev" title="11. Decision Trees und Random Forests" href="chapter11_sec00.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -79,7 +80,15 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -114,11 +123,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -133,9 +145,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -154,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen Programmierung</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter01/chapter01_sec00.html">1. Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter01/chapter01_sec01.html">1.1 Hardware und Software</a></li>
@@ -206,7 +220,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anwendungen</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anwendungen Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. Pandas anstatt Excel</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Series und DataFrame</a></li>
@@ -231,7 +245,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started...</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Maschinelles Lernen - Getting started</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter01/chapter01_sec00.html">1. Grundbegriffe des maschinellen Lernens</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ml_chapter01/chapter01_sec01.html">1.1 Was ist maschinelles Lernen?</a></li>
@@ -308,7 +322,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter11_sec00.html">11. Decision Trees und Random Forests</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-21"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">11.1 Decision Tree (Entscheidungsbaum)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">11.1 Entscheidungsbäume (Decision Trees)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter11_sec03.html">11.2 Random Forests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter11_sec04.html">Übung</a></li>
 </ul>
@@ -456,20 +470,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -486,7 +502,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>11.1 Decision Tree (Entscheidungsbaum)</h1>
+    <h1>11.1 Entscheidungsbäume (Decision Trees)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -498,7 +514,6 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-entscheidungsbaum-im-autohaus">Ein Entscheidungsbaum im Autohaus</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wurzel-knoten-zweig-und-blatt">Wurzel, Knoten, Zweig und Blatt</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entscheidungsbaum-mit-scikit-learn">Entscheidungsbaum mit Scikit-Learn</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komplexitat-von-entscheidungsbaumen">Komplexität von Entscheidungsbäumen</a></li>
 </ul>
@@ -510,10 +525,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="decision-tree-entscheidungsbaum">
-<h1>11.1 Decision Tree (Entscheidungsbaum)<a class="headerlink" href="#decision-tree-entscheidungsbaum" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="entscheidungsbaume-decision-trees">
+<h1>11.1 Entscheidungsbäume (Decision Trees)<a class="headerlink" href="#entscheidungsbaume-decision-trees" title="Permalink to this heading">#</a></h1>
 <p>Ein beliebtes Partyspiel ist das Spiel “Wer bin ich?”. Die Spielregel sind
 simpel. Eine Person wählt eine berühmte Person oder eine Figur aus einem Film
 oder Buch, die die Mitspieler:innen erraten müssen. Die Mitspieler:innen
@@ -535,11 +550,10 @@ auszuwählen, die die anderen Spieler erraten sollen. Vielleicht kennen Sie auch
 die umgekehrte Variante. Der Name der zu ratenden Person/Figur wird der Person
 mit einem Zettel auf die Stirn geklebt. Und nun muss die Person raten, während
 die Mitspieler:innen mit Ja/Nein antworten.</p>
-<p>Dieser Partyklassiker lässt sich auch auf die Entscheidungsfindung bei Problemen
-übertragen.</p>
+<p>Dieser Partyklassiker lässt sich auch auf das maschinelle Lernen übertragen.</p>
 <section id="lernziele">
-<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
-<div class="important admonition">
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this heading">#</a></h2>
+<div class="admonition-goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
 <li><p>Sie wissen, was ein <strong>Entscheidungsbaum</strong> ist und kennen die zugehörigen
@@ -555,31 +569,33 @@ Hyperparameter (z.B. die Baumtiefe) feinjustieren.</p></li>
 </div>
 </section>
 <section id="ein-entscheidungsbaum-im-autohaus">
-<h2>Ein Entscheidungsbaum im Autohaus<a class="headerlink" href="#ein-entscheidungsbaum-im-autohaus" title="Permalink to this headline">#</a></h2>
+<h2>Ein Entscheidungsbaum im Autohaus<a class="headerlink" href="#ein-entscheidungsbaum-im-autohaus" title="Permalink to this heading">#</a></h2>
 <p>Ein <strong>Entscheidungsbaum</strong> gehört zu den überwachten Lernverfahren. Es ist auch
 üblich, die englische Bezeichnung <strong>Decision Tree</strong> anstatt des deutschen
-Begriffes zu nutzen. Entscheidungsbäume können zwar sowohl für Klassifikations-
-als auch Regressionsprobleme genutzt werden, aber letzteres kommt eher selten
-vor. Das Entscheidungsbaum-Verfahren erlernt die Klassifikation anhand von
-Fragen, die sozusagen an die Trainingsdaten gestellt werden.</p>
-<p>Im Folgenden betrachten wir ein fiktives Beispiel, um händisch einen
-Entscheidungsbaum zu erstellen. In einem Autohaus vereinbaren zwölf Personen
-eine Probefahrt. In der folgenden Tabelle ist notiert, welchen</p>
+Begriffes zu nutzen. Ein großer Vorteil von Entscheidungsbäumen ist ihre
+Flexibilität, denn sie können sowohl für Klassifikations- als auch
+Regressionsaufgaben eingesetzt werden. Im Folgenden betrachten wir als Beispiel
+eine Klassifikationsaufgabe. In einem Autohaus vereinbaren zehn Personen eine
+Probefahrt. In der folgenden Tabelle ist notiert, welchen</p>
 <ul class="simple">
-<li><p>Zustand (neu oder gebraucht),</p></li>
-<li><p>Marke (Audi, BMW und Citroën) und</p></li>
-<li><p>Preis (in EUR)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Kilometerstand</span> <span class="pre">[in</span> <span class="pre">km]</span></code> und</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Preis</span> <span class="pre">[in</span> <span class="pre">EUR]</span></code></p></li>
 </ul>
-<p>das jeweilige Auto hat. In der vierten Spalte (= Kaufentscheidung) steht, ob
-anschließend das Auto gekauft wurde oder nicht. Wir lesen mit Pandas die Daten
-aus der csv-Tabelle <code class="docutils literal notranslate"><span class="pre">autokauf.csv</span></code> ein:</p>
+<p>das jeweilige Auto hat. In der dritten Spalte <code class="docutils literal notranslate"><span class="pre">verkauft</span></code> ist vermerkt, ob das
+Auto nach der Probefahrt verkauft wurde (<code class="docutils literal notranslate"><span class="pre">True</span></code>) oder nicht (<code class="docutils literal notranslate"><span class="pre">False</span></code>). Diese
+Information ist die Zielgröße. Die Tabelle mit den Daten lässt sich effizient
+mit einem Pandas-DataFrame organisieren:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
 
-<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/gramschs/book_ml4ing/main/doc/chapter11/data/autokauf.csv&#39;</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">daten</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Kilometerstand [km]&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">32908</span><span class="p">,</span> <span class="mi">20328</span><span class="p">,</span> <span class="mi">13285</span><span class="p">,</span> <span class="mi">17162</span><span class="p">,</span> <span class="mi">27449</span><span class="p">,</span> <span class="mi">13715</span><span class="p">,</span> <span class="mi">32889</span><span class="p">,</span>  <span class="mi">3111</span><span class="p">,</span> <span class="mi">15607</span><span class="p">,</span> <span class="mi">18295</span><span class="p">],</span>
+    <span class="s1">&#39;Preis [EUR]&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">15960</span><span class="p">,</span> <span class="mi">20495</span><span class="p">,</span> <span class="mi">17227</span><span class="p">,</span> <span class="mi">17851</span><span class="p">,</span> <span class="mi">5428</span><span class="p">,</span> <span class="mi">22772</span><span class="p">,</span> <span class="mi">13581</span><span class="p">,</span> <span class="mi">16793</span><span class="p">,</span> <span class="mi">23253</span><span class="p">,</span> <span class="mi">11382</span><span class="p">],</span>
+    <span class="s1">&#39;verkauft&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span>
+    <span class="p">},</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Auto 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Auto 2&#39;</span><span class="p">,</span> <span class="s1">&#39;Auto 3&#39;</span><span class="p">,</span> <span class="s1">&#39;Auto 4&#39;</span><span class="p">,</span> <span class="s1">&#39;Auto 5&#39;</span><span class="p">,</span> <span class="s1">&#39;Auto 6&#39;</span><span class="p">,</span> <span class="s1">&#39;Auto 7&#39;</span><span class="p">,</span> <span class="s1">&#39;Auto 8&#39;</span><span class="p">,</span> <span class="s1">&#39;Auto 9&#39;</span><span class="p">,</span> <span class="s1">&#39;Auto 10&#39;</span><span class="p">])</span>
+<span class="n">daten</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -602,108 +618,89 @@ aus der csv-Tabelle <code class="docutils literal notranslate"><span class="pre"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Zustand</th>
-      <th>Marke</th>
-      <th>Preis</th>
-      <th>Kaufentscheidung</th>
+      <th>Kilometerstand [km]</th>
+      <th>Preis [EUR]</th>
+      <th>verkauft</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>neu</td>
-      <td>Citroën</td>
-      <td>10000</td>
-      <td>ja</td>
+      <th>Auto 1</th>
+      <td>32908</td>
+      <td>15960</td>
+      <td>False</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>gebraucht</td>
-      <td>Citroën</td>
-      <td>13000</td>
-      <td>nein</td>
+      <th>Auto 2</th>
+      <td>20328</td>
+      <td>20495</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>gebraucht</td>
-      <td>BMW</td>
-      <td>16000</td>
-      <td>nein</td>
+      <th>Auto 3</th>
+      <td>13285</td>
+      <td>17227</td>
+      <td>False</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>gebraucht</td>
-      <td>Audi</td>
-      <td>11000</td>
-      <td>ja</td>
+      <th>Auto 4</th>
+      <td>17162</td>
+      <td>17851</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>neu</td>
-      <td>BMW</td>
-      <td>17000</td>
-      <td>nein</td>
+      <th>Auto 5</th>
+      <td>27449</td>
+      <td>5428</td>
+      <td>False</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>neu</td>
-      <td>BMW</td>
-      <td>13000</td>
-      <td>ja</td>
+      <th>Auto 6</th>
+      <td>13715</td>
+      <td>22772</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>gebraucht</td>
-      <td>Audi</td>
-      <td>15000</td>
-      <td>ja</td>
+      <th>Auto 7</th>
+      <td>32889</td>
+      <td>13581</td>
+      <td>False</td>
     </tr>
     <tr>
-      <th>7</th>
-      <td>gebraucht</td>
-      <td>Citroën</td>
-      <td>13000</td>
-      <td>nein</td>
+      <th>Auto 8</th>
+      <td>3111</td>
+      <td>16793</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>8</th>
-      <td>neu</td>
-      <td>BMW</td>
-      <td>11000</td>
-      <td>ja</td>
+      <th>Auto 9</th>
+      <td>15607</td>
+      <td>23253</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>9</th>
-      <td>neu</td>
-      <td>Audi</td>
-      <td>14000</td>
-      <td>ja</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>gebraucht</td>
-      <td>Citroën</td>
-      <td>11000</td>
-      <td>nein</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>gebraucht</td>
-      <td>BMW</td>
-      <td>14000</td>
-      <td>nein</td>
+      <th>Auto 10</th>
+      <td>18295</td>
+      <td>11382</td>
+      <td>False</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p>Da in unserem Beispiel nur drei Eigenschaften vorliegen, können wir die Daten
-visualisieren. Wir ordnen der x-, y- und z-Achse jeweils eine Eigenschaft zu und
-visualisieren die Kaufentscheidung durch die Farbe des Markers.</p>
+<p>Da in unserem Beispiel von den Autos nur die beiden Eigenschaften
+<code class="docutils literal notranslate"><span class="pre">Kilometerstand</span> <span class="pre">[km]</span></code> und <code class="docutils literal notranslate"><span class="pre">Preis</span> <span class="pre">[EUR]</span></code> erfasst wurden, können wir die
+Datenpunkte anschaulich in einem zweidimensionalen Streudiagramm (Scatterplot)
+visualisieren. Dabei wird der Kilometerstand auf der x-Achse und der Preis auf
+der y-Achse abgetragen. Die Zielgröße <code class="docutils literal notranslate"><span class="pre">verkauft</span></code> kennzeichnen wir durch die
+Farbe. Dabei steht die Farbe Rot für »verkauft« (True) und Blau für »nicht
+verkauft« (False).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter_3d</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Zustand&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Marke&#39;</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="s1">&#39;Preis&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Kaufentscheidung&#39;</span><span class="p">])</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">daten</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Kilometerstand [km]&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;Preis [EUR]&#39;</span><span class="p">,</span> 
+                 <span class="n">color</span><span class="o">=</span><span class="s1">&#39;verkauft&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Künstliche Daten: Verkaufsaktion im Autohaus&#39;</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -786,9 +783,9 @@ e.exports=function(t){return null!=t&&(n(t)||function(t){return"function"==typeo
         });
         }
         </script>
-        </div><div class="output text_html"><div>                            <div id="6427e721-76ed-4f3d-9a3e-f9e9e12149e2" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("6427e721-76ed-4f3d-9a3e-f9e9e12149e2")) {                    Plotly.newPlot(                        "6427e721-76ed-4f3d-9a3e-f9e9e12149e2",                        [{"hovertemplate":"Kaufentscheidung=ja<br>Zustand=%{x}<br>Marke=%{y}<br>Preis=%{z}<extra></extra>","legendgroup":"ja","marker":{"color":"#636efa","symbol":"circle"},"mode":"markers","name":"ja","scene":"scene","showlegend":true,"x":["neu","gebraucht","neu","gebraucht","neu","neu"],"y":["Citroën","Audi","BMW","Audi","BMW","Audi"],"z":[10000,11000,13000,15000,11000,14000],"type":"scatter3d"},{"hovertemplate":"Kaufentscheidung=nein<br>Zustand=%{x}<br>Marke=%{y}<br>Preis=%{z}<extra></extra>","legendgroup":"nein","marker":{"color":"#EF553B","symbol":"circle"},"mode":"markers","name":"nein","scene":"scene","showlegend":true,"x":["gebraucht","gebraucht","neu","gebraucht","gebraucht","gebraucht"],"y":["Citroën","BMW","BMW","Citroën","Citroën","BMW"],"z":[13000,16000,17000,13000,11000,14000],"type":"scatter3d"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"scene":{"domain":{"x":[0.0,1.0],"y":[0.0,1.0]},"xaxis":{"title":{"text":"Zustand"}},"yaxis":{"title":{"text":"Marke"}},"zaxis":{"title":{"text":"Preis"}}},"legend":{"title":{"text":"Kaufentscheidung"},"tracegroupgap":0},"margin":{"t":60}},                        {"responsive": true}                    ).then(function(){
+        </div><div class="output text_html"><div>                            <div id="1cdfa09a-62d4-4c13-81d5-1da6b0b7494d" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("1cdfa09a-62d4-4c13-81d5-1da6b0b7494d")) {                    Plotly.newPlot(                        "1cdfa09a-62d4-4c13-81d5-1da6b0b7494d",                        [{"hovertemplate":"verkauft=False<br>Kilometerstand [km]=%{x}<br>Preis [EUR]=%{y}<extra></extra>","legendgroup":"False","marker":{"color":"#636efa","symbol":"circle"},"mode":"markers","name":"False","orientation":"v","showlegend":true,"x":[32908,13285,27449,32889,18295],"xaxis":"x","y":[15960,17227,5428,13581,11382],"yaxis":"y","type":"scatter"},{"hovertemplate":"verkauft=True<br>Kilometerstand [km]=%{x}<br>Preis [EUR]=%{y}<extra></extra>","legendgroup":"True","marker":{"color":"#EF553B","symbol":"circle"},"mode":"markers","name":"True","orientation":"v","showlegend":true,"x":[20328,17162,13715,3111,15607],"xaxis":"x","y":[20495,17851,22772,16793,23253],"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Kilometerstand [km]"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Preis [EUR]"}},"legend":{"title":{"text":"verkauft"},"tracegroupgap":0},"title":{"text":"K\u00fcnstliche Daten: Verkaufsaktion im Autohaus"}},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('6427e721-76ed-4f3d-9a3e-f9e9e12149e2');
+var gd = document.getElementById('1cdfa09a-62d4-4c13-81d5-1da6b0b7494d');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -812,33 +809,57 @@ if (outputEl) {{
 
                         })                };                });            </script>        </div></div></div>
 </div>
-<p>Natürlich können wir nun versuchen, eines der bisherigen ML-Verfahren
-anzuwenden, um die Kaufentscheidung zu prognostizieren. Wir probieren an dieser
-Stelle einen Entscheidungsbaum aus. Dazu betrachten wir uns die verschiedenen
-Features und versuchen nacheinander anhand von Fragen an die Features die
-einzelnen Datensätze in den einen Ast oder in den anderen Ast zu stecken.</p>
-<p>Blättern Sie die folgenden Folien nacheinander durch, um zu sehen, welche Fragen
-an die Features gestellt werden.</p>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output text_html">../assets/chapter11/EntscheidungsbaumImAutohausSingle.html</div></div>
+<p>Als nächstes zeigen wir, wie die Autos anhand von Fragen in die beiden Klassen
+»verkauft« und »nicht verkauft« sortiert werden können. Links im Streudiagramm
+visualisieren wir die Autos mit ihren Eigenschaften <code class="docutils literal notranslate"><span class="pre">Kilometerstand</span> <span class="pre">[km]</span></code> und
+<code class="docutils literal notranslate"><span class="pre">Preis</span> <span class="pre">[EUR]</span></code> als Punkte. Auf der rechten Seite werden wir schrittweise den
+Entscheidungsbaum entwickeln. Ein Entscheidungsbaum visualisiert
+Entscheidungsregeln in Form einer Baumstruktur. Zu Beginn wurde noch keine Frage
+gestellt und alle Autos befinden sich gemeinsam in einem <strong>Knoten</strong> des
+Entscheidungsbaumes, der visuell durch einen rechteckigen Kasten symbolisiert
+wird. Dieser erste Knoten wird als <strong>Wurzelknoten</strong> bezeichnet, da er die Wurzel
+des Entscheidungsbaumes darstellt.</p>
+<p><a class="image169 reference internal" href="../_images/combined_decisiontree00.svg"><img alt="Entscheidungsbaum - Start" class="image169" src="../_images/combined_decisiontree00.svg" width="100%" /></a></p>
+<p>Dann wird eine erste Frage gestellt. Ist der Verkaufspreis kleiner oder gleich
+16376.50 EUR? Entsprechend dieser Entscheidung werden die Autos in zwei Gruppen
+aufgeteilt. Wenn ja, wandern die Autos nach links und ansonsten nach rechts. Im
+Entscheidungsbaum wird diese Aufteilung durch einen <strong>Zweig</strong> nach links und
+einen Zweig nach rechts symbolisiert. Ein alternativer Name für Zweig ist
+<strong>Kante</strong>. Die Autos »rutschen« die Zweige/Kanten entlang und landen in zwei
+separaten Knoten. Im Streudiagramm entspricht diese Fragestellung dem Vergleich
+mit einer horizontalen Linie bei y = 16376.5. Die gesamte Fläche unterhalb
+dieser Linie wird blau markiert.</p>
+<p><a class="image169 reference internal" href="../_images/combined_decisiontree01.svg"><img alt="Entscheidungsbaum - 1. Entscheidung" class="image169" src="../_images/combined_decisiontree01.svg" width="100%" /></a></p>
+<p>Bei den Autos mit einem Preis kleiner oder gleich 16376.50 EUR müssen wir nicht
+weiter sortieren bzw. weitere Fragen stellen. Da aus diesem Knoten keine Zweige
+mehr wachsen, wird dieser Knoten auch <strong>Blatt</strong> genannt. Aber in dem Knoten des
+rechten Zweiges befinden sich fünf rote (also verkaufte) Autos und ein blaues
+(also nicht verkauftes) Auto. Wir wollen diese Autos durch weitere Fragen
+sortieren. Doch obwohl nur ein Auto (nämlich Auto 3) aus dieser Gruppe separiert
+werden soll, ist dies nicht durch nur eine einzige Frage möglich. Lautet die
+Frage: »Ist der Preis kleiner oder gleich 17300 EUR?«, dann wandern das rote
+Auto 8 und das blaue Auto 3 nach links. Wählen wir die Frage: »Ist der
+Kilometerstand kleiner oder gleich 13500 km?«, dann wandern ebenfalls Auto 3 und
+Auto 8 nach links. Beide Fragen sind also gleichwertig, welches sollen wir
+nehmen? Wir gehen nach der Reihenfolge der Eigenschaften vor. Da der
+Kilometerstand in der Tabelle in der ersten Spalte steht und der Preis in der
+zweiten Spalte, entscheiden wir uns für die Frage nach dem Kilometerstand.</p>
+<p><a class="image169 reference internal" href="../_images/combined_decisiontree02.svg"><img alt="Entscheidungsbaum - 2. Entscheidung" class="image169" src="../_images/combined_decisiontree02.svg" width="100%" /></a></p>
+<p>Jetzt sind aber nur noch zwei Autos im linken Knoten, so dass diesmal eine
+weitere Frage ausreicht, die beiden Autos in zwei Klassen zu sortieren. Wir
+fragen: »Ist der Kilometerstand kleiner oder gleich 8198 km?«</p>
+<p><a class="image169 reference internal" href="../_images/combined_decisiontree03.svg"><img alt="Entscheidungsbaum - 3. Entscheidung" class="image169" src="../_images/combined_decisiontree03.svg" width="100%" /></a></p>
+<p>Alle Autos sind nun durch die Fragen sortiert und befinden sich in Blättern.</p>
+<div class="admonition-was-ist-ein-entscheidungsbaum admonition">
+<p class="admonition-title">Was ist … ein Entscheidungsbaum?</p>
+<p>Ein Entscheidungsbaum (Decision Tree) ist ein Modell zur Entscheidungsfindung,
+das Daten mit Hilfe einer Baumstruktur sortiert. Die Datenobjekte starten beim
+Wurzelknoten und werden dann über Knoten (=Entscheidungen) und Zweige/Kanten (=
+Ergebnis der Entscheidung) in Blätter sortiert.</p>
 </div>
 </section>
-<section id="wurzel-knoten-zweig-und-blatt">
-<h2>Wurzel, Knoten, Zweig und Blatt<a class="headerlink" href="#wurzel-knoten-zweig-und-blatt" title="Permalink to this headline">#</a></h2>
-<p>Die Abfolge von Fragen an die Features wird in der Regel visualisiert. Die
-Visualisierung ist einer der großen Vorteile von Entscheidungsbäumen, denn
-dadurch wird sehr deutlich, welche Entscheidungen zu dem Ergebnis führen. Die
-Darstellung erfolgt dabei in der Regel als “mathematischer” Baum. Es gibt Knoten
-(node) und Kanten (branch), manchmal auch Zweige genannt. Jeder Knoten im Baum
-steht für eine Entscheidung oder ein Ereignis, während die Kanten zwischen den
-Knoten die möglichen Auswirkungen dieser Entscheidungen oder Ereignisse
-darstellen. Der oberste Knoten wird Wurzelknoten (root node) genannt. Ist die
-Entscheidung gefällt, dann werden diese letzten Knoten Endknoten (leaf node)
-genannt. Sie stellen sozusagen die Blätter des Baumes dar.</p>
-</section>
 <section id="entscheidungsbaum-mit-scikit-learn">
-<h2>Entscheidungsbaum mit Scikit-Learn<a class="headerlink" href="#entscheidungsbaum-mit-scikit-learn" title="Permalink to this headline">#</a></h2>
+<h2>Entscheidungsbaum mit Scikit-Learn<a class="headerlink" href="#entscheidungsbaum-mit-scikit-learn" title="Permalink to this heading">#</a></h2>
 <p>Scikit-Learn bietet einen Algorithmus an, um einen Entscheidungsbaum zu
 erstellen. Wir bleiben bei unserem fiktiven Autohaus. Allerdings müssen wir nun
 die Klassenbezeichnungen wie beispielsweise ‘neu’ oder ‘gebraucht’ als Zahlen
@@ -847,152 +868,39 @@ Output als <span class="math notranslate nohighlight">\(y\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># wandle Kategorien in Zahlen um</span>
-<span class="n">data</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;neu&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">data</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;gebraucht&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1">#data.replace(&#39;neu&#39;, 1, inplace=True)</span>
+<span class="c1">#data.replace(&#39;gebraucht&#39;, 0, inplace=True)</span>
 
-<span class="n">data</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Audi&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">data</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;BMW&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">data</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Citroën&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1">#data.replace(&#39;Audi&#39;, 0, inplace=True)</span>
+<span class="c1">#data.replace(&#39;BMW&#39;, 1, inplace=True)</span>
+<span class="c1">#data.replace(&#39;Citroën&#39;, 2, inplace=True)</span>
 
-<span class="n">data</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;ja&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">data</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;nein&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1">#data.replace(&#39;ja&#39;, 1, inplace=True)</span>
+<span class="c1">#data.replace(&#39;nein&#39;, 0, inplace=True)</span>
 
 <span class="c1"># extrahiere X und y</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Zustand&#39;</span><span class="p">:</span><span class="s1">&#39;Preis&#39;</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Kaufentscheidung&#39;</span><span class="p">]</span>
+<span class="c1">#X = data.loc[:, &#39;Zustand&#39;:&#39;Preis&#39;]</span>
+<span class="c1">#y = data[&#39;Kaufentscheidung&#39;]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#data.head(12)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Zustand</th>
-      <th>Marke</th>
-      <th>Preis</th>
-      <th>Kaufentscheidung</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>2</td>
-      <td>10000</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>0</td>
-      <td>2</td>
-      <td>13000</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0</td>
-      <td>1</td>
-      <td>16000</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0</td>
-      <td>0</td>
-      <td>11000</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1</td>
-      <td>1</td>
-      <td>17000</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>1</td>
-      <td>1</td>
-      <td>13000</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>0</td>
-      <td>0</td>
-      <td>15000</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>0</td>
-      <td>2</td>
-      <td>13000</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>1</td>
-      <td>1</td>
-      <td>11000</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>1</td>
-      <td>0</td>
-      <td>14000</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>0</td>
-      <td>2</td>
-      <td>11000</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>0</td>
-      <td>1</td>
-      <td>14000</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Nun lassen wir Scikit-Learn einen Entscheidungsbaum erstellen. Dazu importieren
 wir <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code> aus dem Untermodul <code class="docutils literal notranslate"><span class="pre">sklearn.tree</span></code>. Danach
 trainieren wir den Entscheidungsbaum mit <code class="docutils literal notranslate"><span class="pre">.fit()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#from sklearn.tree import DecisionTreeClassifier</span>
 
-<span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
-<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+<span class="c1">#model = DecisionTreeClassifier()</span>
+<span class="c1">#model.fit(X,y);</span>
 </pre></div>
 </div>
 </div>
@@ -1002,14 +910,11 @@ trainieren wir den Entscheidungsbaum mit <code class="docutils literal notransla
 Entscheidungsbäume zeichnen kann. Wir importieren sie direkt und wenden Sie an.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">plot_tree</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#from sklearn.tree import plot_tree </span>
 
-<span class="n">plot_tree</span><span class="p">(</span><span class="n">model</span><span class="p">);</span>
+<span class="c1">#plot_tree(model);</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/e9018819a6ea9c8cc82a5670236c6e6a57a3a15fb7227ac05c3d201096d72920.png" src="../_images/e9018819a6ea9c8cc82a5670236c6e6a57a3a15fb7227ac05c3d201096d72920.png" />
 </div>
 </div>
 <p>In den Kästchen, die den Wurzelknoten und die inneren Knoten darstellen, steht
@@ -1025,12 +930,9 @@ Features anstatt <code class="docutils literal notranslate"><span class="pre">X[
 <code class="docutils literal notranslate"><span class="pre">feature_names=['Zustand','Marke','Preis']</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_tree</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="n">feature_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Zustand&#39;</span><span class="p">,</span><span class="s1">&#39;Marke&#39;</span><span class="p">,</span><span class="s1">&#39;Preis&#39;</span><span class="p">]);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#plot_tree(model,feature_names=[&#39;Zustand&#39;,&#39;Marke&#39;,&#39;Preis&#39;]);</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/74f82aa2887c01501c5c516e701b9a2554fed22289fd55e024e2a7c7d5302eae.png" src="../_images/74f82aa2887c01501c5c516e701b9a2554fed22289fd55e024e2a7c7d5302eae.png" />
 </div>
 </div>
 <p>Der Eintrag <code class="docutils literal notranslate"><span class="pre">samples</span></code> in den Knoten verrät, wie viele Datensätze in den linken
@@ -1054,12 +956,9 @@ füllen können. Sie lautet simpel: <code class="docutils literal notranslate"><
 <p>Je dunkler die Farbe, desto reiner der Knoten!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_tree</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="n">feature_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Zustand&#39;</span><span class="p">,</span><span class="s1">&#39;Marke&#39;</span><span class="p">,</span><span class="s1">&#39;Preis&#39;</span><span class="p">],</span> <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#plot_tree(model,feature_names=[&#39;Zustand&#39;,&#39;Marke&#39;,&#39;Preis&#39;], filled=True);</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/b657757ca9818a89db03f4633a2b45cd9c7dfcffac7f89080af7c080b2981588.png" src="../_images/b657757ca9818a89db03f4633a2b45cd9c7dfcffac7f89080af7c080b2981588.png" />
 </div>
 </div>
 <p>Wenn wir uns die vier Endknoten, also die Blätter betrachten, so haben wir von
@@ -1068,7 +967,7 @@ gekauft wurden (<code class="docutils literal notranslate"><span class="pre">[5,
 zuletzt 1 Auto, das nicht gekauft wurde (<code class="docutils literal notranslate"><span class="pre">[1,0]</span></code>).</p>
 </section>
 <section id="komplexitat-von-entscheidungsbaumen">
-<h2>Komplexität von Entscheidungsbäumen<a class="headerlink" href="#komplexitat-von-entscheidungsbaumen" title="Permalink to this headline">#</a></h2>
+<h2>Komplexität von Entscheidungsbäumen<a class="headerlink" href="#komplexitat-von-entscheidungsbaumen" title="Permalink to this heading">#</a></h2>
 <p>Entscheidungsbäume tendieren schnell zum Overfitting. Natürlich können wir
 solange weiter Fragen stellen, bis jedes Leaf/Endknoten nur noch Datenpunkte
 einer Klasse enthält. Damit hätten wir also eine 100-prozentige Prognose auf den
@@ -1087,15 +986,12 @@ dem Argument <code class="docutils literal notranslate"><span class="pre">max_de
 begrenzen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_begrenzt</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">model_begrenzt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#model_begrenzt = DecisionTreeClassifier(max_depth=2)</span>
+<span class="c1">#model_begrenzt.fit(X,y);</span>
 
-<span class="n">plot_tree</span><span class="p">(</span><span class="n">model_begrenzt</span><span class="p">,</span><span class="n">feature_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Zustand&#39;</span><span class="p">,</span><span class="s1">&#39;Marke&#39;</span><span class="p">,</span><span class="s1">&#39;Preis&#39;</span><span class="p">],</span> <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+<span class="c1">#plot_tree(model_begrenzt,feature_names=[&#39;Zustand&#39;,&#39;Marke&#39;,&#39;Preis&#39;], filled=True);</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/7a49266ef6351d7ea69e24b3b1e942cbc4cc9ce4b8270137bc09dd672e27c66e.png" src="../_images/7a49266ef6351d7ea69e24b3b1e942cbc4cc9ce4b8270137bc09dd672e27c66e.png" />
 </div>
 </div>
 <p>Dadurch sind die Blätter/Endknoten aber nicht mehr rein.</p>
@@ -1130,11 +1026,10 @@ DecisionTreeClassifier</a>.</p>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chapter11_sec00.html"
@@ -1154,10 +1049,7 @@ DecisionTreeClassifier</a>.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1165,6 +1057,7 @@ DecisionTreeClassifier</a>.</p>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1174,7 +1067,6 @@ DecisionTreeClassifier</a>.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-entscheidungsbaum-im-autohaus">Ein Entscheidungsbaum im Autohaus</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wurzel-knoten-zweig-und-blatt">Wurzel, Knoten, Zweig und Blatt</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entscheidungsbaum-mit-scikit-learn">Entscheidungsbaum mit Scikit-Learn</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komplexitat-von-entscheidungsbaumen">Komplexität von Entscheidungsbäumen</a></li>
 </ul>
@@ -1198,6 +1090,7 @@ By Simone Gramsch
   
   <div class="footer-item">
     
+
   </div>
   
   <div class="footer-item">
@@ -1223,8 +1116,8 @@ By Simone Gramsch
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

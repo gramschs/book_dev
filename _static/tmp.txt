@@ -1,0 +1,18 @@
+div.learninggoals {
+    border-left-color: var(--my-color-learning);
+}
+div.learninggoals .admonition-title {
+    background-color: var(--my-color-learning-shade);
+}
+div.learninggoals .admonition-title:before {
+    color: var(--my-color-learning);
+    left: .5rem;
+    top: .3rem;
+    font-family: "Font Awesome 5 Free";
+    content: '    \f046'; 
+    font-weight: 900;
+}
+
+v    --my-color-learning: #ffc107;
+    --my-color-learning-tint: #FFF8E6;
+    --my-color-learning-shade: #584306;

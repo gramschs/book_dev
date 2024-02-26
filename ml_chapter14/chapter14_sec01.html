@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Streudiagramm und Balkendiagramm &#8212; DEVELOPMENT</title>
   
@@ -19,15 +19,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -35,17 +35,18 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/my_styles.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -69,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Histogramme und Scattermatrix" href="chapter14_sec02.html" />
     <link rel="prev" title="Plotly" href="chapter14_sec00.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -77,7 +78,15 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -112,11 +121,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -131,9 +143,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -152,7 +166,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen Programmierung</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter01/chapter01_sec00.html">1. Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter01/chapter01_sec01.html">1.1 Hardware und Software</a></li>
@@ -204,7 +218,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anwendungen</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anwendungen Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. Pandas anstatt Excel</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Series und DataFrame</a></li>
@@ -229,7 +243,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started...</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Maschinelles Lernen - Getting started</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter01/chapter01_sec00.html">1. Grundbegriffe des maschinellen Lernens</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ml_chapter01/chapter01_sec01.html">1.1 Was ist maschinelles Lernen?</a></li>
@@ -306,7 +320,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter11/chapter11_sec00.html">11. Decision Trees und Random Forests</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-21"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec01.html">11.1 Decision Tree (Entscheidungsbaum)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec01.html">11.1 Entscheidungsbäume (Decision Trees)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec03.html">11.2 Random Forests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec04.html">Übung</a></li>
 </ul>
@@ -454,20 +468,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -509,10 +525,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="streudiagramm-und-balkendiagramm">
-<h1>Streudiagramm und Balkendiagramm<a class="headerlink" href="#streudiagramm-und-balkendiagramm" title="Permalink to this headline">#</a></h1>
+<h1>Streudiagramm und Balkendiagramm<a class="headerlink" href="#streudiagramm-und-balkendiagramm" title="Permalink to this heading">#</a></h1>
 <p>Plotly Express unterstützt eine Vielzahl von Diagrammtypen, darunter
 Liniendiagramme, Balkendiagramme, Flächendiagramme, Streudiagramme und viele
 andere. Darüber hinaus bietet es auch eine Reihe von Anpassungsmöglichkeiten,
@@ -523,7 +539,7 @@ mithilfe von Mausklicks oder Berührungen auf mobilen Geräten erkundet werden.
 Sie können auch Zoomen, Scrollen, Anzeigen von Details durch Hovern und weitere
 Interaktionsfunktionen.</p>
 <section id="lernziele">
-<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this heading">#</a></h2>
 <div class="important admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
@@ -537,7 +553,7 @@ anpassen.</p></li>
 </div>
 </section>
 <section id="diagrammtypen">
-<h2>Diagrammtypen<a class="headerlink" href="#diagrammtypen" title="Permalink to this headline">#</a></h2>
+<h2>Diagrammtypen<a class="headerlink" href="#diagrammtypen" title="Permalink to this heading">#</a></h2>
 <p>Bei der Datenvisualisierung geht es darum, Daten durch eine Grafik so
 aufzubereiten, dass Muster oder Unregelmäßigkeiten in den Daten entdeckt werden
 können. Dabei kann die visuelle Darstellung der Daten helfen, Muster in den
@@ -552,7 +568,7 @@ die Diagrammtypen</p>
 <p>Danach beschäftigen wir uns mit der Gestaltung bzw. dem Styling von Diagrammen.</p>
 </section>
 <section id="streudiagramme">
-<h2>Streudiagramme<a class="headerlink" href="#streudiagramme" title="Permalink to this headline">#</a></h2>
+<h2>Streudiagramme<a class="headerlink" href="#streudiagramme" title="Permalink to this heading">#</a></h2>
 <p>Streudiagramme (englisch: Scatterplot) werden eingesetzt, wenn dder Zusammenhang
 zwischen zwei numerischen Größen untersucht werden soll. Das ist vor allem bei
 Exoerimenten häufig der Fall.</p>
@@ -648,7 +664,7 @@ negative Korrelation zwischen der Kriminalitätsrate und dem Medianwert gibt - j
 höher die Kriminalitätsrate, desto niedriger der Hauspreis.</p>
 </section>
 <section id="styling-von-streudiagrammen">
-<h2>Styling von Streudiagrammen<a class="headerlink" href="#styling-von-streudiagrammen" title="Permalink to this headline">#</a></h2>
+<h2>Styling von Streudiagrammen<a class="headerlink" href="#styling-von-streudiagrammen" title="Permalink to this heading">#</a></h2>
 <p>Die Voreinstellungen von Plotly sind bereits sehr gut gewählt, so dass ohne
 weitere Optionen bereits ansprechende Diagramme erstellt werden. Hier sind
 einige Tipps, wie Sie das Styling Ihres Scatterplots mit Plotly verbessern
@@ -709,7 +725,7 @@ heißen <code class="docutils literal notranslate"><span class="pre">xaxis_title
 <p><img alt="scatterplot_title" src="../_images/scatterplot_title.png" /></p>
 </section>
 <section id="balkendiagramme">
-<h2>Balkendiagramme<a class="headerlink" href="#balkendiagramme" title="Permalink to this headline">#</a></h2>
+<h2>Balkendiagramme<a class="headerlink" href="#balkendiagramme" title="Permalink to this heading">#</a></h2>
 <p>Balkendiagramme oder Säulendiagramme sind eine gute Wahl, wenn wir Daten
 darstellen möchten, die in verschiedenen Kategorien oder Gruppen vorliegen, z.B.
 wenn wir die Anzahl der verkauften Produkte nach Produktkategorie oder den
@@ -745,7 +761,8 @@ lassen wir die Anzahl der Häuser pro Stadtteil ermitteln:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24    132
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RAD
+24    132
 5     115
 4     110
 3      38
@@ -754,7 +771,7 @@ lassen wir die Anzahl der Häuser pro Stadtteil ermitteln:</p>
 8      24
 1      20
 7      17
-Name: RAD, dtype: int64
+Name: count, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -782,7 +799,7 @@ Visualisierung. Die Funktion zur Erzeugung des Balkendiagramms lautet: <code cla
 <p><img alt="balkendiagramm_title" src="../_images/balkendiagramm_title.png" /></p>
 </section>
 <section id="weiteres-lernmaterial">
-<h2>Weiteres Lernmaterial<a class="headerlink" href="#weiteres-lernmaterial" title="Permalink to this headline">#</a></h2>
+<h2>Weiteres Lernmaterial<a class="headerlink" href="#weiteres-lernmaterial" title="Permalink to this heading">#</a></h2>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/JnOM7s1BSN8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6sVXa1gfIbA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></section>
 </section>
@@ -812,11 +829,10 @@ Visualisierung. Die Funktion zur Erzeugung des Balkendiagramms lautet: <code cla
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chapter14_sec00.html"
@@ -836,10 +852,7 @@ Visualisierung. Die Funktion zur Erzeugung des Balkendiagramms lautet: <code cla
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -847,6 +860,7 @@ Visualisierung. Die Funktion zur Erzeugung des Balkendiagramms lautet: <code cla
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -881,6 +895,7 @@ By Simone Gramsch
   
   <div class="footer-item">
     
+
   </div>
   
   <div class="footer-item">
@@ -906,8 +921,8 @@ By Simone Gramsch
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

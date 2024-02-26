@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>10.3 Polynomiale Regression &#8212; DEVELOPMENT</title>
   
@@ -19,15 +19,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -35,17 +35,18 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/my_styles.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -71,7 +72,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Übungen" href="chapter10_sec04.html" />
     <link rel="prev" title="10.2 Lineare Regression mit polyfit und polyval" href="chapter10_sec02.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -79,7 +80,15 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -114,11 +123,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -133,9 +145,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -154,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen Programmierung</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter01/chapter01_sec00.html">1. Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter01/chapter01_sec01.html">1.1 Hardware und Software</a></li>
@@ -206,7 +220,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anwendungen</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anwendungen Python</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. Pandas anstatt Excel</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Series und DataFrame</a></li>
@@ -231,7 +245,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started...</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Maschinelles Lernen - Getting started</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter01/chapter01_sec00.html">1. Grundbegriffe des maschinellen Lernens</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ml_chapter01/chapter01_sec01.html">1.1 Was ist maschinelles Lernen?</a></li>
@@ -308,7 +322,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter11/chapter11_sec00.html">11. Decision Trees und Random Forests</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-21"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec01.html">11.1 Decision Tree (Entscheidungsbaum)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec01.html">11.1 Entscheidungsbäume (Decision Trees)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec03.html">11.2 Random Forests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec04.html">Übung</a></li>
 </ul>
@@ -456,20 +470,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -509,12 +525,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="polynomiale-regression">
-<h1>10.3 Polynomiale Regression<a class="headerlink" href="#polynomiale-regression" title="Permalink to this headline">#</a></h1>
+<h1>10.3 Polynomiale Regression<a class="headerlink" href="#polynomiale-regression" title="Permalink to this heading">#</a></h1>
 <section id="lernziele">
-<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this heading">#</a></h2>
 <div class="hint admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
@@ -529,7 +545,7 @@ den Daten passt.</p></li>
 </div>
 </section>
 <section id="regressionspolynome">
-<h2>Regressionspolynome<a class="headerlink" href="#regressionspolynome" title="Permalink to this headline">#</a></h2>
+<h2>Regressionspolynome<a class="headerlink" href="#regressionspolynome" title="Permalink to this heading">#</a></h2>
 <p>Ein Regressionspolynom ist eine Möglichkeit der Regressionsanalyse, bei der die
 Beziehung zwischen einer unabhängigen/erklärenden Variablen <span class="math notranslate nohighlight">\(x\)</span> und einer
 abhängigen Variablen <span class="math notranslate nohighlight">\(y\)</span> durch ein Polynom modelliert wird. Damit erweitert die
@@ -545,7 +561,7 @@ Polynomgrade möglich.</p>
 <p>Die reellen Zahlen <span class="math notranslate nohighlight">\(a, b, c, d\)</span> werden Koeffizienten des Polynoms genannt.</p>
 </section>
 <section id="beispiel-regressionsparabel">
-<h2>Beispiel Regressionsparabel<a class="headerlink" href="#beispiel-regressionsparabel" title="Permalink to this headline">#</a></h2>
+<h2>Beispiel Regressionsparabel<a class="headerlink" href="#beispiel-regressionsparabel" title="Permalink to this heading">#</a></h2>
 <p>Wir betrachten als Beispiel die folgenden künstlichen Messwerte.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -563,7 +579,7 @@ Polynomgrade möglich.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/58b7216f1f23a4a0f71666ef10eb6dace1e08187ece9a6a426668e7e1fa16509.png" src="../_images/58b7216f1f23a4a0f71666ef10eb6dace1e08187ece9a6a426668e7e1fa16509.png" />
+<img alt="../_images/f5d6dc6d105ce436f1826ef82d4f5f840a025d97835f11cd8b51ad982399ea74.png" src="../_images/f5d6dc6d105ce436f1826ef82d4f5f840a025d97835f11cd8b51ad982399ea74.png" />
 </div>
 </div>
 <p>Sieht nicht nach einer linearen Funktion, also einer Geraden aus. Wir probieren
@@ -630,7 +646,7 @@ c = 14.535614285714288
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0d6ade9f223588d92d9439c568410889088df569148ba1ebe021b89e81658591.png" src="../_images/0d6ade9f223588d92d9439c568410889088df569148ba1ebe021b89e81658591.png" />
+<img alt="../_images/235f3031a2c4f97e4c164727730e273b682cf4a83c121e175ddfd5be274d77e7.png" src="../_images/235f3031a2c4f97e4c164727730e273b682cf4a83c121e175ddfd5be274d77e7.png" />
 </div>
 </div>
 <p>Alternativ kann die Funktion <code class="docutils literal notranslate"><span class="pre">polyval</span></code> dazu genutzt werden, um die Parabel aufzustellen.</p>
@@ -650,12 +666,12 @@ c = 14.535614285714288
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0d6ade9f223588d92d9439c568410889088df569148ba1ebe021b89e81658591.png" src="../_images/0d6ade9f223588d92d9439c568410889088df569148ba1ebe021b89e81658591.png" />
+<img alt="../_images/235f3031a2c4f97e4c164727730e273b682cf4a83c121e175ddfd5be274d77e7.png" src="../_images/235f3031a2c4f97e4c164727730e273b682cf4a83c121e175ddfd5be274d77e7.png" />
 </div>
 </div>
 </section>
 <section id="zuviel-des-guten-hohere-polynomgrade-sind-nicht-besser">
-<h2>Zuviel des Guten, höhere Polynomgrade sind nicht besser<a class="headerlink" href="#zuviel-des-guten-hohere-polynomgrade-sind-nicht-besser" title="Permalink to this headline">#</a></h2>
+<h2>Zuviel des Guten, höhere Polynomgrade sind nicht besser<a class="headerlink" href="#zuviel-des-guten-hohere-polynomgrade-sind-nicht-besser" title="Permalink to this heading">#</a></h2>
 <p>Regressionspolynom scheinen zunächst besser zu sein als Regressionsgeraden.
 Durch die zusätzlichen Terme können auch nichtlineare Beziehungen und komplexere
 Muster in den Daten erklärt werden. Allerdings birgt die Verwendung von höhere
@@ -690,7 +706,7 @@ kaum bis gar nicht erklären. Die Wahl des Polynomgrades ist daher sehr wichtig.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a94cdb72a8d570bb4d306342c68c9f0aa7c39aabacf90d77eb4a382b7c32e070.png" src="../_images/a94cdb72a8d570bb4d306342c68c9f0aa7c39aabacf90d77eb4a382b7c32e070.png" />
+<img alt="../_images/6b9fe63540f9a76d54196cb5367484cdb1e03e043abb0fe1701070be5a6d040f.png" src="../_images/6b9fe63540f9a76d54196cb5367484cdb1e03e043abb0fe1701070be5a6d040f.png" />
 </div>
 </div>
 <p>Eine Regressionsgerade kann die Messdaten nicht gut erklären, aber die
@@ -721,13 +737,13 @@ des Beispiels. Probieren wir noch höhere Polynomgrade aus.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_9202/1428329300.py:15: RankWarning: Polyfit may be poorly conditioned
-  p = np.polyfit(x, y, grad)
-/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_9202/1428329300.py:15: RankWarning: Polyfit may be poorly conditioned
-  p = np.polyfit(x, y, grad)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/homebrew/Caskroom/miniconda/base/envs/python311/lib/python3.11/site-packages/IPython/core/interactiveshell.py:3553: RankWarning: Polyfit may be poorly conditioned
+  exec(code_obj, self.user_global_ns, self.user_ns)
+/opt/homebrew/Caskroom/miniconda/base/envs/python311/lib/python3.11/site-packages/IPython/core/interactiveshell.py:3553: RankWarning: Polyfit may be poorly conditioned
+  exec(code_obj, self.user_global_ns, self.user_ns)
 </pre></div>
 </div>
-<img alt="../_images/7dff72ec2a5d4879db7466e230f19929b19fa297798dbdb50616baeeabaf7978.png" src="../_images/7dff72ec2a5d4879db7466e230f19929b19fa297798dbdb50616baeeabaf7978.png" />
+<img alt="../_images/98dd57a1051eefd544ba011a8ae460be674fc5b7258a1c92a14be1bc9ec48641.png" src="../_images/98dd57a1051eefd544ba011a8ae460be674fc5b7258a1c92a14be1bc9ec48641.png" />
 </div>
 </div>
 <p>Grad 5 ist schon gut, aber die Regressionspolynome Grad 6 bis 8 scheinen perfekt
@@ -784,10 +800,10 @@ Polynomgrad 7: R2 = 1.0000
 Polynomgrad 8: R2 = 1.0000
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_9202/2075500443.py:2: RankWarning: Polyfit may be poorly conditioned
-  p = np.polyfit(x, y, grad)
-/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_9202/2075500443.py:2: RankWarning: Polyfit may be poorly conditioned
-  p = np.polyfit(x, y, grad)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/homebrew/Caskroom/miniconda/base/envs/python311/lib/python3.11/site-packages/IPython/core/interactiveshell.py:3553: RankWarning: Polyfit may be poorly conditioned
+  exec(code_obj, self.user_global_ns, self.user_ns)
+/opt/homebrew/Caskroom/miniconda/base/envs/python311/lib/python3.11/site-packages/IPython/core/interactiveshell.py:3553: RankWarning: Polyfit may be poorly conditioned
+  exec(code_obj, self.user_global_ns, self.user_ns)
 </pre></div>
 </div>
 </div>
@@ -818,17 +834,17 @@ Polynomgrad 8: R2 = 1.0000
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_9202/2455438802.py:15: RankWarning: Polyfit may be poorly conditioned
-  p = np.polyfit(x, y, grad)
-/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_9202/2455438802.py:15: RankWarning: Polyfit may be poorly conditioned
-  p = np.polyfit(x, y, grad)
-/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_9202/2455438802.py:15: RankWarning: Polyfit may be poorly conditioned
-  p = np.polyfit(x, y, grad)
-/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_9202/2455438802.py:15: RankWarning: Polyfit may be poorly conditioned
-  p = np.polyfit(x, y, grad)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/homebrew/Caskroom/miniconda/base/envs/python311/lib/python3.11/site-packages/IPython/core/interactiveshell.py:3553: RankWarning: Polyfit may be poorly conditioned
+  exec(code_obj, self.user_global_ns, self.user_ns)
+/opt/homebrew/Caskroom/miniconda/base/envs/python311/lib/python3.11/site-packages/IPython/core/interactiveshell.py:3553: RankWarning: Polyfit may be poorly conditioned
+  exec(code_obj, self.user_global_ns, self.user_ns)
+/opt/homebrew/Caskroom/miniconda/base/envs/python311/lib/python3.11/site-packages/IPython/core/interactiveshell.py:3553: RankWarning: Polyfit may be poorly conditioned
+  exec(code_obj, self.user_global_ns, self.user_ns)
+/opt/homebrew/Caskroom/miniconda/base/envs/python311/lib/python3.11/site-packages/IPython/core/interactiveshell.py:3553: RankWarning: Polyfit may be poorly conditioned
+  exec(code_obj, self.user_global_ns, self.user_ns)
 </pre></div>
 </div>
-<img alt="../_images/482edcb46d7c17cac86a71b7b7b887447d72341e9c94cf242c96aced056b2928.png" src="../_images/482edcb46d7c17cac86a71b7b7b887447d72341e9c94cf242c96aced056b2928.png" />
+<img alt="../_images/eff2cad557f31c8d6b1339a6be1c884b2bf1cb2510e998c43e686c2361dd33bd.png" src="../_images/eff2cad557f31c8d6b1339a6be1c884b2bf1cb2510e998c43e686c2361dd33bd.png" />
 </div>
 </div>
 <p>Die Polynome beginnen zwischen <span class="math notranslate nohighlight">\(x=4\)</span> und <span class="math notranslate nohighlight">\(x=5\)</span> immer höher zu schwingen. Es ist
@@ -866,11 +882,10 @@ Regressionspolynom.</p>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chapter10_sec02.html"
@@ -890,10 +905,7 @@ Regressionspolynom.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -901,6 +913,7 @@ Regressionspolynom.</p>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -933,6 +946,7 @@ By Simone Gramsch
   
   <div class="footer-item">
     
+
   </div>
   
   <div class="footer-item">
@@ -958,8 +972,8 @@ By Simone Gramsch
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

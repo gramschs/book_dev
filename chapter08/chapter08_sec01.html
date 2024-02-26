@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>8.1 Series und DataFrame &#8212; DEVELOPMENT</title>
   
@@ -19,15 +19,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -35,17 +35,18 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/my_styles.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -69,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="8.2 Arbeiten mit Tabellendaten" href="chapter08_sec02.html" />
     <link rel="prev" title="8. Pandas anstatt Excel" href="chapter08_sec00.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -77,7 +78,15 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -112,11 +121,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -131,9 +143,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -152,7 +166,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen Programmierung</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter01/chapter01_sec00.html">1. Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter01/chapter01_sec01.html">1.1 Hardware und Software</a></li>
@@ -204,7 +218,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anwendungen</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anwendungen Python</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter08_sec00.html">8. Pandas anstatt Excel</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">8.1 Series und DataFrame</a></li>
@@ -229,7 +243,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started...</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Maschinelles Lernen - Getting started</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter01/chapter01_sec00.html">1. Grundbegriffe des maschinellen Lernens</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ml_chapter01/chapter01_sec01.html">1.1 Was ist maschinelles Lernen?</a></li>
@@ -306,7 +320,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter11/chapter11_sec00.html">11. Decision Trees und Random Forests</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-21"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec01.html">11.1 Decision Tree (Entscheidungsbaum)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec01.html">11.1 Entscheidungsbäume (Decision Trees)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec03.html">11.2 Random Forests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec04.html">Übung</a></li>
 </ul>
@@ -454,20 +468,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -513,17 +529,17 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="series-und-dataframe">
-<h1>8.1 Series und DataFrame<a class="headerlink" href="#series-und-dataframe" title="Permalink to this headline">#</a></h1>
+<h1>8.1 Series und DataFrame<a class="headerlink" href="#series-und-dataframe" title="Permalink to this heading">#</a></h1>
 <p>Einfache Listen reichen nicht aus, um größere Datenmengen oder Tabellen
 effizient zu speichern. Dazu benutzen Data Scientists die Datentypen <code class="docutils literal notranslate"><span class="pre">Series</span></code>
 oder <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> aus dem Modul Pandas. Daher werden wir uns in diesem Kapitel
 mit diesen beiden Datentypen beschäftigen. Darüber hinaus lernen wir das häufig
 verwendete Datenformat <code class="docutils literal notranslate"><span class="pre">csv</span></code> kennen.</p>
 <section id="lernziele">
-<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this heading">#</a></h2>
 <div class="hint admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
@@ -536,7 +552,7 @@ verwendete Datenformat <code class="docutils literal notranslate"><span class="p
 </div>
 </section>
 <section id="import-von-pandas">
-<h2>Import von pandas<a class="headerlink" href="#import-von-pandas" title="Permalink to this headline">#</a></h2>
+<h2>Import von pandas<a class="headerlink" href="#import-von-pandas" title="Permalink to this heading">#</a></h2>
 <p>Pandas ist eine Bibliothek zur Verarbeitung und Analyse von Daten in Form von
 Datenreihen und Tabellen. Die beiden grundlegenden Datenstrukturen sind Series
 und DataFrame. Dabei wird <strong>Series</strong> für Datenreihen genommen, also sozusagen
@@ -555,7 +571,7 @@ pandas schreiben müssen, wenn wir eine Funktion aus dem pandas-Modul benutzen.<
 </div>
 </section>
 <section id="series-aus-liste-erzeugen">
-<h2>Series aus Liste erzeugen<a class="headerlink" href="#series-aus-liste-erzeugen" title="Permalink to this headline">#</a></h2>
+<h2>Series aus Liste erzeugen<a class="headerlink" href="#series-aus-liste-erzeugen" title="Permalink to this heading">#</a></h2>
 <p>Der Datentyp Series speichert Datenreihen. Liegt beispielsweise eine Reihe von
 Daten vor, die in einer Variable vom Datentyp Liste gespeichert ist, so wird
 über die Methode <code class="docutils literal notranslate"><span class="pre">pd.Series(liste)</span></code> ein neues Series-Objekt erzeugt, dass die
@@ -661,7 +677,7 @@ Vorlesungs/Übungs-Stunden an diesem Wochentag.</p>
 </div>
 </section>
 <section id="dataframe-fur-tabellen">
-<h2>DataFrame für Tabellen<a class="headerlink" href="#dataframe-fur-tabellen" title="Permalink to this headline">#</a></h2>
+<h2>DataFrame für Tabellen<a class="headerlink" href="#dataframe-fur-tabellen" title="Permalink to this heading">#</a></h2>
 <p>Bei Auswertung von Messungen ist aber der häufigste Fall der, dass Daten in Form
 einer Tabelle vorliegen. Ein DataFrame-Objekt entspricht einer Tabelle, wie man
 sie beispielsweise von Excel, LibreOffice oder Numbers kennt. Sowohl Zeile als
@@ -674,7 +690,7 @@ kleine Datenmengen praktikabel ist, Daten händisch zu erfassen, fokussieren wir
 gleich auf die Erzeugung von DataFrame-Objekten aus einer Datei.</p>
 </section>
 <section id="import-von-tabellen">
-<h2>Import von Tabellen<a class="headerlink" href="#import-von-tabellen" title="Permalink to this headline">#</a></h2>
+<h2>Import von Tabellen<a class="headerlink" href="#import-von-tabellen" title="Permalink to this heading">#</a></h2>
 <p>Tabellen liegen werden oft in dem Dateiformat abgespeichert, das die jeweilige
 Tabellenkalkulationssoftware Excel, Numbers oder OpenOfficeCalc als Standard
 eingestellt hat. Wir betrachten in dieser Vorlesung aber primär Tabellen, die in
@@ -682,7 +698,7 @@ einem offenen Standardformat vorliegen und damit unabhängig von der verwendeten
 Software und dem verwendeten Betriebssystem sind. Der Import von Excel wird kurz
 gestreift.</p>
 <section id="import-von-tabellen-im-csv-format">
-<h3>Import von Tabellen im CSV-Format<a class="headerlink" href="#import-von-tabellen-im-csv-format" title="Permalink to this headline">#</a></h3>
+<h3>Import von Tabellen im CSV-Format<a class="headerlink" href="#import-von-tabellen-im-csv-format" title="Permalink to this heading">#</a></h3>
 <p>Das <strong>Dateiformat CSV</strong> speichert Daten zeilenweise ab. Dabei steht CSV für
 “comma separated value”. Die Trennung der Spalten erfolgt durch ein
 Trennzeichen, normalerweise durch das Komma. Im deutschsprachigen Raum wird
@@ -1353,7 +1369,7 @@ Python-Zählweise einer 0 entspricht.</p>
 </div>
 </section>
 <section id="import-von-tabellen-im-xlsx-format">
-<h3>Import von Tabellen im xlsx-Format<a class="headerlink" href="#import-von-tabellen-im-xlsx-format" title="Permalink to this headline">#</a></h3>
+<h3>Import von Tabellen im xlsx-Format<a class="headerlink" href="#import-von-tabellen-im-xlsx-format" title="Permalink to this heading">#</a></h3>
 <p>Eine sehr bekannte Tabellenkalkulationssoftware ist Excel von Microsoft. Excel
 bringt sein eigenens proprietäres Datenformat mit, in der Regel erkennbar an der
 Dateiendung <code class="docutils literal notranslate"><span class="pre">.xlsx</span></code>. Laden Sie sich den Datensatz zu den Top7-Bundesligavereinen
@@ -1368,153 +1384,87 @@ herunter.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/python311/lib/python3.11/site-packages/pandas/compat/_optional.py:132,</span> in <span class="ni">import_optional_dependency</span><span class="nt">(name, extra, errors, min_version)</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">132</span>     <span class="n">module</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span> <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/python311/lib/python3.11/importlib/__init__.py:126,</span> in <span class="ni">import_module</span><span class="nt">(name, package)</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span>         <span class="n">level</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="ne">--&gt; </span><span class="mi">126</span> <span class="k">return</span> <span class="n">_bootstrap</span><span class="o">.</span><span class="n">_gcd_import</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="n">level</span><span class="p">:],</span> <span class="n">package</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Club</th>
-      <th>Nationality</th>
-      <th>Position</th>
-      <th>Age</th>
-      <th>Matches</th>
-      <th>Starts</th>
-      <th>Mins</th>
-      <th>Goals</th>
-      <th>Assists</th>
-      <th>Penalty_Goals</th>
-      <th>Penalty_Attempted</th>
-      <th>xG</th>
-      <th>xA</th>
-      <th>Yellow_Cards</th>
-      <th>Red_Cards</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Manuel Neuer</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>GK</td>
-      <td>34</td>
-      <td>33</td>
-      <td>33</td>
-      <td>2970</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.00</td>
-      <td>0.01</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Thomas Müller</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>MF</td>
-      <td>30</td>
-      <td>32</td>
-      <td>31</td>
-      <td>2674</td>
-      <td>11</td>
-      <td>19</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0.24</td>
-      <td>0.39</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>David Alaba</th>
-      <td>Bayern Munich</td>
-      <td>AUT</td>
-      <td>DF,MF</td>
-      <td>28</td>
-      <td>32</td>
-      <td>30</td>
-      <td>2675</td>
-      <td>2</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.04</td>
-      <td>0.08</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Jérôme Boateng</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>DF</td>
-      <td>31</td>
-      <td>29</td>
-      <td>29</td>
-      <td>2368</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.01</td>
-      <td>0.02</td>
-      <td>6</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Robert Lewandowski</th>
-      <td>Bayern Munich</td>
-      <td>POL</td>
-      <td>FW</td>
-      <td>31</td>
-      <td>29</td>
-      <td>28</td>
-      <td>2458</td>
-      <td>41</td>
-      <td>7</td>
-      <td>8</td>
-      <td>9</td>
-      <td>1.16</td>
-      <td>0.13</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:1206,</span> in <span class="ni">_gcd_import</span><span class="nt">(name, package, level)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:1178,</span> in <span class="ni">_find_and_load</span><span class="nt">(name, import_)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:1142,</span> in <span class="ni">_find_and_load_unlocked</span><span class="nt">(name, import_)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;openpyxl&#39;
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;bundesliga_top7_offensive.xlsx&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/python311/lib/python3.11/site-packages/pandas/io/excel/_base.py:504,</span> in <span class="ni">read_excel</span><span class="nt">(io, sheet_name, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skiprows, nrows, na_values, keep_default_na, na_filter, verbose, parse_dates, date_parser, date_format, thousands, decimal, comment, skipfooter, storage_options, dtype_backend, engine_kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">502</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">ExcelFile</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">503</span>     <span class="n">should_close</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="ne">--&gt; </span><span class="mi">504</span>     <span class="n">io</span> <span class="o">=</span> <span class="n">ExcelFile</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">505</span>         <span class="n">io</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">506</span>         <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">507</span>         <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">508</span>         <span class="n">engine_kwargs</span><span class="o">=</span><span class="n">engine_kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">509</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">510</span> <span class="k">elif</span> <span class="n">engine</span> <span class="ow">and</span> <span class="n">engine</span> <span class="o">!=</span> <span class="n">io</span><span class="o">.</span><span class="n">engine</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">511</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">512</span>         <span class="s2">&quot;Engine should not be specified when passing &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">513</span>         <span class="s2">&quot;an ExcelFile - ExcelFile already has the engine set&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">514</span>     <span class="p">)</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/python311/lib/python3.11/site-packages/pandas/io/excel/_base.py:1580,</span> in <span class="ni">ExcelFile.__init__</span><span class="nt">(self, path_or_buffer, engine, storage_options, engine_kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1577</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span> <span class="o">=</span> <span class="n">engine</span>
+<span class="g g-Whitespace">   </span><span class="mi">1578</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage_options</span> <span class="o">=</span> <span class="n">storage_options</span>
+<span class="ne">-&gt; </span><span class="mi">1580</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engines</span><span class="p">[</span><span class="n">engine</span><span class="p">](</span>
+<span class="g g-Whitespace">   </span><span class="mi">1581</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_io</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1582</span>     <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1583</span>     <span class="n">engine_kwargs</span><span class="o">=</span><span class="n">engine_kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1584</span> <span class="p">)</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/python311/lib/python3.11/site-packages/pandas/io/excel/_openpyxl.py:552,</span> in <span class="ni">OpenpyxlReader.__init__</span><span class="nt">(self, filepath_or_buffer, storage_options, engine_kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">534</span> <span class="nd">@doc</span><span class="p">(</span><span class="n">storage_options</span><span class="o">=</span><span class="n">_shared_docs</span><span class="p">[</span><span class="s2">&quot;storage_options&quot;</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">535</span> <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">536</span>     <span class="bp">self</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">539</span>     <span class="n">engine_kwargs</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">540</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">541</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">542</span><span class="sd">     Reader using openpyxl engine.</span>
+<span class="g g-Whitespace">    </span><span class="mi">543</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">550</span><span class="sd">         Arbitrary keyword arguments passed to excel engine.</span>
+<span class="g g-Whitespace">    </span><span class="mi">551</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">552</span>     <span class="n">import_optional_dependency</span><span class="p">(</span><span class="s2">&quot;openpyxl&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">553</span>     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">554</span>         <span class="n">filepath_or_buffer</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">555</span>         <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">556</span>         <span class="n">engine_kwargs</span><span class="o">=</span><span class="n">engine_kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">557</span>     <span class="p">)</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/python311/lib/python3.11/site-packages/pandas/compat/_optional.py:135,</span> in <span class="ni">import_optional_dependency</span><span class="nt">(name, extra, errors, min_version)</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span> <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span>     <span class="k">if</span> <span class="n">errors</span> <span class="o">==</span> <span class="s2">&quot;raise&quot;</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">135</span>         <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">136</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span> <span class="c1"># Handle submodules: if we have submodule, grab parent module from sys.modules</span>
+
+<span class="ne">ImportError</span>: Missing optional dependency &#39;openpyxl&#39;.  Use pip or conda to install openpyxl.
+</pre></div>
+</div>
+</div>
 </div>
 <p>Vermutlich erhalten Sie zunächst eine Fehlermeldung: <code class="docutils literal notranslate"><span class="pre">Missing</span> <span class="pre">optional</span> <span class="pre">dependency</span> <span class="pre">'openpyxl'.</span>&#160; <span class="pre">Use</span> <span class="pre">pip</span> <span class="pre">or</span> <span class="pre">conda</span> <span class="pre">to</span> <span class="pre">install</span> <span class="pre">openpyxl.</span></code> Falls das der
 Fall sein sollte und Sie interessiert daran sind, Excel-Dateien lesen und
@@ -1524,7 +1474,7 @@ Vorlesung/Übung nicht notwendig ist.</p>
 </section>
 </section>
 <section id="ubersicht-verschaffen-mit-info">
-<h2>Übersicht verschaffen mit info<a class="headerlink" href="#ubersicht-verschaffen-mit-info" title="Permalink to this headline">#</a></h2>
+<h2>Übersicht verschaffen mit info<a class="headerlink" href="#ubersicht-verschaffen-mit-info" title="Permalink to this heading">#</a></h2>
 <p>Das obige Beispiel zeigt uns zwar nun die ersten 10 Zeilen des importierten
 Datensatzes, aber wie viele Daten insgesamt enthalten sind oder welche Vereine
 noch kommen, können wir mit der <code class="docutils literal notranslate"><span class="pre">.head()</span></code>-Methode nicht erfassen. Dafür stellt
@@ -1532,32 +1482,6 @@ Pandas die Methode <code class="docutils literal notranslate"><span class="pre">
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-Index: 177 entries, Manuel Neuer to Joshua Mees
-Data columns (total 15 columns):
- #   Column             Non-Null Count  Dtype  
----  ------             --------------  -----  
- 0   Club               177 non-null    object 
- 1   Nationality        177 non-null    object 
- 2   Position           177 non-null    object 
- 3   Age                177 non-null    int64  
- 4   Matches            177 non-null    int64  
- 5   Starts             177 non-null    int64  
- 6   Mins               177 non-null    int64  
- 7   Goals              177 non-null    int64  
- 8   Assists            177 non-null    int64  
- 9   Penalty_Goals      177 non-null    int64  
- 10  Penalty_Attempted  177 non-null    int64  
- 11  xG                 177 non-null    float64
- 12  xA                 177 non-null    float64
- 13  Yellow_Cards       177 non-null    int64  
- 14  Red_Cards          177 non-null    int64  
-dtypes: float64(2), int64(10), object(3)
-memory usage: 22.1+ KB
 </pre></div>
 </div>
 </div>
@@ -1601,11 +1525,10 @@ goals from the player in a match) wird als Float angegeben.</p>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chapter08_sec00.html"
@@ -1625,10 +1548,7 @@ goals from the player in a match) wird als Float angegeben.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1636,6 +1556,7 @@ goals from the player in a match) wird als Float angegeben.</p>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1674,6 +1595,7 @@ By Simone Gramsch
   
   <div class="footer-item">
     
+
   </div>
   
   <div class="footer-item">
@@ -1699,8 +1621,8 @@ By Simone Gramsch
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

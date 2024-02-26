@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>10.1 Theorie Regression &#8212; DEVELOPMENT</title>
   
@@ -19,15 +19,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -35,17 +35,18 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/my_styles.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -71,7 +72,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="10.2 Lineare Regression mit polyfit und polyval" href="chapter10_sec02.html" />
     <link rel="prev" title="10. Messwerte und Regression" href="chapter10_sec00.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -79,7 +80,15 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -114,11 +123,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -133,9 +145,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -154,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen Programmierung</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter01/chapter01_sec00.html">1. Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter01/chapter01_sec01.html">1.1 Hardware und Software</a></li>
@@ -206,7 +220,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anwendungen</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anwendungen Python</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. Pandas anstatt Excel</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Series und DataFrame</a></li>
@@ -231,7 +245,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started...</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Maschinelles Lernen - Getting started</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter01/chapter01_sec00.html">1. Grundbegriffe des maschinellen Lernens</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ml_chapter01/chapter01_sec01.html">1.1 Was ist maschinelles Lernen?</a></li>
@@ -308,7 +322,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter11/chapter11_sec00.html">11. Decision Trees und Random Forests</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-21"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec01.html">11.1 Decision Tree (Entscheidungsbaum)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec01.html">11.1 Entscheidungsbäume (Decision Trees)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec03.html">11.2 Random Forests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec04.html">Übung</a></li>
 </ul>
@@ -456,20 +470,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -510,17 +526,17 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="theorie-regression">
-<h1>10.1 Theorie Regression<a class="headerlink" href="#theorie-regression" title="Permalink to this headline">#</a></h1>
+<h1>10.1 Theorie Regression<a class="headerlink" href="#theorie-regression" title="Permalink to this heading">#</a></h1>
 <p>In der Analyse technischer und physikalischer Daten ist die Methode der
 Regression ein fundamentales Werkzeug. Einfach ausgedrückt, ist die Regression
 ein statistisches Verfahren, das den Zusammenhang zwischen Variablen ermittelt.
 In diesem Kapitel beschäftigen wir uns zunächst mit der Theorie von
 Regressionsverfahren.</p>
 <section id="lernziele">
-<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this heading">#</a></h2>
 <div class="important admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
@@ -537,7 +553,7 @@ Modellfunktion überhaupt nicht.</p></li>
 </div>
 </section>
 <section id="regression-kommt-aus-der-statistik">
-<h2>Regression kommt aus der Statistik<a class="headerlink" href="#regression-kommt-aus-der-statistik" title="Permalink to this headline">#</a></h2>
+<h2>Regression kommt aus der Statistik<a class="headerlink" href="#regression-kommt-aus-der-statistik" title="Permalink to this heading">#</a></h2>
 <p>In der Statistik beschäftigen sich Mathematikerinnen und Mathematiker bereits
 seit Jahrhunderten damit, Analyseverfahren zu entwickeln, mit denen
 experimentelle Daten gut erklärt werden können. Falls wir eine “erklärende”
@@ -581,7 +597,7 @@ feinjustiert werden können und die Prognosefähigkeit verbessern.</p>
 wie lineare Regression funktioniert.</p>
 </section>
 <section id="beispiel-weltweiter-co2-ausstosz">
-<h2>Beispiel: weltweiter CO2-Ausstoß<a class="headerlink" href="#beispiel-weltweiter-co2-ausstosz" title="Permalink to this headline">#</a></h2>
+<h2>Beispiel: weltweiter CO2-Ausstoß<a class="headerlink" href="#beispiel-weltweiter-co2-ausstosz" title="Permalink to this heading">#</a></h2>
 <p>Wir betrachten den weltweiten CO2-Ausstoß bis 2020 in metrischen Tonnen pro
 Einwohner (<a class="reference external" href="https://nextcloud.frankfurt-university.de/s/3wd24yXeEoTEwRz">hier Download</a>).</p>
 <div class="cell docutils container">
@@ -654,7 +670,7 @@ Einwohner (<a class="reference external" href="https://nextcloud.frankfurt-unive
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-Int64Index: 29 entries, 1990 to 2018
+Index: 29 entries, 1990 to 2018
 Data columns (total 1 columns):
  #   Column                          Non-Null Count  Dtype  
 ---  ------                          --------------  -----  
@@ -706,7 +722,7 @@ max                          4.606487
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9d9e763f5e7427a8d1f178d88cc970dc1bb3506f4e1cbf58649156633b58a07c.png" src="../_images/9d9e763f5e7427a8d1f178d88cc970dc1bb3506f4e1cbf58649156633b58a07c.png" />
+<img alt="../_images/f0a6772abd387cfafacd85e2c19ec77b98d4bb31a47922c7dbf57dfa75019851.png" src="../_images/f0a6772abd387cfafacd85e2c19ec77b98d4bb31a47922c7dbf57dfa75019851.png" />
 </div>
 </div>
 <p>Fangen wir mit dem einfachsten Modell an, diese Messdaten zu beschreiben, mit
@@ -756,7 +772,7 @@ in die lineare Funktion einsetzen und erhalten für 2030 einen CO2-Ausstoß von
 5.1 metrischen Tonnen pro Einwohner :-(</p>
 </section>
 <section id="das-bestimmheitsmasz-r2">
-<h2>Das Bestimmheitsmaß R²<a class="headerlink" href="#das-bestimmheitsmasz-r2" title="Permalink to this headline">#</a></h2>
+<h2>Das Bestimmheitsmaß R²<a class="headerlink" href="#das-bestimmheitsmasz-r2" title="Permalink to this heading">#</a></h2>
 <p>Woher wissen wir eigentlich, dass diese Steigung <span class="math notranslate nohighlight">\(m\)</span> und dieser
 y-Achsenabschnitt <span class="math notranslate nohighlight">\(b\)</span> am besten passen? Dazu berechnen wir, wie weit weg die
 Gerade von den Messpunkten ist. Wie das geht, veranschaulichen wir uns mit der
@@ -891,7 +907,7 @@ Modellfunktion überhaupt nicht.</p></li>
 nicht perfekt.</p>
 </section>
 <section id="interaktive-visualisierung-r2-score">
-<h2>Interaktive Visualisierung R²-Score<a class="headerlink" href="#interaktive-visualisierung-r2-score" title="Permalink to this headline">#</a></h2>
+<h2>Interaktive Visualisierung R²-Score<a class="headerlink" href="#interaktive-visualisierung-r2-score" title="Permalink to this heading">#</a></h2>
 <p>Auf der Seite <a class="reference external" href="https://mathweb.de">https://mathweb.de</a> finden Sie eine Reihe von
 Aufgaben und interaktiven Demonstrationen rund um die Mathematik. Insbesondere
 gibt es dort auch eine interaktive Demonstration des R²-Scores.</p>
@@ -929,11 +945,10 @@ Beobachten Sie dabei, wie die Fehler (rot) kleiner werden.</p>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chapter10_sec00.html"
@@ -953,10 +968,7 @@ Beobachten Sie dabei, wie die Fehler (rot) kleiner werden.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -964,6 +976,7 @@ Beobachten Sie dabei, wie die Fehler (rot) kleiner werden.</p>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -997,6 +1010,7 @@ By Simone Gramsch
   
   <div class="footer-item">
     
+
   </div>
   
   <div class="footer-item">
@@ -1022,8 +1036,8 @@ By Simone Gramsch
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

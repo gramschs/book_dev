@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>3.2 Das Modul NumPy &#8212; DEVELOPMENT</title>
   
@@ -19,15 +19,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -35,17 +35,18 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/my_styles.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -71,7 +72,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="3.3 Das Modul Turtle" href="chapter03_sec03.html" />
     <link rel="prev" title="3.1 Listen" href="chapter03_sec01.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -79,7 +80,15 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -114,11 +123,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -133,9 +145,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -154,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen Programmierung</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen Python</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter01/chapter01_sec00.html">1. Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter01/chapter01_sec01.html">1.1 Hardware und Software</a></li>
@@ -206,7 +220,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anwendungen</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anwendungen Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. Pandas anstatt Excel</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Series und DataFrame</a></li>
@@ -231,7 +245,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started...</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Maschinelles Lernen - Getting started</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter01/chapter01_sec00.html">1. Grundbegriffe des maschinellen Lernens</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ml_chapter01/chapter01_sec01.html">1.1 Was ist maschinelles Lernen?</a></li>
@@ -308,7 +322,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter11/chapter11_sec00.html">11. Decision Trees und Random Forests</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-21"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec01.html">11.1 Decision Tree (Entscheidungsbaum)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec01.html">11.1 Entscheidungsbäume (Decision Trees)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec03.html">11.2 Random Forests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec04.html">Übung</a></li>
 </ul>
@@ -456,20 +470,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -510,10 +526,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="das-modul-numpy">
-<h1>3.2 Das Modul NumPy<a class="headerlink" href="#das-modul-numpy" title="Permalink to this headline">#</a></h1>
+<h1>3.2 Das Modul NumPy<a class="headerlink" href="#das-modul-numpy" title="Permalink to this heading">#</a></h1>
 <p>Python kann auch auf schwachbrüstiger Hardware laufen wie beispielsweise auf
 dem Raspberry Pi. Ein Grund für die Effizienz von Python ist, dass nicht alle
 möglichen Datentypen, Funktionen und Methoden von Beginn an in den Speicher
@@ -522,7 +538,7 @@ unterteilt.</p>
 <p>In diesem Jupyter Notebook werden wir den Modul-Mechanismus anhand des
 NumPy-Moduls kennenlernen.</p>
 <section id="lernziele">
-<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this heading">#</a></h2>
 <div class="hint admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
@@ -534,7 +550,7 @@ NumPy-Moduls kennenlernen.</p>
 </div>
 </section>
 <section id="importieren-von-modulen">
-<h2>Importieren von Modulen<a class="headerlink" href="#importieren-von-modulen" title="Permalink to this headline">#</a></h2>
+<h2>Importieren von Modulen<a class="headerlink" href="#importieren-von-modulen" title="Permalink to this heading">#</a></h2>
 <p>Es wäre schön, häufig gebrauchte Zahlen wie die Kreiszahl <span class="math notranslate nohighlight">\(\pi\)</span> oder die
 Eulersche Zahl <span class="math notranslate nohighlight">\(e\)</span> zur Verfügung zu haben. Leider gehören beide nicht zum
 Python-Kern. Geben Sie einmal den folgenden Code ein:</p>
@@ -587,8 +603,10 @@ Tatsächlich hat der Python-Interpreter jedoch das Modul geladen. Die Anweisung
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ALLOW_THREADS&#39;,
+ &#39;AxisError&#39;,
  &#39;BUFSIZE&#39;,
  &#39;CLIP&#39;,
+ &#39;ComplexWarning&#39;,
  &#39;DataSource&#39;,
  &#39;ERR_CALL&#39;,
  &#39;ERR_DEFAULT&#39;,
@@ -608,6 +626,7 @@ Tatsächlich hat der Python-Interpreter jedoch das Modul geladen. Die Anweisung
  &#39;MAXDIMS&#39;,
  &#39;MAY_SHARE_BOUNDS&#39;,
  &#39;MAY_SHARE_EXACT&#39;,
+ &#39;ModuleDeprecationWarning&#39;,
  &#39;NAN&#39;,
  &#39;NINF&#39;,
  &#39;NZERO&#39;,
@@ -621,9 +640,12 @@ Tatsächlich hat der Python-Interpreter jedoch das Modul geladen. Die Anweisung
  &#39;SHIFT_OVERFLOW&#39;,
  &#39;SHIFT_UNDERFLOW&#39;,
  &#39;ScalarType&#39;,
+ &#39;Tester&#39;,
+ &#39;TooHardError&#39;,
  &#39;True_&#39;,
  &#39;UFUNC_BUFSIZE_DEFAULT&#39;,
  &#39;UFUNC_PYVALS_NAME&#39;,
+ &#39;VisibleDeprecationWarning&#39;,
  &#39;WRAP&#39;,
  &#39;_CopyMode&#39;,
  &#39;_NoValue&#39;,
@@ -661,9 +683,6 @@ Tatsächlich hat der Python-Interpreter jedoch das Modul geladen. Die Anweisung
  &#39;_pytesttester&#39;,
  &#39;_set_promotion_state&#39;,
  &#39;_specific_msg&#39;,
- &#39;_typing&#39;,
- &#39;_using_numpy2_behavior&#39;,
- &#39;_utils&#39;,
  &#39;_version&#39;,
  &#39;abs&#39;,
  &#39;absolute&#39;,
@@ -800,7 +819,6 @@ Tatsächlich hat der Python-Interpreter jedoch das Modul geladen. Die Anweisung
  &#39;dsplit&#39;,
  &#39;dstack&#39;,
  &#39;dtype&#39;,
- &#39;dtypes&#39;,
  &#39;e&#39;,
  &#39;ediff1d&#39;,
  &#39;einsum&#39;,
@@ -812,7 +830,6 @@ Tatsächlich hat der Python-Interpreter jedoch das Modul geladen. Die Anweisung
  &#39;error_message&#39;,
  &#39;errstate&#39;,
  &#39;euler_gamma&#39;,
- &#39;exceptions&#39;,
  &#39;exp&#39;,
  &#39;exp2&#39;,
  &#39;expand_dims&#39;,
@@ -960,6 +977,7 @@ Tatsächlich hat der Python-Interpreter jedoch das Modul geladen. Die Anweisung
  &#39;ma&#39;,
  &#39;mask_indices&#39;,
  &#39;mat&#39;,
+ &#39;math&#39;,
  &#39;matmul&#39;,
  &#39;matrix&#39;,
  &#39;max&#39;,
@@ -1167,6 +1185,7 @@ Tatsächlich hat der Python-Interpreter jedoch das Modul geladen. Die Anweisung
  &#39;unravel_index&#39;,
  &#39;unsignedinteger&#39;,
  &#39;unwrap&#39;,
+ &#39;use_hugepage&#39;,
  &#39;ushort&#39;,
  &#39;vander&#39;,
  &#39;var&#39;,
@@ -1243,7 +1262,7 @@ berechnen und ausgeben.</p>
 </div>
 </section>
 <section id="importieren-von-einzelnen-funktionen-oder-klassen">
-<h2>Importieren von einzelnen Funktionen oder Klassen<a class="headerlink" href="#importieren-von-einzelnen-funktionen-oder-klassen" title="Permalink to this headline">#</a></h2>
+<h2>Importieren von einzelnen Funktionen oder Klassen<a class="headerlink" href="#importieren-von-einzelnen-funktionen-oder-klassen" title="Permalink to this heading">#</a></h2>
 <p>Wenn nur die Kreiszahl <span class="math notranslate nohighlight">\(\pi\)</span> gebraucht wird, ist der komplette Import des
 NumPy-Modules zuviel des Guten. Auch kann es lästig sein, immer <code class="docutils literal notranslate"><span class="pre">numpy.</span></code> vor pi
 zu setzen. Eine zweite Möglichkeit, Funktionalitäten eines Moduls zu
@@ -1298,7 +1317,7 @@ schreiben.</p>
 </div>
 </section>
 <section id="importieren-von-modulen-mit-alias">
-<h2>Importieren von Modulen mit Alias<a class="headerlink" href="#importieren-von-modulen-mit-alias" title="Permalink to this headline">#</a></h2>
+<h2>Importieren von Modulen mit Alias<a class="headerlink" href="#importieren-von-modulen-mit-alias" title="Permalink to this heading">#</a></h2>
 <p>Es ist üblich, Module mit einem kürzeren Alias zu importieren, um den Code
 lesbarer zu gestalten und weniger tippen zu müssen. Im Fall von NumPy wird
 häufig der Alias <code class="docutils literal notranslate"><span class="pre">np</span></code> verwendet:</p>
@@ -1352,7 +1371,7 @@ Verfügung, ist aber weniger umfangreich. Daher verwenden wir in dieser Vorlesun
 NumPy.</p>
 </section>
 <section id="zusammenfassung">
-<h2>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permalink to this headline">#</a></h2>
+<h2>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permalink to this heading">#</a></h2>
 <p>In diesem Kapitel haben wir den Modul-Mechanismus in Python untersucht und das
 NumPy-Modul als Beispiel verwendet. Wir haben gelernt, wie man Module
 importiert, spezifische Funktionen und Klassen aus einem Modul importiert und
@@ -1387,11 +1406,10 @@ verbessern.</p>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chapter03_sec01.html"
@@ -1411,10 +1429,7 @@ verbessern.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1422,6 +1437,7 @@ verbessern.</p>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1455,6 +1471,7 @@ By Simone Gramsch
   
   <div class="footer-item">
     
+
   </div>
   
   <div class="footer-item">
@@ -1480,8 +1497,8 @@ By Simone Gramsch
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

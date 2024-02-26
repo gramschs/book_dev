@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>7.1 Digitale Logik: und, oder, nicht &#8212; DEVELOPMENT</title>
   
@@ -19,15 +19,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -35,17 +35,18 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/my_styles.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -71,7 +72,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="7.2 Schleifen mit Bedingung (while)" href="chapter07_sec02.html" />
     <link rel="prev" title="7. Digitale Logik und Schleifen mit Bedingung" href="chapter07_sec00.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -79,7 +80,15 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -114,11 +123,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -133,9 +145,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -154,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen Programmierung</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen Python</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter01/chapter01_sec00.html">1. Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter01/chapter01_sec01.html">1.1 Hardware und Software</a></li>
@@ -206,7 +220,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anwendungen</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anwendungen Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. Pandas anstatt Excel</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Series und DataFrame</a></li>
@@ -231,7 +245,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started...</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Maschinelles Lernen - Getting started</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter01/chapter01_sec00.html">1. Grundbegriffe des maschinellen Lernens</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ml_chapter01/chapter01_sec01.html">1.1 Was ist maschinelles Lernen?</a></li>
@@ -308,7 +322,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter11/chapter11_sec00.html">11. Decision Trees und Random Forests</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-21"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec01.html">11.1 Decision Tree (Entscheidungsbaum)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec01.html">11.1 Entscheidungsbäume (Decision Trees)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec03.html">11.2 Random Forests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec04.html">Übung</a></li>
 </ul>
@@ -456,20 +470,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -511,15 +527,15 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="digitale-logik-und-oder-nicht">
-<h1>7.1 Digitale Logik: und, oder, nicht<a class="headerlink" href="#digitale-logik-und-oder-nicht" title="Permalink to this headline">#</a></h1>
+<h1>7.1 Digitale Logik: und, oder, nicht<a class="headerlink" href="#digitale-logik-und-oder-nicht" title="Permalink to this heading">#</a></h1>
 <p>In diesem Kapitel beschäftigen wir uns zuerst damit, wie kombinierte Bedingungen
 in der Programmiersprache Python formuliert werden. In der Informatik bezeichnet
 man dieses Themenfeld auch als <strong>digitale Logik</strong> oder <strong>boolesche Algebra</strong>.</p>
 <section id="lernziele">
-<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">#</a></h2>
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this heading">#</a></h2>
 <div class="tip admonition">
 <p class="admonition-title">Lernziele</p>
 <p>Sie kennen die logischen Operatoren und können diese in Python einsetzen:</p>
@@ -531,7 +547,7 @@ man dieses Themenfeld auch als <strong>digitale Logik</strong> oder <strong>bool
 </div>
 </section>
 <section id="boolesche-algebra">
-<h2>Boolesche Algebra<a class="headerlink" href="#boolesche-algebra" title="Permalink to this headline">#</a></h2>
+<h2>Boolesche Algebra<a class="headerlink" href="#boolesche-algebra" title="Permalink to this heading">#</a></h2>
 <p>In früheren Kapiteln haben wir den boolschen Datentyp kennengelernt: wahr oder
 falsch. Man kann solche Ausdrücke auch kombinieren, z.B. könnte man fordern,
 dass zwei Bedingungen gleichzeitg erfüllt sein sollen.</p>
@@ -564,7 +580,7 @@ logischen Operatoren</p>
 <p>beschränken.</p>
 </section>
 <section id="das-logische-und">
-<h2>Das logische UND<a class="headerlink" href="#das-logische-und" title="Permalink to this headline">#</a></h2>
+<h2>Das logische UND<a class="headerlink" href="#das-logische-und" title="Permalink to this heading">#</a></h2>
 <p>Beim logischen UND müssen beide Bedingungen erfüllt sein, damit insgesamt die
 kombinierte Bedingung erfüllt ist. Vergleichbar ist dies mit einer
 Reihenschaltung in der Elektrotechnik. Nur wenn beide Schalter eingeschaltet
@@ -576,7 +592,7 @@ Tabelle auf. Die erste Zeile würde man so lesen: Wenn “Bedingung 1 wahr” is
 wenn “Bedingung 2 wahr” ist, so ist auch die kombinierte Bedingung “Bedingung 1
 UND Bedingung 2” wahr. Wir verwenden hier schon die Python-Werte <code class="docutils literal notranslate"><span class="pre">True</span></code> für wahr
 und <code class="docutils literal notranslate"><span class="pre">False</span></code> für falsch sowie den <code class="docutils literal notranslate"><span class="pre">and</span></code>-Operator für das logische UND:</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Bedingung 1</p></th>
 <th class="head"><p>Bedingung 2</p></th>
@@ -647,7 +663,7 @@ gehst Du in die Grundschule.”</p>
 </div>
 </section>
 <section id="das-logische-oder">
-<h2>Das logische ODER<a class="headerlink" href="#das-logische-oder" title="Permalink to this headline">#</a></h2>
+<h2>Das logische ODER<a class="headerlink" href="#das-logische-oder" title="Permalink to this heading">#</a></h2>
 <p>Beim logischen ODER muss nur eine der beiden Bedingungen erfüllt sein, damit
 insgesamt die kombinierte Bedingung erfüllt ist. Damit ist natürlich die
 Bedingung insgesamt auch erfüllt, wenn beide Bedingungen wahr sind. Vergleichbar
@@ -662,7 +678,7 @@ beispielsweise so lesen: Wenn “Bedingung 1 wahr” ist ODER wenn “Bedingung 
 falsch” ist, so ist auch die kombinierte Bedingung “Bedingung 1 ODER Bedingung
 2” wahr. Wir verwenden hier wiederum die Python-Werte <code class="docutils literal notranslate"><span class="pre">True</span></code> für wahr und
 <code class="docutils literal notranslate"><span class="pre">False</span></code> für falsch sowie den logischen Oder-Operator <code class="docutils literal notranslate"><span class="pre">or</span></code>:</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Bedingung 1</p></th>
 <th class="head"><p>Bedingung 2</p></th>
@@ -755,12 +771,12 @@ sind Sie/bist Du nicht berufstätig.”</p>
 </div>
 </section>
 <section id="das-logische-nicht">
-<h2>Das logische NICHT<a class="headerlink" href="#das-logische-nicht" title="Permalink to this headline">#</a></h2>
+<h2>Das logische NICHT<a class="headerlink" href="#das-logische-nicht" title="Permalink to this heading">#</a></h2>
 <p>Das logische NICHT kehrt eine Aussage um. Wenn eine Bedingung wahr war, wird sie
 falsch. War jedoch die Bedingung vorher wahr, wird sie nach Anwendung des
 logischen NICHT falsch. Man schreibt auch diese Operation normalerweise als
 Tabelle auf, wobei wir den logischen Nicht-Opertor <code class="docutils literal notranslate"><span class="pre">not</span></code> verwenden:</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Bedingung 1</p></th>
 <th class="head"><p>Ergebnis mit <code class="docutils literal notranslate"><span class="pre">not</span></code></p></th>
@@ -848,7 +864,7 @@ ausprobieren, also beispielsweise <code class="docutils literal notranslate"><sp
 </div>
 </section>
 <section id="video">
-<h2>Video<a class="headerlink" href="#video" title="Permalink to this headline">#</a></h2>
+<h2>Video<a class="headerlink" href="#video" title="Permalink to this heading">#</a></h2>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/075l6R42tkQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></section>
 </section>
 
@@ -877,11 +893,10 @@ ausprobieren, also beispielsweise <code class="docutils literal notranslate"><sp
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chapter07_sec00.html"
@@ -901,10 +916,7 @@ ausprobieren, also beispielsweise <code class="docutils literal notranslate"><sp
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -912,6 +924,7 @@ ausprobieren, also beispielsweise <code class="docutils literal notranslate"><sp
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -946,6 +959,7 @@ By Simone Gramsch
   
   <div class="footer-item">
     
+
   </div>
   
   <div class="footer-item">
@@ -971,8 +985,8 @@ By Simone Gramsch
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
