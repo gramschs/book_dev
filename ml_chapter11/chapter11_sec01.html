@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>11.1 Entscheidungsbäume (Decision Trees) &#8212; DEVELOPMENT</title>
+    <title>11.1 Was ist ein Entscheidungsbaum? &#8212; DEVELOPMENT</title>
   
   
   
@@ -64,13 +64,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'ml_chapter11/chapter11_sec01';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="11.2 Random Forests" href="chapter11_sec03.html" />
-    <link rel="prev" title="11. Decision Trees und Random Forests" href="chapter11_sec00.html" />
+    <link rel="prev" title="11. Entscheidungsbäume (Decision Trees)" href="chapter11_sec00.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -321,8 +319,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../ml_chapter10/chapter10_sec04.html">Übung</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter11_sec00.html">11. Decision Trees und Random Forests</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-21"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">11.1 Entscheidungsbäume (Decision Trees)</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter11_sec00.html">11. Entscheidungsbäume (Decision Trees)</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-21"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">11.1 Was ist ein Entscheidungsbaum?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter11_sec03.html">11.2 Random Forests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter11_sec04.html">Übung</a></li>
 </ul>
@@ -502,7 +500,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>11.1 Entscheidungsbäume (Decision Trees)</h1>
+    <h1>11.1 Was ist ein Entscheidungsbaum?</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -514,8 +512,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-entscheidungsbaum-im-autohaus">Ein Entscheidungsbaum im Autohaus</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entscheidungsbaum-mit-scikit-learn">Entscheidungsbaum mit Scikit-Learn</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komplexitat-von-entscheidungsbaumen">Komplexität von Entscheidungsbäumen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entscheidungsbaume-mit-scikit-learn">Entscheidungsbäume mit Scikit-Learn</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
         </div>
@@ -527,8 +525,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="entscheidungsbaume-decision-trees">
-<h1>11.1 Entscheidungsbäume (Decision Trees)<a class="headerlink" href="#entscheidungsbaume-decision-trees" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="was-ist-ein-entscheidungsbaum">
+<h1>11.1 Was ist ein Entscheidungsbaum?<a class="headerlink" href="#was-ist-ein-entscheidungsbaum" title="Permalink to this heading">#</a></h1>
 <p>Ein beliebtes Partyspiel ist das Spiel “Wer bin ich?”. Die Spielregel sind
 simpel. Eine Person wählt eine berühmte Person oder eine Figur aus einem Film
 oder Buch, die die Mitspieler:innen erraten müssen. Die Mitspieler:innen
@@ -556,15 +554,7 @@ die Mitspieler:innen mit Ja/Nein antworten.</p>
 <div class="admonition-goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Sie wissen, was ein <strong>Entscheidungsbaum</strong> ist und kennen die zugehörigen
-Fachbegriffe <strong>Node</strong>, <strong>Branch</strong> und <strong>Leaf</strong>.</p></li>
-<li><p>Sie können selbst bei einem kleinen Datensatz einen Entscheidungsbaum
-erstellen.</p></li>
-<li><p>Sie können mit Scikit-Learn einen Entscheidungsbaum trainieren lassen.</p></li>
-<li><p>Sie können die visuelle Darstellung eines Entscheidungsbaums interpretieren
-und eine Prognose treffen.</p></li>
-<li><p>Sie wissen, dass der Entscheidungsbaum zu Overfitting neigt und können seine
-Hyperparameter (z.B. die Baumtiefe) feinjustieren.</p></li>
+<li><p>TODO</p></li>
 </ul>
 </div>
 </section>
@@ -783,9 +773,9 @@ e.exports=function(t){return null!=t&&(n(t)||function(t){return"function"==typeo
         });
         }
         </script>
-        </div><div class="output text_html"><div>                            <div id="1cdfa09a-62d4-4c13-81d5-1da6b0b7494d" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("1cdfa09a-62d4-4c13-81d5-1da6b0b7494d")) {                    Plotly.newPlot(                        "1cdfa09a-62d4-4c13-81d5-1da6b0b7494d",                        [{"hovertemplate":"verkauft=False<br>Kilometerstand [km]=%{x}<br>Preis [EUR]=%{y}<extra></extra>","legendgroup":"False","marker":{"color":"#636efa","symbol":"circle"},"mode":"markers","name":"False","orientation":"v","showlegend":true,"x":[32908,13285,27449,32889,18295],"xaxis":"x","y":[15960,17227,5428,13581,11382],"yaxis":"y","type":"scatter"},{"hovertemplate":"verkauft=True<br>Kilometerstand [km]=%{x}<br>Preis [EUR]=%{y}<extra></extra>","legendgroup":"True","marker":{"color":"#EF553B","symbol":"circle"},"mode":"markers","name":"True","orientation":"v","showlegend":true,"x":[20328,17162,13715,3111,15607],"xaxis":"x","y":[20495,17851,22772,16793,23253],"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Kilometerstand [km]"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Preis [EUR]"}},"legend":{"title":{"text":"verkauft"},"tracegroupgap":0},"title":{"text":"K\u00fcnstliche Daten: Verkaufsaktion im Autohaus"}},                        {"responsive": true}                    ).then(function(){
+        </div><div class="output text_html"><div>                            <div id="1e11de38-9804-4887-b31d-d361b5688215" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("1e11de38-9804-4887-b31d-d361b5688215")) {                    Plotly.newPlot(                        "1e11de38-9804-4887-b31d-d361b5688215",                        [{"hovertemplate":"verkauft=False<br>Kilometerstand [km]=%{x}<br>Preis [EUR]=%{y}<extra></extra>","legendgroup":"False","marker":{"color":"#636efa","symbol":"circle"},"mode":"markers","name":"False","orientation":"v","showlegend":true,"x":[32908,13285,27449,32889,18295],"xaxis":"x","y":[15960,17227,5428,13581,11382],"yaxis":"y","type":"scatter"},{"hovertemplate":"verkauft=True<br>Kilometerstand [km]=%{x}<br>Preis [EUR]=%{y}<extra></extra>","legendgroup":"True","marker":{"color":"#EF553B","symbol":"circle"},"mode":"markers","name":"True","orientation":"v","showlegend":true,"x":[20328,17162,13715,3111,15607],"xaxis":"x","y":[20495,17851,22772,16793,23253],"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Kilometerstand [km]"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Preis [EUR]"}},"legend":{"title":{"text":"verkauft"},"tracegroupgap":0},"title":{"text":"K\u00fcnstliche Daten: Verkaufsaktion im Autohaus"}},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('1cdfa09a-62d4-4c13-81d5-1da6b0b7494d');
+var gd = document.getElementById('1e11de38-9804-4887-b31d-d361b5688215');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -858,146 +848,104 @@ Wurzelknoten und werden dann über Knoten (=Entscheidungen) und Zweige/Kanten (=
 Ergebnis der Entscheidung) in Blätter sortiert.</p>
 </div>
 </section>
-<section id="entscheidungsbaum-mit-scikit-learn">
-<h2>Entscheidungsbaum mit Scikit-Learn<a class="headerlink" href="#entscheidungsbaum-mit-scikit-learn" title="Permalink to this heading">#</a></h2>
-<p>Scikit-Learn bietet einen Algorithmus an, um einen Entscheidungsbaum zu
-erstellen. Wir bleiben bei unserem fiktiven Autohaus. Allerdings müssen wir nun
-die Klassenbezeichnungen wie beispielsweise ‘neu’ oder ‘gebraucht’ als Zahlen
-kodieren. Danach extrahieren wir die drei Inputs als Matrix <span class="math notranslate nohighlight">\(X\)</span> und unseren
-Output als <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<section id="entscheidungsbaume-mit-scikit-learn">
+<h2>Entscheidungsbäume mit Scikit-Learn<a class="headerlink" href="#entscheidungsbaume-mit-scikit-learn" title="Permalink to this heading">#</a></h2>
+<p>In der Praxis verwenden wir die ML-Bibliothek Scikit-Learn, um einen
+Entscheidungsbaum zu trainieren. Das Modul <a class="reference external" href="https://scikit-learn.org/stable/modules/tree.html">Scikit-Learn →
+Tree</a> stellt sowohl einen
+Entscheidungsbaum-Algorithmus für Klassifikationsprobleme als auch einen
+Algorithmus für Regressionsprobleme zur Verfügung. Für das obige Beispiel
+Autohaus importieren wir den Algorithmus für Klassifikationsprobleme namens
+<code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># wandle Kategorien in Zahlen um</span>
-<span class="c1">#data.replace(&#39;neu&#39;, 1, inplace=True)</span>
-<span class="c1">#data.replace(&#39;gebraucht&#39;, 0, inplace=True)</span>
-
-<span class="c1">#data.replace(&#39;Audi&#39;, 0, inplace=True)</span>
-<span class="c1">#data.replace(&#39;BMW&#39;, 1, inplace=True)</span>
-<span class="c1">#data.replace(&#39;Citroën&#39;, 2, inplace=True)</span>
-
-<span class="c1">#data.replace(&#39;ja&#39;, 1, inplace=True)</span>
-<span class="c1">#data.replace(&#39;nein&#39;, 0, inplace=True)</span>
-
-<span class="c1"># extrahiere X und y</span>
-<span class="c1">#X = data.loc[:, &#39;Zustand&#39;:&#39;Preis&#39;]</span>
-<span class="c1">#y = data[&#39;Kaufentscheidung&#39;]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Dann erzeugen wir ein noch untrainiertes Entscheidungsbaum-Modell und weisen es
+der Variable <code class="docutils literal notranslate"><span class="pre">modell</span></code> zu:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#data.head(12)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modell</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Nun lassen wir Scikit-Learn einen Entscheidungsbaum erstellen. Dazu importieren
-wir <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code> aus dem Untermodul <code class="docutils literal notranslate"><span class="pre">sklearn.tree</span></code>. Danach
-trainieren wir den Entscheidungsbaum mit <code class="docutils literal notranslate"><span class="pre">.fit()</span></code>.</p>
+<p>Bei der Erzeugung könnten wir noch verschiedene Optionen einstellen, die in der
+<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier">Dokumentation Scikit-Learn →
+DecisionTreeClassifier</a>
+nachgelesen werden können. Zunächst belassen wir es aber bei den
+Standardeinstellungen.</p>
+<p>Als nächstes adaptieren wir die Daten aus dem Pandas-DataFrame so, dass das
+Entscheidungsbaum-Modell trainiert werden kann. Der <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code>
+erwartet für das Training zwei Argumente. Als erstes Argument müssen die
+Eingabedaten übergeben werden, also die Eigenschaften der Autos. Als zweites
+Argument erwartet der <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code> die Zielgröße, also den Status
+»nicht verkauft« oder »verkauft«. Wir trennen daher den Pandas-DataFrame <code class="docutils literal notranslate"><span class="pre">daten</span></code>
+auf und verwenden die Bezeichnung <code class="docutils literal notranslate"><span class="pre">X</span></code> für die Eingabedaten und <code class="docutils literal notranslate"><span class="pre">y</span></code> für die
+Zielgröße.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#from sklearn.tree import DecisionTreeClassifier</span>
-
-<span class="c1">#model = DecisionTreeClassifier()</span>
-<span class="c1">#model.fit(X,y);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">daten</span><span class="p">[[</span><span class="s1">&#39;Kilometerstand [km]&#39;</span><span class="p">,</span> <span class="s1">&#39;Preis [EUR]&#39;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">daten</span><span class="p">[</span><span class="s1">&#39;verkauft&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Aber wie sieht denn jetzt der Entscheidungsbaum aus? Das Scikit-Learn-Modul
-<code class="docutils literal notranslate"><span class="pre">sklearn.tree</span></code> stellt auch eine Funktion namens <code class="docutils literal notranslate"><span class="pre">plot_tree</span></code> zur Verfügung, die
-Entscheidungsbäume zeichnen kann. Wir importieren sie direkt und wenden Sie an.</p>
+<p>Als nächstes wird der Entscheidungsbaum trainiert. Dazu wird die Methode
+<code class="docutils literal notranslate"><span class="pre">.fit()</span></code> mit den beiden Argumenten <code class="docutils literal notranslate"><span class="pre">X</span></code> und <code class="docutils literal notranslate"><span class="pre">y</span></code> aufgerufen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#from sklearn.tree import plot_tree </span>
-
-<span class="c1">#plot_tree(model);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modell</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-1 {color: black;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>DecisionTreeClassifier()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">DecisionTreeClassifier</label><div class="sk-toggleable__content"><pre>DecisionTreeClassifier()</pre></div></div></div></div></div></div></div>
+</div>
+<p>Jetzt ist zwar der Entscheidungsbaum trainiert, doch wir sehen nichts. Als
+erstes überprüfen wir mit der Methode <code class="docutils literal notranslate"><span class="pre">.score()</span></code>, wie gut die Prognose des
+Entscheidungsbaumes ist.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="n">modell</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
 </pre></div>
 </div>
 </div>
 </div>
-<p>In den Kästchen, die den Wurzelknoten und die inneren Knoten darstellen, steht
-jeweils in der ersten Zeile, welches Feature überprüft wird und wie die
-dazugehörige Frage lautet. Bei unserem Wurzelknoten also <code class="docutils literal notranslate"><span class="pre">X[1]</span> <span class="pre">&lt;=</span> <span class="pre">0.5</span></code>. Das
-bedeutet, das als erstes das 2. Feature, also die Marke benutzt wird. Die Marken
-waren als Audi = 1, BMW = 2 und Citroën = 3 kodiert. Somit bedeutet diese
-Entscheidung, dass Audis nach links und BMW/Citroën nach rechts gesteckt werden.
-Damit ist der linke Ast schon beendet, alle Audis wurden nach der Probefahrt
-gekauft.</p>
-<p>Damit sich der Entscheidungsbaum leichter lesen lässt, können wir die Namen der
-Features anstatt <code class="docutils literal notranslate"><span class="pre">X[0]</span></code>, <code class="docutils literal notranslate"><span class="pre">X[1]</span></code>und <code class="docutils literal notranslate"><span class="pre">X[2]</span></code> verwenden. Dazu setzen wir die Option
-<code class="docutils literal notranslate"><span class="pre">feature_names=['Zustand','Marke','Preis']</span></code>.</p>
+<p>Eine 1 steht für 100 %, also alle 10 Autos werden korrekt klassifiziert. Dazu hat der <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code> basierend auf den Eingabedaten <code class="docutils literal notranslate"><span class="pre">X</span></code> eine Prognose erstellt und diese Prognose mit <code class="docutils literal notranslate"><span class="pre">y</span></code> verglichen. Für die Trainingsdaten funktioniert der Entscheidungsbaum also perfekt. Ob der Entscheidungsbaum ein neues, elftes Auto korrekt klassifizieren würde, kann so erst einmal nicht entschieden werden.</p>
+<p>Zuletzt lassen wir den Entscheidungsbaum noch visualisieren. Dazu verwenden wir
+die Funktion <code class="docutils literal notranslate"><span class="pre">plot_tree</span></code>, die zuerst aus dem Modul <code class="docutils literal notranslate"><span class="pre">sklearn.tree</span></code> importiert
+wird. Als Argument übergeben wir das trainierte Modell. Zusätzlich setzen wir
+für das optionale Argument <code class="docutils literal notranslate"><span class="pre">feature_names=</span></code> noch eine Liste mit den Namen der
+Eigenschaftsnamen ein, so dass in der Visualisierung des Entscheidungsbaumes
+direkt die Eigenschaften angezeigt werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#plot_tree(model,feature_names=[&#39;Zustand&#39;,&#39;Marke&#39;,&#39;Preis&#39;]);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">plot_tree</span>
+<span class="n">plot_tree</span><span class="p">(</span><span class="n">modell</span><span class="p">,</span> <span class="n">feature_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Kilometer [km]&#39;</span><span class="p">,</span><span class="s1">&#39;Preis [EUR]&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
 </div>
-</div>
-<p>Der Eintrag <code class="docutils literal notranslate"><span class="pre">samples</span></code> in den Knoten verrät, wie viele Datensätze in den linken
-Zweig wandern und wie viele nach rechts. Die drei Audis kommen nach links
-(<code class="docutils literal notranslate"><span class="pre">samples</span> <span class="pre">=</span> <span class="pre">3</span></code>) und die neun BMW/Citroëns (<code class="docutils literal notranslate"><span class="pre">samples</span> <span class="pre">=</span> <span class="pre">9</span></code>) kommen nach rechts.</p>
-<p>Der linke Endknoten enthält nun drei Audis. Von diesen drei Audis werden am Ende
-0 nicht gekauft und 3 gekauft. Das wird in der letzten Zeile beschrieben: <code class="docutils literal notranslate"><span class="pre">value</span> <span class="pre">=</span> <span class="pre">[0,</span> <span class="pre">3]</span></code>. Daher müssen keine weiteren Fragen gestellt werden.</p>
-<p>Die neun BMW/Citroëns enthalten aber noch Fahrzeuge mit beiden
-Kaufentscheidungen. Der value wird mit <code class="docutils literal notranslate"><span class="pre">[6,3]</span></code> angegeben. Also befinden sich
-noch 6 nicht gekaufte Fahrzeuge und 3 gekaufte Fahrzeuge in diesem Zweig. Wir
-müssen weitere Fragen an die Features stellen, um diese Fahrzeuge korrekt zu
-klassifizieren.</p>
-<p>Daher wird nun nach dem Zustand des Fahrzeugs gefragt. <code class="docutils literal notranslate"><span class="pre">Zustand</span> <span class="pre">&lt;=</span> <span class="pre">0.5</span></code> meint
-die Gebrauchtwagen, da wird die Klassenbezeichnung ‘gebraucht’ durch eine Null
-ersetzt haben und ‘neu’ durch eine Eins. Links führt wieder zu einem Endknoten,
-rechts zu einem gemischten Knoten. Es wäre schön, schneller erkennen zu können,
-ob ein Knoten nur noch Autos mit einer Kaufentscheidung enthält, also ein reiner
-Endknoten ist, oder ob der Knoten noch gemischt ist und somit ein innerer
-Knoten. Dazu gibt es eine weitere Option, mit der wir die Kästchen farblich
-füllen können. Sie lautet simpel: <code class="docutils literal notranslate"><span class="pre">filled=True</span></code>.</p>
-<p>Je dunkler die Farbe, desto reiner der Knoten!</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#plot_tree(model,feature_names=[&#39;Zustand&#39;,&#39;Marke&#39;,&#39;Preis&#39;], filled=True);</span>
-</pre></div>
+<div class="cell_output docutils container">
+<img alt="../_images/a3e6f67a75eb0af73065fa8e5d1880d7fdc1f5a79a34fbc522a21d14d6ea93bf.png" src="../_images/a3e6f67a75eb0af73065fa8e5d1880d7fdc1f5a79a34fbc522a21d14d6ea93bf.png" />
 </div>
 </div>
-</div>
-<p>Wenn wir uns die vier Endknoten, also die Blätter betrachten, so haben wir von
-links nach rechts 3 Autos, die gekauft wurden (<code class="docutils literal notranslate"><span class="pre">[0,3]</span></code>), 5 Autos, die nicht
-gekauft wurden (<code class="docutils literal notranslate"><span class="pre">[5,0]</span></code>), wiederum 3 Autos, die gekauft wurden (<code class="docutils literal notranslate"><span class="pre">[0,3]</span></code>) und
-zuletzt 1 Auto, das nicht gekauft wurde (<code class="docutils literal notranslate"><span class="pre">[1,0]</span></code>).</p>
+<p>Weitere Details zu den Optionen der <code class="docutils literal notranslate"><span class="pre">plot_tree</span></code>-Funktion finden Sie in der
+<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.plot_tree.html">Dokumentation Scikit-Learn →
+plot_tree</a>.</p>
 </section>
-<section id="komplexitat-von-entscheidungsbaumen">
-<h2>Komplexität von Entscheidungsbäumen<a class="headerlink" href="#komplexitat-von-entscheidungsbaumen" title="Permalink to this heading">#</a></h2>
-<p>Entscheidungsbäume tendieren schnell zum Overfitting. Natürlich können wir
-solange weiter Fragen stellen, bis jedes Leaf/Endknoten nur noch Datenpunkte
-einer Klasse enthält. Damit hätten wir also eine 100-prozentige Prognose auf den
-Trainingsdaten. Wie so oft bedeutet dies aber nicht, dass der so trainierte
-Entscheidungsbaum gut verallgemeinerbar ist.</p>
-<p>Um das Overfitting zu vermeiden, werden vor allem zwei Methoden verwendet:
-<strong>Prä-Tuning</strong> und <strong>Post-Tuning</strong>.</p>
-<ol class="arabic simple">
-<li><p>Prä-Pruning: die maximale Tiefe des Baumes wird begrenzt oder es wird eine
-bestimmte Mindestanzahl von Datenpunkten pro Knoten gefordert</p></li>
-<li><p>Post-Pruning: im Nachhinein werden Knoten mit wenig Informationen aus dem
-Entscheidungsbaum entfernt oder Knoten werden zusammengelegt</p></li>
-</ol>
-<p>Scikit-Learn hat nur Prä-Pruning implementiert. Beispielsweise können wir mit
-dem Argument <code class="docutils literal notranslate"><span class="pre">max_depth=2</span></code> die Tiefe unseres Entscheidungsbaumes auf 2
-begrenzen.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#model_begrenzt = DecisionTreeClassifier(max_depth=2)</span>
-<span class="c1">#model_begrenzt.fit(X,y);</span>
-
-<span class="c1">#plot_tree(model_begrenzt,feature_names=[&#39;Zustand&#39;,&#39;Marke&#39;,&#39;Preis&#39;], filled=True);</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Dadurch sind die Blätter/Endknoten aber nicht mehr rein.</p>
-<p>Weitere Möglichkeiten des Prä-Pruning finden Sie in der <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html">Dokumumentation
-Scikit-Learn →
-DecisionTreeClassifier</a>.</p>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Permalink to this heading">#</a></h2>
+<p>TODO</p>
 </section>
 </section>
 
@@ -1037,7 +985,7 @@ DecisionTreeClassifier</a>.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">11. Decision Trees und Random Forests</p>
+        <p class="prev-next-title">11. Entscheidungsbäume (Decision Trees)</p>
       </div>
     </a>
     <a class="right-next"
@@ -1067,8 +1015,8 @@ DecisionTreeClassifier</a>.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-entscheidungsbaum-im-autohaus">Ein Entscheidungsbaum im Autohaus</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entscheidungsbaum-mit-scikit-learn">Entscheidungsbaum mit Scikit-Learn</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komplexitat-von-entscheidungsbaumen">Komplexität von Entscheidungsbäumen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entscheidungsbaume-mit-scikit-learn">Entscheidungsbäume mit Scikit-Learn</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>
 

@@ -1,4 +1,4 @@
-# 11. Decision Trees und Random Forests
+# 11. Entscheidungsbäume (Decision Trees)
 
 
 Kapitelübersicht:
