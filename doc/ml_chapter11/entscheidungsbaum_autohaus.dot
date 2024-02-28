@@ -4,7 +4,7 @@ edge [fontname="helvetica"] ;
 0 [label="Preis [EUR] <= 16376.5\ngini = 0.5\nsamples = 10\nvalue = [5, 5]", fillcolor="#ffffff"] ;
 1 [label="gini = 0.0\nsamples = 4\nvalue = [4, 0]", fillcolor="#e58139"] ;
 0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
-2 [label="Preis [EUR] <= 17539.0\ngini = 0.278\nsamples = 6\nvalue = [1, 5]", fillcolor="#61b1ea"] ;
+2 [label="Kilometerstand [km] <= 13500.0\ngini = 0.278\nsamples = 6\nvalue = [1, 5]", fillcolor="#61b1ea"] ;
 0 -> 2 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
 3 [label="Preis [EUR] <= 17010.0\ngini = 0.5\nsamples = 2\nvalue = [1, 1]", fillcolor="#ffffff"] ;
 2 -> 3 ;
