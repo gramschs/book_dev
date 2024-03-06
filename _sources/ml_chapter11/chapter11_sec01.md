@@ -14,6 +14,21 @@ kernelspec:
 
 # 11.1 Was ist ein Entscheidungsbaum?
 
+TEST
+
+<div id="fig11A">
+  <img src="pics/combined_decisiontree00.svg" alt="" />
+  <img src="pics/combined_decisiontree02.svg" alt="" />
+</div>
+<script type="text/javascript">
+  const element = document.getElementById("fig11A");
+  const viewer = new ImageCompare(element).mount();
+</script>
+
+
+TEST
+
+
 Ein beliebtes Partyspiel ist das Spiel "Wer bin ich?". Die Spielregel sind
 simpel. Eine Person wählt eine berühmte Person oder eine Figur aus einem Film
 oder Buch, die die Mitspieler:innen erraten müssen. Die Mitspieler:innen
