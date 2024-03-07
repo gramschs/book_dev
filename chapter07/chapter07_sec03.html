@@ -57,7 +57,6 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script>
     <script src="../_static/image-compare-viewer.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
@@ -324,6 +323,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter11/chapter11_sec00.html">11. Entscheidungsbäume (Decision Trees)</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-21"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec01.html">11.1 Was ist ein Entscheidungsbaum?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec02.html">11.2 Scikit-Learn Tree</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec03.html">11.2 Random Forests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec04.html">Übung</a></li>
 </ul>
@@ -562,7 +562,7 @@ gleichverteilte Zufallszahlen erzeugen. Hier ist ein Beispiel:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9961030105203307
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9975215584083759
 </pre></div>
 </div>
 </div>
@@ -577,7 +577,7 @@ Zahlen bestimmen:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[19.42732732 15.91293718 19.32206767 14.30301053 13.31425569]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[18.28932085 19.39359881 18.14969067 10.7144711  17.43427072]
 </pre></div>
 </div>
 </div>
@@ -599,7 +599,7 @@ werden, um anzugeben, wie viele Zahlen erzeugt werden sollen.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>48
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>83
 </pre></div>
 </div>
 </div>
@@ -616,7 +616,7 @@ inkludiert ist.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[5 0 4 1 7]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 1 8 6 7]
 </pre></div>
 </div>
 </div>
@@ -685,7 +685,7 @@ Zufallszahlen erzeugen:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.8843435305634457
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.9444429042241014
 </pre></div>
 </div>
 </div>
@@ -701,7 +701,7 @@ bedeutet, dass die Normalverteiung eine Standardabweichung von 1 hat.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.82471347  0.74899188 -0.12940906  0.89727088 -1.86199637]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.03321889 -0.99583554  0.1642489  -0.68840273 -0.40555467]
 </pre></div>
 </div>
 </div>
