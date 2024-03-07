@@ -136,6 +136,7 @@ parts:
   - file: ml_chapter11/chapter11_sec00.md
     sections:
     - file: ml_chapter11/chapter11_sec01.md   
+    - file: ml_chapter11/chapter11_sec02.md   
     - file: ml_chapter11/chapter11_sec03.md 
     - file: ml_chapter11/chapter11_sec04.md 
   - file: ml_chapter12/chapter12_sec00.md

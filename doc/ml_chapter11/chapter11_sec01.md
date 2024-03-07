@@ -44,19 +44,27 @@ Dieser Partyklassiker lässt sich auch auf das maschinelle Lernen übertragen.
 
 ```{admonition} Lernziele
 :class: admonition-goals
-* TODO
+* Sie wissen, was ein **Entscheidungsbaum (Decision Tree)** ist.
+* Sie kennen die Bestandteile eines Entscheidungsbaumes:
+  * Wurzelknoten (Root Node)
+  * Knoten (Node)
+  * Zweig oder Kante (Branch)
+  * Blatt (Leave)
+* Sie können einen Entscheidungsbaum mit Scikit-Learn trainieren.
+* Sie können mit Hilfe eines Entscheidungsbaumes Prognosen treffen.
 ```
 
 
 ## Ein Entscheidungsbaum im Autohaus
 
-Ein **Entscheidungsbaum** gehört zu den überwachten Lernverfahren. Es ist auch
-üblich, die englische Bezeichnung **Decision Tree** anstatt des deutschen
-Begriffes zu nutzen. Ein großer Vorteil von Entscheidungsbäumen ist ihre
-Flexibilität, denn sie können sowohl für Klassifikations- als auch
-Regressionsaufgaben eingesetzt werden. Im Folgenden betrachten wir als Beispiel
-eine Klassifikationsaufgabe. In einem Autohaus vereinbaren zehn Personen eine
-Probefahrt. In der folgenden Tabelle ist notiert, welchen 
+Ein **Entscheidungsbaum** gehört zu den überwachten Lernverfahren (Supervised
+Learning). Es ist auch üblich, die englische Bezeichnung **Decision Tree**
+anstatt des deutschen Begriffes zu nutzen. Ein großer Vorteil von
+Entscheidungsbäumen ist ihre Flexibilität, denn sie können sowohl für
+Klassifikations- als auch Regressionsaufgaben eingesetzt werden. Im Folgenden
+betrachten wir als Beispiel eine Klassifikationsaufgabe. In einem Autohaus
+vereinbaren zehn Personen eine Probefahrt. In der folgenden Tabelle ist notiert,
+welchen 
 
 * `Kilometerstand [in km]` und
 * `Preis [in EUR]`
@@ -95,76 +103,126 @@ fig.show()
 ```
 
 Als nächstes zeigen wir, wie die Autos anhand von Fragen in die beiden Klassen
-»verkauft« und »nicht verkauft« sortiert werden können. Links im Streudiagramm
+»verkauft« und »nicht verkauft« sortiert werden können. Im Streudiagramm
 visualisieren wir die Autos mit ihren Eigenschaften `Kilometerstand [km]` und
-`Preis [EUR]` als Punkte. Auf der rechten Seite werden wir schrittweise den
+`Preis [EUR]` als Punkte. Dazu passend werden wir schrittweise den
 Entscheidungsbaum entwickeln. Ein Entscheidungsbaum visualisiert
 Entscheidungsregeln in Form einer Baumstruktur. Zu Beginn wurde noch keine Frage
-gestellt und alle Autos befinden sich gemeinsam in einem **Knoten** des
+gestellt und alle Autos befinden sich gemeinsam in einem **Knoten** (Node) des
 Entscheidungsbaumes, der visuell durch einen rechteckigen Kasten symbolisiert
-wird. Dieser erste Knoten wird als **Wurzelknoten** bezeichnet, da er die Wurzel
-des Entscheidungsbaumes darstellt. 
+wird. Dieser erste Knoten wird als **Wurzelknoten** (Root Node) bezeichnet, da
+er die Wurzel des Entscheidungsbaumes darstellt. 
 
 <img src="pics/combined_decisiontree00.svg" 
 alt="Entscheidungsbaum - Start" 
 class="image169"
 width=100%>
 
-Dann wird eine erste Frage gestellt. Ist der Verkaufspreis kleiner oder gleich
-16376.50 EUR? Entsprechend dieser Entscheidung werden die Autos in zwei Gruppen
+<img src="pics/decisiontree_scatterplot00.svg" 
+alt="Entscheidungsbaum - Start" 
+class="image43"
+width=100%>
+
+<img src="pics/decisiontree_cars00.svg" 
+alt="Entscheidungsbaum - Start" 
+class="image43"
+width=100%>
+
+Dann wird eine erste Frage gestellt. *Ist der Verkaufspreis kleiner oder gleich
+16376.50 EUR?* Entsprechend dieser Entscheidung werden die Autos in zwei Gruppen
 aufgeteilt. Wenn ja, wandern die Autos nach links und ansonsten nach rechts. Im
-Entscheidungsbaum wird diese Aufteilung durch einen **Zweig** nach links und
-einen Zweig nach rechts symbolisiert. Ein alternativer Name für Zweig ist
-**Kante**. Die Autos »rutschen« die Zweige/Kanten entlang und landen in zwei
-separaten Knoten. Im Streudiagramm entspricht diese Fragestellung dem Vergleich
-mit einer horizontalen Linie bei y = 16376.5. Die gesamte Fläche unterhalb
-dieser Linie wird blau markiert.
+Entscheidungsbaum wird diese Aufteilung durch einen **Zweig** (Branch) nach
+links und einen Zweig nach rechts symbolisiert. Ein alternativer Name für Zweig
+ist **Kante**. Die Autos »rutschen« die Zweige/Kanten entlang und landen in zwei
+separaten Knoten. Im Streudiagramm (Scatterplot) entspricht diese Fragestellung
+dem Vergleich mit einer horizontalen Linie bei y = 16376.5. Da alle Autos mit
+einem Verkaufspreis kleiner/gleich 16376.5 EUR blau sind, also »nicht verkauft«
+wurden, wird im Streudiagramm (Scatterplot) alles unterhalb der horizontalen
+Linie blau eingefärbt.
 
 <img src="pics/combined_decisiontree01.svg" 
 alt="Entscheidungsbaum - 1. Entscheidung" 
 class="image169"
 width=100%>
 
+<img src="pics/decisiontree_scatterplot01.svg" 
+alt="Entscheidungsbaum - 1. Entscheidung" 
+class="image43"
+width=100%>
+
+<img src="pics/decisiontree_cars01.svg" 
+alt="Entscheidungsbaum - 1. Entscheidung" 
+class="image43"
+width=100%>
+
 Bei den Autos mit einem Preis kleiner oder gleich 16376.50 EUR müssen wir nicht
 weiter sortieren bzw. weitere Fragen stellen. Da aus diesem Knoten keine Zweige
-mehr wachsen, wird dieser Knoten auch **Blatt** genannt. Aber in dem Knoten des
-rechten Zweiges befinden sich fünf rote (also verkaufte) Autos und ein blaues
-(also nicht verkauftes) Auto. Wir wollen diese Autos durch weitere Fragen
-sortieren. Doch obwohl nur ein Auto (nämlich Auto 3) aus dieser Gruppe separiert
-werden soll, ist dies nicht durch nur eine einzige Frage möglich. Lautet die
-Frage: »Ist der Preis kleiner oder gleich 17300 EUR?«, dann wandern das rote
-Auto 8 und das blaue Auto 3 nach links. Wählen wir die Frage: »Ist der
+mehr wachsen, wird dieser Knoten auch **Blatt** (Leave) genannt. Aber in dem
+Knoten des rechten Zweiges befinden sich fünf rote (also verkaufte) Autos und
+ein blaues (also nicht verkauftes) Auto. Wir wollen diese Autos durch weitere
+Fragen sortieren. Doch obwohl nur ein Auto (nämlich Auto 3) aus dieser Gruppe
+separiert werden soll, ist dies nicht durch nur eine einzige Frage möglich.
+Lautet die Frage: »Ist der Preis kleiner oder gleich 17300 EUR?«, dann wandern
+das rote Auto 8 und das blaue Auto 3 nach links. Wählen wir die Frage: »Ist der
 Kilometerstand kleiner oder gleich 13500 km?«, dann wandern ebenfalls Auto 3 und
 Auto 8 nach links. Beide Fragen sind also gleichwertig, welches sollen wir
 nehmen? Wir gehen nach der Reihenfolge der Eigenschaften vor. Da der
 Kilometerstand in der Tabelle in der ersten Spalte steht und der Preis in der
-zweiten Spalte, entscheiden wir uns für die Frage nach dem Kilometerstand.
+zweiten Spalte, entscheiden wir uns für die Frage nach dem Kilometerstand: *»Ist
+der Kilometerstand kleiner oder gleich 13500 km?«* Alternativ könnten wir auch
+den Zufall entscheiden lassen.
   
 <img src="pics/combined_decisiontree02.svg" 
 alt="Entscheidungsbaum - 2. Entscheidung" 
 class="image169"
 width=100%>
 
-Jetzt sind aber nur noch zwei Autos im linken Knoten, so dass diesmal eine
-weitere Frage ausreicht, die beiden Autos in zwei Klassen zu sortieren. Wir
-fragen: »Ist der Kilometerstand kleiner oder gleich 8198 km?«
+<img src="pics/decisiontree_scatterplot02.svg" 
+alt="Entscheidungsbaum - 2. Entscheidung" 
+class="image43"
+width=100%>
+
+<img src="pics/decisiontree_cars02.svg" 
+alt="Entscheidungsbaum - 2. Entscheidung" 
+class="image43"
+width=100%>
+
+Im Streudiagramm (Scatterplot) wird die noch nicht eingefärbte Fläche rechts der
+vertikalen Linie 13500 km rot gefärbt. Im linken Knoten (Node) sind aber nur
+noch zwei Autos, so dass diesmal eine weitere Frage ausreicht, die beiden Autos
+in zwei Klassen zu sortieren. Wir fragen: *»Ist der Kilometerstand kleiner oder
+gleich 8198 km?«*
    
 <img src="pics/combined_decisiontree03.svg" 
 alt="Entscheidungsbaum - 3. Entscheidung" 
 class="image169"
 width=100%>
 
-Alle Autos sind nun durch die Fragen sortiert und befinden sich in Blättern.
+<img src="pics/decisiontree_scatterplot03.svg" 
+alt="Entscheidungsbaum - 3. Entscheidung" 
+class="image43"
+width=100%>
+
+<img src="pics/decisiontree_cars03.svg" 
+alt="Entscheidungsbaum - 3. Entscheidung" 
+class="image43"
+width=100%>
+
+Alle Autos sind nun durch die Fragen sortiert und befinden sich in Blättern
+(Leaves). Im Streudiagramm (Scatterplot) wird dieser Zustand kenntlich gemacht,
+indem auch die letzte verbleibende Fläche (oberhalb eines Preises von 16376.50
+EUR) links von Kilometerstand 8198 km rot und rechts davon blau eingefärbt wird.
 
 ```{admonition} Was ist ... ein Entscheidungsbaum?
 Ein Entscheidungsbaum (Decision Tree) ist ein Modell zur Entscheidungsfindung,
 das Daten mit Hilfe einer Baumstruktur sortiert. Die Datenobjekte starten beim
-Wurzelknoten und werden dann über Knoten (=Entscheidungen) und Zweige/Kanten (=
-Ergebnis der Entscheidung) in Blätter sortiert.
+Wurzelknoten (= Ausgangssituation) und werden dann über Knoten (=
+Entscheidungsfrage) und Zweige/Kanten (= Ergebnis der Entscheidung) in Blätter
+(= Endzustand des Entscheidungsprozesses) sortiert.
 ```
 
-
-## Entscheidungsbäume mit Scikit-Learn
+ 
+## Entscheidungsbäume mit Scikit-Learn trainieren
 
 In der Praxis verwenden wir die ML-Bibliothek Scikit-Learn, um einen
 Entscheidungsbaum zu trainieren. Das Modul [Scikit-Learn →
@@ -221,24 +279,80 @@ score = modell.score(X,y)
 print(score)
 ```
 
-Eine 1 steht für 100 %, also alle 10 Autos werden korrekt klassifiziert. Dazu hat der `DecisionTreeClassifier` basierend auf den Eingabedaten `X` eine Prognose erstellt und diese Prognose mit `y` verglichen. Für die Trainingsdaten funktioniert der Entscheidungsbaum also perfekt. Ob der Entscheidungsbaum ein neues, elftes Auto korrekt klassifizieren würde, kann so erst einmal nicht entschieden werden.
+Eine 1 steht für 100 %, also alle 10 Autos werden korrekt klassifiziert. Dazu
+hat der `DecisionTreeClassifier` basierend auf den Eingabedaten `X` eine
+Prognose erstellt und diese Prognose mit den echten Daten in `y` verglichen. Für
+die Trainingsdaten funktioniert der Entscheidungsbaum also perfekt. Ob der
+Entscheidungsbaum ein neues, elftes Auto korrekt klassifizieren würde, kann so
+erst einmal nicht entschieden werden.
 
-Zuletzt lassen wir den Entscheidungsbaum noch visualisieren. Dazu verwenden wir
-die Funktion `plot_tree`, die zuerst aus dem Modul `sklearn.tree` importiert
-wird. Als Argument übergeben wir das trainierte Modell. Zusätzlich setzen wir
-für das optionale Argument `feature_names=` noch eine Liste mit den Namen der
-Eigenschaftsnamen ein, so dass in der Visualisierung des Entscheidungsbaumes
-direkt die Eigenschaften angezeigt werden. 
+
+## Prognosen mit Entscheidungsbäumen
+
+Soll für neue Autos eine Prognose abgegeben werden, ob sie sich eher verkaufen
+lassen oder nicht, müssen die neuen Daten die gleiche Struktur wie die
+Eingangsdaten haben. Wir erzeugen daher einen neuen Pandas-DataFrame, bei dem
+die erste Eigenschaft der Kilometerstand der neuen Autos ist und die zweite
+Eigenschaft ihr Preis.
 
 ```{code-cell}
-from sklearn.tree import plot_tree
-plot_tree(modell, feature_names=['Kilometer [km]','Preis [EUR]']);
+neue_autos = pd.DataFrame({
+    'Kilometerstand [km]': [7580, 11300, 20000],
+    'Preis [EUR]': [20999, 12000, 14999]
+    },
+    index=['Auto 11', 'Auto 12', 'Auto 13']) 
 ```
 
-Weitere Details zu den Optionen der `plot_tree`-Funktion finden Sie in der
-[Dokumentation Scikit-Learn →
-plot_tree](https://scikit-learn.org/stable/modules/generated/sklearn.tree.plot_tree.html).
+Mit Hilfe der `predict()`-Methode kann dann der Entscheidungsbaum
+prognostizieren, ob die Autos verkauft werden oder nicht.
+
+```{code-cell}
+:tags: [remove-input]
+modell = DecisionTreeClassifier(random_state=0);
+modell.fit(X,y);
+```
+
+```{code-cell}
+prognose = modell.predict(neue_autos)
+print(prognose)
+```
+
+Um für ein neues Auto eine Prognose abzugeben, werden zunächst den Blättern
+Klassen zugeordnet. Sind alle Blätter **rein**, d.h. befinden sich nur Autos
+einer einzigen Klasse in einem Blatt, dann bekommt das Blatt diese Klasse
+zugeordnet. Ist ein Blatt nicht rein, sondern enthält noch Autos mit
+unterschiedlichen Klassen »verkauft« oder »nicht verkauft« so wird diesem Blatt
+diejenige Klasse zugeordnet, die am häufigsten auftritt. Um diese Idee zu
+visualisieren, färben wir im Entscheidungsbaum die Blätter entsprechend rot und
+blau ein.
+
+Jedes neue Auto durchläuft jetzt die Entscheidungen, bis es in einem Blatt
+angekommen ist. Die Klasse des Blattes ist dann die Prognose für dieses Auto.
+
+<img src="pics/combined_decisiontree_prediction.svg" 
+alt="Entscheidungsbaum - Prognose" 
+class="image169"
+width=100%>
+
+<img src="pics/decisiontree_scatterplot_prediction.svg" 
+alt="Entscheidungsbaum - Prognose" 
+class="image43"
+width=100%>
+
+<img src="pics/decisiontree_cars_prediction.svg" 
+alt="Entscheidungsbaum - Prognose" 
+class="image43"
+width=100%>
+
+Der Entscheidungsbaum prognostiziert, dass Auto 11 und Auto 12 nicht verkauft
+werden, aber Auto 13 könnte verkaufbar sein.
+
 
 ## Zusammenfassung und Ausblick
 
-TODO
+In diesem Kapitel haben Sie den Entscheidungsbaum (Decision Tree) anhand einer
+Klassifikationsaufgabe kennengelernt. Mit Hilfe von Scikit-Learn wurde ein
+Entscheidungsbaum trainiert und dazu benutzt, eine Prognose für neue Daten
+abzugeben. Im nächsten Kapitel werden wir uns damit beschäftigen, weitere
+Einstellmöglichkeiten beim Training des Entscheidungsbaumes zu nutzen und
+Entscheidungsbäume durch Scikit-Learn visualisieren zu lassen.
