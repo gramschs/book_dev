@@ -323,7 +323,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="chapter11_sec00.html">11. Entscheidungsbäume (Decision Trees)</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-21"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="chapter11_sec01.html">11.1 Was ist ein Entscheidungsbaum?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter11_sec02.html">11.2 Scikit-Learn Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter11_sec02.html">11.2 Entscheidungsbäume viualisieren und trainieren</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter11_sec03.html">11.2 Random Forests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter11_sec04.html">Übung</a></li>
 </ul>
@@ -627,50 +627,6 @@ document.write(`
   </tbody>
 </table>
 </div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
-
-<span class="n">modell</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">daten</span><span class="p">[[</span><span class="s1">&#39;Kilometerstand [km]&#39;</span><span class="p">,</span> <span class="s1">&#39;Preis [EUR]&#39;</span><span class="p">]]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">daten</span><span class="p">[</span><span class="s1">&#39;verkauft&#39;</span><span class="p">]</span>
-
-<span class="n">modell</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">score</span> <span class="o">=</span> <span class="n">modell</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">neue_autos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="s1">&#39;Kilometerstand [km]&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">7580</span><span class="p">,</span> <span class="mi">11300</span><span class="p">,</span> <span class="mi">20000</span><span class="p">],</span>
-    <span class="s1">&#39;Preis [EUR]&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">20999</span><span class="p">,</span> <span class="mi">12000</span><span class="p">,</span> <span class="mi">14999</span><span class="p">]</span>
-    <span class="p">},</span>
-    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Auto 11&#39;</span><span class="p">,</span> <span class="s1">&#39;Auto 12&#39;</span><span class="p">,</span> <span class="s1">&#39;Auto 13&#39;</span><span class="p">])</span> 
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prognose</span> <span class="o">=</span> <span class="n">modell</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">neue_autos</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">prognose</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ True False False]
-</pre></div>
-</div>
-</div>
 </div>
 
     <script type="text/x-thebe-config">
