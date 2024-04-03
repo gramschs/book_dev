@@ -287,7 +287,7 @@ Entscheidungsbaum ein neues, elftes Auto korrekt klassifizieren würde, kann so
 erst einmal nicht entschieden werden.
 
 
-## Prognosen mit Entscheidungsbäumen
+## Prognosen mit Entscheidungsbäumen treffen
 
 Soll für neue Autos eine Prognose abgegeben werden, ob sie sich eher verkaufen
 lassen oder nicht, müssen die neuen Daten die gleiche Struktur wie die
