@@ -323,9 +323,10 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter11/chapter11_sec00.html">11. Entscheidungsbäume (Decision Trees)</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-21"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec01.html">11.1 Was ist ein Entscheidungsbaum?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec02.html">11.2 Scikit-Learn Tree</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec03.html">11.2 Random Forests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec02.html">11.2 Entscheidungsbäume viualisieren und trainieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec03.html">11.3 Entscheidungsbäume in der Praxis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec04.html">Übung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_secextra01.html">Random Forests</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter12/chapter12_sec00.html">12. Neuronale Netze</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-22"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -562,7 +563,7 @@ gleichverteilte Zufallszahlen erzeugen. Hier ist ein Beispiel:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9975215584083759
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.26077852922979017
 </pre></div>
 </div>
 </div>
@@ -577,7 +578,7 @@ Zahlen bestimmen:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[18.28932085 19.39359881 18.14969067 10.7144711  17.43427072]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[15.85288236 16.95597457 10.05130704 16.67604154 18.61310181]
 </pre></div>
 </div>
 </div>
@@ -599,7 +600,7 @@ werden, um anzugeben, wie viele Zahlen erzeugt werden sollen.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>83
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>41
 </pre></div>
 </div>
 </div>
@@ -616,7 +617,7 @@ inkludiert ist.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 1 8 6 7]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 1 7 9 9]
 </pre></div>
 </div>
 </div>
@@ -635,7 +636,7 @@ angegeben werden:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
 </pre></div>
 </div>
 </div>
@@ -685,7 +686,7 @@ Zufallszahlen erzeugen:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.9444429042241014
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.7938524419628925
 </pre></div>
 </div>
 </div>
@@ -701,7 +702,7 @@ bedeutet, dass die Normalverteiung eine Standardabweichung von 1 hat.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.03321889 -0.99583554  0.1642489  -0.68840273 -0.40555467]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-2.82810288 -0.55268197  0.33794107  0.86139564 -1.01643622]
 </pre></div>
 </div>
 </div>

@@ -32,7 +32,7 @@ diagramm.show()
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mAttributeError[0m                            Traceback (most recent call last)
-[0;32m/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_2963/3191546431.py[0m in [0;36m?[0;34m()[0m
+[0;32m/var/folders/hd/xdjzhymn4x393gh7v6ws4v880000gn/T/ipykernel_2902/3191546431.py[0m in [0;36m?[0;34m()[0m
 [1;32m      1[0m [0mauswahl[0m [0;34m=[0m [0;34m[[0m[0;34m'Jahr'[0m[0;34m,[0m [0;34m'Preis (Euro)'[0m[0;34m,[0m [0;34m'Leistung (kW)'[0m[0;34m,[0m [0;34m'Leistung (PS)'[0m[0;34m,[0m [0;34m'Verbrauch (l/100 km)'[0m[0;34m,[0m [0;34m'Verbrauch (g/km)'[0m[0;34m,[0m [0;34m'Kilometerstand (km)'[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 2[0;31m [0mdiagramm[0m [0;34m=[0m [0mpx[0m[0;34m.[0m[0mscatter_matrix[0m[0;34m([0m[0mdaten[0m[0;34m,[0m [0mdimensions[0m[0;34m=[0m[0mauswahl[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      3[0m [0mdiagramm[0m[0;34m.[0m[0mshow[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m

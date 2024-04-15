@@ -11,180 +11,146 @@ kernelspec:
   name: python3
 ---
 
-# 11.2 Random Forests
+# 11.3 Entscheidungsbäume in der Praxis
 
-```{admonition} Lernziele
-:class: important
-* Sie wissen, was ein **Random Forest** ist.
+TODO
+
+
+## Lernziele
+
+TODO
+
+
+## Entscheidungsbäume haben Probleme mit Overfitting
+
+Entscheidungsbäume haben viele Vorteile. Ein sehr wichtiger Vorteil ist, dass
+sich der fertig trainierte Entscheidungsbaum visualisieren lässt und so leicht
+nachvollziehbar wird, welche Eigenschaften einflussreich sind. Ein zweiter
+Vorteil ist, dass Entscheidungsbäume auch sehr gut funktionieren, wenn die Daten
+sehr unterschiedlich sind. Beispielsweise können numerische und kategoriale
+Eigenschaften gleichermaßen als Eingabe dienen. Darüber hinaus können die
+numerischen Werte auch auf sehr unterschiedlichen Skalen vorliegen.
+Entscheidungsbäume sind bezogen auf die Daten sehr robust und brauchen nur wenig
+Datenvorverarbeitung. 
+
+Ein großer Nachteil von Entscheidungsbäumen ist, dass sie eine Tendenz zum
+sogenannten **Overfitting** haben. Overfitting könnte man auf deutsch als
+**Überanpassung** übersetzen. Wie so oft beim maschinellen Lernen ist der
+deutsche Begriff ungebräuchlich, so dass auch wir hier den englischen Begriff
+Overfitting und das Gegenteil davon, das sogenannte **Underfitting**
+(Unteranpassung) benutzen.
+
+Was ist Overfitting? Betrachten wir erneut das Autohaus-Beispiel, aber diesmal
+mit mehr Autos. Wir lassen die Autos diesmal mit einer in Scikit-Learn
+eingebauten Funktion zur Generierung von künstlichen Daten erzeugen, der
+sogenannten `make_moons`-Funktion (siehe [Dokumentation Scikit-Learn →
+make_moons](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_moons.html)) aus dem Module `sklearn.datasets`.
+
+```{code-cell}
+from sklearn.datasets import make_moons 
+
+X_array, y_array = make_moons(noise = 0.5, n_samples=50, random_state=3)
 ```
 
-+++
+Damit die künstlichen Daten besser zu dem Autohaus-Beispiel passen,
+transformieren wir die Daten folgendermaßen und packen Sie geeignet in
+Pandas-Datenstrukturen.
 
-## Viele Bäume sind ein Wald
-
-Entscheidungsbäume sind aufgrund ihrer Einfachheit und vor allem aufgrund ihrer
-Interpretierbarkeit sehr beliebt. Allerdings ist ihre Tendenz zum Overfitting
-problematisch. Die Idee des ML-Verfahrens Random Forests ist es, viele
-Entscheidungsbäume zu erstellen und sie beispielsweise durch Mittelwertbildung
-zusammenzufassen. Wenn sich ein einzelner Entscheidungsbaum zu sehr an die
-Trainingsdaten angepasst haben sollte, wird das sozusagen durch die
-Mittelwertbildung mit einem anderen Entscheidungsbaum, der mit anderen
-Trainingsdaten trainiert wurde, wieder ausgeglichen. Dabei wird werden die
-Trainigsdaten für jeden Entscheidungsbaum zufällig ausgewählt.
-
-
-+++
-
-## Wie werden die Trainingsdaten zufällig ausgewählt?
-
-Es gibt verschiedene Methoden, mit denen die Trainingsdaten beim Training eines
-Random Forests zufällig ausgewählt werden können:
-
-1. **Bootstrapping**: Dies ist die gängigste Methode zur Auswahl der
-Trainingsdaten für jeden Entscheidungsbaum in einem Random Forest. Dabei werden
-einzelne Datenpunkte aus der Menge der Trainignsdaten zufällig ausgewählt,
-jedoch sofort wieder zurückgelegt. Dadurch können Datenpunkte auch mehrfach
-auftauchen, während andere Datenpunkte vielleicht gar nicht zum Training des
-Entscheidungsbaumes genutzt werden.
-
-2. **Stratifiziertes Sampling**: Bei dieser Methode werden die Trainingsdaten
-anhand eines Kriteriums in verschiedene "Schichten" eingeteilt, aus denen dann
-zufällig eine Teilmenge von Beispielen ausgewählt wird. Dies kann nützlich sein,
-wenn die Trainingsdaten unausgewogen sind, d. h. es gibt deutlich mehr Beispiele
-für eine Klasse als für die andere. Das Stratified Sampling kann dazu beitragen,
-dass jeder Baum im Random Forest auf einer repräsentativen Stichprobe der Daten
-trainiert wird.
-
-3. **Cluster-Stichproben**: Bei dieser Methode werden die Trainingsdaten in
-separate Cluster unterteilt und dann eine Teilmenge der Cluster zufällig
-ausgewählt, die für das Training verwendet wird. Dies kann nützlich sein, wenn
-die Trainingsdaten auf natürliche Weise in verschiedene Cluster unterteilt sind
-und Sie sicherstellen möchten, dass jeder Baum im Random Forest auf einer
-repräsentativen Stichprobe der Daten trainiert wird.
-
-Es gibt auch andere Methoden, die zur zufälligen Auswahl der Trainingsdaten
-verwendet werden können, wie z. B. das systematische Sampling, bei dem Beispiele
-in regelmäßigen Abständen aus dem Trainingssatz ausgewählt werden, und das
-einfache Zufallsstichprobenverfahren, bei dem Beispiele ohne Ersetzung zufällig
-ausgewählt werden. Die Wahl der Methode hängt von den Besonderheiten der Daten
-und den Zielen des Modells ab.
-
-
-## Bootstrapping in Scikit-Learn
-
-Für die nachfolgenden Erläuterungen generieren wir uns wieder einmal künstliche
-Messdaten. Diesmal verwenden wir die Funktion `make_moons` von Scikit-Learn.
-
-```{code-cell} ipython3
-import plotly.express as px
-from sklearn.datasets import make_moons
-
-# generate artificial data
-X, y = make_moons(n_samples=120, random_state=0, noise=0.3)
-
-# plot artificial data
-fig = px.scatter(x = X[:,0], y = X[:, 1], color=y,
-        title='Künstliche Daten',
-        labels = {'x': 'Feature 1', 'y': 'Feature 2'})
-fig.show()
-```
-
-```{code-cell} ipython3
-from sklearn.tree import DecisionTreeClassifier
-
-model = DecisionTreeClassifier()
-model.fit(X,y);
-
-
-from sklearn.tree import plot_tree 
-plot_tree(model, filled=True);
-```
-
-Das Ergebnis ist ein Entscheidungsbaum mit vielen Entscheidungen. Wir erzeugen jetzt ein Gitter
-
-```{code-cell} ipython3
-x0_min = X[:,0].min()
-x0_max = X[:,0].max()
-x1_min = X[:,1].min()
-x1_max = X[:,1].max()
-
+```{code-cell}
 import numpy as np
-gitter_x1, gitter_x2 = np.meshgrid(np.linspace(x0_min, x0_max), np.linspace(x1_min, x1_max))
-gitter_y = model.predict(np.stack([gitter_x1.ravel(),gitter_x2.ravel()]).T)
+import pandas as pd
 
-import plotly.graph_objects as go
+# shift all feature values to a positive range and 
+# convert it to an integer matrix
+X_array = X_array + 1.2 * np.abs(np.min(X_array))
+X_array[:,0] = np.ceil(X_array[:,0] * 30000)
+X_array[:,1] = np.ceil(X_array[:,1] * 10000)
+X = pd.DataFrame(X_array, columns=['Kilometerstand [km]', 'Preis [EUR]'], dtype=(int, int))
 
-fig = go.Figure()
-fig.add_trace(go.Scatter(x = gitter_x1.ravel(), y = gitter_x2.ravel(), 
-                         marker_color=gitter_y.ravel(), mode='markers', opacity=0.1, name='Gitter'))
-fig.add_trace(go.Scatter(x = X[:,0], y = X[:,1], mode='markers', marker_color=y, name='Daten'))
-fig.update_layout(
-  title='Künstliche Messdaten',
-  xaxis_title = 'Feature 1',
-  yaxis_title = 'Feature 2'
-)
+# map 0.0 to True and 1.0 to False
+y_array = (y_array - 1.0) * (-1)
+y = pd.Series(y_array, name='verkauft', dtype='bool')
 ```
 
-Jetzt lassen wir einen Random Forest erzeugen. Weitere Details finden Sie unter
-[Scikit-Learn Dokumentation →
-RandomForestClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html).
-Zunächst erfolgt der übliche Import. Bei der Instanziierung müssen wir jedoch
-diesmal angeben, aus wie vielen Entscheidungsbäumen der Random Forest bestehen
-zoll. Dazu nutzen wir das Argument `n_estimators=`. 
+Als nächstes visualisieren wir die Daten.
 
-Wir wählen 4 Entscheidungsbäume. Die Auswahl der Daten für jeden
-Entscheidungsbaum erfolgt zufällig. Damit aus didaktischen Gründen die
-Ergebnisse produzierbar sind, fixieren wir den Seed für den
-Zufallszahlengenerator.
+```{code-cell}
+import plotly.express as px
 
-```{code-cell} ipython3
-from sklearn.ensemble import RandomForestClassifier
-
-model = RandomForestClassifier(n_estimators=4, random_state=0)
-model.fit(X,y)
-```
-
-Die vier erzeugten Entscheidungsbäume sind in der Variable `model` gespeichert.
-
-```{code-cell} ipython3
-for (nummer, baum) in zip(range(4), model.estimators_):
-    gitter_y = baum.predict(np.stack([gitter_x1.ravel(),gitter_x2.ravel()]).T)
-
-    fig = go.Figure()
-    fig.add_trace(go.Scatter(x = gitter_x1.ravel(), y = gitter_x2.ravel(), 
-                            marker_color=gitter_y.ravel(), mode='markers', opacity=0.1, name='Gitter'))
-    fig.add_trace(go.Scatter(x = X[:,0], y = X[:,1], mode='markers', marker_color=y, name='Daten'))
-    fig.update_layout(
-      title=f'Entscheidungsbaum {nummer+1}',
-      xaxis_title = 'Feature 1',
-      yaxis_title = 'Feature 2'
-    )
-    fig.show()
-```
-
-Insgesamt erhalten wir:
-
-```{code-cell} ipython3
-gitter_y = model.predict(np.stack([gitter_x1.ravel(),gitter_x2.ravel()]).T)
-
-fig = go.Figure()
-fig.add_trace(go.Scatter(x = gitter_x1.ravel(), y = gitter_x2.ravel(), 
-                        marker_color=gitter_y.ravel(), mode='markers', opacity=0.1, name='Gitter'))
-fig.add_trace(go.Scatter(x = X[:,0], y = X[:,1], mode='markers', marker_color=y, name='Daten'))
-fig.update_layout(
-  title='Random Forest',
-  xaxis_title = 'Feature 1',
-  yaxis_title = 'Feature 2'
-  )
+fig = px.scatter(x = X['Kilometerstand [km]'], y = X['Preis [EUR]'], color=y,
+    title='Künstliche Daten Autohaus',
+    labels={'x': 'Kilometerstand [km]', 'y': 'Preis [EUR]', 'color': 'verkauft'})
 fig.show()
 ```
 
-## Zusammenfassung
+Das Training des Entscheidungsbaumes und dessen Visualisierung erledigt der
+folgende Code.
 
-Random Forests sind einfachen Entscheidungsbäumen vorzuziehen, da sie das
-Overfitting reduzieren. Die Erzeugung der einzelnen Entscheidungsbäume kann
-parallelisiert werden, so dass das Training eines Random Forests sehr schnell
-durchgeführt werden kann. Auch für große Datenmengen mit sehr unterschiedlichen
-Eigenschaften arbeitet der Random Forest sehr effizient. Er ermöglicht auch eine
-Interpreation, welche Eigenschaften ggf. einen größeren Einfluss haben als
-andere Eigenschaften.
+```{code-cell}
+from sklearn.tree import DecisionTreeClassifier, plot_tree
+
+modell = DecisionTreeClassifier(random_state=0)
+modell.fit(X,y)
+
+plot_tree(modell,
+    feature_names=['Kilometerstand [km]', 'Preis [EUR]'],
+    class_names=['nicht verkauft', 'verkauft']);
+```
+
+Die Visualisierung des Entscheidungsbaumes zeigt sehr viele Verzweigungen und
+die Beschriftung ist kaum noch zu lesen. Der folgende Code visualisiert die
+Entscheidungsgrenzen. Leider ist die Visualisierungsmethode von Scikit-Learn
+nicht an Plotly, sondern an die alternative »Matplotlib« angepasst, so dass die
+Syntax etwas ungewohnt wirkt.
+
+```{code-cell}
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+from matplotlib.colors import ListedColormap
+from sklearn.inspection import DecisionBoundaryDisplay
+
+fig = DecisionBoundaryDisplay.from_estimator(modell, X, cmap=ListedColormap(['#EF553B33', '#636EFA33']), grid_resolution=1000)
+fig.ax_.scatter(X['Kilometerstand [km]'], X['Preis [EUR]'], c=y, cmap=ListedColormap(['#EF553B', '#636EFA']))
+fig.ax_.set_title('Entscheidungsgrenzen');
+```
+
+Es ist fraglich, ob dieser Entscheidungsbaum nicht zu genau an die
+Trainingsdaten angepasst wurde. Der dünne blaue vertikale Streifen bei ungefähr
+97000 km ist wahrscheinlich keine sinnvolle Entscheidung, sondern eher einem
+Ausreißer geschuldet (dem Auto mit einem Kilometerstand von 97098 km und einem
+Preis von 28229 EUR). Der Entscheidungsbaum hat sich zu stark an die Daten
+angepasst. Es ist wahrscheinlich, dass dieser Entscheidungsbaum für Autos mit
+einem Kilometerstand von ungefähr 97000 km falsche Prognosen treffen wird. Wenn
+wir mit den gleichen Daten erneut einen Entscheidungsbaum trainieren lassen und
+den Zufallszahlengenerator mit dem Zustand `random_state=1` initialisieren,
+erhalten wir auch ein völlig anderes Ergebnis.
+
+```{code-cell}
+modell_alternative = DecisionTreeClassifier(random_state=1)
+modell_alternative.fit(X,y)
+
+fig = DecisionBoundaryDisplay.from_estimator(modell_alternative, X, cmap=ListedColormap(['#EF553B33', '#636EFA33']), grid_resolution=1000)
+fig.ax_.scatter(X['Kilometerstand [km]'], X['Preis [EUR]'], c=y, cmap=ListedColormap(['#EF553B', '#636EFA']))
+fig.ax_.set_title('Entscheidungsgrenzen des alternativen Modells');
+```
+
+Eine Möglichkeit, die Überanpassung (Overfitting) an die Daten zu bekämpfen, ist
+das Zurechtschneiden (Pruning) der Entscheidungsbäume. Eine andere ist, aus
+mehreren Entscheidungbäumen einen »durchschnittlichen« Entscheidungsbaum zu
+bilden. Dieses Verfahren heißt Zufallswald (Random Forest) und wird ausführlich
+in einem eigenen Kapitel behandelt werden. In diesem Kapitel betrachten wir nur
+das Zurechtschneiden der Entscheidungsbäume. 
+
+## Zurechtschneiden von Entscheidungsbäumen
+
+TODO
+
+
+## Entscheidungsbäume für Regressionsprobleme
+
+TODO
+
+
+## Zusammenfassung und Ausblick
+
+TODO
