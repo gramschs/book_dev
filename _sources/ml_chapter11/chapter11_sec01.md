@@ -43,7 +43,7 @@ Dieser Partyklassiker lässt sich auch auf das maschinelle Lernen übertragen.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie wissen, was ein **Entscheidungsbaum (Decision Tree)** ist.
 * Sie kennen die Bestandteile eines Entscheidungsbaumes:
   * Wurzelknoten (Root Node)
