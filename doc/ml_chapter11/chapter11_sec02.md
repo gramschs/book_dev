@@ -24,7 +24,7 @@ Entscheidungsbäume in Scikit-Learn gibt.
 ## Lernziele
 
 ```{admonition} Lernziele
-:class: admonition-goals
+:class: goals
 * Sie können einen Entscheidungsbaum mit `plot_tree` visualisieren.
 * Sie wissen, was die Angaben `samples` und `value` bei der Visualisierung des
   Entscheidungsbaumes bedeuten.
