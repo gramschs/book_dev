@@ -49,7 +49,7 @@ Dieser Partyklassiker lässt sich auch auf das maschinelle Lernen übertragen.
   * Wurzelknoten (Root Node)
   * Knoten (Node)
   * Zweig oder Kante (Branch)
-  * Blatt (Leave)
+  * Blatt (Leaf)
 * Sie können einen Entscheidungsbaum mit Scikit-Learn trainieren.
 * Sie können mit Hilfe eines Entscheidungsbaumes Prognosen treffen.
 ```
@@ -157,7 +157,7 @@ width=100%>
 
 Bei den Autos mit einem Preis kleiner oder gleich 16376.50 EUR müssen wir nicht
 weiter sortieren bzw. weitere Fragen stellen. Da aus diesem Knoten keine Zweige
-mehr wachsen, wird dieser Knoten auch **Blatt** (Leave) genannt. Aber in dem
+mehr wachsen, wird dieser Knoten auch **Blatt** (Leaf) genannt. Aber in dem
 Knoten des rechten Zweiges befinden sich fünf rote (also verkaufte) Autos und
 ein blaues (also nicht verkauftes) Auto. Wir wollen diese Autos durch weitere
 Fragen sortieren. Doch obwohl nur ein Auto (nämlich Auto 3) aus dieser Gruppe
