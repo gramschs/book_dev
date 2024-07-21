@@ -1,0 +1,54 @@
+\usepackage{amssymb} 
+\usepackage{amsmath} 
+
+\usepackage[no-math]{fontspec}
+\usepackage{unicode-math}
+\setmainfont{Lato}
+\setmathfont{Stix Two Math}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{backgrounds}
+
+\usepackage{xcolor}
+\definecolor{accent1}{RGB}{0,90,148}
+\definecolor{accent2}{RGB}{204,222,233}
+\definecolor{alert}{RGB}{230,0,0}
+\definecolor{bg}{RGB}{243,244,244}
+\definecolor{fg}{RGB}{72,73,73}
+
+
+\makeatletter
+\tikzset{fixed ratio/.code={\def\tikz@pft##1:##2;{\edef\pgfutil@tempx{##1}\edef\pgfutil@tempy{##2}}%
+    \expandafter\tikz@pft#1;%
+    \tikzset{execute at end picture={%
+    \ifcsname sa@border@right\endcsname
+     \pgfmathsetmacro\pgfutil@tempa{((\pgf@picmaxx+\sa@border@right-\pgf@picminx+\sa@border@left)/%
+     (\pgf@picmaxy+\sa@border@top-\pgf@picminy+\sa@border@bottom)}%
+    \else
+     \pgfmathsetmacro\pgfutil@tempa{((\pgf@picmaxx-\pgf@picminx)/(\pgf@picmaxy-\pgf@picminy)}%
+    \fi
+    \pgfmathsetmacro\pgfutil@tempb{(\pgfutil@tempx/\pgfutil@tempy)}%
+    \ifdim\pgfutil@tempa pt=\pgfutil@tempb pt\relax
+    \else
+     \ifdim\pgfutil@tempb pt>\pgfutil@tempa pt\relax
+      % target ratio greater than actual
+      \pgfmathsetmacro\pgfutil@tempc{-(\pgf@picmaxx-\pgf@picminx)%
+      +\pgfutil@tempb*(\pgf@picmaxy-\pgf@picminy)}%
+      \path ([xshift=-0.5*\pgfutil@tempc]current bounding box.west)
+       ([xshift=0.5*\pgfutil@tempc]current bounding box.east);
+     \else
+      % target ratio smaller than actual
+      \pgfmathsetmacro\pgfutil@tempc{-(\pgf@picmaxy-\pgf@picminy)%
+      +(\pgf@picmaxx-\pgf@picminx)/\pgfutil@tempb}%
+      \path ([yshift=-0.5*\pgfutil@tempc]current bounding box.south)
+       ([yshift=0.5*\pgfutil@tempc]current bounding box.north);
+     \fi
+    \fi
+    }%  
+    }}
+}
+\makeatother
+
