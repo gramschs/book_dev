@@ -1,3 +1,4 @@
-# 9. Visualisierung mit Matplotlib
+# Folgen, Grenzwerte und Stetigkeit
 
-In diesem Kapitel geht es darum, Messdaten zu visualisieren.
+Neben Zahlenfolgen behandeln wir auch die Stetigkeit von Funktionen.
+

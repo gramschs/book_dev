@@ -1,76 +1,70 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>8.1 Series und DataFrame &#8212; DEVELOPMENT</title>
+    <title>8.1 Was sind komplexe Zahlen? &#8212; Mathematik 1 Maschinenbau</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/image-compare-viewer.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/my_styles.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=fcc42dec" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="../_static/image-compare-viewer.min.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter08/chapter08_sec01';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="8.2 Arbeiten mit Tabellendaten" href="chapter08_sec02.html" />
-    <link rel="prev" title="8. Pandas anstatt Excel" href="chapter08_sec00.html" />
+    <link rel="next" title="8.2 Addition, Subtraktion und Multiplikation komplexer Zahlen" href="chapter08_sec02.html" />
+    <link rel="prev" title="8. Komplexe Zahlen" href="chapter08_sec00.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -80,27 +74,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -122,8 +112,13 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -147,6 +142,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../intro.html">
   
@@ -154,203 +151,159 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+    
+    
+      
+    
+    
+    <img src="../_static/maths_background_small.png" class="logo__image only-light" alt="Mathematik 1 Maschinenbau - Home"/>
+    <script>document.write(`<img src="../_static/maths_background_small.png" class="logo__image only-dark" alt="Mathematik 1 Maschinenbau - Home"/>`);</script>
   
-    <p class="title logo__title">DEVELOPMENT</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Willkommen
+                    Willkommen zur Mathematik 1
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen Python</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathematischer Werkzeugkasten</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter01/chapter01_sec00.html">1. Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter01/chapter01_sec01.html">1.1 Hardware und Software</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter01/chapter01_sec02.html">1.2 Programmieren</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter01/chapter01_sec03.html">1.3 Installation und Start von Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter01/chapter01_sec04.html">Übungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter01/sec00.html">Grundlagen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter01/sec01.html">Mengen und Intervalle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter01/sec02.html">Rechenregeln</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter01/sec03.html">Potenzen, Wurzeln und Logarithmen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter01/sec04.html">Gleichungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter01/sec05.html">Polynomdivision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter01/sec06.html">Trigonometrie</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter02/chapter02_sec00.html">2. Eingabe, Verarbeitung und Ausgabe</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter02/chapter02_sec01.html">2.1 Taschenrechner und Ausgabe (print)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter02/chapter02_sec02.html">2.2 Datentypen und Variablen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter02/chapter02_sec03.html">2.3 Eingabe (input) und Zuweisungsoperator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter02/chapter02_sec04.html">Übungen</a></li>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter02/sec00.html">Funktionen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02/sec01.html">Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02/sec02.html">Eigenschaften von Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02/sec03.html">Polynome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02/sec04.html">Exponential- und Logarithmusfunktion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02/sec05.html">Trigonometrische Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02/sec06.html">Beziehungen zwischen trigonometrischen Funktionen</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter03/chapter03_sec00.html">3. Listen und Module</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter03/chapter03_sec01.html">3.1 Listen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter03/chapter03_sec02.html">3.2 Das Modul NumPy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter03/chapter03_sec03.html">3.3 Das Modul Turtle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter03/chapter03_sec04.html">Übungen</a></li>
+</details></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter04/chapter04_sec00.html">4. Zählschleifen (for) und Strings</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec01.html">4.1 for-Schleifen mit Liste</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec02.html">4.2 for-Schleifen mit range</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec03.html">4.3 Strings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec04.html">Übungen</a></li>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vektoren und ihre Anwendungen</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter03/sec00.html">3. Vektorrechnung (Teil 1)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter03/sec01.html">3.1 Koordinaten und Koordinatensysteme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter03/sec02.html">3.2 Vektoren und Vektorräume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter03/sec03.html">3.3 Vektoren in der Geometrie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter03/sec04.html">3.4 Affine Punkträume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter03/sec05.html">3.5 Betrag Vektor und Abstand Punkte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter03/sec06.html">3.6 Linearkombination und lineare Unabhängigkeit</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter05/chapter05_sec00.html">5. Programmverzweigung (if - elif - else)</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec01.html">5.1 Vergleiche und der boolesche Datentyp</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec02.html">5.2 Programmverzweigungen: if</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec03.html">5.3 Programmverzweigungen mit mehreren Zweigen: if – elif – else</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec04.html">Übungen</a></li>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter04/chapter04_sec00.html">Vektorrechnung (Teil 2)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec01.html">Basis, Rechts- und Linkssystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec02.html">Skalarprodukt (geometrisch)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec03.html">Skalarprodukt in Komponentendarstellung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec04.html">Vektorprodukt (geometrisch)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec05.html">Vektorprodukt in Komponentendarstellung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec06.html">Spatprodukt</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter06/chapter06_sec00.html">6. Funktionen</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec01.html">6.1 Funktionen selbst schreiben</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec02.html">6.2 Funktionen mit Parameter und Rückgabe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec03.html">6.3 Lokale und globale Variablen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec04.html">Übungen</a></li>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter05/chapter05_sec00.html">Punkte, Geraden und Ebenen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec01.html">Koordinatensystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec02.html">Geraden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec03.html">Ebenen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec04.html">Schnitt Gerade – Ebene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec05.html">Abstände</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec06.html">Winkel</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter07/chapter07_sec00.html">7. Digitale Logik und Schleifen mit Bedingung</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec01.html">7.1 Digitale Logik: und, oder, nicht</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec02.html">7.2 Schleifen mit Bedingung (while)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec03.html">7.3 Zufallszahlen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec04.html">Übungen</a></li>
+</details></li>
 </ul>
-</li>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Matrixrechnung</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter06/chapter06_sec00.html">Matrizen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec01.html">Was ist eine Matrix?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec02.html">Transponierte Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec03.html">Spezielle Matrizen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec04.html">Addition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec05.html">Multiplikation mit einem Skalar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec06.html">Multiplikation Matrix mit Matrix</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Anwendungen Python</span></p>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter07/chapter07_sec00.html">Determinanten und lineare Gleichungssysteme</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec01.html">Determinante (2x2 und 3x3)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec02.html">Determinante  (4x4 und mehr)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec03.html">Inverse und orthogonale Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec04.html">Lösen linearer Gleichungssysteme (LGS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec05.html">Eigenwerte und Eigenvektoren (2x2-Matrix)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec06.html">Eigenwerte und Eigenvektoren (3x3-Matrix und höher)</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Komplexe Zahlen</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter08_sec00.html">8. Pandas anstatt Excel</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.1 Series und DataFrame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter08_sec02.html">8.2 Arbeiten mit Tabellendaten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter08_sec03.html">8.3 Statistik mit Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter08_sec04.html">Übungen</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter08_sec00.html">8. Komplexe Zahlen</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.1 Was sind komplexe Zahlen?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter08_sec02.html">8.2 Addition, Subtraktion und Multiplikation komplexer Zahlen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter08_sec03.html">8.3 Betrag, komplexe Konjugation und Division</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter08_sec04.html">8.4 Komplexe Zahlen in trigonometrischer Form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter08_sec05.html">8.5 Komplexe Zahlen in Exponentialform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter08_sec06.html">8.6 Potenzen und Wurzeln komplexer Zahlen</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">9. Visualisierung mit Matplotlib</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">9.1 Linien- und Balkendiagramme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">9.2 Streudiagramme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">9.3 Visualisierung von DataFrames mit Fehlerbalken</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec04.html">9.4 Histogramme (optional)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec05.html">Übungen</a></li>
+</details></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">10. Messwerte und Regression</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">10.1 Theorie Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">10.2 Lineare Regression mit polyfit und polyval</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">10.3 Polynomiale Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Übungen</a></li>
-</ul>
-</li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Maschinelles Lernen - Getting started</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Funktionen</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter01/chapter01_sec00.html">1. Grundbegriffe des maschinellen Lernens</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter01/chapter01_sec01.html">1.1 Was ist maschinelles Lernen?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter01/chapter01_sec02.html">1.2 Überwachtes, unüberwachtes und verstärkendes Lernen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter01/chapter01_sec03.html">1.3 Technische Voraussetzungen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">Folgen, Grenzwerte und Stetigkeit</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">Grundwissen Zahlenfolgen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">Grenzwert einer Zahlenfolge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">Rechnen mit Grenzwerten von Folgen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec04.html">Funktionsgrenzwerte und ihre Rechenregeln</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec05.html">Stetigkeit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec06.html">Unstetigkeitsstellen</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter02/chapter02_sec00.html">2. Crashkurs Python</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter02/chapter02_sec01.html">2.1 Datentypen, Variablen und print()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter02/chapter02_sec02.html">2.2 Listen und for-Schleifen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter02/chapter02_sec03.html">2.3 Funktionen und Methoden</a></li>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">Differentialrechnung (Teil 1)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">Steigung und Differentialquotient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">Ableitung von elementaren Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">Faktor-, Summen- und Produktregel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Quotientenregel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec05.html">Kettenregel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec06.html">Ableitung der Umkehrfunktion</a></li>
 </ul>
-</li>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">Differentialrechnung (Teil 2)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">Linearisierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">Regel von Bernoulli de l’Hospital</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">Neigungswinkel / Schnittwinkel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec04.html">Monotonie und Krümmung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec05.html">Extrema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec06.html">Wendepunkte</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datenexploration</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter03/chapter03_sec00.html">3. Pandas und Plotly anstatt Excel</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter03/chapter03_sec01.html">3.1 Pandas Series</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter03/chapter03_sec02.html">3.2 Statistik mit Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter03/chapter03_sec03.html">3.3 Boxplots mit Plotly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter03/chapter03_sec04.html">Übungen</a></li>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">Integralrechnung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">Integration als Umkehrung der Differentiation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">Bestimmtes Integral und Rechenregeln</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">Unbestimmtes Integral bzw. Stammfunktion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec04.html">Hauptsatz der Differential- und Integralrechnung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec05.html">Integrationstechnik</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec06.html">Substitutionsregel und partielle Integration</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter04/chapter04_sec00.html">4. Tabellarische Daten erkunden</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter04/chapter04_sec01.html">4.1 Datenstruktur DataFrame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter04/chapter04_sec02.html">4.2 Arbeiten mit Tabellendaten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter04/chapter04_sec03.html">4.3 Scatterplots und Scattermatrix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter04/chapter04_sec04.html">Übungen</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter05/chapter05_sec00.html">5. Kategoriale Daten erkunden</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter05/chapter05_sec01.html">5.1 Was sind kategoriale Daten?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter05/chapter05_sec02.html">5.2 Barplots und Histogramme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter05/chapter05_sec03.html">5.3 Daten filtern und gruppieren</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter05/chapter05_sec04.html">Übungen</a></li>
-</ul>
-</li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">ML-Verfahren</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter06/chapter06_sec00.html">6. Lineare Regression</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter06/chapter06_sec01.html">6.1 Theorie der linearen Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter06/chapter06_sec02.html">6.2 Lineare Regression mit Scikit-Learn</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter06/chapter06_sec03.html">6.3 Multiple lineare Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter06/chapter06_sec04.html">Übungen</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter07/chapter07_sec00.html">7. Polynomiale Regression und ML-Workflow</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter07/chapter07_sec01.html">7.1 Datenvorverarbeitung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter07/chapter07_sec02.html">7.2 Modellvalidierung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter07/chapter07_sec03.html">7.3 Das Bias-Varianz-Dilemma am Beispiel der polynomialen Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter07/chapter07_sec04.html">Übungen</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter08/chapter08_sec00.html">8. Perzeptron</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter08/chapter08_sec01.html">8.1 Grundbaustein neuronaler Netze</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter08/chapter08_sec02.html">8.2 Die Perzeptron-Lernregel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter08/chapter08_sec03.html">8.3 Training eines Perzeptrons mit Scikit-Learn</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter08/chapter08_sec04.html">Übungen</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter09/chapter09_sec00.html">9. Logistische Regression</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-19"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter09/chapter09_sec01.html">9.1 Logistische Regression ersetzt Perzeptron</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter09/chapter09_sec02.html">9.2 Logistische Regression lernt mit Maximum-Likelihood</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter09/chapter09_sec03.html">9.3 Logistische Regression mit Scikit-Learn</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter09/chapter09_sec04.html">Übungen</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter10/chapter10_sec00.html">10. Support Vector Machines</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter10/chapter10_sec01.html">10.1 Maximiere den Rand, aber soft</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter10/chapter10_sec02.html">10.2 Training SVM mit Scikit-Learn</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter10/chapter10_sec03.html">10.3 Nichtlineare SVM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter10/chapter10_sec04.html">Übung</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter11/chapter11_sec00.html">11. Entscheidungsbäume (Decision Trees)</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-21"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec01.html">11.1 Was ist ein Entscheidungsbaum?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec02.html">11.2 Entscheidungsbäume viualisieren und trainieren</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec03.html">11.3 Entscheidungsbäume in der Praxis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_sec04.html">Übung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter11/chapter11_secextra01.html">Random Forests</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter12/chapter12_sec00.html">12. Neuronale Netze</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-22"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter12/chapter12_sec01.html">12.1 Mehrschichtiges Perzeptron</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter12/chapter12_sec02.html">12.2 Neuronale Netze mit Scikit-Learn</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter12/chapter12_sec03.html">12.3 Skalierung von Daten</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter12/chapter12_sec04.html">Übungen</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter13/chapter13_sec00.html">Bildverarbeitung mit Scikit-Image</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-23"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter13/chapter13_sec01.html">Grafiken</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter13/chapter13_sec02.html">Filter anwenden</a></li>
-</ul>
-</li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extras</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ml_chapter14/chapter14_sec00.html">Plotly</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-24"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter14/chapter14_sec01.html">Streudiagramm und Balkendiagramm</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter14/chapter14_sec02.html">Histogramme und Scattermatrix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml_chapter14/chapter14_sec03.html">Plots mit Karten</a></li>
-</ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -366,7 +319,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -375,14 +328,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -394,7 +347,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="article-header-buttons">
 
 
-<a href="https://github.com/gramschs/book_dev" target="_blank"
+<a href="https://github.com/gramschs/book_mathe01" target="_blank"
    class="btn btn-sm btn-source-repository-button"
    title="Source repository"
    data-bs-placement="bottom" data-bs-toggle="tooltip"
@@ -475,10 +428,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -486,14 +439,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -504,7 +457,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>8.1 Series und DataFrame</h1>
+    <h1>8.1 Was sind komplexe Zahlen?</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -515,15 +468,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-pandas">Import von pandas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#series-aus-liste-erzeugen">Series aus Liste erzeugen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe-fur-tabellen">DataFrame für Tabellen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen">Import von Tabellen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen-im-csv-format">Import von Tabellen im CSV-Format</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen-im-xlsx-format">Import von Tabellen im xlsx-Format</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubersicht-verschaffen-mit-info">Übersicht verschaffen mit info</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-imaginare-einheit-i-und-die-imaginaren-zahlen">Die imaginäre Einheit i und die imaginären Zahlen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komplexe-zahlen">Komplexe Zahlen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gauszsche-zahlenebene">Gaußsche Zahlenebene</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
         </div>
@@ -535,1064 +483,230 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="series-und-dataframe">
-<h1>8.1 Series und DataFrame<a class="headerlink" href="#series-und-dataframe" title="Permalink to this heading">#</a></h1>
-<p>Einfache Listen reichen nicht aus, um größere Datenmengen oder Tabellen
-effizient zu speichern. Dazu benutzen Data Scientists die Datentypen <code class="docutils literal notranslate"><span class="pre">Series</span></code>
-oder <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> aus dem Modul Pandas. Daher werden wir uns in diesem Kapitel
-mit diesen beiden Datentypen beschäftigen. Darüber hinaus lernen wir das häufig
-verwendete Datenformat <code class="docutils literal notranslate"><span class="pre">csv</span></code> kennen.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="was-sind-komplexe-zahlen">
+<h1>8.1 Was sind komplexe Zahlen?<a class="headerlink" href="#was-sind-komplexe-zahlen" title="Link to this heading">#</a></h1>
+<p>Mit zunehmender Komplexität unseres Alltags wächst auch die Komplexität der
+Zahlen, die wir benötigen, um ihn zu beschreiben. Bereits im Kindergarten lernen
+wir, mit Zahlen bis zehn umzugehen, um beispielsweise unser Alter oder die
+Anzahl der Gäste bei einem Geburtstag zu bestimmen. Hierbei handelt es sich um
+<em>natürliche Zahlen</em>, die grundlegend für das Zählen sind.</p>
+<p>Wenn wir jedoch in den Bereich der Finanzen eintauchen, erweitert sich unser
+Zahlenverständnis. Wenn wir beispielsweise mehr Geld ausgeben, als wir zur
+Verfügung haben, benötigen wir <em>ganze Zahlen</em>, um einen negativen Kontostand
+darzustellen. Beim Kauf eines Handys für 500 EUR, das wir in 24 Monatsraten
+abzahlen, nutzen wir <em>rationale Zahlen</em>. Die Monatsrate berechnet als 500/24 EUR
+illustriert dies anschaulich.</p>
+<p>Technische und naturwissenschaftliche Beschreibungen erfordern oft den Gebrauch
+von <em>reellen Zahlen</em>. Ein klassisches Beispiel ist die Länge der Diagonale eines
+DIN A4-Blattes, die mit <span class="math notranslate nohighlight">\(\sqrt{297^2 + 210^2}\)</span> mm berechnet wird und somit eine
+reelle Zahl ist. Doch auch die Welt der reellen Zahlen hat ihre Grenzen. Diese
+werden sichtbar, wenn wir versuchen, die quadratische Gleichung <span class="math notranslate nohighlight">\(x^2 = -1\)</span> zu
+lösen. Für solche Fälle benötigen wir die <em>komplexen Zahlen</em>, die über den
+Bereich der reellen Zahlen hinausgehen.</p>
 <section id="lernziele">
-<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this heading">#</a></h2>
-<div class="hint admonition">
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
+<div class="goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Sie können <strong>Pandas</strong> mit der üblichen Abkürzung pd importieren.</p></li>
-<li><p>Sie können aus einer Liste das Datenobjekt <strong>Series</strong> erzeugen.</p></li>
-<li><p>Sie kennen das <strong>CSV-Dateiformat</strong>.</p></li>
-<li><p>Sie können eine csv-Datei mit <strong>read_csv()</strong> einlesen.</p></li>
-<li><p>Sie konnen mit <strong>.info()</strong> sich einen Überblick über die importierten Daten verschaffen.</p></li>
+<li><p>Sie wissen, dass die <strong>imaginäre Einheit</strong> <span class="math notranslate nohighlight">\(\mathrm{i}\)</span> durch
+<span class="math notranslate nohighlight">\(\mathrm{i}^2=-1\)</span> definiert ist.</p></li>
+<li><p>Sie wissen, was eine <strong>imaginäre</strong> Zahl ist.</p></li>
+<li><p>Sie wissen, was eine <strong>komplexe Zahl</strong> ist.</p></li>
+<li><p>Sie wissen, was die <strong>Menge</strong> <span class="math notranslate nohighlight">\(\pmb{\mathbb{C}}\)</span> ist.</p></li>
+<li><p>Sie können eine komplexe Zahl in der <strong>Normalform</strong> formulieren.</p></li>
+<li><p>Sie können eine komplexe Zahl in die <strong>Gaußschen Zahlenebene</strong> einzeichnen.</p></li>
+<li><p>Sie können den <strong>Realteil</strong> und den <strong>Imaginärteil</strong> einer komplexen Zahl
+bestimmen.</p></li>
 </ul>
 </div>
 </section>
-<section id="import-von-pandas">
-<h2>Import von pandas<a class="headerlink" href="#import-von-pandas" title="Permalink to this heading">#</a></h2>
-<p>Pandas ist eine Bibliothek zur Verarbeitung und Analyse von Daten in Form von
-Datenreihen und Tabellen. Die beiden grundlegenden Datenstrukturen sind Series
-und DataFrame. Dabei wird <strong>Series</strong> für Datenreihen genommen, also sozusagen
-die Verallgemeinerung von Vektoren bzw. eindimensionalen Arrays. Der Datentyp
-<strong>DataFrame</strong> repräsentiert Tabellen, also sozusagen Matrizen bzw.
-verallgemeinerte zweidimensionale Arrays.</p>
-<p>Um das Modul pandas benutzen zu können, müssen wir es zunächst importieren. Es
-ist üblich, dabei dem Modul die Abkürzung <strong>pd</strong> zu geben, damit wir nicht immer
-pandas schreiben müssen, wenn wir eine Funktion aus dem pandas-Modul benutzen.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># kürze das Modul pandas als pd ab, um Schreibarbeit zu sparen</span>
-</pre></div>
+<section id="die-imaginare-einheit-i-und-die-imaginaren-zahlen">
+<h2>Die imaginäre Einheit i und die imaginären Zahlen<a class="headerlink" href="#die-imaginare-einheit-i-und-die-imaginaren-zahlen" title="Link to this heading">#</a></h2>
+<p>Innerhalb der Menge der reellen Zahlen <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> stößt man an Grenzen, wie
+beispielsweise bei der Lösung der quadratischen Gleichung</p>
+<div class="math notranslate nohighlight">
+\[x^2 = -1.\]</div>
+<p>Dies liegt daran, dass das Produkt zweier reeller Zahlen, egal ob positiv oder
+negativ, immer positiv ist, und somit die Gleichung in diesem Zahlensystem
+unlösbar ist. Selbst die Zahl 0 kann diese Gleichung nicht lösen.</p>
+<p>Um diese Lücke zu schließen, erfanden Mathematiker im 16. Jahrhundert eine
+neue Zahl, die sogenannte <strong>imaginäre Einheit</strong> und bezeichneten sie mit dem
+Symbol <span class="math notranslate nohighlight">\(\mathrm{i}\)</span>. Von dieser neuen Zahl forderten sie, dass sie mit sich
+selbst multipliziert -1 ergibt, also die Eigenschaft</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{i}^2 = -1\]</div>
+<p>erfüllen soll. Der Name »imaginär« wurde von <a class="reference external" href="https://de.wikipedia.org/wiki/Ren%C3%A9_Descartes">René
+Descartes</a> eingeführt. Imaginär
+ist ein lateinisches Adjektiv und bedeutet, dass etwas nicht wirklich vorhanden
+ist, sondern nur in der Einbildung oder Vorstellung einer Person existiert.</p>
+<p>Die imaginäre Einheit kann ähnlich wie eine physikalische Einheit benutzt
+werden. Beispielsweise gilt</p>
+<div class="math notranslate nohighlight">
+\[3\mathrm{i} + 2\mathrm{i} = 5\mathrm{i}\]</div>
+<p>oder</p>
+<div class="math notranslate nohighlight">
+\[2.5\mathrm{i} -3\mathrm{i} = -0.5 \mathrm{i}.\]</div>
+<p>Bei der Multiplikation oder dem Potenzieren können wir die Definition
+<span class="math notranslate nohighlight">\(\mathrm{i}^2 = -1\)</span> ausnutzen. Es gilt beispielsweise</p>
+<div class="math notranslate nohighlight">
+\[3\mathrm{i} \cdot 4\mathrm{i} = 12 \mathrm{i}^2 = 12 \cdot (-1) = -12\]</div>
+<p>oder</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{i}^3 = \mathrm{i}^2 \cdot \mathrm{i} = -1\cdot \mathrm{i} =
+-\mathrm{i}.\]</div>
+<p>Die imaginäre Einheit ist also zusammengefasst folgendermaßen definiert.</p>
+<div class="note admonition">
+<p class="admonition-title">Was ist … die imaginäre Einheit i?</p>
+<p>Die imaginäre Einheit <span class="math notranslate nohighlight">\(\mathrm{i}\)</span> ist eine spezielle, nicht-reelle Zahl mit der
+Eigenschaft</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{i}^2 = -1.\]</div>
 </div>
-</div>
+<p>Aus der imaginären Einheit <span class="math notranslate nohighlight">\(\mathrm{i}\)</span> wird dann eine sogenannte <strong>imaginäre
+Zahl</strong> gebildet, indem die imaginäre Einheit <span class="math notranslate nohighlight">\(\mathrm{i}\)</span> mit einem <em>reellen</em>
+Faktor <span class="math notranslate nohighlight">\(b\)</span>  multipliziert wird. Eine imaginäre Zahl ist also ein Vielfaches der
+imaginären Einheit. In Mengenschreibweise werden die imaginären Zahlen
+folgendermaßen notiert:</p>
+<div class="math notranslate nohighlight">
+\[\{b \cdot \mathrm{i} \, | \, b\in\mathbb{R} \text{ und } \mathrm{i}^2=-1\}.\]</div>
+<p>Für diese Menge gibt es kein besonderes Symbol wie beispielsweise für die
+reellen Zahlen <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p>
+</section>
+<section id="komplexe-zahlen">
+<h2>Komplexe Zahlen<a class="headerlink" href="#komplexe-zahlen" title="Link to this heading">#</a></h2>
+<p>Im vorherigen Abschnitt haben wir die imaginäre Einheit <span class="math notranslate nohighlight">\(\mathrm{i}\)</span> und die
+imaginären Zahlen <span class="math notranslate nohighlight">\(b\cdot\mathrm{i}\)</span> kennengelernt, bei denen die imaginäre
+Einheit <span class="math notranslate nohighlight">\(\mathrm{i}\)</span> mit einem reellen Faktor <span class="math notranslate nohighlight">\(b\)</span> multipliziert wird. Damit ist
+eine komplett neue Zahlenart entstanden, die wir nun mit den reellen Zahlen
+kombinieren wollen, um die komplexen Zahlen zu bilden.</p>
+<p>Eine komplexe Zahl <span class="math notranslate nohighlight">\(z\)</span> ist definiert als die Summe einer reellen Zahl und
+einer imaginären Zahl, also beispielsweise</p>
+<div class="math notranslate nohighlight">
+\[z = 2  + 3\mathrm{i}\]</div>
+<p>oder</p>
+<div class="math notranslate nohighlight">
+\[z = -\frac{5}{2} - \sqrt{3}\mathrm{i}.\]</div>
+<p>Und warum werden diese Zahlen komplex genannt? Das Adjektiv »komplex« ist
+wiederum ein lateinisches Wort und bedeutet vielschichtig oder zusammengesetzt.
+Komplexe Zahlen sind also Zahlen, die aus einer reellen Zahl und einer
+imaginären Zahl zusammengesetzt sind. Formal wird eine komplexe Zahl wie folgt
+notiert:</p>
+<div class="math notranslate nohighlight">
+\[z = a + b\mathrm{i}.\]</div>
+<p>Dabei sind <span class="math notranslate nohighlight">\(a\)</span> und <span class="math notranslate nohighlight">\(b\)</span> reelle Zahlen, d.h. <span class="math notranslate nohighlight">\(a, b \in \mathbb{R}\)</span>. Diese
+Darstellung ist als <strong>Normalform</strong> der komplexen Zahlen bekannt. In späteren
+Abschnitten werden weitere Darstellungsformen wie die trigonometrische Form und
+die Exponentialform eingeführt.</p>
+<p>Jetzt brauchen wir nur noch ein Symbol für die komplexen Zahlen. Für die
+natürlichen Zahlen wird das Symbol <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> verwendet, für die ganzen Zahlen
+<span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>. Das Symbol <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span> steht für die rationale Zahlen und
+<span class="math notranslate nohighlight">\(\mathbb{R}\)</span> für die reelle Zahlen. Die <strong>Menge der komplexen Zahlen</strong> wird
+durch das Symbol <span class="math notranslate nohighlight">\(\mathbb{C}\)</span> bezeichnet.</p>
+<p>Zusammengefasst werden also komplexe Zahlen folgendermaßen definiert.</p>
+<div class="note admonition">
+<p class="admonition-title">Was ist … eine komplexe Zahl?</p>
+<p>Eine komplexe Zahl ist eine zusammengesetzte Zahl aus einer reellen Zahl und
+einer imaginären Zahl</p>
+<div class="math notranslate nohighlight">
+\[z = a + b\mathrm{i}.\]</div>
+<p>Dabei ist <span class="math notranslate nohighlight">\(a\)</span> eine reelle Zahl und <span class="math notranslate nohighlight">\(b\mathrm{i}\)</span> eine imaginäre Zahl. Die Menge
+der komplexen Zahlen wird mit <span class="math notranslate nohighlight">\(\mathbb{C}\)</span> bezeichnet.</p>
 </div>
 </section>
-<section id="series-aus-liste-erzeugen">
-<h2>Series aus Liste erzeugen<a class="headerlink" href="#series-aus-liste-erzeugen" title="Permalink to this heading">#</a></h2>
-<p>Der Datentyp Series speichert Datenreihen. Liegt beispielsweise eine Reihe von
-Daten vor, die in einer Variable vom Datentyp Liste gespeichert ist, so wird
-über die Methode <code class="docutils literal notranslate"><span class="pre">pd.Series(liste)</span></code> ein neues Series-Objekt erzeugt, dass die
-Listenelemente enthält. Im folgenden Beispiel haben wir Altersangaben in einer
-Liste, also <code class="docutils literal notranslate"><span class="pre">[25,</span> <span class="pre">22,</span> <span class="pre">43,</span> <span class="pre">37]</span></code> und initialisieren über <code class="docutils literal notranslate"><span class="pre">pd.Series()</span></code> die
-Variable <code class="docutils literal notranslate"><span class="pre">alter</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">25</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">37</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">alter</span><span class="p">)</span>
-</pre></div>
+<section id="gauszsche-zahlenebene">
+<h2>Gaußsche Zahlenebene<a class="headerlink" href="#gauszsche-zahlenebene" title="Link to this heading">#</a></h2>
+<p>In der Schule werden üblicherweise die natürlichen Zahlen als Zahlenstrahl
+dargestellt. Das soll den Schülerinnen und Schülern helfen zu verstehen, dass
+die natürlichen Zahlen eine Ordnung haben, also beispielsweise <span class="math notranslate nohighlight">\(3 &lt; 7\)</span> gilt.
+Auch die Addition und die Subtraktion können so intuitiv erklärt werden.</p>
+<figure class="align-default" id="zahlenstrahl-n">
+<a class="reference internal image-reference" href="../_images/zahlenstrahl_N.svg"><img alt="../_images/zahlenstrahl_N.svg" src="../_images/zahlenstrahl_N.svg" width="100%" /></a>
+</figure>
+<p>Mit der Einführung der ganzen Zahlen wird der Zahlenstrahl zu einer
+Zahlengeraden erweitert.</p>
+<figure class="align-default" id="zahlenstrahl-z">
+<a class="reference internal image-reference" href="../_images/zahlenstrahl_Z.svg"><img alt="../_images/zahlenstrahl_Z.svg" src="../_images/zahlenstrahl_Z.svg" width="100%" /></a>
+</figure>
+<p>Die rationalen Zahlen werden zwischen den ganzen Zahlen
+eingefügt.</p>
+<figure class="align-default" id="zahlenstrahl-q">
+<a class="reference internal image-reference" href="../_images/zahlenstrahl_Q.svg"><img alt="../_images/zahlenstrahl_Q.svg" src="../_images/zahlenstrahl_Q.svg" width="100%" /></a>
+</figure>
+<p>Und letztendlich werden auch noch die reellen Zahlen dazugepackt.</p>
+<figure class="align-default" id="zahlenstrahl-r">
+<a class="reference internal image-reference" href="../_images/zahlenstrahl_R.svg"><img alt="../_images/zahlenstrahl_R.svg" src="../_images/zahlenstrahl_R.svg" width="100%" /></a>
+</figure>
+<p>Die imaginäre Einheit <span class="math notranslate nohighlight">\(\mathrm{i}\)</span> ist jedoch keine reelle Zahl und darf deshalb
+nicht auf der reellen Zahlengeraden <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> eingezeichnet werden. Sie liegt
+außerhalb. Dies gilt für alle imaginären Zahlen. Deshalb brauchen die imaginären
+Zahlen eine eigene Zahlengerade. Diese wird senkrecht zur reellen Zahlengerade
+aufgetragen, so dass ein zweidimensionales Koordinatensystem entsteht.</p>
+<figure class="align-default" id="zahlenebene">
+<a class="reference internal image-reference" href="../_images/zahlenebene.svg"><img alt="../_images/zahlenebene.svg" src="../_images/zahlenebene.svg" width="100%" /></a>
+</figure>
+<p>Auf der horizontalen Achse (Rechtsachse) werden die reellen Zahlen aufgetragen.
+Der reelle Teil einer komplexen Zahl wird als <strong>Realteil</strong> bezeichnet. Man
+könnte vermuten, dass auf der vertikalen Achse (Hochachse) die imaginären Zahlen
+augetragen würden. Dies ist aber nicht der Fall, sondern es werden die reellen
+Zahlen aufgetragen, mit denen die imaginäre Einheit <span class="math notranslate nohighlight">\(\mathrm{i}\)</span> multipliziert
+wird. Dieser Teil der komplexen Zahl wird <strong>Imaginärteil</strong> genannt.</p>
+<p><strong>Beispiel 1:</strong> Die komplexe Zahl</p>
+<div class="math notranslate nohighlight">
+\[z = 2 + 3\mathrm{i}\]</div>
+<p>hat den Realteil <span class="math notranslate nohighlight">\(2\)</span> und den Imaginärteil <span class="math notranslate nohighlight">\(3\)</span>. In der Gaußschen Zahlenebene wird
+<span class="math notranslate nohighlight">\(z = 3+2\mathrm{i}\)</span> als Punkt <span class="math notranslate nohighlight">\((2,3)\)</span> notiert.</p>
+<p><strong>Beispiel 2:</strong> Die komplexe Zahl</p>
+<div class="math notranslate nohighlight">
+\[z = -\frac{5}{2} - \sqrt{3}\mathrm{i}\]</div>
+<p>hat den Realteil <span class="math notranslate nohighlight">\(-\frac{5}{2}\)</span> und den Imaginärteil <span class="math notranslate nohighlight">\(\sqrt{3}\)</span>. In der
+Gaußschen Zahlenebene wird <span class="math notranslate nohighlight">\(z = -\frac{5}{2} - \sqrt{3}\mathrm{i}\)</span> als Punkt
+<span class="math notranslate nohighlight">\((-\frac{5}{2},-\sqrt{3})\)</span> notiert.</p>
+<p>Wir halten noch die allgemeine Definition der Begriffe Realteil und Imaginärteil fest.</p>
+<div class="note admonition">
+<p class="admonition-title">Was sind … Realteil und Imaginärteil?</p>
+<p>Ist <span class="math notranslate nohighlight">\(z\)</span> eine komplexe Zahl in der Normalform <span class="math notranslate nohighlight">\(z = a + b\mathrm{i}\)</span>, dann nennt
+man die reelle Zahl <span class="math notranslate nohighlight">\(a\)</span> den Realteil von <span class="math notranslate nohighlight">\(z\)</span>. Als Abkürzung wird das Symbol
+<span class="math notranslate nohighlight">\(\mathrm{Re}\)</span> benutzt und als Formel schreibt man</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{Re}(z) = \mathrm{Re}(a+b\mathrm{i}) = a.\]</div>
+<p>Die reelle Zahl <span class="math notranslate nohighlight">\(b\)</span>, die zusammen mit der imaginären Einheit <span class="math notranslate nohighlight">\(\mathrm{i}\)</span> die
+imaginäre Zahl <span class="math notranslate nohighlight">\(b\mathrm{i}\)</span> bildet, heißt Imaginärteil von <span class="math notranslate nohighlight">\(z\)</span>. Der
+Imaginärteil wird mit <span class="math notranslate nohighlight">\(\mathrm{Im}\)</span> abgekürzt. Als Formel schreibt man</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{Im}(z) = \mathrm{Im}(a+b\mathrm{i}) = b.\]</div>
 </div>
+<p>Für die beiden obigen Beispiele gilt also:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{Re}(2+3\mathrm{i}) = 2 \; \text{ und } \;
+\mathrm{Im}(2+3\mathrm{i}) = 3\]</div>
+<p>und</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{Re}\left(-\frac{5}{2} - \sqrt{3}\mathrm{i}\right) = -\frac{5}{2} 
+\; \text{ und } \; 
+\mathrm{Im}\left(\frac{5}{2} - \sqrt{3}\mathrm{i}\right) = -\sqrt{3}.\]</div>
+<p>Das folgende Video fasst die oben eingeführten Begriffe zusammen.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Komplexe Zahlen z=x+iy” von MathePeter</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LxPUwlQ2wn0" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    25
-1    22
-2    43
-3    37
-dtype: int64
-</pre></div>
+</details><p>Im nächsten Video präsentiert Herr Prof. Hoever eine Einführung in die komplexen
+Zahlen. Das Video zeigt auch schon die ersten Grundrechenoperationen, die aber
+erst im nächsten Kapitel eingeführt werden.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Komplexe Zahlen - Einführung” von Prof. Hoever</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ql5wpNTHXOo?si=XcFWE1tdYWQnykmw" title="YouTube video player" frameborder="0" allow="accelerometer; 
+autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
-</div>
-</div>
-<p>Was ist aber jetzt der Vorteil von Pandas? Warum nicht einfach bei der Liste
-bleiben oder aber, wenn Performance wichtig sein sollte, ein eindimensionales
-Numpy-Array nehmen? Der wichtigste Unterschied ist der <strong>Index</strong>.</p>
-<p>Bei einer Liste oder einem Numpy-Array ist der Index implizit definiert. Damit
-ist gemeint, dass bei der Initialisierung automatisch ein Index 0, 1, 2, 3, …
-angelegt wird. Wenn bei einer Liste <code class="docutils literal notranslate"><span class="pre">l</span> <span class="pre">=</span> <span class="pre">[25,</span> <span class="pre">22,</span> <span class="pre">43,</span> <span class="pre">37]</span></code> auf das zweite
-Element zugegriffen werden soll, dann verwenden wir den Index 1 (zur Erinnerung:
-Python zählt ab 0) und schreiben</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">37</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. Element der Liste: &quot;</span><span class="p">,</span> <span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2. Element der Liste:  22
-</pre></div>
-</div>
-</div>
-</div>
-<p>Die Datenstruktur Series ermöglich es aber, einen <em>expliziten Index</em> zu setzen.
-Über den optionalen Parameter <code class="docutils literal notranslate"><span class="pre">index=</span></code> speichern wir als Zusatzinformation noch
-ab, von welcher Person das Alter abgefragt wurde. In dem Fall sind es die vier
-Personen Alice, Bob, Charlie und Dora.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">25</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="s2">&quot;Dora&quot;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">alter</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alice      25
-Bob        22
-Charlie    43
-Dora       30
-dtype: int64
-</pre></div>
-</div>
-</div>
-</div>
-<p>Jetzt ist auch klar, warum beim ersten Mal, als wir <code class="docutils literal notranslate"><span class="pre">print(alter)</span></code> ausgeführt
-haben, die Zahlen 0, 1, 2, 3 ausgegeben wurden. Zu dem Zeitpunkt hatte das
-Series-Objekt noch einen impliziten Index wie eine Liste. Was noch an
-Informationen ausgegeben wird, ist das Attribut <code class="docutils literal notranslate"><span class="pre">dtype</span></code>. Darin gespeichert ist
-der Datentyp der gespeicherten Werte. Auf dieses Attribut kann auch direkt mit
-dem Punktoperator zugegegriffen werden.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">alter</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int64
-</pre></div>
-</div>
-</div>
-</div>
-<p>Offensichtlich sind die gespeicherten Werte Integer.</p>
-<div class="miniexercise admonition">
-<p class="admonition-title">Mini-Übung</p>
-<p>Erzeugen Sie ein Series-Objekt mit den Wochentagen als Index und der Anzahl der
-Vorlesungs/Übungs-Stunden an diesem Wochentag.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier Ihr Code:</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="minisolution toggle admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">stundenplan</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Montag&quot;</span><span class="p">,</span> <span class="s2">&quot;Dienstag&quot;</span><span class="p">,</span> <span class="s2">&quot;Mittwoch&quot;</span><span class="p">,</span> <span class="s2">&quot;Donnerstag&quot;</span><span class="p">,</span> <span class="s2">&quot;Freitag&quot;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">stundenplan</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</section>
-<section id="dataframe-fur-tabellen">
-<h2>DataFrame für Tabellen<a class="headerlink" href="#dataframe-fur-tabellen" title="Permalink to this heading">#</a></h2>
-<p>Bei Auswertung von Messungen ist aber der häufigste Fall der, dass Daten in Form
-einer Tabelle vorliegen. Ein DataFrame-Objekt entspricht einer Tabelle, wie man
-sie beispielsweise von Excel, LibreOffice oder Numbers kennt. Sowohl Zeile als
-auch Spalten sind indiziert. Typischerweise werden die Daten in der Tabelle
-zeilenweise angeordnet. Damit ist gemeint, dass jede Zeile einen Datensatz
-darstellt und die Spalten die Eigenschaften speichern.</p>
-<p>Ein DataFrame kann direkt über mehrere Pandas-Series-Objekte oder verschachtelte
-Listen erzeugt werden. Da es in der Praxis nur selten vorkommt und nur für sehr
-kleine Datenmengen praktikabel ist, Daten händisch zu erfassen, fokussieren wir
-gleich auf die Erzeugung von DataFrame-Objekten aus einer Datei.</p>
-</section>
-<section id="import-von-tabellen">
-<h2>Import von Tabellen<a class="headerlink" href="#import-von-tabellen" title="Permalink to this heading">#</a></h2>
-<p>Tabellen liegen werden oft in dem Dateiformat abgespeichert, das die jeweilige
-Tabellenkalkulationssoftware Excel, Numbers oder OpenOfficeCalc als Standard
-eingestellt hat. Wir betrachten in dieser Vorlesung aber primär Tabellen, die in
-einem offenen Standardformat vorliegen und damit unabhängig von der verwendeten
-Software und dem verwendeten Betriebssystem sind. Der Import von Excel wird kurz
-gestreift.</p>
-<section id="import-von-tabellen-im-csv-format">
-<h3>Import von Tabellen im CSV-Format<a class="headerlink" href="#import-von-tabellen-im-csv-format" title="Permalink to this heading">#</a></h3>
-<p>Das <strong>Dateiformat CSV</strong> speichert Daten zeilenweise ab. Dabei steht CSV für
-“comma separated value”. Die Trennung der Spalten erfolgt durch ein
-Trennzeichen, normalerweise durch das Komma. Im deutschsprachigen Raum wird
-gelegentlich ein Semikolon verwendet, weil Dezimalzahlen das Komma zum Abtrennen
-der Nacchkommastellen verwenden.</p>
-<p>Um Tabellen im csv-Format einzulesen, bietet Pandas eine eigene Funktion namens
-<code class="docutils literal notranslate"><span class="pre">read_csv</span></code> an (siehe
-<a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html">Dokumentation/read_csv</a>).
-Wird diese Funktion verwendet, um die Daten zu importieren, so wird automatisch
-ein DataFrame-Objekt erzeugt. Beim Aufruf der Funktion wird der Dateiname
-übergeben, aber beispielweise könnte auch ein anderes Trennzeichen eingestellt werden.</p>
-<p>Am besten sehen wir uns die Funktionsweise von <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> an einem Beispiel an.
-Sollten Sie mit einem lokalen JupyterNotebook arbeiten, laden Sie bitte die
-Datei
-<a class="reference external" href="https://nextcloud.frankfurt-university.de/s/yJjkkMSkWqcSxGL"><code class="docutils literal notranslate"><span class="pre">bundesliga_top7_offensive.csv</span></code></a>
-herunter und speichern Sie sie in denselben Ordner, in dem auch dieses
-JupyterNotebook liegt. Die csv-Datei stammt von
-<a class="reference external" href="https://www.kaggle.com/rajatrc1705/bundesliga-top-7-teams-offensive-stats?select=bundesliga_top7_offensive.csv">Kaggle</a>.
-Wie der Name schon verrät, sind darin Spielerdaten zu den Top7-Fußballvereinen
-der Bundesligasaison 2020/21 enthalten.</p>
-<p>Führen Sie dann anschließend die folgende Code-Zelle aus.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bundesliga_top7_offensive.csv&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Es erscheint keine Fehlermeldung, aber den Inhalt der geladenen Datei sehen wir
-trotzdem nicht. Dazu verwenden wir die Methode <code class="docutils literal notranslate"><span class="pre">.head()</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Name</th>
-      <th>Club</th>
-      <th>Nationality</th>
-      <th>Position</th>
-      <th>Age</th>
-      <th>Matches</th>
-      <th>Starts</th>
-      <th>Mins</th>
-      <th>Goals</th>
-      <th>Assists</th>
-      <th>Penalty_Goals</th>
-      <th>Penalty_Attempted</th>
-      <th>xG</th>
-      <th>xA</th>
-      <th>Yellow_Cards</th>
-      <th>Red_Cards</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Manuel Neuer</td>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>GK</td>
-      <td>34</td>
-      <td>33</td>
-      <td>33</td>
-      <td>2970</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.00</td>
-      <td>0.01</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Thomas Müller</td>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>MF</td>
-      <td>30</td>
-      <td>32</td>
-      <td>31</td>
-      <td>2674</td>
-      <td>11</td>
-      <td>19</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0.24</td>
-      <td>0.39</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>David Alaba</td>
-      <td>Bayern Munich</td>
-      <td>AUT</td>
-      <td>DF,MF</td>
-      <td>28</td>
-      <td>32</td>
-      <td>30</td>
-      <td>2675</td>
-      <td>2</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.04</td>
-      <td>0.08</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Jérôme Boateng</td>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>DF</td>
-      <td>31</td>
-      <td>29</td>
-      <td>29</td>
-      <td>2368</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.01</td>
-      <td>0.02</td>
-      <td>6</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Robert Lewandowski</td>
-      <td>Bayern Munich</td>
-      <td>POL</td>
-      <td>FW</td>
-      <td>31</td>
-      <td>29</td>
-      <td>28</td>
-      <td>2458</td>
-      <td>41</td>
-      <td>7</td>
-      <td>8</td>
-      <td>9</td>
-      <td>1.16</td>
-      <td>0.13</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>Die Methode <code class="docutils literal notranslate"><span class="pre">.head()</span></code> zeigt uns die ersten fünf Zeilen der Tabelle an. Wenn wir
-beispielsweise die ersten 10 Zeilen anzeigen lassen wollen, so verwenden wir die
-Methode <code class="docutils literal notranslate"><span class="pre">.head(10)</span></code>mit dem Argument 10.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Name</th>
-      <th>Club</th>
-      <th>Nationality</th>
-      <th>Position</th>
-      <th>Age</th>
-      <th>Matches</th>
-      <th>Starts</th>
-      <th>Mins</th>
-      <th>Goals</th>
-      <th>Assists</th>
-      <th>Penalty_Goals</th>
-      <th>Penalty_Attempted</th>
-      <th>xG</th>
-      <th>xA</th>
-      <th>Yellow_Cards</th>
-      <th>Red_Cards</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Manuel Neuer</td>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>GK</td>
-      <td>34</td>
-      <td>33</td>
-      <td>33</td>
-      <td>2970</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.00</td>
-      <td>0.01</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Thomas Müller</td>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>MF</td>
-      <td>30</td>
-      <td>32</td>
-      <td>31</td>
-      <td>2674</td>
-      <td>11</td>
-      <td>19</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0.24</td>
-      <td>0.39</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>David Alaba</td>
-      <td>Bayern Munich</td>
-      <td>AUT</td>
-      <td>DF,MF</td>
-      <td>28</td>
-      <td>32</td>
-      <td>30</td>
-      <td>2675</td>
-      <td>2</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.04</td>
-      <td>0.08</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Jérôme Boateng</td>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>DF</td>
-      <td>31</td>
-      <td>29</td>
-      <td>29</td>
-      <td>2368</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.01</td>
-      <td>0.02</td>
-      <td>6</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Robert Lewandowski</td>
-      <td>Bayern Munich</td>
-      <td>POL</td>
-      <td>FW</td>
-      <td>31</td>
-      <td>29</td>
-      <td>28</td>
-      <td>2458</td>
-      <td>41</td>
-      <td>7</td>
-      <td>8</td>
-      <td>9</td>
-      <td>1.16</td>
-      <td>0.13</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Joshua Kimmich</td>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>MF</td>
-      <td>25</td>
-      <td>27</td>
-      <td>25</td>
-      <td>2194</td>
-      <td>4</td>
-      <td>10</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.10</td>
-      <td>0.27</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Kingsley Coman</td>
-      <td>Bayern Munich</td>
-      <td>FRA</td>
-      <td>FW,MF</td>
-      <td>24</td>
-      <td>29</td>
-      <td>23</td>
-      <td>1752</td>
-      <td>5</td>
-      <td>10</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.21</td>
-      <td>0.34</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Benjamin Pavard</td>
-      <td>Bayern Munich</td>
-      <td>FRA</td>
-      <td>DF</td>
-      <td>24</td>
-      <td>24</td>
-      <td>22</td>
-      <td>1943</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.02</td>
-      <td>0.09</td>
-      <td>3</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Alphonso Davies</td>
-      <td>Bayern Munich</td>
-      <td>CAN</td>
-      <td>DF</td>
-      <td>19</td>
-      <td>23</td>
-      <td>22</td>
-      <td>1763</td>
-      <td>1</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.01</td>
-      <td>0.04</td>
-      <td>2</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Serge Gnabry</td>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>FW,MF</td>
-      <td>25</td>
-      <td>27</td>
-      <td>20</td>
-      <td>1644</td>
-      <td>10</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.44</td>
-      <td>0.25</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>Offensichtlich wurde beim Import der Daten wieder ein impliziter Index 0, 1, 2,
-usw. gesetzt. Das ist nicht weiter verwunderlich, denn Pandas kann nicht wissen,
-welche Spalte wir als Index vorgesehen haben. Und manchmal ist ein automatisch
-erzeugter impliziter Index auch nicht schlecht. In diesem Fall würden wir aber
-gerne als Zeilenindex die Namen der Spieler verwenden. Daher modifizieren wir
-den Befehl mit <code class="docutils literal notranslate"><span class="pre">index_col=</span></code>. Die Namen stehen in der 1. Spalte, was in
-Python-Zählweise einer 0 entspricht.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bundesliga_top7_offensive.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Club</th>
-      <th>Nationality</th>
-      <th>Position</th>
-      <th>Age</th>
-      <th>Matches</th>
-      <th>Starts</th>
-      <th>Mins</th>
-      <th>Goals</th>
-      <th>Assists</th>
-      <th>Penalty_Goals</th>
-      <th>Penalty_Attempted</th>
-      <th>xG</th>
-      <th>xA</th>
-      <th>Yellow_Cards</th>
-      <th>Red_Cards</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Manuel Neuer</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>GK</td>
-      <td>34</td>
-      <td>33</td>
-      <td>33</td>
-      <td>2970</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.00</td>
-      <td>0.01</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Thomas Müller</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>MF</td>
-      <td>30</td>
-      <td>32</td>
-      <td>31</td>
-      <td>2674</td>
-      <td>11</td>
-      <td>19</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0.24</td>
-      <td>0.39</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>David Alaba</th>
-      <td>Bayern Munich</td>
-      <td>AUT</td>
-      <td>DF,MF</td>
-      <td>28</td>
-      <td>32</td>
-      <td>30</td>
-      <td>2675</td>
-      <td>2</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.04</td>
-      <td>0.08</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Jérôme Boateng</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>DF</td>
-      <td>31</td>
-      <td>29</td>
-      <td>29</td>
-      <td>2368</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.01</td>
-      <td>0.02</td>
-      <td>6</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Robert Lewandowski</th>
-      <td>Bayern Munich</td>
-      <td>POL</td>
-      <td>FW</td>
-      <td>31</td>
-      <td>29</td>
-      <td>28</td>
-      <td>2458</td>
-      <td>41</td>
-      <td>7</td>
-      <td>8</td>
-      <td>9</td>
-      <td>1.16</td>
-      <td>0.13</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Joshua Kimmich</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>MF</td>
-      <td>25</td>
-      <td>27</td>
-      <td>25</td>
-      <td>2194</td>
-      <td>4</td>
-      <td>10</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.10</td>
-      <td>0.27</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Kingsley Coman</th>
-      <td>Bayern Munich</td>
-      <td>FRA</td>
-      <td>FW,MF</td>
-      <td>24</td>
-      <td>29</td>
-      <td>23</td>
-      <td>1752</td>
-      <td>5</td>
-      <td>10</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.21</td>
-      <td>0.34</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Benjamin Pavard</th>
-      <td>Bayern Munich</td>
-      <td>FRA</td>
-      <td>DF</td>
-      <td>24</td>
-      <td>24</td>
-      <td>22</td>
-      <td>1943</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.02</td>
-      <td>0.09</td>
-      <td>3</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Alphonso Davies</th>
-      <td>Bayern Munich</td>
-      <td>CAN</td>
-      <td>DF</td>
-      <td>19</td>
-      <td>23</td>
-      <td>22</td>
-      <td>1763</td>
-      <td>1</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.01</td>
-      <td>0.04</td>
-      <td>2</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>Serge Gnabry</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>FW,MF</td>
-      <td>25</td>
-      <td>27</td>
-      <td>20</td>
-      <td>1644</td>
-      <td>10</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.44</td>
-      <td>0.25</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-</section>
-<section id="import-von-tabellen-im-xlsx-format">
-<h3>Import von Tabellen im xlsx-Format<a class="headerlink" href="#import-von-tabellen-im-xlsx-format" title="Permalink to this heading">#</a></h3>
-<p>Eine sehr bekannte Tabellenkalkulationssoftware ist Excel von Microsoft. Excel
-bringt sein eigenens proprietäres Datenformat mit, in der Regel erkennbar an der
-Dateiendung <code class="docutils literal notranslate"><span class="pre">.xlsx</span></code>. Laden Sie sich den Datensatz zu den Top7-Bundesligavereinen
-als Excel-Datei
-<a class="reference external" href="https://nextcloud.frankfurt-university.de/s/wogabyEQbkSTtpm">bundesliga_top7_offensive.xlsx</a>
-herunter.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;bundesliga_top7_offensive.xlsx&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Club</th>
-      <th>Nationality</th>
-      <th>Position</th>
-      <th>Age</th>
-      <th>Matches</th>
-      <th>Starts</th>
-      <th>Mins</th>
-      <th>Goals</th>
-      <th>Assists</th>
-      <th>Penalty_Goals</th>
-      <th>Penalty_Attempted</th>
-      <th>xG</th>
-      <th>xA</th>
-      <th>Yellow_Cards</th>
-      <th>Red_Cards</th>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Manuel Neuer</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>GK</td>
-      <td>34</td>
-      <td>33</td>
-      <td>33</td>
-      <td>2970</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.00</td>
-      <td>0.01</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Thomas Müller</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>MF</td>
-      <td>30</td>
-      <td>32</td>
-      <td>31</td>
-      <td>2674</td>
-      <td>11</td>
-      <td>19</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0.24</td>
-      <td>0.39</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>David Alaba</th>
-      <td>Bayern Munich</td>
-      <td>AUT</td>
-      <td>DF,MF</td>
-      <td>28</td>
-      <td>32</td>
-      <td>30</td>
-      <td>2675</td>
-      <td>2</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.04</td>
-      <td>0.08</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Jérôme Boateng</th>
-      <td>Bayern Munich</td>
-      <td>GER</td>
-      <td>DF</td>
-      <td>31</td>
-      <td>29</td>
-      <td>29</td>
-      <td>2368</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.01</td>
-      <td>0.02</td>
-      <td>6</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Robert Lewandowski</th>
-      <td>Bayern Munich</td>
-      <td>POL</td>
-      <td>FW</td>
-      <td>31</td>
-      <td>29</td>
-      <td>28</td>
-      <td>2458</td>
-      <td>41</td>
-      <td>7</td>
-      <td>8</td>
-      <td>9</td>
-      <td>1.16</td>
-      <td>0.13</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>Vermutlich erhalten Sie zunächst eine Fehlermeldung: <code class="docutils literal notranslate"><span class="pre">Missing</span> <span class="pre">optional</span> <span class="pre">dependency</span> <span class="pre">'openpyxl'.</span>&#160; <span class="pre">Use</span> <span class="pre">pip</span> <span class="pre">or</span> <span class="pre">conda</span> <span class="pre">to</span> <span class="pre">install</span> <span class="pre">openpyxl.</span></code> Falls das der
-Fall sein sollte und Sie interessiert daran sind, Excel-Dateien lesen und
-schreiben zu können, installieren Sie bitte das Modul <code class="docutils literal notranslate"><span class="pre">openpyxl</span></code> mit <code class="docutils literal notranslate"><span class="pre">!conda</span> <span class="pre">install</span> <span class="pre">openpyxl</span></code> oder <code class="docutils literal notranslate"><span class="pre">!pip</span> <span class="pre">install</span> <span class="pre">openpyxl</span> </code> nach. In dieser Vorlesung
-verwenden wir nur CSV-Dateien, so dass ein Nachinstallieren für die
-Vorlesung/Übung nicht notwendig ist.</p>
-</section>
-</section>
-<section id="ubersicht-verschaffen-mit-info">
-<h2>Übersicht verschaffen mit info<a class="headerlink" href="#ubersicht-verschaffen-mit-info" title="Permalink to this heading">#</a></h2>
-<p>Das obige Beispiel zeigt uns zwar nun die ersten 10 Zeilen des importierten
-Datensatzes, aber wie viele Daten insgesamt enthalten sind oder welche Vereine
-noch kommen, können wir mit der <code class="docutils literal notranslate"><span class="pre">.head()</span></code>-Methode nicht erfassen. Dafür stellt
-Pandas die Methode <code class="docutils literal notranslate"><span class="pre">.info()</span></code> zur Verfügung. Probieren wir es einfach aus.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-Index: 177 entries, Manuel Neuer to Joshua Mees
-Data columns (total 15 columns):
- #   Column             Non-Null Count  Dtype  
----  ------             --------------  -----  
- 0   Club               177 non-null    object 
- 1   Nationality        177 non-null    object 
- 2   Position           177 non-null    object 
- 3   Age                177 non-null    int64  
- 4   Matches            177 non-null    int64  
- 5   Starts             177 non-null    int64  
- 6   Mins               177 non-null    int64  
- 7   Goals              177 non-null    int64  
- 8   Assists            177 non-null    int64  
- 9   Penalty_Goals      177 non-null    int64  
- 10  Penalty_Attempted  177 non-null    int64  
- 11  xG                 177 non-null    float64
- 12  xA                 177 non-null    float64
- 13  Yellow_Cards       177 non-null    int64  
- 14  Red_Cards          177 non-null    int64  
-dtypes: float64(2), int64(10), object(3)
-memory usage: 22.1+ KB
-</pre></div>
-</div>
-</div>
-</div>
-<p>Mit <code class="docutils literal notranslate"><span class="pre">.info()</span></code> erhalten wir eine Übersicht, wie viele Spalten es gibt und auch
-die Spaltenüberschriften werden aufgelistet. Dabei sind Überschriften wie <code class="docutils literal notranslate"><span class="pre">Name</span></code>
-selbsterklärend, aber was <code class="docutils literal notranslate"><span class="pre">xG</span></code> bedeutet, erschließt sich nicht von selbst. Dazu
-brauchen wir mehr Informationen von den Autor:innen der Daten.</p>
-<p>Weiterhin entnehmen wir der Ausgabe von <code class="docutils literal notranslate"><span class="pre">.info()</span></code>, dass in jeder Spalte 177
-Einträge sind, die ‘non-null’ sind. Damit ist gemeint, dass diese Zellen beim
-Import nicht leer waren. Zudem wird bei jeder Spalte noch der Datentyp
-angegeben. Für die Namen, die als Strings gespeichert sind, wird der allgemeine
-Datentyp ‘object’ angegeben. Beim Alter/Age wurden korrektweise Integer erkannt
-und die mittlere erwartete Anzahl von Toren pro Spiel ‘xG’ (= expected number of
-goals from the player in a match) wird als Float angegeben.</p>
+</details></section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>In diesem Kapitel haben Sie gelernt, was eine komplexe Zahl ist und wie eine
+komplexe Zahl als Punkt in der Gaußschen Zahlenebene interpretiert wird. Diese
+geometrische Interpretation wird uns helfen, die Rechenregeln der komplexen
+Zahlen besser zu verstehen, die in den nächsten Kapiteln erläutert werden.</p>
 </section>
 </section>
 
@@ -1623,7 +737,7 @@ goals from the player in a match) wird als Float angegeben.</p>
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1632,7 +746,7 @@ goals from the player in a match) wird als Float angegeben.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">8. Pandas anstatt Excel</p>
+        <p class="prev-next-title">8. Komplexe Zahlen</p>
       </div>
     </a>
     <a class="right-next"
@@ -1640,7 +754,7 @@ goals from the player in a match) wird als Float angegeben.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">8.2 Arbeiten mit Tabellendaten</p>
+        <p class="prev-next-title">8.2 Addition, Subtraktion und Multiplikation komplexer Zahlen</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1661,15 +775,10 @@ goals from the player in a match) wird als Float angegeben.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-pandas">Import von pandas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#series-aus-liste-erzeugen">Series aus Liste erzeugen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe-fur-tabellen">DataFrame für Tabellen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen">Import von Tabellen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen-im-csv-format">Import von Tabellen im CSV-Format</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-von-tabellen-im-xlsx-format">Import von Tabellen im xlsx-Format</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubersicht-verschaffen-mit-info">Übersicht verschaffen mit info</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-imaginare-einheit-i-und-die-imaginaren-zahlen">Die imaginäre Einheit i und die imaginären Zahlen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komplexe-zahlen">Komplexe Zahlen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gauszsche-zahlenebene">Gaußsche Zahlenebene</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>
 
@@ -1717,8 +826,8 @@ By Simone Gramsch
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,5 +1,4 @@
-# 10. Messwerte und Regression
+# Differentialrechnung (Teil 1)
 
-Nachdem wir gelernt haben, Messwerte einzulesen, statistische Kennzahlen zu
-berechnen und die Daten zu visualisieren, geht es in diesem Kapitel darum, eine
-Modellfunktion an die Messwerte anzupassen.
+In diesem Kapitel lernen wir zunächst, was eine Ableitung ist. Im nächsten Kapitel werden wir dann Ableitungen anwenden.
+

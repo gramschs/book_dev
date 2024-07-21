@@ -1,251 +1,282 @@
----
-jupytext:
-  formats: ipynb,md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: Python 3 (ipykernel)
-  language: python
-  name: python3
----
+# 8.1 Was sind komplexe Zahlen?
 
-# 8.1 Series und DataFrame 
+Mit zunehmender Komplexität unseres Alltags wächst auch die Komplexität der
+Zahlen, die wir benötigen, um ihn zu beschreiben. Bereits im Kindergarten lernen
+wir, mit Zahlen bis zehn umzugehen, um beispielsweise unser Alter oder die
+Anzahl der Gäste bei einem Geburtstag zu bestimmen. Hierbei handelt es sich um
+*natürliche Zahlen*, die grundlegend für das Zählen sind.
 
-Einfache Listen reichen nicht aus, um größere Datenmengen oder Tabellen
-effizient zu speichern. Dazu benutzen Data Scientists die Datentypen `Series`
-oder `DataFrame` aus dem Modul Pandas. Daher werden wir uns in diesem Kapitel
-mit diesen beiden Datentypen beschäftigen. Darüber hinaus lernen wir das häufig
-verwendete Datenformat `csv` kennen.
+Wenn wir jedoch in den Bereich der Finanzen eintauchen, erweitert sich unser
+Zahlenverständnis. Wenn wir beispielsweise mehr Geld ausgeben, als wir zur
+Verfügung haben, benötigen wir *ganze Zahlen*, um einen negativen Kontostand
+darzustellen. Beim Kauf eines Handys für 500 EUR, das wir in 24 Monatsraten
+abzahlen, nutzen wir *rationale Zahlen*. Die Monatsrate berechnet als 500/24 EUR
+illustriert dies anschaulich.
+
+Technische und naturwissenschaftliche Beschreibungen erfordern oft den Gebrauch
+von *reellen Zahlen*. Ein klassisches Beispiel ist die Länge der Diagonale eines
+DIN A4-Blattes, die mit $\sqrt{297^2 + 210^2}$ mm berechnet wird und somit eine
+reelle Zahl ist. Doch auch die Welt der reellen Zahlen hat ihre Grenzen. Diese
+werden sichtbar, wenn wir versuchen, die quadratische Gleichung $x^2 = -1$ zu
+lösen. Für solche Fälle benötigen wir die *komplexen Zahlen*, die über den
+Bereich der reellen Zahlen hinausgehen.
 
 
 ## Lernziele
 
-```{admonition} Lernziele
-:class: hint
-* Sie können **Pandas** mit der üblichen Abkürzung pd importieren.
-* Sie können aus einer Liste das Datenobjekt **Series** erzeugen.
-* Sie kennen das **CSV-Dateiformat**.
-* Sie können eine csv-Datei mit **read_csv()** einlesen.
-* Sie konnen mit **.info()** sich einen Überblick über die importierten Daten verschaffen.
+```{admonition} Lernziele 
+:class: goals
+* Sie wissen, dass die **imaginäre Einheit** $\mathrm{i}$ durch
+  $\mathrm{i}^2=-1$ definiert ist.
+* Sie wissen, was eine **imaginäre** Zahl ist.
+* Sie wissen, was eine **komplexe Zahl** ist.
+* Sie wissen, was die **Menge** $\pmb{\mathbb{C}}$ ist.
+* Sie können eine komplexe Zahl in der **Normalform** formulieren.
+* Sie können eine komplexe Zahl in die **Gaußschen Zahlenebene** einzeichnen. 
+* Sie können den **Realteil** und den **Imaginärteil** einer komplexen Zahl
+  bestimmen.
 ```
 
-## Import von pandas
 
-Pandas ist eine Bibliothek zur Verarbeitung und Analyse von Daten in Form von
-Datenreihen und Tabellen. Die beiden grundlegenden Datenstrukturen sind Series
-und DataFrame. Dabei wird **Series** für Datenreihen genommen, also sozusagen
-die Verallgemeinerung von Vektoren bzw. eindimensionalen Arrays. Der Datentyp
-**DataFrame** repräsentiert Tabellen, also sozusagen Matrizen bzw.
-verallgemeinerte zweidimensionale Arrays. 
+## Die imaginäre Einheit i und die imaginären Zahlen
 
-Um das Modul pandas benutzen zu können, müssen wir es zunächst importieren. Es
-ist üblich, dabei dem Modul die Abkürzung **pd** zu geben, damit wir nicht immer
-pandas schreiben müssen, wenn wir eine Funktion aus dem pandas-Modul benutzen.
+Innerhalb der Menge der reellen Zahlen $\mathbb{R}$ stößt man an Grenzen, wie
+beispielsweise bei der Lösung der quadratischen Gleichung 
 
-```{code-cell} ipython3
-import pandas as pd # kürze das Modul pandas als pd ab, um Schreibarbeit zu sparen
+$$x^2 = -1.$$
+
+Dies liegt daran, dass das Produkt zweier reeller Zahlen, egal ob positiv oder
+negativ, immer positiv ist, und somit die Gleichung in diesem Zahlensystem
+unlösbar ist. Selbst die Zahl 0 kann diese Gleichung nicht lösen. 
+
+Um diese Lücke zu schließen, erfanden Mathematiker im 16. Jahrhundert eine
+neue Zahl, die sogenannte **imaginäre Einheit** und bezeichneten sie mit dem
+Symbol $\mathrm{i}$. Von dieser neuen Zahl forderten sie, dass sie mit sich
+selbst multipliziert -1 ergibt, also die Eigenschaft
+
+$$\mathrm{i}^2 = -1$$
+
+erfüllen soll. Der Name »imaginär« wurde von [René
+Descartes](https://de.wikipedia.org/wiki/René_Descartes) eingeführt. Imaginär
+ist ein lateinisches Adjektiv und bedeutet, dass etwas nicht wirklich vorhanden
+ist, sondern nur in der Einbildung oder Vorstellung einer Person existiert. 
+
+Die imaginäre Einheit kann ähnlich wie eine physikalische Einheit benutzt
+werden. Beispielsweise gilt
+
+$$3\mathrm{i} + 2\mathrm{i} = 5\mathrm{i}$$
+
+oder 
+
+$$2.5\mathrm{i} -3\mathrm{i} = -0.5 \mathrm{i}.$$
+
+Bei der Multiplikation oder dem Potenzieren können wir die Definition
+$\mathrm{i}^2 = -1$ ausnutzen. Es gilt beispielsweise 
+
+$$3\mathrm{i} \cdot 4\mathrm{i} = 12 \mathrm{i}^2 = 12 \cdot (-1) = -12$$
+
+oder 
+
+$$\mathrm{i}^3 = \mathrm{i}^2 \cdot \mathrm{i} = -1\cdot \mathrm{i} =
+-\mathrm{i}.$$ 
+
+Die imaginäre Einheit ist also zusammengefasst folgendermaßen definiert.
+
+```{admonition} Was ist ... die imaginäre Einheit i?
+:class: note
+Die imaginäre Einheit $\mathrm{i}$ ist eine spezielle, nicht-reelle Zahl mit der
+Eigenschaft
+
+$$\mathrm{i}^2 = -1.$$
 ```
 
-## Series aus Liste erzeugen
+Aus der imaginären Einheit $\mathrm{i}$ wird dann eine sogenannte **imaginäre
+Zahl** gebildet, indem die imaginäre Einheit $\mathrm{i}$ mit einem *reellen*
+Faktor $b$  multipliziert wird. Eine imaginäre Zahl ist also ein Vielfaches der
+imaginären Einheit. In Mengenschreibweise werden die imaginären Zahlen
+folgendermaßen notiert:
 
-Der Datentyp Series speichert Datenreihen. Liegt beispielsweise eine Reihe von
-Daten vor, die in einer Variable vom Datentyp Liste gespeichert ist, so wird
-über die Methode `pd.Series(liste)` ein neues Series-Objekt erzeugt, dass die
-Listenelemente enthält. Im folgenden Beispiel haben wir Altersangaben in einer
-Liste, also `[25, 22, 43, 37]` und initialisieren über `pd.Series()` die
-Variable `alter`:
+$$\{b \cdot \mathrm{i} \, | \, b\in\mathbb{R} \text{ und } \mathrm{i}^2=-1\}.$$
 
-```{code-cell} ipython3
-alter = pd.Series([25, 22, 43, 37])
-print(alter)
+Für diese Menge gibt es kein besonderes Symbol wie beispielsweise für die
+reellen Zahlen $\mathbb{R}$.
+
+
+## Komplexe Zahlen
+
+Im vorherigen Abschnitt haben wir die imaginäre Einheit $\mathrm{i}$ und die
+imaginären Zahlen $b\cdot\mathrm{i}$ kennengelernt, bei denen die imaginäre
+Einheit $\mathrm{i}$ mit einem reellen Faktor $b$ multipliziert wird. Damit ist
+eine komplett neue Zahlenart entstanden, die wir nun mit den reellen Zahlen
+kombinieren wollen, um die komplexen Zahlen zu bilden.
+
+Eine komplexe Zahl $z$ ist definiert als die Summe einer reellen Zahl und
+einer imaginären Zahl, also beispielsweise
+
+$$z = 2  + 3\mathrm{i}$$
+
+oder 
+
+$$z = -\frac{5}{2} - \sqrt{3}\mathrm{i}.$$
+
+Und warum werden diese Zahlen komplex genannt? Das Adjektiv »komplex« ist
+wiederum ein lateinisches Wort und bedeutet vielschichtig oder zusammengesetzt.
+Komplexe Zahlen sind also Zahlen, die aus einer reellen Zahl und einer
+imaginären Zahl zusammengesetzt sind. Formal wird eine komplexe Zahl wie folgt
+notiert:
+
+$$z = a + b\mathrm{i}.$$
+
+Dabei sind $a$ und $b$ reelle Zahlen, d.h. $a, b \in \mathbb{R}$. Diese
+Darstellung ist als **Normalform** der komplexen Zahlen bekannt. In späteren
+Abschnitten werden weitere Darstellungsformen wie die trigonometrische Form und
+die Exponentialform eingeführt. 
+
+Jetzt brauchen wir nur noch ein Symbol für die komplexen Zahlen. Für die
+natürlichen Zahlen wird das Symbol $\mathbb{N}$ verwendet, für die ganzen Zahlen
+$\mathbb{Z}$. Das Symbol $\mathbb{Q}$ steht für die rationale Zahlen und
+$\mathbb{R}$ für die reelle Zahlen. Die **Menge der komplexen Zahlen** wird
+durch das Symbol $\mathbb{C}$ bezeichnet. 
+
+Zusammengefasst werden also komplexe Zahlen folgendermaßen definiert.
+
+```{admonition} Was ist ... eine komplexe Zahl?
+:class: note
+Eine komplexe Zahl ist eine zusammengesetzte Zahl aus einer reellen Zahl und
+einer imaginären Zahl
+
+$$z = a + b\mathrm{i}.$$
+
+Dabei ist $a$ eine reelle Zahl und $b\mathrm{i}$ eine imaginäre Zahl. Die Menge
+der komplexen Zahlen wird mit $\mathbb{C}$ bezeichnet.
 ```
 
-Was ist aber jetzt der Vorteil von Pandas? Warum nicht einfach bei der Liste
-bleiben oder aber, wenn Performance wichtig sein sollte, ein eindimensionales
-Numpy-Array nehmen? Der wichtigste Unterschied ist der **Index**.
 
-Bei einer Liste oder einem Numpy-Array ist der Index implizit definiert. Damit
-ist gemeint, dass bei der Initialisierung automatisch ein Index 0, 1, 2, 3, ...
-angelegt wird. Wenn bei einer Liste `l = [25, 22, 43, 37]` auf das zweite
-Element zugegriffen werden soll, dann verwenden wir den Index 1 (zur Erinnerung:
-Python zählt ab 0) und schreiben
+## Gaußsche Zahlenebene
 
-```{code-cell} ipython3
-l = [25, 22, 43, 37]
-print("2. Element der Liste: ", l[1])
+In der Schule werden üblicherweise die natürlichen Zahlen als Zahlenstrahl
+dargestellt. Das soll den Schülerinnen und Schülern helfen zu verstehen, dass
+die natürlichen Zahlen eine Ordnung haben, also beispielsweise $3 < 7$ gilt.
+Auch die Addition und die Subtraktion können so intuitiv erklärt werden.
+
+```{figure} pics/zahlenstrahl_N.svg
+---
+width: 100%
+name: zahlenstrahl_N
+---
 ```
 
-Die Datenstruktur Series ermöglich es aber, einen *expliziten Index* zu setzen.
-Über den optionalen Parameter `index=` speichern wir als Zusatzinformation noch
-ab, von welcher Person das Alter abgefragt wurde. In dem Fall sind es die vier
-Personen Alice, Bob, Charlie und Dora.
+Mit der Einführung der ganzen Zahlen wird der Zahlenstrahl zu einer
+Zahlengeraden erweitert. 
 
-```{code-cell} ipython3
-alter = pd.Series([25, 22, 43, 30], index=["Alice", "Bob", "Charlie", "Dora"])
-print(alter)
+```{figure} pics/zahlenstrahl_Z.svg
+---
+width: 100%
+name: zahlenstrahl_Z
+---
 ```
 
-Jetzt ist auch klar, warum beim ersten Mal, als wir `print(alter)` ausgeführt
-haben, die Zahlen 0, 1, 2, 3 ausgegeben wurden. Zu dem Zeitpunkt hatte das
-Series-Objekt noch einen impliziten Index wie eine Liste. Was noch an
-Informationen ausgegeben wird, ist das Attribut `dtype`. Darin gespeichert ist
-der Datentyp der gespeicherten Werte. Auf dieses Attribut kann auch direkt mit
-dem Punktoperator zugegegriffen werden.
+Die rationalen Zahlen werden zwischen den ganzen Zahlen
+eingefügt.
 
-```{code-cell} ipython3
-print(alter.dtype)
+```{figure} pics/zahlenstrahl_Q.svg
+---
+width: 100%
+name: zahlenstrahl_Q
+---
 ```
 
-Offensichtlich sind die gespeicherten Werte Integer.
+Und letztendlich werden auch noch die reellen Zahlen dazugepackt.
 
-```{admonition} Mini-Übung
-:class: miniexercise 
-Erzeugen Sie ein Series-Objekt mit den Wochentagen als Index und der Anzahl der
-Vorlesungs/Übungs-Stunden an diesem Wochentag.
+```{figure} pics/zahlenstrahl_R.svg
+---
+width: 100%
+name: zahlenstrahl_R
+---
 ```
 
-```{code-cell} ipython3
-# Hier Ihr Code:
+Die imaginäre Einheit $\mathrm{i}$ ist jedoch keine reelle Zahl und darf deshalb
+nicht auf der reellen Zahlengeraden $\mathbb{R}$ eingezeichnet werden. Sie liegt
+außerhalb. Dies gilt für alle imaginären Zahlen. Deshalb brauchen die imaginären
+Zahlen eine eigene Zahlengerade. Diese wird senkrecht zur reellen Zahlengerade
+aufgetragen, so dass ein zweidimensionales Koordinatensystem entsteht.
+
+```{figure} pics/zahlenebene.svg
+---
+width: 100%
+name: zahlenebene
+---
 ```
 
-````{admonition} Lösung
-:class: minisolution, toggle
-```python
-stundenplan = pd.Series([4, 0, 4, 6, 8], index=["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"])
-print(stundenplan)
-```
-````
+Auf der horizontalen Achse (Rechtsachse) werden die reellen Zahlen aufgetragen.
+Der reelle Teil einer komplexen Zahl wird als **Realteil** bezeichnet. Man
+könnte vermuten, dass auf der vertikalen Achse (Hochachse) die imaginären Zahlen
+augetragen würden. Dies ist aber nicht der Fall, sondern es werden die reellen
+Zahlen aufgetragen, mit denen die imaginäre Einheit $\mathrm{i}$ multipliziert
+wird. Dieser Teil der komplexen Zahl wird **Imaginärteil** genannt.
 
-+++
+**Beispiel 1:** Die komplexe Zahl 
 
-## DataFrame für Tabellen
+$$z = 2 + 3\mathrm{i}$$
 
-Bei Auswertung von Messungen ist aber der häufigste Fall der, dass Daten in Form
-einer Tabelle vorliegen. Ein DataFrame-Objekt entspricht einer Tabelle, wie man
-sie beispielsweise von Excel, LibreOffice oder Numbers kennt. Sowohl Zeile als
-auch Spalten sind indiziert. Typischerweise werden die Daten in der Tabelle
-zeilenweise angeordnet. Damit ist gemeint, dass jede Zeile einen Datensatz
-darstellt und die Spalten die Eigenschaften speichern.
+hat den Realteil $2$ und den Imaginärteil $3$. In der Gaußschen Zahlenebene wird
+$z = 3+2\mathrm{i}$ als Punkt $(2,3)$ notiert.
 
-Ein DataFrame kann direkt über mehrere Pandas-Series-Objekte oder verschachtelte
-Listen erzeugt werden. Da es in der Praxis nur selten vorkommt und nur für sehr
-kleine Datenmengen praktikabel ist, Daten händisch zu erfassen, fokussieren wir
-gleich auf die Erzeugung von DataFrame-Objekten aus einer Datei. 
+**Beispiel 2:** Die komplexe Zahl
 
-## Import von Tabellen 
+$$z = -\frac{5}{2} - \sqrt{3}\mathrm{i}$$
 
-Tabellen liegen werden oft in dem Dateiformat abgespeichert, das die jeweilige
-Tabellenkalkulationssoftware Excel, Numbers oder OpenOfficeCalc als Standard
-eingestellt hat. Wir betrachten in dieser Vorlesung aber primär Tabellen, die in
-einem offenen Standardformat vorliegen und damit unabhängig von der verwendeten
-Software und dem verwendeten Betriebssystem sind. Der Import von Excel wird kurz
-gestreift.
+hat den Realteil $-\frac{5}{2}$ und den Imaginärteil $\sqrt{3}$. In der
+Gaußschen Zahlenebene wird $z = -\frac{5}{2} - \sqrt{3}\mathrm{i}$ als Punkt
+$(-\frac{5}{2},-\sqrt{3})$ notiert.
 
-### Import von Tabellen im CSV-Format
+Wir halten noch die allgemeine Definition der Begriffe Realteil und Imaginärteil fest.
 
-Das **Dateiformat CSV** speichert Daten zeilenweise ab. Dabei steht CSV für
-"comma separated value". Die Trennung der Spalten erfolgt durch ein
-Trennzeichen, normalerweise durch das Komma. Im deutschsprachigen Raum wird
-gelegentlich ein Semikolon verwendet, weil Dezimalzahlen das Komma zum Abtrennen
-der Nacchkommastellen verwenden.
+```{admonition} Was sind ... Realteil und Imaginärteil?
+:class: note
+Ist $z$ eine komplexe Zahl in der Normalform $z = a + b\mathrm{i}$, dann nennt
+man die reelle Zahl $a$ den Realteil von $z$. Als Abkürzung wird das Symbol
+$\mathrm{Re}$ benutzt und als Formel schreibt man
 
-Um Tabellen im csv-Format einzulesen, bietet Pandas eine eigene Funktion namens
-`read_csv` an (siehe
-[Dokumentation/read_csv](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html)).
-Wird diese Funktion verwendet, um die Daten zu importieren, so wird automatisch
-ein DataFrame-Objekt erzeugt. Beim Aufruf der Funktion wird der Dateiname
-übergeben, aber beispielweise könnte auch ein anderes Trennzeichen eingestellt werden.
+$$\mathrm{Re}(z) = \mathrm{Re}(a+b\mathrm{i}) = a.$$ 
 
-Am besten sehen wir uns die Funktionsweise von `read_csv` an einem Beispiel an.
-Sollten Sie mit einem lokalen JupyterNotebook arbeiten, laden Sie bitte die
-Datei
-[`bundesliga_top7_offensive.csv`](https://nextcloud.frankfurt-university.de/s/yJjkkMSkWqcSxGL)
-herunter und speichern Sie sie in denselben Ordner, in dem auch dieses
-JupyterNotebook liegt. Die csv-Datei stammt von
-[Kaggle](https://www.kaggle.com/rajatrc1705/bundesliga-top-7-teams-offensive-stats?select=bundesliga_top7_offensive.csv).
-Wie der Name schon verrät, sind darin Spielerdaten zu den Top7-Fußballvereinen
-der Bundesligasaison 2020/21 enthalten. 
+Die reelle Zahl $b$, die zusammen mit der imaginären Einheit $\mathrm{i}$ die
+imaginäre Zahl $b\mathrm{i}$ bildet, heißt Imaginärteil von $z$. Der
+Imaginärteil wird mit $\mathrm{Im}$ abgekürzt. Als Formel schreibt man
 
-Führen Sie dann anschließend die folgende Code-Zelle aus.
-
-```{code-cell} ipython3
-import pandas as pd
-data = pd.read_csv('bundesliga_top7_offensive.csv')
+$$\mathrm{Im}(z) = \mathrm{Im}(a+b\mathrm{i}) = b.$$ 
 ```
 
-Es erscheint keine Fehlermeldung, aber den Inhalt der geladenen Datei sehen wir
-trotzdem nicht. Dazu verwenden wir die Methode `.head()`.
+Für die beiden obigen Beispiele gilt also:
 
-```{code-cell} ipython3
-data.head()
+$$\mathrm{Re}(2+3\mathrm{i}) = 2 \; \text{ und } \;
+\mathrm{Im}(2+3\mathrm{i}) = 3$$
+
+und
+
+$$\mathrm{Re}\left(-\frac{5}{2} - \sqrt{3}\mathrm{i}\right) = -\frac{5}{2} 
+\; \text{ und } \; 
+\mathrm{Im}\left(\frac{5}{2} - \sqrt{3}\mathrm{i}\right) = -\sqrt{3}.$$
+
+Das folgende Video fasst die oben eingeführten Begriffe zusammen.
+
+```{dropdown} Video "Komplexe Zahlen z=x+iy" von MathePeter
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LxPUwlQ2wn0" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 
-Die Methode `.head()` zeigt uns die ersten fünf Zeilen der Tabelle an. Wenn wir
-beispielsweise die ersten 10 Zeilen anzeigen lassen wollen, so verwenden wir die
-Methode `.head(10)`mit dem Argument 10.
+Im nächsten Video präsentiert Herr Prof. Hoever eine Einführung in die komplexen
+Zahlen. Das Video zeigt auch schon die ersten Grundrechenoperationen, die aber
+erst im nächsten Kapitel eingeführt werden.
 
-```{code-cell} ipython3
-data.head(10)
+```{dropdown} Video "Komplexe Zahlen - Einführung" von Prof. Hoever
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ql5wpNTHXOo?si=XcFWE1tdYWQnykmw" title="YouTube video player" frameborder="0" allow="accelerometer; 
+autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
 
-Offensichtlich wurde beim Import der Daten wieder ein impliziter Index 0, 1, 2,
-usw. gesetzt. Das ist nicht weiter verwunderlich, denn Pandas kann nicht wissen,
-welche Spalte wir als Index vorgesehen haben. Und manchmal ist ein automatisch
-erzeugter impliziter Index auch nicht schlecht. In diesem Fall würden wir aber
-gerne als Zeilenindex die Namen der Spieler verwenden. Daher modifizieren wir
-den Befehl mit `index_col=`. Die Namen stehen in der 1. Spalte, was in
-Python-Zählweise einer 0 entspricht.
+## Zusammenfassung und Ausblick
 
-```{code-cell} ipython3
-data = pd.read_csv('bundesliga_top7_offensive.csv', index_col=0)
-data.head(10)
-```
-
-### Import von Tabellen im xlsx-Format
-
-Eine sehr bekannte Tabellenkalkulationssoftware ist Excel von Microsoft. Excel
-bringt sein eigenens proprietäres Datenformat mit, in der Regel erkennbar an der
-Dateiendung `.xlsx`. Laden Sie sich den Datensatz zu den Top7-Bundesligavereinen
-als Excel-Datei
-[bundesliga_top7_offensive.xlsx](https://nextcloud.frankfurt-university.de/s/wogabyEQbkSTtpm)
-herunter.
-
-```{code-cell} ipython3
-data = pd.read_excel('bundesliga_top7_offensive.xlsx', index_col=0)
-data.head(5)
-```
-
-Vermutlich erhalten Sie zunächst eine Fehlermeldung: `Missing optional
-dependency 'openpyxl'.  Use pip or conda to install openpyxl.` Falls das der
-Fall sein sollte und Sie interessiert daran sind, Excel-Dateien lesen und
-schreiben zu können, installieren Sie bitte das Modul `openpyxl` mit `!conda
-install openpyxl` oder `!pip install openpyxl ` nach. In dieser Vorlesung
-verwenden wir nur CSV-Dateien, so dass ein Nachinstallieren für die
-Vorlesung/Übung nicht notwendig ist.
-
-## Übersicht verschaffen mit info 
-
-Das obige Beispiel zeigt uns zwar nun die ersten 10 Zeilen des importierten
-Datensatzes, aber wie viele Daten insgesamt enthalten sind oder welche Vereine
-noch kommen, können wir mit der `.head()`-Methode nicht erfassen. Dafür stellt
-Pandas die Methode `.info()` zur Verfügung. Probieren wir es einfach aus.
-
-```{code-cell} ipython3
-data.info()
-```
-
-Mit `.info()` erhalten wir eine Übersicht, wie viele Spalten es gibt und auch
-die Spaltenüberschriften werden aufgelistet. Dabei sind Überschriften wie `Name`
-selbsterklärend, aber was `xG` bedeutet, erschließt sich nicht von selbst. Dazu
-brauchen wir mehr Informationen von den Autor:innen der Daten.
-
-Weiterhin entnehmen wir der Ausgabe von `.info()`, dass in jeder Spalte 177
-Einträge sind, die 'non-null' sind. Damit ist gemeint, dass diese Zellen beim
-Import nicht leer waren. Zudem wird bei jeder Spalte noch der Datentyp
-angegeben. Für die Namen, die als Strings gespeichert sind, wird der allgemeine
-Datentyp 'object' angegeben. Beim Alter/Age wurden korrektweise Integer erkannt
-und die mittlere erwartete Anzahl von Toren pro Spiel 'xG' (= expected number of
-goals from the player in a match) wird als Float angegeben.
+In diesem Kapitel haben Sie gelernt, was eine komplexe Zahl ist und wie eine
+komplexe Zahl als Punkt in der Gaußschen Zahlenebene interpretiert wird. Diese
+geometrische Interpretation wird uns helfen, die Rechenregeln der komplexen
+Zahlen besser zu verstehen, die in den nächsten Kapiteln erläutert werden.

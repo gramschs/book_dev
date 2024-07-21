@@ -1,168 +1,208 @@
----
-jupytext:
-  formats: ipynb,md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: Python 3 (ipykernel)
-  language: python
-  name: python3
----
+# 8.4 Komplexe Zahlen in trigonometrischer Form
 
-# Übungen
+Im letzen Kapitel haben wir die Multiplikation und Division zweier komplexer
+Zahlen in der Normalform kennengelernt. Gerade bei »Punktrechnungen« ist jedoch
+die sogenannte trigonometrische Form einfacher. In diesem Kapitel werden daher
+lernen, eine komplexe Zahl in Normalform in die trigonometrische Form
+umzurechnen (und umgekehrt). Dabei lernen wir auch verschiedene Konventionen
+kennen. Zuletzt beschäftigen wir uns mit der Multiplikation und Division in
+trigonometrischer Form und ihren geometrischen Interpretationen in der Gaußschen
+Zahlenebene.
 
-```{admonition} Übung 8.1
-:class: miniexercise
-Laden Sie die Datei
-[20220801_Marktwert_Bundesliga.csv](https://nextcloud.frankfurt-university.de/s/GESBZzRyXq6dLNC)
-herunter. Die ersten 5 Zeilen sind Kommentare, die beim Einlesen übersprungen
-werden sollten. Informieren Sie sich im Internet über die Option `skiprows` und
-importieren Sie die Daten mit Pandas. Lassen Sie die ersten 10 Zeilen anzeigen.
 
-* Welche Daten sind in der Tabelle enthalten?
-* Welche Spalte wäre gut als Zeilenindex geeignet? 
+## Lernziele
 
-Importieren Sie die Daten mit einem geeigneten Zeilenindex.
+```{admonition} Lernziele 
+:class: goals
+* Sie können eine komplexe Zahl in der **trigonometrische Form** darstellen.
+* Sie können das **Argument** einer komplexen Zahl ausrechnen.
+* Sie können eine komplexe Zahl aus der Normalform in die trigonometrische Form
+  umrechnen.
+* Sie können eine komplexe Zahl aus der trigonometrischen Form in die Normalform
+  umrechnen.
+* Sie können komplexe Zahlen in trigonometrischer Form **multiplizieren** und
+  **dividieren**.
 ```
-````{admonition} Lösung
-:class: minisolution, toggle
-Die Tabelle enthält scheinbar Fußballvereine, ihre Ligazugehörigkeit, Wert und Kadergröße. Zumindest lauten die Spaltenindizes so. In der Tat sind dies die Werte des Transfermarktes der Bundesliga am 01.08.2022. Der Wert eines Vereines wird als Summe der Werte aller Fuballer geschätzt und ist in Mio. Euro angegeben.
 
-Die Vereinsnamen sind ein guter Zeilenindex. Daher sollten die Daten folgendermaßen importiert werden:
 
-```python
-import pandas as pd
+## Trigonometrische Form
 
-data = pd.read_csv('20220801_Marktwert_Bundesliga.csv', skiprows=5, index_col=0)
-data.head(10)
+Die Gaußsche Zahlenebene entspricht einem kartesischen Koordinatensystem, bei
+dem jeder Punkt in der Ebene durch seine beiden Koordinaten $(x,y)$ beschrieben
+wird. Dabei ist $x$ der Realteil der komplexen Zahl, also $x = \text{Re}(z)$,
+und $y$ der Imaginärteil, also $y=\text{Im}(z)$. 
+
+Eine Alternative zum kartesischen Koordinatensystem ist das
+Polarkoordinatensystem. Im Polarkoordinatensystem werden Punkte in einer Ebene
+durch 
+
+* Abstand Punkt zum Ursprung und
+* Winkel im Verhältnis zur klassischen x-Achse
+
+beschrieben. Zum Beispiel bedeutet die Angabe $(2, 30^{\circ})$ im
+Polarkoordinatensystem, dass dieser Punkt einen Abstand von 2 zum Ursprung hat.
+Er liegt sozusagen auf einem Kreis um den Ursprung mit Radius $r = 2$. Zeichnet
+man jetzt die Verbindungslinie vom Punkt zum Ursprung ein, bildet sie einen
+Winkel von $\varphi = 30^{\circ}$ zur klassischen x-Achse. Diesen Winkel nennt
+man auch Polarwinkel oder Azimuth. 
+
+<img src="pics/polarform_light43.svg" 
+alt="Mehrere komplexe Zahlen in trigonometrischer Form" 
+class="image43"
+width=100%>
+<img src="pics/polarform_light169.svg" 
+alt="Mehrere komplexe Zahlen in trigonometrischer Form" 
+class="image169"
+width=100%>
+
+Komplexe Zahlen in der Gaußschen Zahlenebene können ebenfalls in
+Polarkoordinaten dargestellt werden. Zu der komplexen Zahl $z = \sqrt{3} +
+\mathrm{i}$ gehören die kartesischen Koordinaten $(\sqrt{3},1)$. In
+Polarkoordinaten entspricht das gerade dem obigen Beispiel $(2, 30^{\circ})$. Um
+deutlich zu machen, dass es sich um eine komplexe Zahl handelt, werden
+allerdings nicht die Polarkoordinaten selbst benutzt, sondern die sogenannte
+Polarform. Es gibt zwei Varianten der Polarform. Zunächst betrachten wir die
+**trigonometrische Form**:
+
+$$z = 2\cos(30^{\circ}) + 2\sin(30^{\circ})\mathrm{i}.$$
+
+Ein Vorteil dieser Schreibweise ist, dass der Betrag der komplexen Zahl sofort
+abgelesen werden kann, weil er dem Radius entspricht:
+
+$$|z| = 2.$$
+
+Wir werden noch sehen, dass der Winkel entscheidend für die Multiplikation,
+Division und vor allem auch für das Potenzieren von komplexen Zahlen ist. Um
+diese Bedeutung hervorzuheben, wird der Winkel als **Argument** der komplexen
+Zahl bezeichnet. Zusammengefasst erhalten wir folgende Definition der
+trigonometrischen Form einer komplexen Zahl.
+
+```{admonition} Was ist ... die trigonometrische Form?
+:class: note
+Die trigonometrische Form ist eine alternative Schreibweise einer komplexen Zahl
+$z$. In trigonometrischer Form wird eine komplexe Zahl geschrieben als
+
+$$z = r \, \cos(\varphi) + r \, \sin(\varphi)\, \mathrm{i}.$$
+
+Dabei ist $r$ der Betrag der komplexen Zahl (also $r = |z|$) und $\varphi$ ihr 
+Argument.
 ```
-````
 
-```{admonition} Übung 8.2
-:class: miniexercise
-Laden Sie die Tabelle aus Übung 8.1. 
 
-1. Verschaffen Sie sich einen Überblick: wie viele Spalten gibt es, wie viele Zeilen und  und wie viele Einträge sind gültig?
-2. Filtern Sie die Tabelle nach allen Vereine der 2. Bundesliga (`2. Bundesliga`) und speichern Sie diese Daten in der Variable `zweite`.
-3. Lassen Sie sich die statistischen Kennzahlen ausgeben. Was ist der höchste Kaderwert, was der kleinste? Wie viele Speiler hat ein Verein in der 2. Bundesliga durchschnittlich?
-4. Lassen Sie sich die Daten des 1.FC Kaiserslautern anzeigen. 
+## Umrechnung Normalform und trigonometrische Form
+
+Die Umrechnung von der trigonometrischen Form in die Normalform ist einfach.
+Tatsächlich müssen wir ja nur die Kosinus- und Sinuswerte konkret ausrechnen und
+jeweils mit dem Betrag multiplizieren. Die komplexe Zahl $z = 2 \cos(30^{\circ})
++ 2 \sin(\varphi) \mathrm{i}$ hat den Realteil
+
+$$\text{Re}(z) = 2 \cos(30^{\circ}) = 2 \cdot \frac{\sqrt{3}}{2} 
+= \sqrt{3}$$
+
+und den Imaginärteil
+
+$$\text{Im}(z) = 2 \sin(30^{\circ}) = 2 \cdot \frac{1}{2} = 1.$$
+
+Daher ist $z = 2 \cos(30^{\circ}) + 2\sin(\varphi) \mathrm{i}$ in der Normalform
+die Zahl
+
+$$z = \sqrt{3} + \mathrm{i}.$$
+
+Die umgekehrte Richtung ist etwas schwieriger, lässt sich aber auch mit
+bekannten Formeln aus der Trigonometrie lösen. Dazu zeichnen wir ein
+rechtwinkliges Dreieck ein.
+
+<img src="pics/normal2polarform_light43.svg" 
+alt="Rechtwinkliges Dreieck zur Berechnung der Poloarform" 
+class="image43"
+width=100%>
+<img src="pics/normal2polarform_light169.svg" 
+alt="Rechtwinkliges Dreieck zur Berechnung der Poloarform" 
+class="image169"
+width=100%>
+
+Der Betrag der komplexen Zahl $z = \sqrt{3} + \mathrm{i}$ ergibt sich aus dem
+Satz des Pythagoras:
+
+$$\textcolor[RGB]{230,0,0}{|z|} = \sqrt{(\sqrt{3})^2 + 1^2} = \sqrt{3 + 1} = 
+\textcolor[RGB]{230,0,0}{2}.$$
+
+Den Winkel bzw. das Argument $\varphi$ der komplexen Zahl können wir nun über
+den Kosinus bestimmen. Der Kosinus ist Ankathete geteilt durch Hypotenuse, also 
+
+$$\cos(\varphi) = \frac{\textcolor[RGB]{0,90,148}{\sqrt{3}}}{\textcolor[RGB]{230,0,0}{2}}.$$
+
+Nun wenden wir auf beiden Seiten dieser Gleichung die Umkehrfunktion
+Arkuskosinus an:
+
+$$\varphi = \arccos(\cos(\varphi)) = \arccos\left( \frac{\sqrt{3}}{2} \right) 
+= 30^{\circ}.$$
+
+Für das obige Beispiel hat das gut geklappt. Ein kleines Problem tritt auf, wenn
+der Imaginärteil der komplexen Zahl negativ ist. Der Wertebereich der
+Arkuskosinus-Funktion ist nämlich $[0, \pi]$ im Bogenmaß oder $[0, 180^{\circ}]$
+im Gradmaß. Somit werden nur positive Imaginärteile abgedeckt. Wenn der
+Imaginärteil der komplexen Zahl negativ ist und beispielsweise das Argument der
+komplexen Zahl $z = \sqrt{3} - \mathrm{i}$ gesucht wird, wird der Winkel im
+Uhrzeigersinn angegeben werden und ist somit negativ.
+
+Insgesamt lautet die Formeln zur Berechnung des Betrages $|z|$ für eine
+beliebige komplexe Zahl $z = a + b\mathrm{i}$ wie folgt:
+
+$$|z| = \sqrt{a^2 + b^2}.$$
+
+Das Argument $\varphi$ im wird für eine beliebige komplexe Zahl 
+$z = a + b\mathrm{i}$ folgendermaßen berechnet:
+
+$$ \varphi = \arg(z) =
+\begin{cases}
+\arccos\left(\frac{a}{|z|}\right), \quad & \text{falls } b\geq 0, \\
+- \arccos\left(\frac{a}{|z|}\right), \quad & \text{falls } b < 0.
+\end{cases}
+$$
+
+Natürlich hätten wir auch Sinus oder Tangens nutzen können, um das Argument der
+komplexen Zahl zu berechnen.
+
+```{dropdown} Video "Darstellung komplexer Zahlen" von MathePeter
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TSeC_2D8xNs" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
-````{admonition} Lösung
-:class: minisolution, toggle
-```python
-data.info()
+
+```{dropdown} Video "Polarform" von Mathematrick
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KzhWHGoAuK8" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
-Es gibt 3 Spalten (wenn wie oben die Vereine als Zeilenindex verwendet werden) und 56 Zeilen, die alle gültige Werte enthalten.
-
-```python
-mein_filter = data.loc[:, 'Ligazugehörigkeit'] == '2. Bundesliga'
-zweite = data[mein_filter]
-
-zweite.describe()
-```
-Der höchste Kaderwert ist 34.85 Mio. EUR, der kleinste 8.83 Mio. EUR. Es spielen durchschnittlich 27 Fußballer in den Zweitligavereinen.
-```python
-fck = zweite.loc['1.FC Kaiserslautern', :]
-print(fck)
-```
-````
-
-```{admonition} Übung 8.3
-:class: miniexercise
-Schreiben Sie ein Python-Programm, dass das Spiel Galgenmännchen umsetzt. Das
-Spiel funktioniert folgendermaßen:
-
-Der Computer wählt aus einer Liste von Wörtern zufällig eines aus. Anstatt das
-Wort anzuzeigen, werden Unterstriche angezeigt. Wurde beispielsweise zufällig
-das Wort "beispiel" ausgewählt, so wird 
-
-<code>_ _ _ _ _ _ _ _ </code>
-
-angezeigt. Danach darf der Spieler einen Buchstaben raten. Ist der Buchstabe im
-gesuchten Wort, so wird er künftig korrekt angezeigt. Wurde beispielweise E
-geraten, dann sieht die Anzeige so aus:
-
-<code>_ e _ _ _ _ e _</code>
-
-Es dürfen maximal 10 Buchstaben falsch geraten werden. Ein Galgenmännchen muss
-nicht gezeichnet werden.
-
-Tipps:
-* Eine Liste der richtig geratenen Buchstaben ist hilfreich.
-* Um zu testen, ob schon alle Buchstaben korrekt geraten wurden, kann auf die
-  Existenz von `_` getestet werden. Das ist aber nur eine von vielen
-  Möglichkeiten.
-```
- 
-````{admonition} Lösung
-:class: minisolution, toggle
-```python
-from numpy.random import randint
-
-def waehle_zufallswort():
-    # Erzeugung einer Liste mit Wörtern und zufällige Auswahl eines Wortes, indem der Index zufällig gezogen wird
-    woerterliste = ['python', 'matlab', 'cplusplus', 'java', 'javascript', 'ruby', 'perl', 'swift', 'golang', 'rust']
-    anzahl_woerter = len(woerterliste)
-    zufallsindex = randint(anzahl_woerter)
-    return woerterliste[zufallsindex]     
-
-def generiere_anzeigetext(wort, korrekt_geratene_buchstaben):
-    # Starte mit leerem String
-    anzeigetext = ''
-    # ersetze jeden Buchstaben im Zufallswort durch sich Unterstrich und ein Leerzeichen,
-    # aber nur, wenn er nicht in der Liste der richtig geratenen Buchstaben ist
-    for zeichen in wort:
-        if zeichen in korrekt_geratene_buchstaben:
-            anzeigetext += zeichen + ' '
-        else:
-            anzeigetext += '_ '
-
-    return anzeigetext
-
-# Start
-anzahl_versuche = 10
-zufallswort = waehle_zufallswort()
-
-print(f'Wir spielen Galgenmännchen. Sie haben {anzahl_versuche} Fehlversuche, um das Wort zu erraten.')
-print('Es darf immer nur ein Kleinbuchstabe eingegeben werden.')
-print('Los geht es.')
-
-# Bereite Liste vor, in der richtig geratene Buchstaben gesammelt werden
-geratene_richtige_buchstaben = []
-
-# Schleifen zum Anzeigen und Abfragen der Buchstaben
-anzeigetext = generiere_anzeigetext(zufallswort, geratene_richtige_buchstaben)
-while anzahl_versuche > 0:
-    # Anzeige des Rätselwortes und Abfrage eines Buchstabens
-    print(f'Sie haben noch {anzahl_versuche} Fehlversuche, das Rätselwort lautet: {anzeigetext}')
-    buchstabe = input('Welchen Buchstaben wählen Sie? ')
-
-    # Test, ob Buchstabe vorkommt; wenn nicht, Anzahl Versuche reduzieren
-    if buchstabe in zufallswort:
-            geratene_richtige_buchstaben.append(buchstabe)
-            print(f'Richtig, {buchstabe} ist im gesuchten Wort enthalten.')
-    else:
-            anzahl_versuche -= 1
-            print(f'Leider kommt der Buchstabe {buchstabe} im gesuchten Wort nicht vor.')
-
-    # Aktualisierung des Anzeigetextes
-    anzeigetext = generiere_anzeigetext(zufallswort, geratene_richtige_buchstaben)
-   
-    # Test, ob bereits alle Buchstaben geraten wurden
-    if '_' not in anzeigetext:
-        print(f'Herzlichen Glückwunsch, Sie haben das Wort {zufallswort} erraten :-)')
-        break
-
-if anzahl_versuche == 0 and '_' in anzeigetext:
-    print(f'Sie haben leider verloren. Das richtige Wort wäre {zufallswort} gewesen.') 
-```
-````
 
 
-  
+## Multiplikation und Division in trigonometrischer Form
+
+Als nächstes betrachten wir die Multiplikation und Division zweier komplexer
+Zahlen in trigonometrischer Form. Hat die erste Zahl $z_1$ den Betrag $r$ und
+das Argument $\alpha$ und die zweite Zahl $z_2$ den Betrag $s$ und das Argument
+$\beta$, dann ist das Produkt der beiden komplexen Zahlen
+
+$$z_1 \cdot z_2 = r\cdot s \cdot \left(\cos(\alpha+\beta) + 
+\sin(\alpha+\beta)\cdot \mathrm{i} \right).$$
+
+Die beiden Beträge werden multipliziert und die beiden Argumente werden addiert.
+
+Für die Division erhalten wir
+
+$$\frac{z_1}{z_2} = \frac{r}{s} \left(\cos(\alpha-\beta) + 
+\sin(\alpha - \beta)\cdot\mathrm{i} \right).$$
+
+Die beiden Beträge werden dividiert und die beiden Argumente subtrahiert.
 
 
+## Zusammenfassung und Ausblick
 
+In diesem Kapitel haben Sie gelernt, wie eine komplexe Zahl in trigonometrischer
+Form formuliert wird und wie die Umrechnung in die Normalform funktioniert. Wird
+die trigonometrische Form verwendet, so sind Multiplikation und Division recht
+einfach durchzuführen. Auch in der dritten Darstellungsform für komplexe Zahlen,
+der sogenannten Exponentialform, sind diese beiden Rechenoperationen einfach.
+Darüber hinaus wird aber auch das Potenzieren und Wurzelziehen erleichtert, so
+dass wir im nächsten Kapitel die Exponentialform studieren werden.

@@ -1,0 +1,815 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3.2 Vektoren und Vektorräume &#8212; Mathematik 1 Maschinenbau</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=fcc42dec" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter03/sec02';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.3 Vektoren in der Geometrie" href="sec03.html" />
+    <link rel="prev" title="3.1 Koordinaten und Koordinatensysteme" href="sec01.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/maths_background_small.png" class="logo__image only-light" alt="Mathematik 1 Maschinenbau - Home"/>
+    <script>document.write(`<img src="../_static/maths_background_small.png" class="logo__image only-dark" alt="Mathematik 1 Maschinenbau - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Willkommen zur Mathematik 1
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathematischer Werkzeugkasten</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter01/sec00.html">Grundlagen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter01/sec01.html">Mengen und Intervalle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter01/sec02.html">Rechenregeln</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter01/sec03.html">Potenzen, Wurzeln und Logarithmen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter01/sec04.html">Gleichungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter01/sec05.html">Polynomdivision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter01/sec06.html">Trigonometrie</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter02/sec00.html">Funktionen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02/sec01.html">Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02/sec02.html">Eigenschaften von Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02/sec03.html">Polynome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02/sec04.html">Exponential- und Logarithmusfunktion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02/sec05.html">Trigonometrische Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02/sec06.html">Beziehungen zwischen trigonometrischen Funktionen</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vektoren und ihre Anwendungen</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="sec00.html">3. Vektorrechnung (Teil 1)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sec01.html">3.1 Koordinaten und Koordinatensysteme</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.2 Vektoren und Vektorräume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sec03.html">3.3 Vektoren in der Geometrie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sec04.html">3.4 Affine Punkträume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sec05.html">3.5 Betrag Vektor und Abstand Punkte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sec06.html">3.6 Linearkombination und lineare Unabhängigkeit</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter04/chapter04_sec00.html">Vektorrechnung (Teil 2)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec01.html">Basis, Rechts- und Linkssystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec02.html">Skalarprodukt (geometrisch)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec03.html">Skalarprodukt in Komponentendarstellung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec04.html">Vektorprodukt (geometrisch)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec05.html">Vektorprodukt in Komponentendarstellung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec06.html">Spatprodukt</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter05/chapter05_sec00.html">Punkte, Geraden und Ebenen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec01.html">Koordinatensystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec02.html">Geraden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec03.html">Ebenen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec04.html">Schnitt Gerade – Ebene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec05.html">Abstände</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec06.html">Winkel</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Matrixrechnung</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter06/chapter06_sec00.html">Matrizen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec01.html">Was ist eine Matrix?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec02.html">Transponierte Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec03.html">Spezielle Matrizen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec04.html">Addition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec05.html">Multiplikation mit einem Skalar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec06.html">Multiplikation Matrix mit Matrix</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter07/chapter07_sec00.html">Determinanten und lineare Gleichungssysteme</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec01.html">Determinante (2x2 und 3x3)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec02.html">Determinante  (4x4 und mehr)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec03.html">Inverse und orthogonale Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec04.html">Lösen linearer Gleichungssysteme (LGS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec05.html">Eigenwerte und Eigenvektoren (2x2-Matrix)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec06.html">Eigenwerte und Eigenvektoren (3x3-Matrix und höher)</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Komplexe Zahlen</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. Komplexe Zahlen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Was sind komplexe Zahlen?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec02.html">8.2 Addition, Subtraktion und Multiplikation komplexer Zahlen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec03.html">8.3 Betrag, komplexe Konjugation und Division</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec04.html">8.4 Komplexe Zahlen in trigonometrischer Form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec05.html">8.5 Komplexe Zahlen in Exponentialform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec06.html">8.6 Potenzen und Wurzeln komplexer Zahlen</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Funktionen</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">Folgen, Grenzwerte und Stetigkeit</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">Grundwissen Zahlenfolgen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">Grenzwert einer Zahlenfolge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">Rechnen mit Grenzwerten von Folgen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec04.html">Funktionsgrenzwerte und ihre Rechenregeln</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec05.html">Stetigkeit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec06.html">Unstetigkeitsstellen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">Differentialrechnung (Teil 1)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">Steigung und Differentialquotient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">Ableitung von elementaren Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">Faktor-, Summen- und Produktregel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Quotientenregel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec05.html">Kettenregel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec06.html">Ableitung der Umkehrfunktion</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">Differentialrechnung (Teil 2)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">Linearisierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">Regel von Bernoulli de l’Hospital</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">Neigungswinkel / Schnittwinkel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec04.html">Monotonie und Krümmung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec05.html">Extrema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec06.html">Wendepunkte</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">Integralrechnung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">Integration als Umkehrung der Differentiation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">Bestimmtes Integral und Rechenregeln</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">Unbestimmtes Integral bzw. Stammfunktion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec04.html">Hauptsatz der Differential- und Integralrechnung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec05.html">Integrationstechnik</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec06.html">Substitutionsregel und partielle Integration</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/gramschs/book_mathe01" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter03/sec02.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>3.2 Vektoren und Vektorräume</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele-vektoren">Lernziele Vektoren</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rechnen-mit-n-tupeln">Rechnen mit n-Tupeln</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-reelle-standardvektorraum">Der reelle Standardvektorraum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektorraum">Vektorraum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="vektoren-und-vektorraume">
+<h1>3.2 Vektoren und Vektorräume<a class="headerlink" href="#vektoren-und-vektorraume" title="Link to this heading">#</a></h1>
+<p>Im letzten Kapitel haben wir n-Tupel kennengelernt. Je nachdem für welche
+Anwendung sie eingesetzt werden, ist es sinnvoll, damit rechnen zu können.
+n-Tupels zusammen mit bestimmten Rechenoperationen führen zu dem Begriff des
+Vektorraumes, den wir in diesem Kapitel behandeln werden.</p>
+<section id="lernziele-vektoren">
+<h2>Lernziele Vektoren<a class="headerlink" href="#lernziele-vektoren" title="Link to this heading">#</a></h2>
+<div class="goals admonition">
+<p class="admonition-title">Lernziele</p>
+<ul class="simple">
+<li><p>Sie wissen, wie der <strong>reelle Standardvektorraum</strong> definiert ist, d.h. Sie können die</p>
+<ul>
+<li><p><strong>Vektoraddition</strong> und</p></li>
+<li><p><strong>Skalarmultiplikation</strong>
+für n-Tupels anwenden.</p></li>
+</ul>
+</li>
+<li><p>Sie wissen, dass ein Element eines Vektorraumes <strong>Vektor</strong> genannt wird.</p></li>
+<li><p>Sie wissen, wie ein allgemeiner, reeller <strong>Vektorraum</strong> definiert ist. Insbesondere können Sie die vier Eigenschaften der Vektoraddition und die vier Eigenschaften der Skalarmultiplikation nachprüfen.</p></li>
+<li><p><strong>Eigenschaften der Vektoraddition</strong>:</p>
+<ul>
+<li><p>Assoziativgesetz: <span class="math notranslate nohighlight">\(u\oplus(v\oplus w) = (u\oplus v)\oplus w\)</span></p></li>
+<li><p>Existenz eines neutralen Elements <span class="math notranslate nohighlight">\(0\in V\)</span> mit <span class="math notranslate nohighlight">\(v\oplus 0 = 0\oplus v = v\)</span></p></li>
+<li><p>Existenz eines zu <span class="math notranslate nohighlight">\(v\in V\)</span> inversen Elements <span class="math notranslate nohighlight">\(-v\in V\)</span> mit <span class="math notranslate nohighlight">\(v\oplus (-v)= (-v)\oplus v = 0\)</span></p></li>
+<li><p>Kommutativgesetz: <span class="math notranslate nohighlight">\(v\oplus u = u \oplus v\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>Eigenschaften der Skalarmultiplikation</strong>:</p>
+<ul>
+<li><p>Vektorielles Distributivgesetz: <span class="math notranslate nohighlight">\(s\odot(u\oplus v) = (s\odot u) \oplus (s\odot v)\)</span></p></li>
+<li><p>Skalares Distributivgesetz: <span class="math notranslate nohighlight">\((s+t)\odot v = (s\odot v) \oplus (t\odot v)\)</span></p></li>
+<li><p>Assoziativgesetz für Skalare: <span class="math notranslate nohighlight">\((s\cdot t)\odot v = s\odot (t \odot v)\)</span></p></li>
+<li><p>Existenz eines neutralen Elements: <span class="math notranslate nohighlight">\(1\odot v = v\)</span></p></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="rechnen-mit-n-tupeln">
+<h2>Rechnen mit n-Tupeln<a class="headerlink" href="#rechnen-mit-n-tupeln" title="Link to this heading">#</a></h2>
+<p>Im vorherigen Kapitel haben wir die n-Tupel kennengelernt, eine Liste von <span class="math notranslate nohighlight">\(n\)</span>
+mathematischen Objekten, bei denen die Reihenfolge festgelegt ist. Eine
+Anwendung von n-Tupeln in der Praxis könnte die Erfassung der Arbeitsstunden pro
+Woche sein. Das erste Element des Tupels steht für die Arbeitsstunden am Montag,
+das zweite für den Dienstag, das dritte für den Mittwoch, das vierte für den
+Donnerstag und der letzte Eintrag erfasst die Arbeitsstunden am Freitag.
+Beispielsweise könnte die Erfassung der Arbeitsstunden für die erste Woche im
+Januar <span class="math notranslate nohighlight">\((8, 8, 6, 8, 10)\)</span> sein. Wir bezeichnen dieses 5-Tupel mit <span class="math notranslate nohighlight">\(w_1\)</span> für
+erste Woche, also</p>
+<div class="math notranslate nohighlight">
+\[w_1 = (8, 8, 6, 8, 10).\]</div>
+<p>In der zweiten, dritten und vierten Woche des Januars könnte eine Person
+folgende Arbeitsstunden geleistet haben:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+w_2 &amp;= (7, 7, 10, 8, 8) \\
+w_3 &amp;= (8, 8, 8, 8, 8) \\
+w_4 &amp;= (7, 9, 8, 7, 9) \\
+\end{align*}\]</div>
+<p>Sollen nun die Arbeitsstunden im Januar ausgewertet werden, können wir
+beispielsweise fragen, wie viele Stunden insgesamt in den beiden ersten Wochen
+gearbeitet wurden. Dazu müssen wir jeden Eintrag (Wochentag) von <span class="math notranslate nohighlight">\(w_1\)</span> mit jedem
+Eintrag (Wochentag) von <span class="math notranslate nohighlight">\(w_2\)</span> addieren:</p>
+<div class="math notranslate nohighlight">
+\[w_1 \oplus w_2 = (8, 8, 6, 8, 10) \oplus (7, 7, 10, 8, 8) = (15, 15, 16, 16, 18).\]</div>
+<p>Um deutlich zu machen, dass die »Addition« der beiden 5-Tupel etwas Neues ist,
+haben wir das Symbol <span class="math notranslate nohighlight">\(\oplus\)</span> verwendet. Addieren wir die ersten vier Wochen im
+Januar komponentenweise (also Wochentag für Wochentag), dann erhalten wir</p>
+<div class="math notranslate nohighlight">
+\[\text{Januar} = w_1 \oplus w_2 \oplus w_3 \oplus w_4 = (30, 32, 32, 31, 35).\]</div>
+<p>Im Januar hat diese Person mehr Stunden am Freitag gearbeitet als an den anderen
+Tagen. Offensichtlich arbeitet diese Personen jede Woche unterschiedlich. Wenn
+wir nun analysieren wollen, wie eine durchschnittliche Woche im Januar aussieht,
+können wir jede Komponente durch 4 teilen (bzw. mit <span class="math notranslate nohighlight">\(\frac{1}{4}\)</span>
+multiplizieren.</p>
+<div class="math notranslate nohighlight">
+\[\text{Durchschnitt Januar} = \frac{1}{4} \odot (30, 32, 32, 31, 35) = (7.5, 8, 8,
+7.75, 8.75).\]</div>
+<p>Das Rechnen mit n-Tupeln wollen wir nun formalisieren.</p>
+</section>
+<section id="der-reelle-standardvektorraum">
+<h2>Der reelle Standardvektorraum<a class="headerlink" href="#der-reelle-standardvektorraum" title="Link to this heading">#</a></h2>
+<p>Zunächst formalisieren wir die Schreibweise der Menge aller n-Tupel, indem wir
+das kartesische Produkt einführen. Ist <span class="math notranslate nohighlight">\(n\)</span> eine natürliche Zahl und <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>
+die Menge der reellen Zahlen, dann ist das n-fache kartesische Produkt</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{R}^{n} = \{(x_1, x_2, \ldots, x_n) \;|\; x_1, x_2, \dots,x_n \in
+\mathbb{R}\}\]</div>
+<p>die Menge aller n-Tupel <span class="math notranslate nohighlight">\((x_1, x_2, \ldots, x_n)\)</span> mit reellen Zahlen als
+Komponenten. Für diese Tupel definieren wir eine komponentenweise <strong>Vektoraddition</strong>
+<span class="math notranslate nohighlight">\(\oplus: \mathbb{R}^n \times \mathbb{R}^n \to \mathbb{R}^n\)</span> durch</p>
+<div class="math notranslate nohighlight">
+\[(x_1, x_2, \ldots, x_n) \oplus (y_1, y_2, \ldots, y_n) = (x_1 + y_1, x_2 + y_2,
+\ldots, x_n+y_n).\]</div>
+<p>Weiterhin definieren wir eine komponentenweise Multiplikation mit einem Skalar
+<span class="math notranslate nohighlight">\(\odot:\mathbb{R}^n \times \mathbb{R}^n \to \mathbb{R}^n\)</span> durch</p>
+<div class="math notranslate nohighlight">
+\[s\odot (x_1, x_2, \ldots, x_n) = (s\cdot x_1, s\cdot x_2, \ldots, s\cdot
+x_n),\]</div>
+<p>die <strong>Skalarmultiplikation</strong> genannt wird. Den Begriff <strong>Skalar</strong> haben wir hier
+genommen, um zu verdeutlichen, dass <span class="math notranslate nohighlight">\(s\)</span> nicht ein n-Tupel ist, sondern (in
+diesem Fall) eine reelle Zahl. Mit den beiden Rechenoperationen »Vektoraddition«
+und »Skalarmultiplikation« wird das reelle kartesische Produkt <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> zu
+einem reellen <strong>Vektorraum</strong>, der auch <strong>reeller Standardvektorraum</strong> genannt
+wird. Die n-Tupel mit Rechenoperationen werden daher auch <strong>Vektoren</strong> genannt.
+Was genau ein Vektorraum ist, behandeln wir im nächsten Abschnitt. Zunächst
+halten wir noch eine alternative Schreibweise fest.</p>
+<p>Die Vektoren des reellen Standardvektorraumes werden häufig als sogenannte
+<strong>Spaltenvektoren</strong> notiert. Das erleichtert die Übersicht bei der
+Vektoraddition und der Skalarmultiplikation, da dann zeilenweise addiert und
+mulitpliziert werden kann. Die Vektoraddition in Form von Spaltenvektoren wird
+dann folgendermaßen notiert:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}x_1 \\x_2\\ \vdots \\ x_n\end{pmatrix} + \begin{pmatrix}y_1
+\\y_2\\ \vdots \\ y_n\end{pmatrix} = \begin{pmatrix}x_1 + y_1 \\x_2 + y_2\\
+\vdots \\ x_n + y_n\end{pmatrix}.\end{split}\]</div>
+<p>Insbesondere wird meist das Symbol <span class="math notranslate nohighlight">\(\oplus\)</span> vereinfacht als <span class="math notranslate nohighlight">\(+\)</span> geschreiben, da
+eine »normale« Addition nicht gemeint sein kann. Die Skalarmultiplikation wird
+folgendermaßen geschrieben:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}s\cdot \begin{pmatrix}x_1 \\x_2\\ \vdots \\ x_n\end{pmatrix} 
+= \begin{pmatrix}s\cdot x_1 \\ s\cdot x_2 \\ \vdots \\ s\cdot x_n \end{pmatrix}.\end{split}\]</div>
+<p>Auch hier wird in der Regel anstatt des Symbols <span class="math notranslate nohighlight">\(\odot\)</span> nur das normale
+Multiplikationszeichen <span class="math notranslate nohighlight">\(\cdot\)</span> verwendet, da jeweils aus dem Zusammenhang klar
+ist, ob die normale Multiplikation zwischen reellen Zahlen oder die
+Skalarmultiplikation gemeint ist.</p>
+</section>
+<section id="vektorraum">
+<h2>Vektorraum<a class="headerlink" href="#vektorraum" title="Link to this heading">#</a></h2>
+<p>Noch haben wir nicht die Frage beantwortet, was ein Vektorraum eigentlich ist.
+Ein Vektorraum ist eine mathematische Struktur, die über einem Körper definiert
+ist. Da wir hier nicht den Begriff Körper erläutern wollen, beschränken wir uns
+auf das prominente Beispiel der reellen Zahlen als Körper. Details zu Körpern
+können beispielsweise in dem <a class="reference external" href="https://de.wikipedia.org/wiki/K%C3%B6rper_(Algebra)">Wikipedia-Artikel → Körper
+(Algebra)</a> nachgelesen werden.</p>
+<p>Zu dem Körper (also hier den reellen Zahlen) kommt noch eine weitere Menge, die
+wir mit <span class="math notranslate nohighlight">\(V\)</span> abkürzen. In unserem obigen Beispiel war als <span class="math notranslate nohighlight">\(V\)</span> die Menge der
+n-Tupel gewählt worden. Ein anderes Beispiel könnte aber auch die Menge <span class="math notranslate nohighlight">\(V\)</span> die
+Funktionen <span class="math notranslate nohighlight">\(\{1, x, x^2, \ldots, x^n\}\)</span> sein.</p>
+<p>Als dritte und vierte Zutat für einen Vektorraum kommen noch zwei Verknüpfungen
+(Rechenoperationen) dazu:</p>
+<ul class="simple">
+<li><p>Vektoraddition <span class="math notranslate nohighlight">\(\oplus: V \times V \to V\)</span> und</p></li>
+<li><p>Skalarmultiplikation <span class="math notranslate nohighlight">\(\odot: \mathbb{R} \times V \to V\)</span>.</p></li>
+</ul>
+<p>Der Körper (hier <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>), die Menge <span class="math notranslate nohighlight">\(V\)</span> und die beiden Verknüpfungen
+<span class="math notranslate nohighlight">\(\oplus\)</span> und <span class="math notranslate nohighlight">\(\odot\)</span> bilden einen Vektorraum, wenn für alle <span class="math notranslate nohighlight">\(u, v, w \in V\)</span> und
+<span class="math notranslate nohighlight">\(s,t \in \mathbb{R}\)</span> die folgende Eigenschaften gelten:</p>
+<p>Vektoraddition:</p>
+<ol class="arabic simple">
+<li><p>Assoziativgesetz: <span class="math notranslate nohighlight">\(u\oplus(v\oplus w) = (u\oplus v)\oplus w\)</span></p></li>
+<li><p>Existenz eines neutralen Elements <span class="math notranslate nohighlight">\(0\in V\)</span> mit <span class="math notranslate nohighlight">\(v\oplus 0 = 0\oplus v = v\)</span></p></li>
+<li><p>Existenz eines zu <span class="math notranslate nohighlight">\(v\in V\)</span> inversen Elements <span class="math notranslate nohighlight">\(-v\in V\)</span> mit <span class="math notranslate nohighlight">\(v\oplus (-v)=
+(-v)\oplus v = 0\)</span></p></li>
+<li><p>Kommutativgesetz: <span class="math notranslate nohighlight">\(v\oplus u = u \oplus v\)</span></p></li>
+</ol>
+<p>Skalarmultiplikation:</p>
+<ol class="arabic simple">
+<li><p>Vektorielles Distributivgesetz: <span class="math notranslate nohighlight">\(s\odot(u\oplus v) = (s\odot u) \oplus
+(s\odot v)\)</span></p></li>
+<li><p>Skalares Distributivgesetz: <span class="math notranslate nohighlight">\((s+t)\odot v = (s\odot v) \oplus (t\odot v)\)</span></p></li>
+<li><p>Assoziativgesetz für Skalare: <span class="math notranslate nohighlight">\((s\cdot t)\odot v = s\odot (t \odot v)\)</span></p></li>
+<li><p>Existenz eines neutralen Elements: <span class="math notranslate nohighlight">\(1\odot v = v\)</span></p></li>
+</ol>
+<p>In der Physik wird der Raum unserer Anschauung oft als <strong>euklidischer Raum</strong>
+bezeichnet. Es gibt verschiedene Interpretationen dieses Begriffes. Eine davon
+ist, den euklidischen Raum als reellen Standardvektorraum zu interpretieren. In
+den folgenden Videos wird daher nicht zwischen beiden Begriffen unterschieden.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “n-dimensionaler euklidischer Raum” von Mathematische Methoden</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uh14yOb_0VY" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Addition von Vektoren” von Mathematische Methoden</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IN_21Zd8tcE" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Skalarmultiplikation” von Mathematische Methoden</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dz3ccb5cqxQ" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Subtraktion von Vektoren” von Mathematische Methoden</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9oQzrH0x434" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>Der mathematische Begriff Vektorraum ist zunächst recht abstrakt. In dieser
+Vorlesung beschränken wir uns auf daher auf reelle Vektorräume. Im nächsten
+Kapitel werden wir den reellen Standardvektorraum benutzen, um geometrische
+Objekte zu beschreiben.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapter03"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="sec01.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">3.1 Koordinaten und Koordinatensysteme</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="sec03.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">3.3 Vektoren in der Geometrie</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele-vektoren">Lernziele Vektoren</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rechnen-mit-n-tupeln">Rechnen mit n-Tupeln</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-reelle-standardvektorraum">Der reelle Standardvektorraum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektorraum">Vektorraum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Simone Gramsch
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div>
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0 License</a>.
+</div>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

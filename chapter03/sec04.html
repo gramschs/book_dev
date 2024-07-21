@@ -1,0 +1,789 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3.4 Affine Punkträume &#8212; Mathematik 1 Maschinenbau</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=fcc42dec" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter03/sec04';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.5 Betrag Vektor und Abstand Punkte" href="sec05.html" />
+    <link rel="prev" title="3.3 Vektoren in der Geometrie" href="sec03.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/maths_background_small.png" class="logo__image only-light" alt="Mathematik 1 Maschinenbau - Home"/>
+    <script>document.write(`<img src="../_static/maths_background_small.png" class="logo__image only-dark" alt="Mathematik 1 Maschinenbau - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Willkommen zur Mathematik 1
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathematischer Werkzeugkasten</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter01/sec00.html">Grundlagen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter01/sec01.html">Mengen und Intervalle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter01/sec02.html">Rechenregeln</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter01/sec03.html">Potenzen, Wurzeln und Logarithmen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter01/sec04.html">Gleichungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter01/sec05.html">Polynomdivision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter01/sec06.html">Trigonometrie</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter02/sec00.html">Funktionen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02/sec01.html">Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02/sec02.html">Eigenschaften von Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02/sec03.html">Polynome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02/sec04.html">Exponential- und Logarithmusfunktion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02/sec05.html">Trigonometrische Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02/sec06.html">Beziehungen zwischen trigonometrischen Funktionen</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vektoren und ihre Anwendungen</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="sec00.html">3. Vektorrechnung (Teil 1)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sec01.html">3.1 Koordinaten und Koordinatensysteme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sec02.html">3.2 Vektoren und Vektorräume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sec03.html">3.3 Vektoren in der Geometrie</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.4 Affine Punkträume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sec05.html">3.5 Betrag Vektor und Abstand Punkte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sec06.html">3.6 Linearkombination und lineare Unabhängigkeit</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter04/chapter04_sec00.html">Vektorrechnung (Teil 2)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec01.html">Basis, Rechts- und Linkssystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec02.html">Skalarprodukt (geometrisch)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec03.html">Skalarprodukt in Komponentendarstellung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec04.html">Vektorprodukt (geometrisch)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec05.html">Vektorprodukt in Komponentendarstellung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec06.html">Spatprodukt</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter05/chapter05_sec00.html">Punkte, Geraden und Ebenen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec01.html">Koordinatensystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec02.html">Geraden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec03.html">Ebenen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec04.html">Schnitt Gerade – Ebene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec05.html">Abstände</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec06.html">Winkel</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Matrixrechnung</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter06/chapter06_sec00.html">Matrizen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec01.html">Was ist eine Matrix?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec02.html">Transponierte Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec03.html">Spezielle Matrizen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec04.html">Addition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec05.html">Multiplikation mit einem Skalar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter06/chapter06_sec06.html">Multiplikation Matrix mit Matrix</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter07/chapter07_sec00.html">Determinanten und lineare Gleichungssysteme</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec01.html">Determinante (2x2 und 3x3)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec02.html">Determinante  (4x4 und mehr)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec03.html">Inverse und orthogonale Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec04.html">Lösen linearer Gleichungssysteme (LGS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec05.html">Eigenwerte und Eigenvektoren (2x2-Matrix)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter07/chapter07_sec06.html">Eigenwerte und Eigenvektoren (3x3-Matrix und höher)</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Komplexe Zahlen</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter08/chapter08_sec00.html">8. Komplexe Zahlen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec01.html">8.1 Was sind komplexe Zahlen?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec02.html">8.2 Addition, Subtraktion und Multiplikation komplexer Zahlen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec03.html">8.3 Betrag, komplexe Konjugation und Division</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec04.html">8.4 Komplexe Zahlen in trigonometrischer Form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec05.html">8.5 Komplexe Zahlen in Exponentialform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter08/chapter08_sec06.html">8.6 Potenzen und Wurzeln komplexer Zahlen</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Funktionen</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter09/chapter09_sec00.html">Folgen, Grenzwerte und Stetigkeit</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec01.html">Grundwissen Zahlenfolgen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec02.html">Grenzwert einer Zahlenfolge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec03.html">Rechnen mit Grenzwerten von Folgen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec04.html">Funktionsgrenzwerte und ihre Rechenregeln</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec05.html">Stetigkeit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter09/chapter09_sec06.html">Unstetigkeitsstellen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter10/chapter10_sec00.html">Differentialrechnung (Teil 1)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec01.html">Steigung und Differentialquotient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec02.html">Ableitung von elementaren Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec03.html">Faktor-, Summen- und Produktregel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec04.html">Quotientenregel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec05.html">Kettenregel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter10/chapter10_sec06.html">Ableitung der Umkehrfunktion</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter11/chapter11_sec00.html">Differentialrechnung (Teil 2)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec01.html">Linearisierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec02.html">Regel von Bernoulli de l’Hospital</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec03.html">Neigungswinkel / Schnittwinkel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec04.html">Monotonie und Krümmung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec05.html">Extrema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter11/chapter11_sec06.html">Wendepunkte</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter12/chapter12_sec00.html">Integralrechnung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec01.html">Integration als Umkehrung der Differentiation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec02.html">Bestimmtes Integral und Rechenregeln</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec03.html">Unbestimmtes Integral bzw. Stammfunktion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec04.html">Hauptsatz der Differential- und Integralrechnung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec05.html">Integrationstechnik</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter12/chapter12_sec06.html">Substitutionsregel und partielle Integration</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/gramschs/book_mathe01" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter03/sec04.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>3.4 Affine Punkträume</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#affiner-punktraum">Affiner Punktraum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#affine-punktraume-zur-beschreibung-geometrischer-probleme-in-der-ebene-2d">Affine Punkträume zur Beschreibung geometrischer Probleme in der Ebene (2D)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#affine-punktraume-im-mathbb-r-n">Affine Punkträume im <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="affine-punktraume">
+<h1>3.4 Affine Punkträume<a class="headerlink" href="#affine-punktraume" title="Link to this heading">#</a></h1>
+<p>Nachdem wir gelernt haben, wie Punkte bezüglich eines Koordinatensystems durch
+n-Tupel und Verschiebungen als Vektoren beschrieben werden können, kombinieren
+wir nun beides und führen den sogenannten affinen Punktraum ein.</p>
+<section id="lernziele">
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
+<div class="goals admonition">
+<p class="admonition-title">Lernziele</p>
+<ul class="simple">
+<li><p>Sie können die Definition eines <strong>affinen Punktraumes</strong> auswendig.</p></li>
+<li><p>Sie wissen, wie Punkte und Verschiebungsvektoren im <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> über die
+<strong>Punkt-Vektoraddition</strong> zu einem affinen Punktraum kombiniert werden können.</p></li>
+</ul>
+</div>
+</section>
+<section id="affiner-punktraum">
+<h2>Affiner Punktraum<a class="headerlink" href="#affiner-punktraum" title="Link to this heading">#</a></h2>
+<p>Erste Zutat eines affinen Punktraumes ist eine nichtleere Menge <span class="math notranslate nohighlight">\(A\)</span>, deren
+Elemente wir Punkte nennen. Zweite Zutat ist ein reeller Vektorraum <span class="math notranslate nohighlight">\(V\)</span> mit der
+Verknüpfung <span class="math notranslate nohighlight">\(\oplus: V\times V\to V\)</span> (bzw. ein allgemeiner Vektorraum über einem
+beliebigen Körper). Darüber hinaus setzen wir voraus, dass es eine weitere
+Verknüpfung <span class="math notranslate nohighlight">\(\boxplus: A\times V \to A\)</span> gibt. Wir nennen das Tripel
+<span class="math notranslate nohighlight">\((V,A,\boxplus)\)</span> <strong>affinen Punktraum</strong>, wenn gilt:</p>
+<ol class="arabic simple">
+<li><p>Für alle Punkte <span class="math notranslate nohighlight">\(P \in A\)</span> gilt <span class="math notranslate nohighlight">\(P \boxplus \vec{0} = P\)</span>.</p></li>
+<li><p>Für jeden Punkt <span class="math notranslate nohighlight">\(P\in A\)</span> und <span class="math notranslate nohighlight">\(Q\in A\)</span> existiert genau ein Vektor <span class="math notranslate nohighlight">\(v\in V\)</span>
+mit <span class="math notranslate nohighlight">\(P\boxplus\vec{v}=Q\)</span>.</p></li>
+<li><p>Für alle Punkte <span class="math notranslate nohighlight">\(P\in A\)</span> und Vektoren <span class="math notranslate nohighlight">\(\vec{v}, \vec{w}\in V\)</span> gilt <span class="math notranslate nohighlight">\(P\boxplus
+(\vec{v}\oplus\vec{w}) = (P\boxplus \vec{v})\boxplus\vec{w}\)</span>.</p></li>
+</ol>
+<p>Bemerkung: Üblicherweise werden die Verknüpfungen <span class="math notranslate nohighlight">\(\boxplus: A \times V \to A\)</span>
+und <span class="math notranslate nohighlight">\(\oplus: V \times V \to V\)</span> nur mit einem einfachen Pluszeichen <span class="math notranslate nohighlight">\(+\)</span>
+geschrieben, da ja aus dem Zusammenhang klar ist, welche Verknüpfung gemeint
+ist.</p>
+<p>In der »lässigeren« Schreibweise mit dem <span class="math notranslate nohighlight">\(+\)</span> als Symbol für die Verknüpfung
+lässt sich der Begriff affiner Punktraum also folgendermaßen definieren.</p>
+<div class="note admonition">
+<p class="admonition-title">Was ist … ein affiner Punktraum?</p>
+<p>Eine nichtleere Menge <span class="math notranslate nohighlight">\(A\)</span> mit einem Vektorraum <span class="math notranslate nohighlight">\(V\)</span> und einer Verknüpfung <span class="math notranslate nohighlight">\(+:
+A\times V \to A\)</span> wird affiner Punktraum genannt, wenn folgende Eigenschaften
+erfüllt sind:</p>
+<ol class="arabic simple">
+<li><p>Für alle Punkte <span class="math notranslate nohighlight">\(P \in A\)</span> gilt <span class="math notranslate nohighlight">\(P + \vec{0} = P\)</span>.</p></li>
+<li><p>Für jeden Punkt <span class="math notranslate nohighlight">\(P\in A\)</span> und <span class="math notranslate nohighlight">\(Q\in A\)</span> existiert genau ein Vektor <span class="math notranslate nohighlight">\(v\in V\)</span>
+mit <span class="math notranslate nohighlight">\(P + \vec{v} = Q\)</span>.</p></li>
+<li><p>Für alle Punkte <span class="math notranslate nohighlight">\(P\in A\)</span> und Vektoren <span class="math notranslate nohighlight">\(\vec{v}, \vec{w}\in V\)</span> gilt <span class="math notranslate nohighlight">\(P+
+(\vec{v}+\vec{w}) = (P+ \vec{v})+\vec{w}\)</span>.</p></li>
+</ol>
+</div>
+<p>Gemäß Regel Nr. 2 wird existiert für jeden Punkt <span class="math notranslate nohighlight">\(P\in A\)</span> und <span class="math notranslate nohighlight">\(Q\in A\)</span> genau ein
+Vektor <span class="math notranslate nohighlight">\(v \in V\)</span>, so dass <span class="math notranslate nohighlight">\(P + \vec{v} = Q\)</span> gilt. Häufig wird dieser Vektor
+<span class="math notranslate nohighlight">\(\vec{v}\)</span> auch mit der Notation <span class="math notranslate nohighlight">\(\overrightarrow{PQ}\)</span> bezeichnet und
+<strong>Verbindungsvektor</strong> zwischen dem Punkt <span class="math notranslate nohighlight">\(P\)</span> und dem Punkt <span class="math notranslate nohighlight">\(Q\)</span> genannt.</p>
+<p>Außerdem gilt dann auch</p>
+<div class="math notranslate nohighlight">
+\[P + \overrightarrow{PQ} = Q \; \Rightarrow \;
+\overrightarrow{PQ} = Q - P.\]</div>
+</section>
+<section id="affine-punktraume-zur-beschreibung-geometrischer-probleme-in-der-ebene-2d">
+<h2>Affine Punkträume zur Beschreibung geometrischer Probleme in der Ebene (2D)<a class="headerlink" href="#affine-punktraume-zur-beschreibung-geometrischer-probleme-in-der-ebene-2d" title="Link to this heading">#</a></h2>
+<p>Nachdem wir nun das mathematische Rüstzeug haben, können wir Punkte (Positionen)
+und Verschiebungen (Bewegungen) miteinander kombinieren, um geometrische
+Probleme präzise zu beschreiben und sie zu lösen.</p>
+<p>Sobald wir für unsere Menge der Punkte ein Koordinatensystem gewählt haben,
+können wir die Position der Punkte als n-Tupel angeben. Wir beginnen mit dem
+zweidimensionalen Raum <span class="math notranslate nohighlight">\(A=\mathbb{R}^2\)</span>. Zweckmäßigerweise verwenden wir für das
+2-Tupel der Koordinaten eines Punktes <span class="math notranslate nohighlight">\(P\in\mathbb{R}^2\)</span> einen Spaltenvektor</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix} P_1 \\ P_2 \end{pmatrix}.\end{split}\]</div>
+<p>Die Verknüpfung <span class="math notranslate nohighlight">\(+: \mathbb{R}^2 \times V \to \mathbb{R}^2\)</span> definieren wir als
+komponentenweise Addition, also für einen Punkt <span class="math notranslate nohighlight">\(S\in\mathbb{R}^2\)</span> und einen
+zweidimensionalen Verschiebungsvektor <span class="math notranslate nohighlight">\(\vec{v}\)</span> als</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix} P_1 \\ P_2 \end{pmatrix} + \begin{pmatrix} v_1 \\ v_2
+\end{pmatrix} = \begin{pmatrix} Q_1 \\ Q_2 \end{pmatrix}.\end{split}\]</div>
+<p>Das Ergebnis ist der Punkt <span class="math notranslate nohighlight">\(Q\in\mathbb{R}^2\)</span> mit den Koordinaten <span class="math notranslate nohighlight">\(Q_1\)</span> und
+<span class="math notranslate nohighlight">\(Q_2\)</span>.</p>
+<p>Achtung: auf den ersten Blick könnte man meinen, dass zwei Vektoren addiert
+werden und das Ergebnis auf der rechten Seite ein Vektor ist. Trotz der
+einheitlichen Schreibweise, die schnelleres Rechnen ermöglichen soll, handelt es
+sich dennoch um zwei unterschiedliche Objekte Punkt und Verschiebung (oder
+physikalisch ausgedrückt um Ort und Bewegung).</p>
+<p>Wir fragen uns, ob die so definierte <strong>Punkt-Vektor-Addition</strong> zusammen mit der
+Menge der Punkte <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> und dem Vektorraum der Verschiebungen einen
+affinen Punktraum bildet. Dazu müssen wir die drei Eigenschaften nachrechnen.</p>
+<p>Eigenschaft 1 ist geometrisch und arithmetisch erfüllt. Wenn wir die
+Verschiebung</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix} 0 \\ 0 \end{pmatrix}\end{split}\]</div>
+<p>auf den geometrisch auf den Punkt <span class="math notranslate nohighlight">\(P\)</span> anwenden, bewegen wir uns nicht und
+erhalten als Ergebnis wiederum <span class="math notranslate nohighlight">\(P\)</span>. Also gilt <span class="math notranslate nohighlight">\(P + \vec{0} = P\)</span>. Arithmetisch
+erhalten wir dasselbe Ergebnis, denn es gilt</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix} P_1 \\ P_2 \end{pmatrix} + \begin{pmatrix} 0 \\ 0
+\end{pmatrix} = \begin{pmatrix} P_1 \\ P_2 \end{pmatrix}.\end{split}\]</div>
+<p>Eigenschaft 2 gilt auch. Wenn wir nämlich den Verbindunsvektor <span class="math notranslate nohighlight">\(\vec{v}\)</span> als</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\vec{v} := \begin{pmatrix} Q_1 - P_1 \\ Q_2 - P_2 \end{pmatrix}\end{split}\]</div>
+<p>definieren, gilt mit der Punkt-Vektor-Addition</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix} P_1 \\ P_2 \end{pmatrix} + 
+\begin{pmatrix} Q_1 - P_1 \\ Q_2 - P_2 \end{pmatrix} = 
+\begin{pmatrix} Q_1 \\ Q_2 \end{pmatrix},\end{split}\]</div>
+<p>oder anders ausgedrückt <span class="math notranslate nohighlight">\(P + \vec{v} = Q\)</span>.</p>
+<p>Bleibt noch die letzte Eigenschaft. Dazu betrachten wir eine Skizze.</p>
+<figure class="align-default" id="affiner-punktraum-2d">
+<a class="reference internal image-reference" href="../_images/affiner_punktraum_2D.png"><img alt="../_images/affiner_punktraum_2D.png" src="../_images/affiner_punktraum_2D.png" style="width: 75%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Beispiel zur 3. Eigenschaft von affinen Punkträumen am Beispiel vom
+<span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>; Quelle: eigene Darstellung; Lizenz: <a class="reference external" href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA
+4.0</a></span><a class="headerlink" href="#affiner-punktraum-2d" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Geometrisch bedeutet <span class="math notranslate nohighlight">\(P+ (\vec{v}+\vec{w})\)</span>, dass ich erst die beiden
+Verschiebungen hintereinander ausführe und so zur rot gezeichneten Verschiebung
+<span class="math notranslate nohighlight">\((-2,4)\)</span> komme. Wird der Punkt <span class="math notranslate nohighlight">\(P\)</span> dann um <span class="math notranslate nohighlight">\((-2,4)\)</span> verschoben, landen wir bei
+<span class="math notranslate nohighlight">\(R(1,6)\)</span>. Die linke Seite ergibt arithmetisch</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}P+(\vec{v}+\vec{w}) = P + \begin{pmatrix} -2 \\ 4 \end{pmatrix} =
+\begin{pmatrix} 3 \\ 2 \end{pmatrix} + \begin{pmatrix} -2 \\ 4 \end{pmatrix} =
+\begin{pmatrix} 1 \\ 6 \end{pmatrix}.\end{split}\]</div>
+<p>Jetzt betrachten wir die rechte Seite. Verschieben wir zunächst den Punkt
+<span class="math notranslate nohighlight">\(P(3,2)\)</span> um <span class="math notranslate nohighlight">\(\vec{v}\)</span>, landen wir bei <span class="math notranslate nohighlight">\(Q(5,3)\)</span>. Nun wenden wir die zweite
+Verschiebung <span class="math notranslate nohighlight">\(\vec{w}\)</span> an und enden ebenfalls bei <span class="math notranslate nohighlight">\(R(1,6)\)</span>. Das ist auch
+arithmetisch erfüllt:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}(P+\vec{v})+\vec{w} = \left(\begin{pmatrix} 3 \\ 2 \end{pmatrix} +
+\begin{pmatrix} 2 \\ 1 \end{pmatrix}\right)
++ \begin{pmatrix} -4 \\ 3 \end{pmatrix} = \begin{pmatrix} 5 \\ 3 \end{pmatrix} +
+\begin{pmatrix} -4 \\ 3 \end{pmatrix} = \begin{pmatrix} 1 \\ 6 \end{pmatrix}.\end{split}\]</div>
+<p>Die Überlegungen wurden hier für ein konkretes Beispiel durchgeführt. Um zu
+zeigen, dass die Punkt-Vektor-Addition tatsächlich die 3. Eigenschaft eines
+affinen Punktraumes erfüllt, müssen wir das allgemein zeigen.</p>
+<p>Allgemein lautet die linke Seite</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}P+(\vec{v}+\vec{w}) = \begin{pmatrix} P_1 \\ P_2 \end{pmatrix} +
+\left(\begin{pmatrix} v_1 \\ v_2 \end{pmatrix} + \begin{pmatrix} w_1 \\ w_2
+\end{pmatrix} \right) = \begin{pmatrix} P_1 \\ P_2 \end{pmatrix} +
+\begin{pmatrix} v_1 + w_1 \\ v_2 + w_2 \end{pmatrix} = \begin{pmatrix} P_1 + v_1
++ w_1\\ P_2 + v_2 + w_2 \end{pmatrix} .\end{split}\]</div>
+<p>Die rechte Seite lautet</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}(P+\vec{v})+\vec{w} = \left( \begin{pmatrix} P_1 \\ P_2 \end{pmatrix} +
+\begin{pmatrix} v_1 \\ v_2 \end{pmatrix}\right) + \begin{pmatrix} w_1 \\ w_2
+\end{pmatrix} = \begin{pmatrix} P_1 + v_1 \\ P_2 + v_2\end{pmatrix} +
+\begin{pmatrix}  w_1 \\  w_2 \end{pmatrix} = \begin{pmatrix} P_1 + v_1 + w_1\\
+P_2 + v_2 + w_2 \end{pmatrix} .\end{split}\]</div>
+<p>Beide Seiten sind gleich, was durch das Assoziativgesetz der skalaren Addition
+bedingt ist. Somit ist auch die 3. Eigenschaft des affinen Punktraumes erfüllt.</p>
+</section>
+<section id="affine-punktraume-im-mathbb-r-n">
+<h2>Affine Punkträume im <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span><a class="headerlink" href="#affine-punktraume-im-mathbb-r-n" title="Link to this heading">#</a></h2>
+<p>Die oben gezeigten Überlegungen lassen sich einfach auf den n-dimensionalen Raum
+<span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> übertragen. Wir stellen Punkte als n-Tupel im kartesischen
+Koordinatensystem dar:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix} P_1 \\ P_2 \\ \vdots \\ P_n\end{pmatrix}.\end{split}\]</div>
+<p>Verschiebungen beschreiben wir ebenfalls als n-Tupel mit der üblichen
+Vektoraddition und Skalarmultiplikation des reellen Standardvektorraumes.  Wir
+verwenden ebenfalls die Notation als Spaltenvektor, also</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix} v_1 \\ v_2 \\ \vdots \\ v_n\end{pmatrix}.\end{split}\]</div>
+<p>Zusätzlich definieren wir eine n-dimensionale Punkt-Vektor-Addition <span class="math notranslate nohighlight">\(+:
+\mathbb{R}^n \times \mathbb{R}^n \to \mathbb{R}^n\)</span> als komponentenweise Addition
+in den reellen Zahlen, also als</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix} P_1 \\ P_2 \\ \vdots \\ P_n\end{pmatrix} + \begin{pmatrix} v_1
+\\ v_2 \\ \vdots \\ v_n\end{pmatrix} = \begin{pmatrix} P_1 + v_1 \\ P_2 + v_2 \\
+\vdots \\ P_n + v_n\end{pmatrix}. \end{split}\]</div>
+<p>Der Nachweis der drei Eigenschaften eines affinen Punktraumes erfolgt dabei wie
+im zweidimensionalen Fall.</p>
+</section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>Mit Hilfe des mathematischen Konzepts der affinen Punkträume können wir nun
+geometrische Probleme algebraisch beschreiben. In den nächsten Kapiteln werden
+sehen, wie geometrische Probleme dadurch einfacher gelöst werden können.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapter03"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="sec03.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">3.3 Vektoren in der Geometrie</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="sec05.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">3.5 Betrag Vektor und Abstand Punkte</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#affiner-punktraum">Affiner Punktraum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#affine-punktraume-zur-beschreibung-geometrischer-probleme-in-der-ebene-2d">Affine Punkträume zur Beschreibung geometrischer Probleme in der Ebene (2D)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#affine-punktraume-im-mathbb-r-n">Affine Punkträume im <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Simone Gramsch
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div>
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0 License</a>.
+</div>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,248 +1,212 @@
----
-jupytext:
-  formats: ipynb,md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.8
-kernelspec:
-  display_name: Python 3 (ipykernel)
-  language: python
-  name: python3
----
+# 8.3 Betrag, komplexe Konjugation und Division
 
-# 8.3 Statistik mit Pandas
+In dem vorherigen Kapitel haben wir die Addition, Subtraktion und Multiplikation
+von komplexen Zahlen kennengelernt. In diesem Kapitel werden wir uns mit der
+letzten -- noch fehlenden -- Grundrechenart beschäftigen, nämlich der
+**Division**. Dazu führen wir zuerst den **Betrag** einer komplexen Zahl ein und
+beschäftigen uns mit der **komplexen Konjugation**.
+
 
 ## Lernziele
 
-```{admonition} Lernziele
-:class: hint
-* Sie können sich mit **describe** eine Übersicht über statistische Kennzahlen
-  verschaffen.
-* Sie wissen, wie Sie die Anzahl der gültigen Einträge mit **count** ermitteln.
-* Sie kennen die statistischen Kennzahlen Mittelwert und Standardabweichung und
-  wissen, wie diese mit **mean** und **std** berechnet werden.
-* Sie können das Minimum und das Maximum mit **min** und **max** bestimmen.
-* Sie wissen wie ein Quantil interpretiert wird und wie es mit **quantile**
-  berechnet wird.
+```{admonition} Lernziele 
+:class: goals
+* Sie können den **Betrag** einer komplexen Zahl berechnen: 
+
+   $$|z|=\sqrt{\text{Re}(z)^2 + \text{Im}(z)^2}.$$
+
+* Sie kennen die **Dreiecksungleichung** für den Betrag komplexer Zahlen: 
+
+   $$|z_1 + z_2| \leq |z_1| + |z_2|.$$
+* Sie können die **konjugiert komplexe Zahl** bilden, also eine **komplexe
+  Konjugation** durchführen. 
+* Sie können die folgenden Rechenregeln für den Betrag anwenden:
+    * $|z_1 \cdot z_2| = |z_1| \cdot |z_2|$   
+    * $|z| = |\bar{z}|$   
+    * $|z| = \sqrt{z \cdot \bar{z}}$
+* Sie können zwei komplexe Zahlen in Normalform **dividieren**.
 ```
 
 
-## Schnelle Übersicht mit .describe()
+## Betrag komplexer Zahlen
 
-So wie die Methode `.info()` uns einen schnellen Überblick über die Daten eines
-DataFrame-Objektes gibt, so liefert die Methode `.describe()` eine schnelle
-Übersicht über statistische Kennzahlen. Wir bleiben bei unserem Beispiel der
-Spielerdaten der Top7-Fußballvereine der Bundesligasaison 2020/21. 
+Im Gegensatz zu reellen Zahlen sind komplexe Zahlen nicht geordnet. Welche Zahl
+ist größer: $-1+3\mathrm{i}$ oder $2-0.5\mathrm{i}$? Auf der Zahlengerade lassen
+sich die reellen Zahlen ordnen. $3$ ist größer als $2.7$ und liegt daher weiter
+rechts auf der Zahlengeraden. Die geometrische Interpretation der komplexen
+Zahlen als Punkte in der Gaußschen Zahlenebene zeigt aber, dass dieses Ordnen in
+der Gaußschen Zahlenebene nicht funktioniert. Die Zahl $2-0.5\mathrm{i}$ liegt
+zwar weiter rechts als $-1+3\mathrm{i}$. Gleichzeitig liegt aber
+$-1+3\mathrm{i}$ höher als $2-0.5\mathrm{i}$. Als Ersatz für eine Ordnung der
+komplexen Zahlen dient daher der sogenannte **Betrag** einer komplexen Zahl. Der
+Betrag einer komplexen Zahl ist ihr Abstand zum Koordinatenursprung, also zur
+Null $0+0\mathrm{i}$.
 
-```{code-cell} ipython3
-import pandas as pd
+Verwenden wir den Satz des Pythagoras, können wir den Betrag einer komplexen
+Zahl aus ihrem Realteil und Imaginärteil ausrechnen.
 
-data = pd.read_csv('bundesliga_top7_offensive.csv', index_col=0)
-data.head(10)
+```{admonition} Was ist ... der Betrag einer komplexen Zahl?
+:class: note
+Der Betrag einer komplexen Zahl $z = a + \mathrm{i}$ mit Realteil $a$ und
+Imaginärteil $b$ ist
+
+$$|z| = \sqrt{a^2 + b^2}.$$
 ```
 
-Die Anwendung der `.describe()`-Methode liefert fogende Ausgabe:
+Für den Betrag zweier komplexer Zahlen gilt die sogenannte
+**Dreiecksungleichung**:
 
-```{code-cell} ipython3
-data.describe()
+$$|z_1 + z_2| \leq |z_1| + |z_2|.$$
+
+```{dropdown} Video "Komplexe Zahlen - Betrag" von Prof. Hoever
+<iframe width="560" height="315" src="https://www.youtube.com/embed/09WI_DCFmI0?si=bJrb_PYPcQ3t9cQY" title="YouTube video player" frameborder="0" allow="accelerometer; 
+autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
 
-Da es sich eingebürgert hat, Daten zeilenweise abzuspeichern und die Eigenschaft
-pro einzelnem Datensatz in den Spalten zu speichern, wertet `.describe()` jede
-Spalte für sich aus. Für jede Eigenschaft werden dann die statistischen
-Kennzahlen
 
-* count
-* mean
-* std
-* min
-* max
-* Quantile 25 %, 50 % und 75 %
-* max
+## Komplexe Konjugation
 
-ausgegeben.
+Als nächstes betrachen wir den Prozess der komplexen Konjugation. Soll zu einer
+komplexen Zahl die sogenannte **konjugiert komplexe Zahl** berechnet werden,
+dann ist damit gemeint, dass das Vorzeichen des Imaginärteils getauscht wird.
+Anhand eines Beispiels betrachten wir nun die geometrische Interpretation der
+konjugiert komplexen Zahl in der Gaußschen Zahlenebene.
 
-Die Bedeutung der Kennzahlen wird in der
-[Pandas-Dokumentation/DataFrame.describe
-](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html)
-erläutert. Wir gehen dennoch jede Kennzahl einzeln durch.
+**Beispiel:** Wir betrachten die komplexe Zahl $z = 3 + 2\mathrm{i}$. Tauschen
+wir nun das Vorzeichen des Imaginärteils, ergibt sich daraus die konjugiert
+komplexe Zahl
 
+$$\bar{z} = 3 \textcolor{red}{-} 2\mathrm{i}.$$
 
-## Anzahl count
+Dabei wird die konjugiert komplexe Zahl durch einen Strich gekennzeichnet. Als
+nächstes zeichnen wir $z$ und $\bar{z}$ in der Gaußschen Zahlenebene ein.
 
-Mit `.count()` wird die Anzahl der Einträge bestimmt, die *nicht* 'NA' sind. Der
-Begriff 'NA' stammt dabei aus dem Bereich Data Science. Gemeint sind fehlende
-Einträge, wobei die fehlenden Einträge verschiedene Ursachen haben können:
+<img src="pics/konjugiert_komplexe_zahl_light43.svg" 
+alt="Komplexe Zahl und ihre konjugiert komplexe Zahl in der Gaußschen Zahlenebene" 
+class="image43"
+width=100%>
+<img src="pics/konjugiert_komplexe_zahl_light169.svg" 
+alt="Komplexe Zahl und ihre konjugiert komplexe Zahl in der Gaußschen Zahlenebene" 
+class="image169"
+width=100%>
 
-* NA = not available (der Messsensor hat versagt)
-* NA = not applicable (es ist sinnlos bei einem Mann nachzufragen, ob er
-  schwanger ist)
-* NA = no answer (eine Person hat bei dem Umfrage nichts angegeben)
+Wir können den Prozess des »Vorzeichentauschens«, die sogenannte **komplexe
+Konjugation** geometrisch als eine Spiegelung an der Realteil-Achse
+interpretieren.
 
-Wir können auch direkt auf diesen Wert zugreifen, wenn wir beispielsweise wissen
-wollen, bei wie vielen Fußballspielern ein Alter eingetragen ist. Wird die
-Methode `.count()` direkt auf den kompletten DataFrame angewendet, so erhalten
-wir ein Pandas-Series-Objekt. 
+```{admonition} Was ist ... die konjugiert komplexe Zahl?
+:class: note
+Ist $z = a + b\mathrm{i}$ eine komplexe Zahl, dann wird
 
-```{code-cell} ipython3
-print( data.count() )
+$$\bar{z} = a - b\mathrm{i}$$
+
+ihre konjugiert komplexe Zahl genannt. Sie entsteht durch das Tauschen des
+Vorzeichens des Imaginärteils. 
 ```
 
-Um jetzt an die Anzahl gültiger Altersangaben zu kommen, können wir entweder
-erst die Spalte mit dem Alter heraussgreifen und darauf `.count()` anwenden.
-
-
-```{code-cell} ipython3
-methode01 = data.loc[:, 'Age'].count()
-print(methode01)
+```{dropdown} Video "Komplexe Zahlen - Konjugiert komplexe Zahl" von Prof. Hoever
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-XZcW-xa35I?si=CB-vYzuUPo-TWTCS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
 
-Oder wir wenden zuerst `.count()`an und wählen dann im Series-Objekt das Alter
-'Age' aus.
 
-```{code-cell} ipython3
-methode02 = data.count().loc['Age']
-print(methode02)
+## Division komplexer Zahlen
+
+Die Division zweier komplexer Zahlen erfordert einen Trick. Um den Trick zu
+erklären, starten wir mit einem Beispiel. Die beiden komplexen Zahlen 
+$z_1 = 1-3\mathrm{i}$ und $z_2 = 1+2\mathrm{i}$ sollen dividiert werden, also 
+
+$$\frac{z_1}{z_2} = \frac{1-3\mathrm{i}}{1+2\mathrm{i}}$$
+
+berechnet werden. Wir nehmen den Nenner $1+2\mathrm{i}$ und tauschen das
+Vorzeichen des Imaginärteils aus. Aus Plus machen wir Minus und aus Minus machen
+wir Plus und erhalten die folgende konjugiert komplexe Zahl:
+
+$$1+2\mathrm{i} \; \longrightarrow \; 1 \textcolor{red}{-}2\mathrm{i}.$$
+
+Als nächstes erweitern wir den Bruch mit dieser neuen Zahl, rechnen also
+
+$$\frac{1-3\mathrm{i}}{1+2\mathrm{i}} \cdot \frac{1
+\textcolor{red}{-}2\mathrm{i}}{1 \textcolor{red}{-}2\mathrm{i}}$$
+
+aus. Beim Ausmultiplizieren des Nenners können wir die [3. binomische
+Formel](https://de.wikipedia.org/wiki/Binomische_Formeln) $(a+b)\cdot (a-b) =
+a^2 -b^2$ ausnutzen:
+
+$$\frac{(1-3\mathrm{i})}{(1+2\mathrm{i})} \cdot \frac{(1
+\textcolor{red}{-}2\mathrm{i})}{(1 \textcolor{red}{-}2\mathrm{i})} =
+\frac{1-2\mathrm{i}-3\mathrm{i}+6\mathrm{i}^2}{1^2 - 4\mathrm{i}^2}
+.$$
+
+Da ja $\mathrm{i}^2 = -1$ gilt, vereinfachen sich die Terme zu
+
+$$\frac{1-2\mathrm{i}-3\mathrm{i}+6\mathrm{i}^2}{1^2 - 4\mathrm{i}^2}
+= \frac{-5 -5\mathrm{i}}{5}.$$
+
+Daher gilt also insgesamt
+
+$$\frac{z_1}{z_2} = \frac{1-3\mathrm{i}}{1+2\mathrm{i}} = \frac{-5
+-5\mathrm{i}}{5} = -1 -\mathrm{i}.$$
+
+Um zwei komplexe Zahlen in Normalform zu dividieren, gehen wir also in drei
+Schritten vor:
+
+1. Bei der komplexen Zahl im Nenner wird das Vorzeichen des Imaginärteils
+   getauscht, also die konjugiert komplexe Zahl des Nenners gebildet.
+2. Danach wird der Bruch mit der kongugiert komplexen Zahl erweitert.
+3. Zuletzt werden alle Terme durch Ausmultiplizieren vereinfacht. Dabei werden
+   die 3. binomische Formel und $\mathrm{i}^2=-1$ ausgenutzt, bis das Ergebnis
+   in Normalform dasteht.  
+
+Der Vollständigkeit halber notieren wir noch die mathematische Formel zur
+Berechnung eines Quotienten von komplexen Zahlen im Allgemeinen. Wenn $z_1 = 
+a_1 + b_1 \cdot \mathrm{i}$ und $z_2 = a_2 + b_2 \cdot \mathrm{i}$ komplexe Zahlen
+sind, dann ist ihr Quotient
+
+$$\frac{z_1}{z_2} = \frac{a_1 + b_1 \cdot \mathrm{i}}{a_2 + b_2 \cdot
+\mathrm{i}} = \frac{a_1a_2 + b_1 b_2}{a_2^2 + b_2^2} + \frac{a_2 b_1 - a_1
+b_2}{a_2^2 + b_2^2} \mathrm{i}.$$
+
+Es ist wenig sinnvoll, diese Formel auswendig zu lernen. Eine bessere Strategie
+ist, sich zu merken, dass mit der konjugiert komplexen Zahl erweitert wird. Auch
+die Division zweier komplexer Zahlen kann geometrisch in der Gaußschen
+Zahlenebene interpretiert werden. Probieren Sie dazu das folgende Applet aus.
+
+```{admonition} Interaktiv: Division komplexer Zahlen von "Hart und Trocken"
+:class: seealso, toggle
+Starten Sie das 
+
+[Applet "Division komplexer
+Zahlen"](https://www.hartundtrocken.de/my-product/interaktiv-division-komplexer-zahlen/) 
+
+von "Hart und Trocken". Dort können Sie zwei komplexe Zahlen in der Gaußschen
+Zahlenebene wählen, indem Sie die beiden blauen Punkte bewegen. Der Quotient dieser
+beiden komplexen Zahlen wird orange dargestellt.
 ```
 
-## Mittelwert mean
-
-Mittelwert heißt auf Englisch mean. Daher ist es nicht verwunderlich, dass die Methode `.mean()` den Mittelwert der Einträge in jeder Spalte berechnet.
-
-```{code-cell} ipython3
-mittelwert = data.mean(numeric_only=True)
-print(mittelwert)
+```{dropdown} Video "Komplexe Zahlen - Kehrwert einer komplexen Zahl" von Prof. Hoever
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Rxq-4o1eFNA?si=yUlycavP-smHAGAP" title="YouTube video player" frameborder="0" allow="accelerometer; 
+autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
 
-An der Stelle ist es wichtig, die Option `numeric_only=True` zu setzen, damit
-nur von numerischen Werten, also Zahlen, der Mittelwert gebildet wird.
-
-Wir entnehmen der Statistik, dass Fußballer der Top7-Vereine im Mittel 24.9
-Jahre alt sind und 1321.6 Minuten im Einsatz waren.
-
-Falls Sie prinzipiell nochmal die Berechnung des Mittelwertes wiederholen
-wollen, können Sie folgendes Video ansehen.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/IKfsGPwACnU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
-## Standardabweichung std
-
-Das 'st' in `.std()`für Standard steht, ist nachvollziehbar. Der dritte
-Buchstabe 'd' kommt von 'deviation', also Abweichung. Somit ist wiederum die
-Methode nach dem englischen Fachbegriff 'standard deviation' benannt.  Welche
-Standardabweichung erhalten wir beim Alter?
-
-```{code-cell} ipython3
-standardabweichung = data.std(numeric_only=True)
-print(standardabweichung)
+```{dropdown} Video "Komplexe Zahlen | Division" von Lernkompass
+<iframe width="560" height="315" src="https://www.youtube.com/embed/J8btoGTJW-k?si=c057mP3tROAx6hHs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
 
-Es sind 4.3 Jahre. Das haben wir jetzt der Ausgabe abgelsen. Wenn wir den Wert
-extrahieren wollen, gibt es wieder die beiden Methoden. Entweder erst Spalte und
-dann `.std()` oder erst `.std()`und dann Selektion nach 'Age'. Probieren wir es
-aus.
 
-```{code-cell} ipython3
-alter_std = data.loc[:, 'Age'].std()
-print(alter_std) 
+## Weiteres Lernmaterial
+
+```{dropdown} Video "Komplexe Mengen grafisch darstellen" von MathePeter
+<iframe width="560" height="315" src="https://www.youtube.com/embed/M4KewnSNyC4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 
-Was war eigentlich nochmal die Standardabweichung? Falls Sie dazu eine kurze
-Wiederholung der Theorie benötigen, empfehle ich Ihnen dieses Video.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/QNNt7BvmUJM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+## Zusammenfassung und Ausblick
 
-
-## Minimum und Maximum mit min und max
-
-Die Namen der Methoden `.min()` und `max()` sind fast schon wieder
-selbsterklärend. Die Methode `.min()` liefert den kleinsten Werte zurück, der in
-einer Spalte gefunden wird. Umgekehrt liefert `.max()` den größten Eintrag, der
-in jeder Spalte gefunden wird. Wie häufig die minimalen und maximalen Werte
-vorkommen, ist dabei egal. 
-
-Schauen wir uns an, was die minimale Anzahl von Toren ist, die geschossen wurden
-(haben Sie eine Vermutung). Und dann schauen wir gleich nach, was die maximale
-Anzahl von Toren ist.
-
-```{code-cell} ipython3
-tore_min = data.loc[:, 'Goals'].min()
-print(tore_min)
-
-tore_max = data.loc[:, 'Goals'].max()
-print(tore_max)
-```
-
-Wenig verwunderlich ist die minimale Anzahl an Toren 0 und die maximale Anzahl
-an Toren, die ein oder mehrere Spieler der Top7 2020/21 geschossen haben, war
-41. (Wahrscheinlich wissen Sie aber, dass nur ein Spieler 41 Tore geschafft hat,
-natürlich Lewandowski).
-
-Von Verteidigern wird nicht erwartet, Tore zu schieen, sondern von Stürmern. Was
-ist denn das Minimum an Toren bei den Stürmern? Die Positionen sind in der
-Spalte 'Position'. Dabei bedeutet FW = forward = Stürmer, MF = mid field =
-Mittelfeld, DF = defensive = Verteidigung und GK = goalkeeper = Torwart. Bei
-manchen Spielern stehen zwei Positionen, konzentrieren wir uns auf diejenigen,
-bei denen nur 'FW' eingetragen ist.  
-
-```{code-cell} ipython3
-filter = data.loc[:, 'Position'] == 'FW'
-stuermer = data.loc[filter, 'Goals']
-
-print('Stürmer')
-print(stuermer)
-
-print('==============')
-print('Minimale Tore: {}'.format(stuermer.min()))
-```
-
-## Quantil mit quantile
-
-Das Quantil $p \%$ ist der Wert, bei dem $p %$ der Einträge kleiner als diese
-Zahl sind und $100 \% - p \%$ sind größer. Meist werden nicht Prozentzahlen
-verwendet, sondern p ist zwischen 0 und 1, wobei die 1 für 100 % steht. 
-
-Angenommen, wir würden gerne das 0.5-Quantil (auch Median genannt) der gelben
-Karten wissen. Mit der Methode `.quantile()` können wir diesen Wert leicht aus
-den Daten holen.
-
-```{code-cell} ipython3
-gelbe_karten_50prozent_quantil = data.loc[:, 'Yellow_Cards'].quantile(0.5)
-print(gelbe_karten_50prozent_quantil)
-```
-
-Das 50 % -Quantil liegt bei 2 gelben Karten. 50 % aller Spieler haben also
-weniger als 2 gelbe Karten kassiert. Und 50 % aller Spieler haben 2 oder mehr
-gelbe Karten kassiert. Wir schauen uns jetzt das 75 % Quantil an. 
-
-```{code-cell} ipython3
-gelbe_karten_75prozent_quantil = data.loc[:, 'Yellow_Cards'].quantile(0.75)
-print(gelbe_karten_75prozent_quantil)
-```
-
-75 % aller Spieler haben weniger als 4 gelbe Karten bekommen. SChauen wir uns
-die Gelbkarten-Spieler an. Ob da vielleicht mehrheitlich Defensivspieler dabei
-sind?
-
-```{code-cell} ipython3
-filter = data.loc[:, 'Yellow_Cards'] > 4.0
-gelbkarten_spieler = data.loc[filter, ['Position', 'Yellow_Cards']]
-print(gelbkarten_spieler.sort_values(by='Yellow_Cards', ascending=False))
-```
-
-## Zusammenfassung
-
-In diesem Abschnitt haben wir uns mit einfachen statistischen Kennzahlen
-beschäftigt, die Pandas mit der Methode `.describe()` zusammenfasst, die aber
-auch einzeln über 
-
-* `.count()`
-* `.mean()`
-* `.std()`
-* `.min()` und `.max()`
-* `.quantile()`
-
-berechnet und ausgegeben werden können.
+In diesem Kapitel haben Sie gelernt, wie komplexe Zahlen dividiert werden. Dazu
+wurden die Begriffe Betrag und komplexe Konjugation eingeführt. Tatsächlich ist
+es bei der Multiplikation und der Division häufig geschickter, von der
+Darstellung einer komplexen Zahl in Normalform zu der sogenannten
+trigonometrischen Form oder Exponentialform überzugehen. Letzteres wird uns auch
+das Potenzieren und Wurzelziehen ermöglichen. Daher behandeln wir im nächsten
+Kapitel zunächst die trigonometrische Form der komplexen Zahlen.
