@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Basis, Rechts- und Linkssystem &#8212; Mathematik 1 Maschinenbau</title>
+    <title>4.1 Basis und Dimension &#8212; Mathematik 1 Maschinenbau</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=fcc42dec" />
@@ -58,6 +58,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter04/chapter04_sec01';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -213,7 +215,7 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter04_sec00.html">Vektorrechnung (Teil 2)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Basis, Rechts- und Linkssystem</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.1 Basis und Dimension</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter04_sec02.html">Skalarprodukt (geometrisch)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter04_sec03.html">Skalarprodukt in Komponentendarstellung</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter04_sec04.html">Vektorprodukt (geometrisch)</a></li>
@@ -455,7 +457,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Basis, Rechts- und Linkssystem</h1>
+    <h1>4.1 Basis und Dimension</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -466,7 +468,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugendensystem">Erzeugendensystem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basis">Basis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dimension">Dimension</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
         </div>
@@ -478,21 +483,216 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="basis-rechts-und-linkssystem">
-<h1>Basis, Rechts- und Linkssystem<a class="headerlink" href="#basis-rechts-und-linkssystem" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="basis-und-dimension">
+<h1>4.1 Basis und Dimension<a class="headerlink" href="#basis-und-dimension" title="Link to this heading">#</a></h1>
+<p>In diesem Kapitel werden wir uns mit den grundlegenden Konzepten Basis und
+Dimension von Vektorräumen beschäftigen. Beide Konzepte basieren auf der
+Linearkombination von Vektoren, die wir im letzten Kapitel kennengelernt haben.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
+<li><p>Sie wissen, was ein <strong>Erzeugendensystem</strong> ist.</p></li>
 <li><p>Sie wissen, was eine <strong>Basis</strong> ist.</p></li>
-<li><p>Sie können ein <strong>Rechtssystem</strong> von einem <strong>Linkssystem</strong> unterscheiden.</p></li>
+<li><p>Sie wissen, was die <strong>Dimension</strong> eines Vektorraumes ist.</p></li>
 </ul>
 </div>
 </section>
-<section id="videos">
-<h2>Videos<a class="headerlink" href="#videos" title="Link to this heading">#</a></h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SWuDTHkkQeg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<section id="erzeugendensystem">
+<h2>Erzeugendensystem<a class="headerlink" href="#erzeugendensystem" title="Link to this heading">#</a></h2>
+<p>Bei manchen vor allem hochpreisigen Gaming-Tastaturen wird damit geworben, dass
+die Tastaturkappen für die Buchstaben W, A, S und D austauschbar sind. Doch
+warum? Bei vielen Computerspielen werden diese vier Tasten zur Steuerung der
+Spielfigur benutzt. Beispielsweise steuert A eine Figur nach links und D nach
+rechts, während mit W die Figur nach oben und mit S nach unten gesteuert wird.
+Bei einem zweidimensionalen Spiel reichen die Bewegungen oben/unten und
+links/rechts aus, um jede Position des Spielfeldes zu erreichen. Somit kann die
+Spielfigur komplett mit der linken Hand gesteuert werden und die rechte Hand
+bleibt frei, um weitere Aktionen der Spielfigur zu kontrollieren.</p>
+<p>Die Bewegung oben/unten wird von dem Computerspiel folgendermaßen interpretiert.
+Jeder Tastendruck von W bewirkt, dass die Spielfigur einen Schritt nach oben
+bewegt wird. Wird dreimal gedrückt, ist die neue y-Koordinate der Spielfigur</p>
+<div class="math notranslate nohighlight">
+\[y_{\text{neu}} = y_{\text{alt}} + 3\]</div>
+<p>und die reine Bewegung in y-Richtung <span class="math notranslate nohighlight">\(v_y = 3\)</span>. Wird danach fünfmal die S-Taste
+gedrückt, bewegt sich die Spielfigur um fünf Schritte nach unten. Nimmt man
+jetzt beide Bewegungen zusammen, dann ist die neue y-Position</p>
+<div class="math notranslate nohighlight">
+\[y_{\text{neu}} = \left( y_{\text{alt}} + 3 \right) - 5 = y_{\text{alt}} -2.\]</div>
+<p>Allgemein können wir die Bewegung der Spielfigur beschreiben als
+Linearkombination</p>
+<div class="math notranslate nohighlight">
+\[v_y = W \cdot (+1) + S \cdot (-1),\]</div>
+<p>wobei die <span class="math notranslate nohighlight">\(+1\)</span> für einen Schritt nach oben steht und die <span class="math notranslate nohighlight">\(-1\)</span> für einen Schritt
+nach unten.</p>
+<p>Analog dazu können wir die Bewegung links/rechts durch die Tasten A und D
+beschreiben. Wird erst dreimal die Taste A gedrückt und dann einmal die Taste D,
+so läuft die Spielfigure drei Schritte nach links und dann einen Schritt nach
+rechts. Insgesamt befindet sich die Figure dann zwei Schritte links von der
+ursprünglichen Position, also</p>
+<div class="math notranslate nohighlight">
+\[x_{\text{neu}} = x_{\text{alt}} - 2.\]</div>
+<p>Die reine Bewegung können wir durch</p>
+<div class="math notranslate nohighlight">
+\[v_x = D\cdot (+1) + A \cdot (-1)\]</div>
+<p>berechnen. Diesmal steht <span class="math notranslate nohighlight">\(+1\)</span> für einen Schritt nach rechts und <span class="math notranslate nohighlight">\(-1\)</span> für einen
+Schritt nach links.</p>
+<p>Jetzt beschreiben wir die beiden Bewegungsarten gemeinsam. Fünfmal W, dreimal D
+und dann zweimal A bedeutet, dass die Spielfigur am Ende der Bewegung fünf
+Schritte nach oben und einen Schritt nach rechts gegangen ist. Wir nutzen die
+Vektornotation, d.h. Bewegungen links/rechts werden als erste Komponente notiert
+und die zweite Komponente repräsentiert die Bewegung oben/unten. Die drei
+Bewegungen sind also</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\vec{v} = \begin{pmatrix} 0 \\ 5 \end{pmatrix} + \begin{pmatrix} 3 \\ 0
+\end{pmatrix} + \begin{pmatrix} -2 \\ 0 \end{pmatrix}.\end{split}\]</div>
+<p>Allgemein können wir jede Bewegung der Spielfigur folgendermaßen zusammensetzen:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\vec{v} = W \cdot \begin{pmatrix} 0 \\ 1 \end{pmatrix} 
++ A \cdot \begin{pmatrix} -1 \\ 0 \end{pmatrix} 
++ S \cdot \begin{pmatrix} 0 \\ -1 \end{pmatrix} 
++ D\cdot \begin{pmatrix} 1 \\ 0 \end{pmatrix}.\end{split}\]</div>
+<p>Diese <em>vier</em> Bewegungsvektoren erzeugen alle Bewegungen, um jede Position des
+Spielfeldes zu erreichen. In der Mathematik nennt man eine Menge von Vektoren,
+die linear kombiniert jeden Vektor des Vektorraumes erzeugen, ein
+<strong>Erzeugendensystem</strong>.</p>
+<p>Mathematisch präzise wird ein Erzeugendensystem folgendermaßen definiert.</p>
+<div class="note admonition">
+<p class="admonition-title">Was ist … ein Erzeugendensystem?</p>
+<p>Ist <span class="math notranslate nohighlight">\(V\)</span> ein reeller Vektorraum, dann wird eine Menge <span class="math notranslate nohighlight">\(E\subseteq V\)</span> von Vektoren
+<strong>Erzeugendensystem</strong> von <span class="math notranslate nohighlight">\(V\)</span> genannt, wenn jeder Vektor <span class="math notranslate nohighlight">\(\vec{v}\in V\)</span> als
+Linearkombination von den Vektoren aus <span class="math notranslate nohighlight">\(E\)</span> dargestellt werden kann. Jeder Vektor
+<span class="math notranslate nohighlight">\(\vec{v}\in V\)</span> hat also eine Zerlegung der Form</p>
+<div class="math notranslate nohighlight">
+\[\vec{v} = s_1\cdot \vec{e}_1 + s_2 \cdot \vec{e}_2 + \ldots + s_n \cdot
+\vec{e}_n\]</div>
+<p>mit den Skalaren <span class="math notranslate nohighlight">\(s_1, s_2, \ldots, s_n\)</span> und den Erzeugendensystem-Vektoren
+<span class="math notranslate nohighlight">\(\vec{e}_1, \vec{e}_2, \ldots, \vec{e}_n \in E\)</span>.</p>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Erzeugendensystem” von Prof. Hoever</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Yh8xj_iMe98?si=I7eRSZneTrPf9pvx" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="basis">
+<h2>Basis<a class="headerlink" href="#basis" title="Link to this heading">#</a></h2>
+<p>Bei dem obigen Beispiel des Erzeugendensystems für ein 2D-Computerspiel haben
+wir vier Vektoren benutzt, um die Bewegungen der Spielfigur auf dem Spielfeld zu
+beschreiben:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\vec{v} = W \cdot \begin{pmatrix} 0 \\ 1 \end{pmatrix} 
++ A \cdot \begin{pmatrix} -1 \\ 0 \end{pmatrix} 
++ S \cdot \begin{pmatrix} 0 \\ -1 \end{pmatrix} 
++ D\cdot \begin{pmatrix} 1 \\ 0 \end{pmatrix}.\end{split}\]</div>
+<p>Wenn wir als Spieler beobachten wollen, wie die Figur läuft, ist es sinnvoll
+jede Einzelbewegung auch als solche zu animieren. Sollte das Computerspiel auch
+einen Transport zulassen, bei der die Figur sich von einer Position zu einer
+anderen Position teleportiert, ohne dass die Bewegung selbst sichtbar wird (z.B.
+beim Spawnen), dann ist es einfacher, nur die Gesamtbewegung
+<span class="math notranslate nohighlight">\(\vec{v}_{\text{gesamt}}\)</span> zu betrachten:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\vec{v}_{\text{gesamt}} = \begin{pmatrix} 0 \\ 5 \end{pmatrix} + \begin{pmatrix} 3 \\ 0
+\end{pmatrix} + \begin{pmatrix} -2 \\ 0 \end{pmatrix} =
+\begin{pmatrix} 1 \\ 5 \end{pmatrix}.\end{split}\]</div>
+<p>Die Spielfigur teleportiert also zu der neuen Position</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+x_{\text{neu}} &amp;= x_{\text{alt}} + 1, \\
+y_{\text{neu}} &amp;= y_{\text{alt}} + 5. \\
+\end{align*}\]</div>
+<p>Am einfachsten lässt sich die Teleportation durch ein Erzeugendensystem
+beschreiben, bei dem nur zwei Vektoren verwendet werden. Der erste Vektor
+beschreibt die Bewegung links/rechts, der zweite Vektor die Bewegung oben/unten:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\vec{v}_{\text{gesamt}} = (D - A) \cdot \begin{pmatrix} 1 \\ 0 \end{pmatrix} +
+(W - s) \cdot \begin{pmatrix} 0 \\ 1 \end{pmatrix}.\end{split}\]</div>
+<p>Bei der Gesamtbewegung werden erst die resultierenden Schritte links/rechts als
+<span class="math notranslate nohighlight">\(D-A\)</span> berechnet und dann die resultierenden Schritte oben/unten als <span class="math notranslate nohighlight">\(W-S\)</span>.
+Dennoch können wir immer noch jede Bewegung auf dem Spielfeld darstellen, die
+gebraucht wird, um jede Position auf dem Spielfeld zu erreichen. Lassen wir
+jedoch einen der beiden Vektoren weg und benutzen beispielsweise nur noch</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\vec{v}_1 = \begin{pmatrix} 1 \\ 0 \end{pmatrix},\end{split}\]</div>
+<p>so können wir nur noch links/rechts-Bewegungen erzeugen. Die Spielfigure könnte
+sich nur noch entlang einer horizontalen Linie bewegen, die auf der Höhe ihrer
+Startposition liegt. Weniger als zwei Vektoren darf das Erzeugendensystem nicht
+haben. Das minimale Erzeugendensystem, mit dem durch Linearkombination alle
+Vektoren eines Vektorraums dargestellt werden können, nennt man <strong>Basis</strong>. Für
+unser 2D-Computerspiel bildet die Menge</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}E = \left\{ 
+\begin{pmatrix} 0 \\ 1 \end{pmatrix},
+\begin{pmatrix} -1 \\ 0 \end{pmatrix},
+\begin{pmatrix} 0 \\ -1 \end{pmatrix}, 
+\begin{pmatrix} 1 \\ 0 \end{pmatrix}
+\right\} \end{split}\]</div>
+<p>ein Erzeugendensystem. Die Menge</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}B = \left\{ 
+\begin{pmatrix} 1 \\ 0 \end{pmatrix},
+\begin{pmatrix} 0 \\ 0 \end{pmatrix}
+\right\} \end{split}\]</div>
+<p>bildet eine Basis der Bewegungen auf dem Spielfeld.</p>
+<div class="note admonition">
+<p class="admonition-title">Was ist … eine Basis?</p>
+<p>Ein minimales Erzeugendensystem eines Vektorraumes wird <strong>Basis</strong> genannt. Damit
+ist gemeint, dass alle Vektoren des Vektorraumes <span class="math notranslate nohighlight">\(V\)</span> durch eine
+Linearkombination der Vektoren von <span class="math notranslate nohighlight">\(B\)</span> dargestellt werden können (=
+Erzeugendensystem). Wird jedoch ein Element aus der Menge <span class="math notranslate nohighlight">\(B\)</span> der Basisvektoren
+entfernt, können nicht mehr alle Vektoren von <span class="math notranslate nohighlight">\(V\)</span> durch Linearkombination
+erzeugt werden (= minimal).</p>
+</div>
+</section>
+<section id="dimension">
+<h2>Dimension<a class="headerlink" href="#dimension" title="Link to this heading">#</a></h2>
+<p>Offensichtlich ist die Anzahl der Basisvektoren eine wichtige Eigenschaft eines
+Vektorraumes. Bei unserem Computerspiel führt die Eigenschaft, dass mindestens
+zwei Basisvektoren gebraucht werden, um die Bewegungen links/rechts und
+oben/unten zu beschreiben, dazu, dass vier Finger für die Steuerung der
+Spielfigur benötigt werden. A - D steuern entlang des Vektors</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\vec{b}_1 = \begin{pmatrix} 1 \\ 0 \end{pmatrix}\end{split}\]</div>
+<p>und W - S entlang</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\vec{b}_2 = \begin{pmatrix} 0 \\ 1 \end{pmatrix}.\end{split}\]</div>
+<p>Wir könnten auch eine andere Basis wählen. Auch die Vektoren</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}B' = \left\{\begin{pmatrix} 1 \\ 1 \end{pmatrix}, \begin{pmatrix} -1 \\ 1 \end{pmatrix}
+\right\}\end{split}\]</div>
+<p>ermöglichen es, jede Bewegung auf dem Spielfeld darzustellen. Die Spielfigure
+bewegt sich dann diagonal auf dem Spielfeld, kann aber dennoch durch geschickte
+Linearkombination jede Position des Spielfeldes erreichen. Aber auch hier
+brauchen wir mindestens zwei Basisvektoren, damit die Spielfigure nicht auf eine
+einzige Diagonale beschränkt ist.</p>
+<p>Da die Anzahl der Basisvektoren so wichtig zur Charakterisierung von
+Vektorräumen ist, hat sie einen eigenen Namen. Die Anzahl der Basisvektoren wird
+<strong>Dimension</strong> genannt. Sie ändert sich auch nicht, wenn die Basis gewechselt
+wird.</p>
+<div class="admonition-was-ist-die-dimension-eines-vektorraumes admonition">
+<p class="admonition-title">Was ist … die Dimension eines Vektorraumes?</p>
+<p>Die Anzahl der Basisvektoren eines Vektorraumes <span class="math notranslate nohighlight">\(V\)</span> wird <strong>Dimension</strong> genannt. Oft
+wird sie mit dem mathematischen Symbol <span class="math notranslate nohighlight">\(\dim(V)\)</span> abgekürzt.</p>
+</div>
+<p>Die Bewegungen unseres zweidimensionales Computerspiels werden also durch einen
+Vektorraum der Dimension 2 beschrieben :-)</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Basis und Dimension” von Prof. Hoever</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xhG2nXniUfA?si=meqKP2ryeKV9glv-" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>Die Basis ist ein wichtiges Konzept, um möglichst effizient alle Vektoren eines
+Vektorraumes durch Linearkombination zur erzeugen. Die minimal notwendige Anzahl
+an Vektoren, die dafür gebraucht wird, ist eine wichtige Eigenschaft und wird
+als Dimension bezeichnet.</p>
 </section>
 </section>
 
@@ -561,7 +761,10 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erzeugendensystem">Erzeugendensystem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basis">Basis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dimension">Dimension</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>
 
