@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Skalarprodukt in Komponentendarstellung &#8212; Mathematik 1 Maschinenbau</title>
+    <title>Skalarprodukt (geometrisch) &#8212; Mathematik 1 Maschinenbau</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=fcc42dec" />
@@ -58,11 +58,13 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter04/chapter04_sec03';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Vektorprodukt (geometrisch)" href="chapter04_sec04.html" />
-    <link rel="prev" title="Skalarprodukt (geometrisch)" href="chapter04_sec02.html" />
+    <link rel="prev" title="4.2 Skalarprodukt" href="chapter04_sec02.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -214,8 +216,8 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter04_sec00.html">Vektorrechnung (Teil 2)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="chapter04_sec01.html">4.1 Basis und Dimension</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter04_sec02.html">Skalarprodukt (geometrisch)</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Skalarprodukt in Komponentendarstellung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter04_sec02.html">4.2 Skalarprodukt</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Skalarprodukt (geometrisch)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter04_sec04.html">Vektorprodukt (geometrisch)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter04_sec05.html">Vektorprodukt in Komponentendarstellung</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter04_sec06.html">Spatprodukt</a></li>
@@ -455,7 +457,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Skalarprodukt in Komponentendarstellung</h1>
+    <h1>Skalarprodukt (geometrisch)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -466,6 +468,12 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#betrag-und-abstand-zweier-punkte">Betrag und Abstand zweier Punkte</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skalarprodukt-in-komponentendarstellung">Skalarprodukt in Komponentendarstellung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Lernziele</a></li>
 </ul>
             </nav>
         </div>
@@ -477,10 +485,49 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="skalarprodukt-in-komponentendarstellung">
-<h1>Skalarprodukt in Komponentendarstellung<a class="headerlink" href="#skalarprodukt-in-komponentendarstellung" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="skalarprodukt-geometrisch">
+<h1>Skalarprodukt (geometrisch)<a class="headerlink" href="#skalarprodukt-geometrisch" title="Link to this heading">#</a></h1>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
+<div class="goals admonition">
+<p class="admonition-title">Lernziele</p>
+<ul class="simple">
+<li><p>Sie wissen, wie das <strong>Skalarprodukt</strong> zweier Vektoren <strong>geometrisch</strong> definiert ist: Das Skalarprodukt der Vektoren <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> und <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> ist das Produkt aus den Längen der beiden Vektoren und dem Kosinus des von den beiden Vektoren eingeschlossenen Winkels.</p></li>
+<li><p>Sie können den Winkel zwischen zwei Vektoren berechnen, wenn Sie das Skalarprodukt und die beiden Längen kennen.</p></li>
+<li><p>Sie kennen den Begriff <strong>Orthogonalität</strong> und können mit dem Skalarprodukt überpüfen, ob zwei Vektoren orthogonal <span class="math notranslate nohighlight">\(\perp\)</span> (= senkrecht zueinander) sind.</p></li>
+<li><p>Sie kennen den Zusammenhang zwischen Skalarprodukt und Betrag/Länge eines Vektors: <span class="math notranslate nohighlight">\(|\mathbf{a}|=\sqrt{\mathbf{a}\cdot\mathbf{a}}\)</span>.</p></li>
+</ul>
+</div>
+</section>
+<section id="videos">
+<h2>Videos<a class="headerlink" href="#videos" title="Link to this heading">#</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FKN2mcoD6bQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/swMhAjkoCm0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+<section id="betrag-und-abstand-zweier-punkte">
+<h2>Betrag und Abstand zweier Punkte<a class="headerlink" href="#betrag-und-abstand-zweier-punkte" title="Link to this heading">#</a></h2>
+</section>
+<section id="id1">
+<h2>Lernziele<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<div class="goals admonition">
+<p class="admonition-title">Lernziele</p>
+<ul class="simple">
+<li><p>Sie können den Betrag eines Vektors in Koordinatendarstellung ausrechnen.</p></li>
+<li><p>Sie können den Einheitsvektor in Richtung eines Vektors (in
+Koordinatendarstellung) bestimmen (=normieren).</p></li>
+</ul>
+</div>
+</section>
+<section id="id2">
+<h2>Videos<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zFKvZpzzO7M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eXSMrAB-miM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+<section id="skalarprodukt-in-komponentendarstellung">
+<h2>Skalarprodukt in Komponentendarstellung<a class="headerlink" href="#skalarprodukt-in-komponentendarstellung" title="Link to this heading">#</a></h2>
+</section>
+<section id="id3">
+<h2>Lernziele<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
@@ -488,7 +535,6 @@ document.write(`
 <li><p>Sie können die senkrechte Projektion eines Vektors in Richtung eines anderen Vektors berechnen.</p></li>
 </ul>
 </div>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/1T1aTlEUO0E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/K6ZCP8cpCc8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </section>
 </section>
@@ -529,7 +575,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Skalarprodukt (geometrisch)</p>
+        <p class="prev-next-title">4.2 Skalarprodukt</p>
       </div>
     </a>
     <a class="right-next"
@@ -558,6 +604,12 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#betrag-und-abstand-zweier-punkte">Betrag und Abstand zweier Punkte</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skalarprodukt-in-komponentendarstellung">Skalarprodukt in Komponentendarstellung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Lernziele</a></li>
 </ul>
   </nav></div>
 
