@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Skalarprodukt (geometrisch) &#8212; Mathematik 1 Maschinenbau</title>
+    <title>4.3 Geometrische Interpretation Skalarprodukt &#8212; Mathematik 1 Maschinenbau</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=fcc42dec" />
@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter04/chapter04_sec03';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Vektorprodukt (geometrisch)" href="chapter04_sec04.html" />
+    <link rel="next" title="4.4 Anwendungen Skalarprodukt" href="chapter04_sec04.html" />
     <link rel="prev" title="4.2 Skalarprodukt" href="chapter04_sec02.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -217,8 +217,8 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter04_sec00.html">Vektorrechnung (Teil 2)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="chapter04_sec01.html">4.1 Basis und Dimension</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter04_sec02.html">4.2 Skalarprodukt</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Skalarprodukt (geometrisch)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter04_sec04.html">Vektorprodukt (geometrisch)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.3 Geometrische Interpretation Skalarprodukt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter04_sec04.html">4.4 Anwendungen Skalarprodukt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter04_sec05.html">Vektorprodukt in Komponentendarstellung</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter04_sec06.html">Spatprodukt</a></li>
 </ul>
@@ -457,7 +457,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Skalarprodukt (geometrisch)</h1>
+    <h1>4.3 Geometrische Interpretation Skalarprodukt</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -468,12 +468,9 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#betrag-und-abstand-zweier-punkte">Betrag und Abstand zweier Punkte</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Videos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skalarprodukt-in-komponentendarstellung">Skalarprodukt in Komponentendarstellung</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skalarprodukt-und-betrag-von-vektoren">Skalarprodukt und Betrag von Vektoren</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skalarprodukt-und-eingeschlossener-winkel">Skalarprodukt und eingeschlossener Winkel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
         </div>
@@ -485,57 +482,161 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="skalarprodukt-geometrisch">
-<h1>Skalarprodukt (geometrisch)<a class="headerlink" href="#skalarprodukt-geometrisch" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="geometrische-interpretation-skalarprodukt">
+<h1>4.3 Geometrische Interpretation Skalarprodukt<a class="headerlink" href="#geometrische-interpretation-skalarprodukt" title="Link to this heading">#</a></h1>
+<p>In diesem Kapitel werden wir das Skalarprodukt für Vektoren in der Geometrie
+anwenden.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
 <p class="admonition-title">Lernziele</p>
-<ul class="simple">
-<li><p>Sie wissen, wie das <strong>Skalarprodukt</strong> zweier Vektoren <strong>geometrisch</strong> definiert ist: Das Skalarprodukt der Vektoren <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> und <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> ist das Produkt aus den Längen der beiden Vektoren und dem Kosinus des von den beiden Vektoren eingeschlossenen Winkels.</p></li>
-<li><p>Sie können den Winkel zwischen zwei Vektoren berechnen, wenn Sie das Skalarprodukt und die beiden Längen kennen.</p></li>
-<li><p>Sie kennen den Begriff <strong>Orthogonalität</strong> und können mit dem Skalarprodukt überpüfen, ob zwei Vektoren orthogonal <span class="math notranslate nohighlight">\(\perp\)</span> (= senkrecht zueinander) sind.</p></li>
-<li><p>Sie kennen den Zusammenhang zwischen Skalarprodukt und Betrag/Länge eines Vektors: <span class="math notranslate nohighlight">\(|\mathbf{a}|=\sqrt{\mathbf{a}\cdot\mathbf{a}}\)</span>.</p></li>
+<ul>
+<li><p>Sie kennen den Zusammenhang zwischen Skalarprodukt und Betrag/Länge eines
+Vektors:</p>
+<div class="math notranslate nohighlight">
+\[|\vec{a}|=\sqrt{\vec{a}\cdot\vec{a}}.\]</div>
+</li>
+<li><p>Sie wissen, wie das <strong>Skalarprodukt</strong> zweier Vektoren <strong>geometrisch</strong>
+definiert ist: Das Skalarprodukt der Vektoren <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span>
+ist das Produkt aus den Längen der beiden Vektoren und dem Kosinus des von den
+beiden Vektoren eingeschlossenen Winkels <span class="math notranslate nohighlight">\(\varphi = \angle (\vec{a},\vec{b})\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\vec{a}\cdot\vec{b} = |\vec{a}|\cdot|\vec{b}| \cdot \cos(\varphi).\]</div>
+</li>
+<li><p>Sie können den Winkel zwischen zwei Vektoren berechnen, wenn Sie das
+Skalarprodukt und die beiden Längen kennen:</p>
+<div class="math notranslate nohighlight">
+\[\varphi = \arccos\left(\frac{\vec{a}\cdot\vec{b}}{|\vec{a}|\cdot|\vec{b}|}\right).\]</div>
+</li>
+<li><p>Sie können anhand des Vorzeichens des Skalarproduktes Aussagen über die
+Orientierung der Vektorn zueinander treffen.</p></li>
 </ul>
 </div>
 </section>
-<section id="videos">
-<h2>Videos<a class="headerlink" href="#videos" title="Link to this heading">#</a></h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/FKN2mcoD6bQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/swMhAjkoCm0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</section>
-<section id="betrag-und-abstand-zweier-punkte">
-<h2>Betrag und Abstand zweier Punkte<a class="headerlink" href="#betrag-und-abstand-zweier-punkte" title="Link to this heading">#</a></h2>
-</section>
-<section id="id1">
-<h2>Lernziele<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<div class="goals admonition">
-<p class="admonition-title">Lernziele</p>
-<ul class="simple">
-<li><p>Sie können den Betrag eines Vektors in Koordinatendarstellung ausrechnen.</p></li>
-<li><p>Sie können den Einheitsvektor in Richtung eines Vektors (in
-Koordinatendarstellung) bestimmen (=normieren).</p></li>
-</ul>
+<section id="skalarprodukt-und-betrag-von-vektoren">
+<h2>Skalarprodukt und Betrag von Vektoren<a class="headerlink" href="#skalarprodukt-und-betrag-von-vektoren" title="Link to this heading">#</a></h2>
+<p>Die Länge einer Verschiebung oder einer Bewegung ist gleich dem Betrag des
+Vektors <span class="math notranslate nohighlight">\(\vec{a}\in\mathbb{R}^n\)</span>, der defininiert ist als</p>
+<div class="math notranslate nohighlight">
+\[|\vec{a}| = \sqrt{a_1^2 + a_2^2 + \ldots + a_n^2}.\]</div>
+<p>Mit Hilfe des Skalarproduktes können wir die Länge bzw. den Betrag auch
+folgendermaßen berechnen:</p>
+<div class="math notranslate nohighlight">
+\[|\vec{a}|=\sqrt{\vec{a}\cdot\vec{a}}.\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Zusammenhang Skalarprodukt und Länge Vektor” von Mathehoch13</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Zjc7aI8cp4o?si=EMLwSAnLYt8aC01V" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
-</section>
-<section id="id2">
-<h2>Videos<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/zFKvZpzzO7M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/eXSMrAB-miM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</section>
-<section id="skalarprodukt-in-komponentendarstellung">
-<h2>Skalarprodukt in Komponentendarstellung<a class="headerlink" href="#skalarprodukt-in-komponentendarstellung" title="Link to this heading">#</a></h2>
-</section>
-<section id="id3">
-<h2>Lernziele<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<div class="goals admonition">
-<p class="admonition-title">Lernziele</p>
+</details></section>
+<section id="skalarprodukt-und-eingeschlossener-winkel">
+<h2>Skalarprodukt und eingeschlossener Winkel<a class="headerlink" href="#skalarprodukt-und-eingeschlossener-winkel" title="Link to this heading">#</a></h2>
+<p>Als nächstes führen wir den eingeschlossenen Winkel zwischen zwei Vektoren ein.
+Geometrisch interpretieren wir die beiden Vektoren <span class="math notranslate nohighlight">\(\vec{a}\in\mathbb{R}^n\)</span> und
+<span class="math notranslate nohighlight">\(\vec{b}\in\mathbb{R}^n\)</span> als Bewegungen, die beide an einem gemeinsamen Punkt
+starten. Unabhängig von der Reihenfolge der Vektoren wird der Winkel zwischen
+den beiden Richtungen, in die der Startpunkt verschoben werden soll, als der
+Winkel der Vektoren <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span> bezeichnet. Er ist stets der
+kleinere der möglichen Winkel und liegt somit zwischen 0 und 180° bzw. zwischen
+0 und <span class="math notranslate nohighlight">\(\pi\)</span> im Bogenmaß. Wir verwenden dazu das Symbol <span class="math notranslate nohighlight">\(\angle
+(\vec{a},\vec{b})\)</span> oder den griechischen Buchstaben Phi <span class="math notranslate nohighlight">\(\varphi\)</span>.</p>
+<p>Für den zwischen <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span> eingeschlossenen Winkel <span class="math notranslate nohighlight">\(\varphi\)</span> gilt
+die Beziehung</p>
+<div class="math notranslate nohighlight">
+\[\vec{a}\cdot\vec{b} = |\vec{a}|\cdot|\vec{b}| \cdot \cos(\varphi).\]</div>
+<p>Das Skalarprodukt der Vektoren <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span> kann über die
+Beträge/Längen der Vektoren <span class="math notranslate nohighlight">\(|\vec{a}|\)</span> und <span class="math notranslate nohighlight">\(|\vec{b}|\)</span> sowie dem Kosinus-Wert
+des eingeschlossenen Winkels <span class="math notranslate nohighlight">\(\varphi = \angle (\vec{a},\vec{b})\)</span> berechnet
+werden. Das ermöglicht direkt einige Aussagen über die Orientierung der Vektoren
+zueinander. Darüber hinaus können wir, sofern die beiden Vektoren <span class="math notranslate nohighlight">\(\vec{a}\)</span> und
+<span class="math notranslate nohighlight">\(\vec{b}\)</span> nicht der Nullvektor sind, auch mit der Arkuskosinus-Funktion den
+Winkel <span class="math notranslate nohighlight">\(\varphi\)</span> aus dem Skalarprodukt berechnen:</p>
+<div class="math notranslate nohighlight">
+\[\varphi =
+\arccos\left(\frac{\vec{a}\cdot\vec{b}}{|\vec{a}|\cdot|\vec{b}|}\right).\]</div>
+<p>Aus dieser Beziehung können einige Schlussfolgerungen gezogen werden:</p>
 <ul class="simple">
-<li><p>Sie können das Skalarprodukt von Vektoren in Koordinaten ausrechnen.</p></li>
-<li><p>Sie können die senkrechte Projektion eines Vektors in Richtung eines anderen Vektors berechnen.</p></li>
+<li><p>Sind <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span> parallel und gleichorientiert, ist also der
+eingeschlossene Winkel <span class="math notranslate nohighlight">\(\varphi = 0\)</span>, dann gilt</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[\vec{a}\cdot\vec{b} = |\vec{a}| \cdot |\vec{b}|.\]</div>
+<ul class="simple">
+<li><p>Sind <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span> parallel und entgegengesetzt orientiert, gilt
+also für den eingeschlossenen Winkel <span class="math notranslate nohighlight">\(\varphi = \pi\)</span>, dann gilt</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\vec{a}\cdot\vec{b} = - |\vec{a}| \cdot |\vec{b}|.\]</div>
+<ul class="simple">
+<li><p>Sind die beiden Vektoren <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span> orthogonal (stehen senkrecht
+aufeinander), dann gilt</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\vec{a}\cdot\vec{b} = 0.\]</div>
+<ul class="simple">
+<li><p>Ist <span class="math notranslate nohighlight">\(\varphi\)</span> ein spitzer Winkel, so gilt</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\vec{a}\cdot\vec{b} &gt; 0.\]</div>
+<ul class="simple">
+<li><p>Ist <span class="math notranslate nohighlight">\(\varphi\)</span> ein stumpfer Winkel, so gilt</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\vec{a}\cdot\vec{b} &lt; 0.\]</div>
+<p>Es gilt</p>
+<div class="math notranslate nohighlight">
+\[|\vec{a}\cdot\vec{b}| \leq |\vec{a}| \cdot |\vec{b}|.\]</div>
+<p>Es gilt</p>
+<div class="math notranslate nohighlight">
+\[|\vec{a}\cdot\vec{b}| = |\vec{a}| \cdot |\vec{b}| \Leftrightarrow \vec{a},
+\vec{b} \text{ linear abhängig}.\]</div>
+<p>Die große Bedeutung des Skalarproduktes in der Geometrie erkennen Sie daran, dass es sehr viele Erklärvideos zu diesem Thema gibt. Einige Videos zu dem Thema sind im Folgenden gelistet.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “geometrische Interpretation Skalarprodukt” von Visual X</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/swMhAjkoCm0?si=XPKYIezPvpQ7HqKf" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/K6ZCP8cpCc8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Winkel zwischen zwei Vektoren” von Mathematrick</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vB9yjxpbDQ4?si=QIH86HSQJf915iRr" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Standard Skalarprodukt Einfach Erklärt” von MathePeter</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wJAniAr6avU?si=E2-wbANRbD2VElRh" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Skalarprodukt Teil 2 |  Erklärung &amp; Bedeutung” von Einfach Mathe!</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rZ1zS3MBV0Y?si=0SEe5f51bsH965WF" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Skalarprodukt II” von Mathematische Methoden</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uGs7vGAxJko?si=YYM3r12agb-6C_tf" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>In diesem Kapitel haben wir die geometrische Interpretation des Skalarproduktes
+kennengelernt. Einige Autoren von Mathematikbüchern gehen den umgekehrten Weg
+und definieren das Skalarprodukt über die Formel <span class="math notranslate nohighlight">\(\vec{a}\cdot\vec{b} =
+|\vec{a}|\cdot|\vec{b}| \cdot \cos(\varphi)\)</span>. Im nächsten Kapitel werden wir die
+Anwendungen des Skalarproduktes in der Geometrie (und damit in Physik und
+Technische Mechanik) weiter vertiefen.</p>
 </section>
 </section>
 
@@ -583,7 +684,7 @@ Koordinatendarstellung) bestimmen (=normieren).</p></li>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Vektorprodukt (geometrisch)</p>
+        <p class="prev-next-title">4.4 Anwendungen Skalarprodukt</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -604,12 +705,9 @@ Koordinatendarstellung) bestimmen (=normieren).</p></li>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#betrag-und-abstand-zweier-punkte">Betrag und Abstand zweier Punkte</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Videos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skalarprodukt-in-komponentendarstellung">Skalarprodukt in Komponentendarstellung</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skalarprodukt-und-betrag-von-vektoren">Skalarprodukt und Betrag von Vektoren</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skalarprodukt-und-eingeschlossener-winkel">Skalarprodukt und eingeschlossener Winkel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>
 

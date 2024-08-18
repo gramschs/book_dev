@@ -136,7 +136,75 @@ referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Eigenschaften des Skalarproduktes
 
-TODO
+Das Skalarprodukt hat einige sehr wichtige Eigenschaften. Für jeden Vektor
+$\vec{x}\in\mathbb{R}^n$ gilt, dass das Skalarprodukt des Vektors mit sich
+selbst positiv ist. Null kann das Skalarprodukt eines Vektors mit sich selbst
+nur werden, wenn der Vektor $\vec{x}$ der Nullvektor ist. Negativ hingegen wird
+das Skalarprodukt eines Vektors mit sich selbst nie. Wir können leicht
+nachrechnen, dass diese Aussagen stimmen, indem wir das Skalarprodukt des
+Vektors $\vec{x}$ mit sich selbst ausrechnen:
+
+$$\vec{x}\cdot\vec{x} = x_1 \cdot x_1 + x_2 \cdot x_2 + \ldots + x_n \cdot x_n =
+ x_1^2 + x_2^2 + \ldots + x_n^2.$$
+
+Da jede Komponente $x_i$ eine reelle Zahl ist, sind die Quadrate der Komponenten
+nicht-negativ, also $x_i^2 \geq 0$. Damit ist aber auch die Summe der Quadrate
+$x_1^2 + x_2^2 + \ldots + x_n^2$ nicht-negativ. Nur wenn der Vektor $\vec{x}$
+der Nullvektor ist, dann haben wir
+
+$$\vec{0} \cdot \vec{0} = 0\cdot 0 + 0\cdot 0 + \ldots + 0\cdot0 = 0.$$
+
+Diese Eigenschaft nennt man **positive Definitheit** bzw. man bezeichnet das
+Skalarprodukt als **positiv definit**.
+
+Das Skalarprodukt ist auch **symmetrisch** und erfüllt das **Kommutativgesetz**. Es gilt
+
+$$\vec{x} \cdot \vec{y} = \vec{y} \cdot \vec{x},$$
+
+was auch leicht nachgerechnet werden kann:
+
+\begin{align*} \vec{x}\cdot\vec{y} &= x_1\cdot y_1 + x_2\cdot y_2 + \ldots +
+x_n\cdot y_n =\\
+&= y_1\cdot x_1 + y_2\cdot x_2 + \ldots + y_n\cdot x_n = \vec{y}\cdot\vec{x}\\
+\end{align*}
+
+Es überträgt sich sozusagen die Symmetrie der "normalen" Multiplikation von
+den reellen Zahlen auf das Skalarprodukt.
+
+Für das Skalarprodukt gilt darüber hinaus das **gemischte Assoziativgesetz**.
+Sind $\vec{x}$ und $\vec{y}$ zwei Vektoren des reellen Standardvektorraumes,
+also $\vec{x}, \vec{y}\in\mathbb{R}^n$ und ist $s$ ein Skalar, also
+$s\in\mathbb{R}$, dann gilt
+
+$$(s\cdot\vec{x})\cdot\vec{y} = s\cdot (\vec{x}\cdot\vec{y}) = \vec{x}\cdot
+(s\cdot\vec{b}).$$
+
+Ein richtiges Assoziativgesetz gilt für das Skalarprodukt nicht. Im Allgemeinen
+gilt also
+
+$$(\vec{x}\cdot\vec{y})\cdot\vec{z} \textcolor{red}{\neq}
+\vec{x}\cdot(\vec{y}\cdot\vec{z}).$$
+
+Das Skalarprodukt ist **nicht assoziativ**.
+
+Die letzte Eigenschaft, mit der wir uns in diesem Kapitel beschäftigen wollen,
+ist das **Distributivgesetz**. Es gelten für alle Vektoren $\vec{x}, \vec{y},
+\vec{z} \in \mathbb{R}^n$ die beiden Distributivgesetze
+
+\begin{align*}
+(\vec{x}+\vec{y})\cdot\vec{z} &= \vec{x}\cdot\vec{z} + \vec{x}\cdot\vec{z} \\
+\vec{x}\cdot(\vec{y}+\vec{z}) &= \vec{x}\cdot\vec{y} + \vec{x}\cdot\vec{z} \\
+\end{align*}
+
+Aufgrund der beiden letzten Eigenschaften, dem gemischten Assoziativgesetzt und
+dem Distributivgesetz, wird das Skalarprodukt **bilinear** genannt.
+
+Wir fassen zusammen: Das Skalarprodukt ist eine positiv definite, symmetrische
+Bilinearform. Tatsächlich wird in vielen mathematischen Disziplinen umgekehrt
+vorgegangen und jede positiv definite, symmetrische Bilinearform als
+Skalarprodukt bezeichnet. Das Skalarprodukt aus diesem Kapitel ist nur eines
+unter vielen Skalarprodukten. Da es in natürlicher Weise zum reellen
+Standardvektorraum gehört, wird es auch **Standardskalarprodukt** genannt.
 
 ## Zusammenfassung und Ausblick
 

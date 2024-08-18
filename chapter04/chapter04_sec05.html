@@ -64,7 +64,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Spatprodukt" href="chapter04_sec06.html" />
-    <link rel="prev" title="Vektorprodukt (geometrisch)" href="chapter04_sec04.html" />
+    <link rel="prev" title="4.4 Anwendungen Skalarprodukt" href="chapter04_sec04.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -216,9 +216,9 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter04_sec00.html">Vektorrechnung (Teil 2)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="chapter04_sec01.html">4.1 Basis und Dimension</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter04_sec02.html">Skalarprodukt (geometrisch)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter04_sec03.html">Skalarprodukt in Komponentendarstellung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter04_sec04.html">Vektorprodukt (geometrisch)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter04_sec02.html">4.2 Skalarprodukt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter04_sec03.html">4.3 Geometrische Interpretation Skalarprodukt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter04_sec04.html">4.4 Anwendungen Skalarprodukt</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Vektorprodukt in Komponentendarstellung</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter04_sec06.html">Spatprodukt</a></li>
 </ul>
@@ -468,6 +468,9 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektorprodukt-geometrisch">Vektorprodukt (geometrisch)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
 </ul>
             </nav>
         </div>
@@ -481,6 +484,10 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="vektorprodukt-in-komponentendarstellung">
 <h1>Vektorprodukt in Komponentendarstellung<a class="headerlink" href="#vektorprodukt-in-komponentendarstellung" title="Link to this heading">#</a></h1>
+<div class="warning admonition">
+<p class="admonition-title">Warnung</p>
+<p>Dieser Teil des Vorlesungsskriptes wird gerade überarbeitet.</p>
+</div>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
@@ -499,6 +506,31 @@ document.write(`
 <p>und können sie auch anwenden.</p>
 </div>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tg9oiUPdrFc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+<section id="vektorprodukt-geometrisch">
+<h2>Vektorprodukt (geometrisch)<a class="headerlink" href="#vektorprodukt-geometrisch" title="Link to this heading">#</a></h2>
+</section>
+<section id="id1">
+<h2>Lernziele<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<div class="goals admonition">
+<p class="admonition-title">Lernziele</p>
+<ul class="simple">
+<li><p>Sie wissen, wie das <strong>Vektorprodukt</strong> zweier Vektoren <strong>geometrisch</strong> definiert ist: Das Vektorprodukt der beiden Vektoren <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> und <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> ist der Vektor <span class="math notranslate nohighlight">\(\mathbf{c}\)</span> für den gilt:</p>
+<ul>
+<li><p>Die Länge von <span class="math notranslate nohighlight">\(\mathbf{c}\)</span> ist die Fläche des Parallelogramms, das durch <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> und <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> gebildet wird.</p></li>
+<li><p>Die Richtung von <span class="math notranslate nohighlight">\(\mathbf{c}\)</span> ist senkrecht zu <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> und senkrecht zu <span class="math notranslate nohighlight">\(\mathbf{b}\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Da es zwei Vektoren gibt, die Punkt 1 und 2 erfüllen, fordern wir noch, dass <span class="math notranslate nohighlight">\(\mathbf{a}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> und <span class="math notranslate nohighlight">\(\mathbf{c}\)</span> ein Rechtssystem bilden.</p></li>
+<li><p>Sie wissen, was ein <strong>Rechtssystem</strong> ist und können die <strong>Rechte-Hand-Regel</strong> anwenden.</p></li>
+<li><p>Sie können mit dem Vektorprodukt die Fläche des Parallelogramms berechnen, das durch die beiden Vektoren aufgespannt wird.</p></li>
+<li><p>Sie wissen, was es bedeutet, wenn das Vektorprodukt zweier Vektoren der Nullvektor ist.</p></li>
+</ul>
+</div>
+</section>
+<section id="videos">
+<h2>Videos<a class="headerlink" href="#videos" title="Link to this heading">#</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vhfwxWjHqeI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </section>
 </section>
 
@@ -538,7 +570,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Vektorprodukt (geometrisch)</p>
+        <p class="prev-next-title">4.4 Anwendungen Skalarprodukt</p>
       </div>
     </a>
     <a class="right-next"
@@ -567,6 +599,9 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektorprodukt-geometrisch">Vektorprodukt (geometrisch)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
 </ul>
   </nav></div>
 

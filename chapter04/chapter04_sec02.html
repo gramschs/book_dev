@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=fcc42dec" />
@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter04/chapter04_sec02';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Skalarprodukt (geometrisch)" href="chapter04_sec03.html" />
+    <link rel="next" title="4.3 Geometrische Interpretation Skalarprodukt" href="chapter04_sec03.html" />
     <link rel="prev" title="4.1 Basis und Dimension" href="chapter04_sec01.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -217,8 +217,8 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter04_sec00.html">Vektorrechnung (Teil 2)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="chapter04_sec01.html">4.1 Basis und Dimension</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">4.2 Skalarprodukt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter04_sec03.html">Skalarprodukt (geometrisch)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter04_sec04.html">Vektorprodukt (geometrisch)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter04_sec03.html">4.3 Geometrische Interpretation Skalarprodukt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter04_sec04.html">4.4 Anwendungen Skalarprodukt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter04_sec05.html">Vektorprodukt in Komponentendarstellung</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter04_sec06.html">Spatprodukt</a></li>
 </ul>
@@ -658,7 +658,64 @@ referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </details></section>
 <section id="eigenschaften-des-skalarproduktes">
 <h2>Eigenschaften des Skalarproduktes<a class="headerlink" href="#eigenschaften-des-skalarproduktes" title="Link to this heading">#</a></h2>
-<p>TODO</p>
+<p>Das Skalarprodukt hat einige sehr wichtige Eigenschaften. Für jeden Vektor
+<span class="math notranslate nohighlight">\(\vec{x}\in\mathbb{R}^n\)</span> gilt, dass das Skalarprodukt des Vektors mit sich
+selbst positiv ist. Null kann das Skalarprodukt eines Vektors mit sich selbst
+nur werden, wenn der Vektor <span class="math notranslate nohighlight">\(\vec{x}\)</span> der Nullvektor ist. Negativ hingegen wird
+das Skalarprodukt eines Vektors mit sich selbst nie. Wir können leicht
+nachrechnen, dass diese Aussagen stimmen, indem wir das Skalarprodukt des
+Vektors <span class="math notranslate nohighlight">\(\vec{x}\)</span> mit sich selbst ausrechnen:</p>
+<div class="math notranslate nohighlight">
+\[\vec{x}\cdot\vec{x} = x_1 \cdot x_1 + x_2 \cdot x_2 + \ldots + x_n \cdot x_n =
+ x_1^2 + x_2^2 + \ldots + x_n^2.\]</div>
+<p>Da jede Komponente <span class="math notranslate nohighlight">\(x_i\)</span> eine reelle Zahl ist, sind die Quadrate der Komponenten
+nicht-negativ, also <span class="math notranslate nohighlight">\(x_i^2 \geq 0\)</span>. Damit ist aber auch die Summe der Quadrate
+<span class="math notranslate nohighlight">\(x_1^2 + x_2^2 + \ldots + x_n^2\)</span> nicht-negativ. Nur wenn der Vektor <span class="math notranslate nohighlight">\(\vec{x}\)</span>
+der Nullvektor ist, dann haben wir</p>
+<div class="math notranslate nohighlight">
+\[\vec{0} \cdot \vec{0} = 0\cdot 0 + 0\cdot 0 + \ldots + 0\cdot0 = 0.\]</div>
+<p>Diese Eigenschaft nennt man <strong>positive Definitheit</strong> bzw. man bezeichnet das
+Skalarprodukt als <strong>positiv definit</strong>.</p>
+<p>Das Skalarprodukt ist auch <strong>symmetrisch</strong> und erfüllt das <strong>Kommutativgesetz</strong>. Es gilt</p>
+<div class="math notranslate nohighlight">
+\[\vec{x} \cdot \vec{y} = \vec{y} \cdot \vec{x},\]</div>
+<p>was auch leicht nachgerechnet werden kann:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*} \vec{x}\cdot\vec{y} &amp;= x_1\cdot y_1 + x_2\cdot y_2 + \ldots +
+x_n\cdot y_n =\\
+&amp;= y_1\cdot x_1 + y_2\cdot x_2 + \ldots + y_n\cdot x_n = \vec{y}\cdot\vec{x}\\
+\end{align*}\]</div>
+<p>Es überträgt sich sozusagen die Symmetrie der “normalen” Multiplikation von
+den reellen Zahlen auf das Skalarprodukt.</p>
+<p>Für das Skalarprodukt gilt darüber hinaus das <strong>gemischte Assoziativgesetz</strong>.
+Sind <span class="math notranslate nohighlight">\(\vec{x}\)</span> und <span class="math notranslate nohighlight">\(\vec{y}\)</span> zwei Vektoren des reellen Standardvektorraumes,
+also <span class="math notranslate nohighlight">\(\vec{x}, \vec{y}\in\mathbb{R}^n\)</span> und ist <span class="math notranslate nohighlight">\(s\)</span> ein Skalar, also
+<span class="math notranslate nohighlight">\(s\in\mathbb{R}\)</span>, dann gilt</p>
+<div class="math notranslate nohighlight">
+\[(s\cdot\vec{x})\cdot\vec{y} = s\cdot (\vec{x}\cdot\vec{y}) = \vec{x}\cdot
+(s\cdot\vec{b}).\]</div>
+<p>Ein richtiges Assoziativgesetz gilt für das Skalarprodukt nicht. Im Allgemeinen
+gilt also</p>
+<div class="math notranslate nohighlight">
+\[(\vec{x}\cdot\vec{y})\cdot\vec{z} \textcolor{red}{\neq}
+\vec{x}\cdot(\vec{y}\cdot\vec{z}).\]</div>
+<p>Das Skalarprodukt ist <strong>nicht assoziativ</strong>.</p>
+<p>Die letzte Eigenschaft, mit der wir uns in diesem Kapitel beschäftigen wollen,
+ist das <strong>Distributivgesetz</strong>. Es gelten für alle Vektoren <span class="math notranslate nohighlight">\(\vec{x}, \vec{y},
+\vec{z} \in \mathbb{R}^n\)</span> die beiden Distributivgesetze</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+(\vec{x}+\vec{y})\cdot\vec{z} &amp;= \vec{x}\cdot\vec{z} + \vec{x}\cdot\vec{z} \\
+\vec{x}\cdot(\vec{y}+\vec{z}) &amp;= \vec{x}\cdot\vec{y} + \vec{x}\cdot\vec{z} \\
+\end{align*}\]</div>
+<p>Aufgrund der beiden letzten Eigenschaften, dem gemischten Assoziativgesetzt und
+dem Distributivgesetz, wird das Skalarprodukt <strong>bilinear</strong> genannt.</p>
+<p>Wir fassen zusammen: Das Skalarprodukt ist eine positiv definite, symmetrische
+Bilinearform. Tatsächlich wird in vielen mathematischen Disziplinen umgekehrt
+vorgegangen und jede positiv definite, symmetrische Bilinearform als
+Skalarprodukt bezeichnet. Das Skalarprodukt aus diesem Kapitel ist nur eines
+unter vielen Skalarprodukten. Da es in natürlicher Weise zum reellen
+Standardvektorraum gehört, wird es auch <strong>Standardskalarprodukt</strong> genannt.</p>
 </section>
 <section id="zusammenfassung-und-ausblick">
 <h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
@@ -712,7 +769,7 @@ in der Geometrie anwenden.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Skalarprodukt (geometrisch)</p>
+        <p class="prev-next-title">4.3 Geometrische Interpretation Skalarprodukt</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
