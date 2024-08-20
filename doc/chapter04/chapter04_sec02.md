@@ -104,15 +104,15 @@ Damit haben wir nun die dritte Bedeutung des Symbols $\;\cdot\;$ kennengelernt.
 Bei den folgenden drei Verknüpfungen wird das Symbol $\;\cdot\;$ benutzt. Nur
 aus dem Zusammenhang wird klar, welche Verknüpfung gemeint ist.
 
-1. Multiplikation, also Skalar "mal" Skalar = Skalar, z.B.
+1. **Multiplikation**, also Skalar "mal" Skalar = Skalar, z.B.
 
    $$3\cdot 2 = 6,$$
 
-2. skalare Multiplikation, also Skalar "mal" Vektor = Vektor, z.B.
+2. **skalare Multiplikation**, also Skalar "mal" Vektor = Vektor, z.B.
 
    $$3\cdot \begin{pmatrix} -1 \\ 3.1 \end{pmatrix} = \begin{pmatrix} -3 \\ 9.3 \end{pmatrix},$$
 
-3. Skalarprodukt, also Vektor "mal" Vektor = Skalar, z.B.
+3. **Skalarprodukt**, also Vektor "mal" Vektor = Skalar, z.B.
 
    $$\begin{pmatrix} 1 \\ 2 \end{pmatrix} \cdot \begin{pmatrix} -1 \\ 3.1
    \end{pmatrix} = 5.2.$$
