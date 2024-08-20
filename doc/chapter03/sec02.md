@@ -7,7 +7,7 @@ Vektorraumes, den wir in diesem Kapitel behandeln werden.
 
 ## Lernziele Vektoren
 
-```{admonition} Lernziele 
+```{admonition} Lernziele
 :class: goals
 * Sie wissen, wie der **reelle Standardvektorraum** definiert ist, d.h. Sie können die
   * **Vektoraddition** und
@@ -26,7 +26,6 @@ Vektorraumes, den wir in diesem Kapitel behandeln werden.
   * Assoziativgesetz für Skalare: $(s\cdot t)\odot v = s\odot (t \odot v)$
   * Existenz eines neutralen Elements: $1\odot v = v$
 ```
-
 
 ## Rechnen mit n-Tupeln
 
@@ -75,7 +74,6 @@ $$\text{Durchschnitt Januar} = \frac{1}{4} \odot (30, 32, 32, 31, 35) = (7.5, 8,
 
 Das Rechnen mit n-Tupeln wollen wir nun formalisieren.
 
-
 ## Der reelle Standardvektorraum
 
 Zunächst formalisieren wir die Schreibweise der Menge aller n-Tupel, indem wir
@@ -121,16 +119,15 @@ Insbesondere wird meist das Symbol $\oplus$ vereinfacht als $+$ geschreiben, da
 eine »normale« Addition nicht gemeint sein kann. Die Skalarmultiplikation wird
 folgendermaßen geschrieben:
 
-$$s\cdot \begin{pmatrix}x_1 \\x_2\\ \vdots \\ x_n\end{pmatrix} 
+$$s\cdot \begin{pmatrix}x_1 \\x_2\\ \vdots \\ x_n\end{pmatrix}
 = \begin{pmatrix}s\cdot x_1 \\ s\cdot x_2 \\ \vdots \\ s\cdot x_n \end{pmatrix}.$$
 
 Auch hier wird in der Regel anstatt des Symbols $\odot$ nur das normale
 Multiplikationszeichen $\cdot$ verwendet, da jeweils aus dem Zusammenhang klar
 ist, ob die normale Multiplikation zwischen reellen Zahlen oder die
-Skalarmultiplikation gemeint ist. 
+Skalarmultiplikation gemeint ist.
 
-
-## Vektorraum 
+## Vektorraum
 
 Noch haben wir nicht die Frage beantwortet, was ein Vektorraum eigentlich ist.
 Ein Vektorraum ist eine mathematische Struktur, die über einem Körper definiert
@@ -197,22 +194,9 @@ title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
 clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 
-
 ## Zusammenfassung und Ausblick
 
 Der mathematische Begriff Vektorraum ist zunächst recht abstrakt. In dieser
 Vorlesung beschränken wir uns auf daher auf reelle Vektorräume. Im nächsten
 Kapitel werden wir den reellen Standardvektorraum benutzen, um geometrische
 Objekte zu beschreiben.
-
-
-
-
-
-
-
-
-
-
-
-

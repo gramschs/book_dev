@@ -6,7 +6,7 @@ Vektorraum ein normierter Raum.
 
 ## Lernziele
 
-```{admonition} Lernziele 
+```{admonition} Lernziele
 :class: goals
 * Sie wissen, was der **Betrag** eines Vektors ist und können ihn ausrechnen.
 * Sie können den **Einheitsvektor** in Richtung eines Vektors bestimmen
@@ -14,7 +14,6 @@ Vektorraum ein normierter Raum.
 * Sie können den **Abstand zweier Punkte** berechnen.
 * Sie können den **Mittelpunkt zweier Punkte** berechnen.
 ```
-
 
 ## Betrag eines Vektors
 
@@ -33,7 +32,7 @@ $$\vec{v} = \begin{pmatrix} 6 \\ 2.5 \end{pmatrix}.$$
 
 Es gibt unendlich viele Pfeile, die geometrisch diesen Vektor im kartesischen
 Koordinatensystem repräsentieren. In der Skizze haben wir die Verschiebung
-eingezeichnet, die beim Punkt $(1.5, 2)$ startet. 
+eingezeichnet, die beim Punkt $(1.5, 2)$ startet.
 
 ```{figure} pics/ betrag_vektor.png
 ---
@@ -52,9 +51,9 @@ Betrag $|\vec{v}|$ des Vektors berechnen:
 $$|\vec{v}| = \sqrt{6^2 + 2.5^2} = \sqrt{42.25} = 6.5.$$
 
 Dieses Vorgehen können wir verallgemeinern. Allgemein kann der Betrag
-$|\vec{v}|$ eines Vektors 
+$|\vec{v}|$ eines Vektors
 
-$$\vec{v} = \begin{pmatrix} v_1 \\ v_2 \\ \vdots \\ v_2 \end{pmatrix}$$ 
+$$\vec{v} = \begin{pmatrix} v_1 \\ v_2 \\ \vdots \\ v_2 \end{pmatrix}$$
 
 des reellen Standardvektorraumes $\mathbb{R}^n$ folgendermaßen berechnet werden:
 
@@ -66,7 +65,6 @@ title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
 clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 ```
-
 
 ## Einheitsvektor bzw. Vektoren normieren  
 
@@ -111,7 +109,6 @@ $$\vec{e}_v = \frac{1}{|\vec{v}|} \vec{v}.$$
 clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ```
 
-
 ## Abstand zweier Punkte
 
 Bisher haben wir nur Vektoren betrachtet bzw. ihre geometrische Interpretation
@@ -147,7 +144,6 @@ clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
 </iframe>
 ```
 
-
 ## Mittelpunkt einer Strecke berechnen
 
 Sind zwei Punkte $P$ und $Q$ gegeben, können wir die Richtung zwischen den
@@ -166,7 +162,6 @@ $$M = P + \frac{1}{2}\vec{PQ}.$$
 <iframe width="560" height="315" src="https://www.youtube.com/embed/63yukPX43tI?si=YBWaylBuFar8LU1E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
 clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ```
-
 
 ## Zusammenfassung und Ausblick
 

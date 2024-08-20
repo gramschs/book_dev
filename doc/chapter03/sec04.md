@@ -4,16 +4,14 @@ Nachdem wir gelernt haben, wie Punkte bezüglich eines Koordinatensystems durch
 n-Tupel und Verschiebungen als Vektoren beschrieben werden können, kombinieren
 wir nun beides und führen den sogenannten affinen Punktraum ein.
 
-
 ## Lernziele
 
-```{admonition} Lernziele 
+```{admonition} Lernziele
 :class: goals
 * Sie können die Definition eines **affinen Punktraumes** auswendig.
 * Sie wissen, wie Punkte und Verschiebungsvektoren im $\mathbb{R}^n$ über die
   **Punkt-Vektoraddition** zu einem affinen Punktraum kombiniert werden können.
 ```
-
 
 ## Affiner Punktraum
 
@@ -26,14 +24,14 @@ $(V,A,\boxplus)$ **affinen Punktraum**, wenn gilt:
 
 1. Für alle Punkte $P \in A$ gilt $P \boxplus \vec{0} = P$.
 2. Für jeden Punkt $P\in A$ und $Q\in A$ existiert genau ein Vektor $v\in V$
-   mit $P\boxplus\vec{v}=Q$. 
+   mit $P\boxplus\vec{v}=Q$.
 3. Für alle Punkte $P\in A$ und Vektoren $\vec{v}, \vec{w}\in V$ gilt $P\boxplus
    (\vec{v}\oplus\vec{w}) = (P\boxplus \vec{v})\boxplus\vec{w}$.
 
 Bemerkung: Üblicherweise werden die Verknüpfungen $\boxplus: A \times V \to A$
 und $\oplus: V \times V \to V$ nur mit einem einfachen Pluszeichen $+$
 geschrieben, da ja aus dem Zusammenhang klar ist, welche Verknüpfung gemeint
-ist. 
+ist.
 
 In der »lässigeren« Schreibweise mit dem $+$ als Symbol für die Verknüpfung
 lässt sich der Begriff affiner Punktraum also folgendermaßen definieren.
@@ -61,7 +59,6 @@ Außerdem gilt dann auch
 $$P + \overrightarrow{PQ} = Q \; \Rightarrow \;
 \overrightarrow{PQ} = Q - P.$$
 
-
 ## Affine Punkträume zur Beschreibung geometrischer Probleme in der Ebene (2D)
 
 Nachdem wir nun das mathematische Rüstzeug haben, können wir Punkte (Positionen)
@@ -83,7 +80,7 @@ $$\begin{pmatrix} P_1 \\ P_2 \end{pmatrix} + \begin{pmatrix} v_1 \\ v_2
 \end{pmatrix} = \begin{pmatrix} Q_1 \\ Q_2 \end{pmatrix}.$$
 
 Das Ergebnis ist der Punkt $Q\in\mathbb{R}^2$ mit den Koordinaten $Q_1$ und
-$Q_2$. 
+$Q_2$.
 
 Achtung: auf den ersten Blick könnte man meinen, dass zwei Vektoren addiert
 werden und das Ergebnis auf der rechten Seite ein Vektor ist. Trotz der
@@ -113,8 +110,8 @@ $$\vec{v} := \begin{pmatrix} Q_1 - P_1 \\ Q_2 - P_2 \end{pmatrix}$$
 
 definieren, gilt mit der Punkt-Vektor-Addition
 
-$$\begin{pmatrix} P_1 \\ P_2 \end{pmatrix} + 
-\begin{pmatrix} Q_1 - P_1 \\ Q_2 - P_2 \end{pmatrix} = 
+$$\begin{pmatrix} P_1 \\ P_2 \end{pmatrix} +
+\begin{pmatrix} Q_1 - P_1 \\ Q_2 - P_2 \end{pmatrix} =
 \begin{pmatrix} Q_1 \\ Q_2 \end{pmatrix},$$
 
 oder anders ausgedrückt $P + \vec{v} = Q$.
@@ -173,7 +170,6 @@ P_2 + v_2 + w_2 \end{pmatrix} .$$
 Beide Seiten sind gleich, was durch das Assoziativgesetz der skalaren Addition
 bedingt ist. Somit ist auch die 3. Eigenschaft des affinen Punktraumes erfüllt.
 
-
 ## Affine Punkträume im $\mathbb{R}^n$
 
 Die oben gezeigten Überlegungen lassen sich einfach auf den n-dimensionalen Raum
@@ -198,7 +194,6 @@ $$\begin{pmatrix} P_1 \\ P_2 \\ \vdots \\ P_n\end{pmatrix} + \begin{pmatrix} v_1
 
 Der Nachweis der drei Eigenschaften eines affinen Punktraumes erfolgt dabei wie
 im zweidimensionalen Fall.
-
 
 ## Zusammenfassung und Ausblick
 

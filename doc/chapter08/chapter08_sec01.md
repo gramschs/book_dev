@@ -21,10 +21,9 @@ werden sichtbar, wenn wir versuchen, die quadratische Gleichung $x^2 = -1$ zu
 lösen. Für solche Fälle benötigen wir die *komplexen Zahlen*, die über den
 Bereich der reellen Zahlen hinausgehen.
 
-
 ## Lernziele
 
-```{admonition} Lernziele 
+```{admonition} Lernziele
 :class: goals
 * Sie wissen, dass die **imaginäre Einheit** $\mathrm{i}$ durch
   $\mathrm{i}^2=-1$ definiert ist.
@@ -37,17 +36,16 @@ Bereich der reellen Zahlen hinausgehen.
   bestimmen.
 ```
 
-
 ## Die imaginäre Einheit i und die imaginären Zahlen
 
 Innerhalb der Menge der reellen Zahlen $\mathbb{R}$ stößt man an Grenzen, wie
-beispielsweise bei der Lösung der quadratischen Gleichung 
+beispielsweise bei der Lösung der quadratischen Gleichung
 
 $$x^2 = -1.$$
 
 Dies liegt daran, dass das Produkt zweier reeller Zahlen, egal ob positiv oder
 negativ, immer positiv ist, und somit die Gleichung in diesem Zahlensystem
-unlösbar ist. Selbst die Zahl 0 kann diese Gleichung nicht lösen. 
+unlösbar ist. Selbst die Zahl 0 kann diese Gleichung nicht lösen.
 
 Um diese Lücke zu schließen, erfanden Mathematiker im 16. Jahrhundert eine
 neue Zahl, die sogenannte **imaginäre Einheit** und bezeichneten sie mit dem
@@ -59,26 +57,26 @@ $$\mathrm{i}^2 = -1$$
 erfüllen soll. Der Name »imaginär« wurde von [René
 Descartes](https://de.wikipedia.org/wiki/René_Descartes) eingeführt. Imaginär
 ist ein lateinisches Adjektiv und bedeutet, dass etwas nicht wirklich vorhanden
-ist, sondern nur in der Einbildung oder Vorstellung einer Person existiert. 
+ist, sondern nur in der Einbildung oder Vorstellung einer Person existiert.
 
 Die imaginäre Einheit kann ähnlich wie eine physikalische Einheit benutzt
 werden. Beispielsweise gilt
 
 $$3\mathrm{i} + 2\mathrm{i} = 5\mathrm{i}$$
 
-oder 
+oder
 
 $$2.5\mathrm{i} -3\mathrm{i} = -0.5 \mathrm{i}.$$
 
 Bei der Multiplikation oder dem Potenzieren können wir die Definition
-$\mathrm{i}^2 = -1$ ausnutzen. Es gilt beispielsweise 
+$\mathrm{i}^2 = -1$ ausnutzen. Es gilt beispielsweise
 
 $$3\mathrm{i} \cdot 4\mathrm{i} = 12 \mathrm{i}^2 = 12 \cdot (-1) = -12$$
 
-oder 
+oder
 
 $$\mathrm{i}^3 = \mathrm{i}^2 \cdot \mathrm{i} = -1\cdot \mathrm{i} =
--\mathrm{i}.$$ 
+-\mathrm{i}.$$
 
 Die imaginäre Einheit ist also zusammengefasst folgendermaßen definiert.
 
@@ -101,7 +99,6 @@ $$\{b \cdot \mathrm{i} \, | \, b\in\mathbb{R} \text{ und } \mathrm{i}^2=-1\}.$$
 Für diese Menge gibt es kein besonderes Symbol wie beispielsweise für die
 reellen Zahlen $\mathbb{R}$.
 
-
 ## Komplexe Zahlen
 
 Im vorherigen Abschnitt haben wir die imaginäre Einheit $\mathrm{i}$ und die
@@ -115,7 +112,7 @@ einer imaginären Zahl, also beispielsweise
 
 $$z = 2  + 3\mathrm{i}$$
 
-oder 
+oder
 
 $$z = -\frac{5}{2} - \sqrt{3}\mathrm{i}.$$
 
@@ -130,13 +127,13 @@ $$z = a + b\mathrm{i}.$$
 Dabei sind $a$ und $b$ reelle Zahlen, d.h. $a, b \in \mathbb{R}$. Diese
 Darstellung ist als **Normalform** der komplexen Zahlen bekannt. In späteren
 Abschnitten werden weitere Darstellungsformen wie die trigonometrische Form und
-die Exponentialform eingeführt. 
+die Exponentialform eingeführt.
 
 Jetzt brauchen wir nur noch ein Symbol für die komplexen Zahlen. Für die
 natürlichen Zahlen wird das Symbol $\mathbb{N}$ verwendet, für die ganzen Zahlen
 $\mathbb{Z}$. Das Symbol $\mathbb{Q}$ steht für die rationale Zahlen und
 $\mathbb{R}$ für die reelle Zahlen. Die **Menge der komplexen Zahlen** wird
-durch das Symbol $\mathbb{C}$ bezeichnet. 
+durch das Symbol $\mathbb{C}$ bezeichnet.
 
 Zusammengefasst werden also komplexe Zahlen folgendermaßen definiert.
 
@@ -150,7 +147,6 @@ $$z = a + b\mathrm{i}.$$
 Dabei ist $a$ eine reelle Zahl und $b\mathrm{i}$ eine imaginäre Zahl. Die Menge
 der komplexen Zahlen wird mit $\mathbb{C}$ bezeichnet.
 ```
-
 
 ## Gaußsche Zahlenebene
 
@@ -167,7 +163,7 @@ name: zahlenstrahl_N
 ```
 
 Mit der Einführung der ganzen Zahlen wird der Zahlenstrahl zu einer
-Zahlengeraden erweitert. 
+Zahlengeraden erweitert.
 
 ```{figure} pics/zahlenstrahl_Z.svg
 ---
@@ -215,7 +211,7 @@ augetragen würden. Dies ist aber nicht der Fall, sondern es werden die reellen
 Zahlen aufgetragen, mit denen die imaginäre Einheit $\mathrm{i}$ multipliziert
 wird. Dieser Teil der komplexen Zahl wird **Imaginärteil** genannt.
 
-**Beispiel 1:** Die komplexe Zahl 
+**Beispiel 1:** Die komplexe Zahl
 
 $$z = 2 + 3\mathrm{i}$$
 
@@ -254,8 +250,8 @@ $$\mathrm{Re}(2+3\mathrm{i}) = 2 \; \text{ und } \;
 
 und
 
-$$\mathrm{Re}\left(-\frac{5}{2} - \sqrt{3}\mathrm{i}\right) = -\frac{5}{2} 
-\; \text{ und } \; 
+$$\mathrm{Re}\left(-\frac{5}{2} - \sqrt{3}\mathrm{i}\right) = -\frac{5}{2}
+\; \text{ und } \;
 \mathrm{Im}\left(\frac{5}{2} - \sqrt{3}\mathrm{i}\right) = -\sqrt{3}.$$
 
 Das folgende Video fasst die oben eingeführten Begriffe zusammen.

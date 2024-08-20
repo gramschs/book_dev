@@ -6,10 +6,9 @@ Geometrie Bewegungen dargestellt werden. n-Tupel zusammen mit Vektoren sind
 daher ein mächtiges Werkzeug, um geometrische Probleme zu beschreiben und zu
 lösen.
 
-
 ## Lernziele
 
-```{admonition} Lernziele 
+```{admonition} Lernziele
 :class: goals
 * Sie können die Vektoren des reellen Standardvektorraumes als Bewegungen bzw.
   Verschiebungen in der Geometrie interpretieren.
@@ -19,7 +18,6 @@ lösen.
   Verschiebung interpretieren. Multiplikation mit einem negativen Skalar führt
   zu einer Umorientierung.
 ```
-
 
 ## Vektoren als Verschiebung interpretieren
 
@@ -81,7 +79,6 @@ Vektor $\vec{v}_1 = \begin{pmatrix} 3 \ 0 \end{pmatrix}$ in einem
 Koordinatensystem dargestellt werden, müssten unendlich viele Pfeile
 eingezeichnet werden, um alle möglichen Startpunkte abzudecken.
 
-
 ## Verschiebungen addieren
 
 In den obigen Betrachtungen haben wir die geometrische Verschiebung von Punkten,
@@ -112,7 +109,7 @@ und
 
 $$(\vec{v}_1 \oplus \vec{v}_2) \oplus \vec{v}_3.$$
 
-Es gibt auch ein neutrales Element 
+Es gibt auch ein neutrales Element
 
 $$\vec{0} = \begin{pmatrix} 0 \\ 0 \end{pmatrix},$$
 
@@ -130,7 +127,6 @@ hintereinander ausgeführt, haben wir uns gar nicht bewegt.
 $$\vec{v} = \begin{pmatrix} a \\ b \end{pmatrix} \Rightarrow \vec{v} \oplus
 (-\vec{v}) =\begin{pmatrix} a \\ b \end{pmatrix} + \begin{pmatrix} -a \\ -b
 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix} = \vec{0}.$$
-
 
 ## Verschiebungen vervielfachen
 
@@ -173,16 +169,15 @@ mit -1 multiplizieren, erhalten wir:
 
 $$-1\cdot \begin{pmatrix} 2 \\ 1 \end{pmatrix}= \begin{pmatrix} -2 \\ 11
 \end{pmatrix}.$$
-​	
+​
 Diese Multiplikation führt zu einer Verschiebung in die entgegengesetzte
-Richtung, nämlich 2 Einheiten nach links und 1 Einheit nach unten. 
-
+Richtung, nämlich 2 Einheiten nach links und 1 Einheit nach unten.
 
 ## Zusammenfassung und Ausblick
 
 Der reelle Standardvektorraum mit n-Tupeln, Vektoraddition und
 Skalarmultiplikation ist ein äußerst geeignetes Werkzeug, um Bewegungen bzw.
-Verschiebungen in der Geometrie zu beschreiben. 
+Verschiebungen in der Geometrie zu beschreiben.
 
 Im nächsten Kapitel werden wir uns mit affinen Punkträumen beschäftigen. Affine
 Punkträume erweitern unser Verständnis, indem sie es uns ermöglichen, die
