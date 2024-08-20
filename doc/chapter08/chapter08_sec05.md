@@ -8,10 +8,9 @@ Polarkoordinaten, wie wir in diesem Kapitel lernen werden. Der Vorteil der
 Exponentialform ist, dass die Berechnung von Potenzen oder Wurzeln in dieser
 Darstellung leicht gelingt.
 
-
 ## Lernziele
 
-```{admonition} Lernziele 
+```{admonition} Lernziele
 :class: goals
 * Sie kennen die **eulersche Formel**
 
@@ -22,7 +21,6 @@ Darstellung leicht gelingt.
 * Sie können eine komplexe Zahl von der trigonometrischen Form in die
   Exponentialform umrechnen und umgekehrt.
 ```
-
 
 ## Die eulersche Formel führt zur Exponentialform
 
@@ -83,7 +81,7 @@ $$\frac{z_1}{z_2} = \frac{r_1}{r_2} \; e^{(\varphi_1 - \varphi_2) \, \mathrm{i}}
 Die Potenzgesetze werden wir auch für das Potenzieren einer komplexen Zahl
 ausnutzen, wie wir im nächsten Kapitel lernen werden. Zunächst halten wir noch
 einen häufig benutzten Zusammenhang zwischen der komplexen Exponentialfunktion
-und den trigonometrischen Funktionen fest. 
+und den trigonometrischen Funktionen fest.
 
 ## Trigonometrische Funktionen und die komplexe Exponentialfunktion
 
@@ -92,7 +90,7 @@ $e^{\varphi \, \mathrm{i}}$ und $e^{- \varphi \, \mathrm{i}}$ den Kosinus
 erzeugen. Wir addieren die beiden und wechseln in die trigonomterische Form:
 
 $$
-e^{\varphi \, \mathrm{i}} + e^{-\varphi \, \mathrm{i}} 
+e^{\varphi \, \mathrm{i}} + e^{-\varphi \, \mathrm{i}}
 = \cos(\varphi) + \sin(\varphi) \, \mathrm{i} + \cos(-\varphi) + \sin(-\varphi) \, \mathrm{i} $$
 
 Da die Kosinus-Funktion gerade ist, gilt aber
@@ -127,7 +125,6 @@ Der Kosinus und der Sinus lässt sich folgendermaßen durch komplexe Exponential
 \end{align*}
 ```
 
-
 ## Weiteres Lernmaterial
 
 ```{dropdown} Video "Eulersche Formel" von MathePeter
@@ -140,7 +137,6 @@ encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CwxhwTRv65Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
 picture-in-picture" allowfullscreen></iframe>
 ```
-
 
 ## Zusammenfassung und Ausblick
 
