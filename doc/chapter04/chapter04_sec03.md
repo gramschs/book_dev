@@ -1,11 +1,16 @@
 # 4.3 Geometrische Interpretation Skalarprodukt
 
+```{admonition} Warnung
+:class: warning
+Dieser Teil des Vorlesungsskriptes wird gerade überarbeitet.
+```
+
 In diesem Kapitel werden wir das Skalarprodukt für Vektoren in der Geometrie
 anwenden.
 
 ## Lernziele
 
-```{admonition} Lernziele 
+```{admonition} Lernziele
 :class: goals
 * Sie kennen den Zusammenhang zwischen Skalarprodukt und Betrag/Länge eines
   Vektors: 
@@ -134,7 +139,7 @@ title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; cli
 encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ```
 
-```{dropdown} Video "Skalarprodukt II" von Mathematische Methoden 
+```{dropdown} Video "Skalarprodukt II" von Mathematische Methoden
 <iframe width="560" height="315" src="https://www.youtube.com/embed/uGs7vGAxJko?si=YYM3r12agb-6C_tf" 
 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
 encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

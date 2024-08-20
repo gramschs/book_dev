@@ -1,4 +1,4 @@
-# Vektorprodukt in Komponentendarstellung
+# 4.5 Vektorprodukt
 
 ```{admonition} Warnung
 :class: warning
@@ -7,7 +7,7 @@ Dieser Teil des Vorlesungsskriptes wird gerade überarbeitet.
 
 ## Lernziele
 
-```{admonition} Lernziele 
+```{admonition} Lernziele
 :class: goals
 * Sie können das Vektorprodukt von Vektoren in Koordinatendarstellung ausrechnen.
 * Sie kennen folgende Rechenregel für das Vektorprodukt:
@@ -17,16 +17,6 @@ Dieser Teil des Vorlesungsskriptes wird gerade überarbeitet.
     * *kein* Assoziativgesetz: $\left(\mathbf{a}\times\mathbf{b}\right)\times\mathbf{c} \textcolor{red}{\, \neq \, } \mathbf{a}\times \left(\mathbf{b} \times \mathbf{c}\right) $
     
 und können sie auch anwenden.
-```
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tg9oiUPdrFc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-## Vektorprodukt (geometrisch)
-
-## Lernziele
-
-```{admonition} Lernziele 
-:class: goals
 * Sie wissen, wie das **Vektorprodukt** zweier Vektoren **geometrisch** definiert ist: Das Vektorprodukt der beiden Vektoren $\mathbf{a}$ und $\mathbf{b}$ ist der Vektor $\mathbf{c}$ für den gilt:
     * Die Länge von $\mathbf{c}$ ist die Fläche des Parallelogramms, das durch $\mathbf{a}$ und $\mathbf{b}$ gebildet wird.
     * Die Richtung von $\mathbf{c}$ ist senkrecht zu $\mathbf{a}$ und senkrecht zu $\mathbf{b}$.
@@ -36,6 +26,14 @@ und können sie auch anwenden.
 * Sie wissen, was es bedeutet, wenn das Vektorprodukt zweier Vektoren der Nullvektor ist.
 ```
 
-## Videos
+```{dropdown} Video
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tg9oiUPdrFc" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/vhfwxWjHqeI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```{dropdown} Video
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vhfwxWjHqeI" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```

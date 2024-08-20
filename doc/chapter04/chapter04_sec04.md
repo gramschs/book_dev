@@ -7,7 +7,7 @@ Dieser Teil des Vorlesungsskriptes wird gerade überarbeitet.
 
 ## Lernziele
 
-```{admonition} Lernziele 
+```{admonition} Lernziele
 :class: goals
 * Sie kennen den Begriff **Orthogonalität** und können mit dem Skalarprodukt
   überpüfen, ob zwei Vektoren orthogonal $\perp$ (= senkrecht zueinander) sind.

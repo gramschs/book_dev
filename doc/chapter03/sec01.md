@@ -7,10 +7,9 @@ der Fachbegriff Tupel eingeführt. Tupel, die auf ein Koordinatensystem bezogen
 werden, heißen Koordinaten. Sie ermöglichen es uns, Positionen genau
 festzulegen.
 
-
 ## Lernziele
 
-```{admonition} Lernziele 
+```{admonition} Lernziele
 :class: goals
 * Sie können mit eigenen Worten erklären, was ein **n-Tupel** ist.
 * Sie wissen, was **Koordinaten** sind.
@@ -22,7 +21,6 @@ festzulegen.
 * Sie können Punkte in ein **Polarkoordinatensystem** einzeichnen und daraus
   ablesen.
 ```
-
 
 ## Tupel und Koordinaten
 
@@ -60,7 +58,7 @@ Normalhöhennull. Wenn wir die Reihenfolge Längengrad, Breitengrad und Höhe
 vereinbaren, können wir die Position als **Tripel** notieren:
 
 $$(8.691847044378648, 50.13016149806154, 112).$$
- 
+
 Der Begriff Tripel zeigt, dass die Reihenfolge der Zahlen festgelegt und nicht
 austauschbar ist. Allgemein bezeichnet man eine geordnete Liste von Zahlen (oder
 anderen mathematischen Objekten) als **Tupel**. Ein Tupel kann beliebig viele
@@ -98,7 +96,6 @@ Elemente eines solchen Tupels werden Koordinaten genannt.
 
 Den Begriff Koordinatensystem haben wir intuitiv verwendet. Was genau ein
 Koordinatensystem ist, wird im folgenden Abschnitt näher erläutert.
-
 
 ## Kartesische Koordinatensysteme
 
@@ -165,14 +162,13 @@ erzeugt ein linkshändiges Koordinatensystem.
 Bei einem kartesischen Koordinatensystem stehen jeweils zwei Koordinatenachsen
 zueinander senkrecht und schneiden sich im Ursprung $O$. 
 ```
- 
+
 Das kartesische Koordinatensystem ist eines der grundlegendsten und am
 häufigsten verwendeten Werkzeuge in der Mathematik und den
 Ingenieurwissenschaften. Es ermöglicht eine präzise und einfache Darstellung von
 Punkten und Bewegungen im Raum.
 
-
-## Polarkoordinatensystem 
+## Polarkoordinatensystem
 
 In den Ingenieurwissenschaften und der Physik wird häufig das
 Polarkoordinatensystem verwendet, insbesondere wenn es um kreisförmige Phänomene
@@ -183,9 +179,9 @@ beschrieben werden kann.
 Zunächst wird ein Ursprung festgelegt, der üblicherweise als **Pol** bezeichnet
 wird. Vom Pol ausgehend wird ein Strahl in eine Richtung fesgelegt, die dann als
 **Polarachse** bezeichnet wird. Die Position eines Punktes wird in
-Polarkoordinaten dann durch ein Paar $(r, \varphi)$ beschrieben, wobei 
+Polarkoordinaten dann durch ein Paar $(r, \varphi)$ beschrieben, wobei
 
-* $r$ der Abstand des Punktes zum Pol/Ursprung und 
+* $r$ der Abstand des Punktes zum Pol/Ursprung und
 * $\varphi$ der Winkel relativ zur Polarachse ist.
 
 ```{figure} pics/polarform_light43.svg
@@ -200,7 +196,6 @@ Polarkoordinatensystem, Quelle: eigene Darstellung, Lizenz: [CC BY-SA
 Alternativ kann der Winkel relativ zur Polarachse auch im Bogenmaß angegeben
 werden.
 
-
 ## Zusammenfassung und Ausblick
 
 In diesem Kapitel haben wir die Grundlagen von Koordinatensystemen behandelt.
@@ -212,4 +207,3 @@ Im nächsten Kapitel erweitern wir das Thema, indem wir lernen, wie Tupel durch
 Rechenoperationen zu Vektoren werden. Der Vektorbegriff ist zentral für die
 Beschreibung von Kräften und Bewegungen im Raum und bildet die Grundlage für das
 Verständnis von Vektorräumen.
-
