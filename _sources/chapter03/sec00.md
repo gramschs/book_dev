@@ -1,4 +1,6 @@
-# 3. Vektorrechnung (Teil 1)
+# 3. Vektorräume
+
+Vektoren sind Elemente eines Vektorraumes.
 
 Themen:
 

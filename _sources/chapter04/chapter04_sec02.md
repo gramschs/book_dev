@@ -5,7 +5,7 @@ führen wir es für reelle Standardvektorräume $\mathbb{R}^n$ ein.
 
 ## Lernziele
 
-```{admonition} Lernziele 
+```{admonition} Lernziele
 :class: goals
 * Sie wissen, was das **Skalarprodukt** im reellen Standardvektorraum $\mathbb{R}^n$ ist.
 * Sie können das Skalarprodukt berechnen.
@@ -77,8 +77,8 @@ hinaus führen wir jetzt noch eine neue mathematische Verknüpfung ein, die den
 Wert des Gesamtdepots ermittelt. Wir verwenden dazu (wieder einmal) das Symbol
 $\;\cdot\;$
 
-$$\vec{a} \cdot \vec{k} = 
-\begin{pmatrix} 5 \\ 3 \\ 1 \\ 10 \\ 7 \end{pmatrix} \cdot 
+$$\vec{a} \cdot \vec{k} =
+\begin{pmatrix} 5 \\ 3 \\ 1 \\ 10 \\ 7 \end{pmatrix} \cdot
 \begin{pmatrix} 216.5 \\ 42.55 \\ 12.76 \\ 25.15 \\ 12.22 \end{pmatrix} =
 5\cdot 216.5 + 3\cdot 42.55 + 1\cdot 12.76 + 10\cdot 25.15 + 7\cdot 12.22 = 1559.95.$$
 
@@ -104,18 +104,18 @@ Damit haben wir nun die dritte Bedeutung des Symbols $\;\cdot\;$ kennengelernt.
 Bei den folgenden drei Verknüpfungen wird das Symbol $\;\cdot\;$ benutzt. Nur
 aus dem Zusammenhang wird klar, welche Verknüpfung gemeint ist.
 
-1. Multiplikation, also Skalar "mal" Skalar = Skalar, z.B. 
+1. **Multiplikation**, also Skalar "mal" Skalar = Skalar, z.B.
 
-$$3\cdot 2 = 6,$$
+   $$3\cdot 2 = 6,$$
 
-2. skalare Multiplikation, also Skalar "mal" Vektor = Vektor, z.B.
+2. **skalare Multiplikation**, also Skalar "mal" Vektor = Vektor, z.B.
 
-$$3\cdot \begin{pmatrix} -1 \\ 3.1 \end{pmatrix} = \begin{pmatrix} -3 \\ 9.3 \end{pmatrix},$$
+   $$3\cdot \begin{pmatrix} -1 \\ 3.1 \end{pmatrix} = \begin{pmatrix} -3 \\ 9.3 \end{pmatrix},$$
 
-3. Skalarprodukt, also Vektor "mal" Vektor = Skalar, z.B.
+3. **Skalarprodukt**, also Vektor "mal" Vektor = Skalar, z.B.
 
-$$\begin{pmatrix} 1 \\ 2 \end{pmatrix} \cdot \begin{pmatrix} -1 \\ 3.1
-\end{pmatrix} = 5.2.$$
+   $$\begin{pmatrix} 1 \\ 2 \end{pmatrix} \cdot \begin{pmatrix} -1 \\ 3.1
+   \end{pmatrix} = 5.2.$$
 
 Die folgenden Videos zeigen weitere Beispiele zur Berechnung des Skalarproduktes
 von zwei Vektoren. Danach werden wir uns mit allgemeinen Eigenschaften des

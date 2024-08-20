@@ -6,10 +6,9 @@ beschäftigen, wie komplexe Zahlen addiert, subtrahiert und multipliziert werden
 Dabei werden wir auch auf die geometrische Interpretation dieser
 Rechenoperationen in der Gaußschen Zahlenebene eingehen.
 
-
 ## Lernziele
 
-```{admonition} Lernziele 
+```{admonition} Lernziele
 :class: goals
 * Sie können zwei komplexe Zahlen in der Normalform **addieren**.
 * Sie können die Addition zweier komplexer Zahlen geometrisch in der Gaußschen
@@ -21,7 +20,6 @@ Rechenoperationen in der Gaußschen Zahlenebene eingehen.
 * Sie können die Multiplikation zweier komplexer Zahlen geometrisch in der
   Gaußschen Zahlenebene interpretieren.
 ```
-
 
 ## Addition komplexer Zahlen
 
@@ -98,7 +96,6 @@ $$z_1 - z_2 = (a_1 - a_2) + (b_1 - b_2) \cdot \mathrm{i}.$$
 Die beiden Realteile werden subtrahiert $a_1 - a_2$ und die beiden Imaginärteile
 $b_1 - b_2$ werden subtrahiert.
 
-
 ## Multiplikation komplexer Zahlen
 
 Die Multiplikation zweier komplexer Zahlen ist nicht weiter schwer, wenn wir die Regel $\mathrm{i}^2 = -1$ beachten. Dann können wir einfach Ausmultiplizieren.
@@ -106,7 +103,7 @@ Die Multiplikation zweier komplexer Zahlen ist nicht weiter schwer, wenn wir die
 **Beispiel:** Die beiden komplexen Zahlen $z_1 = 2 + 3\mathrm{i}$ und $z_2 = -4 + 2\mathrm{i}$ sollen multipliziert werden. Dann gilt
 
 \begin{align*}
-z_1 \cdot z_2 
+z_1 \cdot z_2
 &= (2 + 3\mathrm{i}) \cdot (-4 + 2\mathrm{i}) = \\
 &= 2\cdot(-4) + 4\mathrm{i} - 12\mathrm{i} + 6 \mathrm{i}^2 = \\
 &= -8 -8\mathrm{i} + 6\cdot(-1) = \\
@@ -150,7 +147,6 @@ beiden komplexen Zahlen wird orange dargestellt.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/EdCqr-TDJgE?si=KomK36ZQY_ARAPLe" title="YouTube video player" frameborder="0" allow="accelerometer; 
 autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
-
 
 ## Zusammenfassung und Ausblick
 

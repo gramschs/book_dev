@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=fcc42dec" />
@@ -205,7 +205,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Vektoren und ihre Anwendungen</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter03/sec00.html">3. Vektorrechnung (Teil 1)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter03/sec00.html">3. Vektorräume</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter03/sec01.html">3.1 Koordinaten und Koordinatensysteme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter03/sec02.html">3.2 Vektoren und Vektorräume</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter03/sec03.html">3.3 Vektoren in der Geometrie</a></li>
@@ -214,13 +214,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter03/sec06.html">3.6 Linearkombination und lineare Unabhängigkeit</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter04_sec00.html">Vektorrechnung (Teil 2)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter04_sec00.html">4. Vektorrechnung</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="chapter04_sec01.html">4.1 Basis und Dimension</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter04_sec02.html">4.2 Skalarprodukt</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">4.3 Geometrische Interpretation Skalarprodukt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter04_sec04.html">4.4 Anwendungen Skalarprodukt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter04_sec05.html">Vektorprodukt in Komponentendarstellung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter04_sec06.html">Spatprodukt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter04_sec05.html">4.5 Vektorprodukt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter04_sec06.html">4.6 Spatprodukt</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter05/chapter05_sec00.html">Punkte, Geraden und Ebenen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -468,8 +468,9 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skalarprodukt-und-betrag-von-vektoren">Skalarprodukt und Betrag von Vektoren</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skalarprodukt-und-betrag-lange-von-vektoren">Skalarprodukt und Betrag/Länge von Vektoren</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skalarprodukt-und-eingeschlossener-winkel">Skalarprodukt und eingeschlossener Winkel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#winkelberechnungen-mit-dem-skalarprodukt">Winkelberechnungen mit dem Skalarprodukt</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
@@ -485,7 +486,9 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="geometrische-interpretation-skalarprodukt">
 <h1>4.3 Geometrische Interpretation Skalarprodukt<a class="headerlink" href="#geometrische-interpretation-skalarprodukt" title="Link to this heading">#</a></h1>
 <p>In diesem Kapitel werden wir das Skalarprodukt für Vektoren in der Geometrie
-anwenden.</p>
+anwenden. Wir setzen ein kartesisches, dreidimensionales Koordinatensystem
+voraus und stellen Verschiebungen bzw. Bewegungen bzgl. dieses
+Koordinatensystems als Vektoren des Standardvektorraumes <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> dar.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
@@ -496,109 +499,206 @@ Vektors:</p>
 <div class="math notranslate nohighlight">
 \[|\vec{a}|=\sqrt{\vec{a}\cdot\vec{a}}.\]</div>
 </li>
-<li><p>Sie wissen, wie das <strong>Skalarprodukt</strong> zweier Vektoren <strong>geometrisch</strong>
-definiert ist: Das Skalarprodukt der Vektoren <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span>
+<li><p>Sie wissen, welche Bedeutung das <strong>Skalarprodukt</strong> zweier Vektoren <strong>geometrisch</strong>
+hat: Das Skalarprodukt der Vektoren <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span>
 ist das Produkt aus den Längen der beiden Vektoren und dem Kosinus des von den
 beiden Vektoren eingeschlossenen Winkels <span class="math notranslate nohighlight">\(\varphi = \angle (\vec{a},\vec{b})\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\vec{a}\cdot\vec{b} = |\vec{a}|\cdot|\vec{b}| \cdot \cos(\varphi).\]</div>
 </li>
-<li><p>Sie können den Winkel zwischen zwei Vektoren berechnen, wenn Sie das
+<li><p>Sie können den <strong>Winkel zwischen zwei Vektoren</strong> berechnen, wenn Sie das
 Skalarprodukt und die beiden Längen kennen:</p>
 <div class="math notranslate nohighlight">
-\[\varphi = \arccos\left(\frac{\vec{a}\cdot\vec{b}}{|\vec{a}|\cdot|\vec{b}|}\right).\]</div>
+\[\varphi = \arccos\left(\frac{\vec{a}\cdot\vec{b}}{|\vec{a}|\cdot|\vec{b}|}\right),
+  \quad \vec{a}\neq\vec{0}, \vec{b}\neq\vec{0}.\]</div>
 </li>
-<li><p>Sie können anhand des Vorzeichens des Skalarproduktes Aussagen über die
-Orientierung der Vektorn zueinander treffen.</p></li>
 </ul>
 </div>
 </section>
-<section id="skalarprodukt-und-betrag-von-vektoren">
-<h2>Skalarprodukt und Betrag von Vektoren<a class="headerlink" href="#skalarprodukt-und-betrag-von-vektoren" title="Link to this heading">#</a></h2>
-<p>Die Länge einer Verschiebung oder einer Bewegung ist gleich dem Betrag des
-Vektors <span class="math notranslate nohighlight">\(\vec{a}\in\mathbb{R}^n\)</span>, der defininiert ist als</p>
+<section id="skalarprodukt-und-betrag-lange-von-vektoren">
+<h2>Skalarprodukt und Betrag/Länge von Vektoren<a class="headerlink" href="#skalarprodukt-und-betrag-lange-von-vektoren" title="Link to this heading">#</a></h2>
+<p>Für Vektoren des reellen Standardvektorraumes <span class="math notranslate nohighlight">\(\vec{x}\in\mathbb{R}^n\)</span> ist der
+Betrag des Vektors definiert als</p>
 <div class="math notranslate nohighlight">
-\[|\vec{a}| = \sqrt{a_1^2 + a_2^2 + \ldots + a_n^2}.\]</div>
-<p>Mit Hilfe des Skalarproduktes können wir die Länge bzw. den Betrag auch
-folgendermaßen berechnen:</p>
+\[|\vec{x}| = \sqrt{x_1^2 + x_2^2 + \ldots + x_n^2}.\]</div>
+<p>Im geometrischen Kontext wird oft der Begriff »Länge eines Vektors« anstatt
+»Betrag eines Vektors« verwendet. Das liegt an der Interpretation des
+geometrischen Vektors als Verschiebung. Ist ein Vektor <span class="math notranslate nohighlight">\(\vec{v}\in\mathbb{R}^3\)</span>
+gegeben und ist <span class="math notranslate nohighlight">\(P\)</span> ein beliebiger Punkt in einem kartesischen
+3D-Koordinatensystem, dann führt die Verschiebung <span class="math notranslate nohighlight">\(\vec{v}\)</span> zu einem neuen
+Punkt <span class="math notranslate nohighlight">\(Q\)</span>, also <span class="math notranslate nohighlight">\(P = \vec{v} = Q\)</span>. Die Länge der Strecke zwischen den Punkten
+<span class="math notranslate nohighlight">\(P\)</span> und <span class="math notranslate nohighlight">\(Q\)</span> ist gleich dem Betrag des Vektors <span class="math notranslate nohighlight">\(\vec{v}\)</span>, also</p>
 <div class="math notranslate nohighlight">
-\[|\vec{a}|=\sqrt{\vec{a}\cdot\vec{a}}.\]</div>
+\[\overline{PQ} = \sqrt{v_1^2 + v_2^2 + v_3^2} = |\vec{v}|.\]</div>
+<p>Wenn wir jetzt das Skalarprodukt von <span class="math notranslate nohighlight">\(\vec{v}\)</span> mit sich selbst berechnen, erhalten wir</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\vec{v}\cdot\vec{v} =
+\begin{pmatrix} v_1 \\ v_2 \\ v_3 \end{pmatrix} \cdot
+\begin{pmatrix} v_1 \\ v_2 \\ v_3 \end{pmatrix} =
+v_1^2 + v_2^2 + v_3^2.\end{split}\]</div>
+<p>Das ist genau der Ausdruck, der beim Betrag bzw. der Länge des Vektors unter der
+Wurzel steht. Wir können also auch das Skalarprodukt eines Vektors mit sich
+selbst nutzen, um den Betrag bzw. die Länge des Vektors zu berechnen:</p>
+<div class="math notranslate nohighlight">
+\[|\vec{v}|=\sqrt{\vec{v}\cdot\vec{v}}.\]</div>
+<p>Alternativ können wir auch die Formel</p>
+<div class="math notranslate nohighlight">
+\[|\vec{v}|^2 = \vec{v}\cdot\vec{v}\]</div>
+<p>nutzen.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Video “Zusammenhang Skalarprodukt und Länge Vektor” von Mathehoch13</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Zjc7aI8cp4o?si=EMLwSAnLYt8aC01V" 
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
-encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 </details></section>
 <section id="skalarprodukt-und-eingeschlossener-winkel">
 <h2>Skalarprodukt und eingeschlossener Winkel<a class="headerlink" href="#skalarprodukt-und-eingeschlossener-winkel" title="Link to this heading">#</a></h2>
 <p>Als nächstes führen wir den eingeschlossenen Winkel zwischen zwei Vektoren ein.
-Geometrisch interpretieren wir die beiden Vektoren <span class="math notranslate nohighlight">\(\vec{a}\in\mathbb{R}^n\)</span> und
-<span class="math notranslate nohighlight">\(\vec{b}\in\mathbb{R}^n\)</span> als Bewegungen, die beide an einem gemeinsamen Punkt
-starten. Unabhängig von der Reihenfolge der Vektoren wird der Winkel zwischen
-den beiden Richtungen, in die der Startpunkt verschoben werden soll, als der
-Winkel der Vektoren <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span> bezeichnet. Er ist stets der
-kleinere der möglichen Winkel und liegt somit zwischen 0 und 180° bzw. zwischen
-0 und <span class="math notranslate nohighlight">\(\pi\)</span> im Bogenmaß. Wir verwenden dazu das Symbol <span class="math notranslate nohighlight">\(\angle
-(\vec{a},\vec{b})\)</span> oder den griechischen Buchstaben Phi <span class="math notranslate nohighlight">\(\varphi\)</span>.</p>
-<p>Für den zwischen <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span> eingeschlossenen Winkel <span class="math notranslate nohighlight">\(\varphi\)</span> gilt
-die Beziehung</p>
+Geometrisch interpretieren wir die beiden Vektoren <span class="math notranslate nohighlight">\(\vec{a}\in\mathbb{R}^3\)</span> und
+<span class="math notranslate nohighlight">\(\vec{b}\in\mathbb{R}^3\)</span> als Verschiebungen, die beide an einem gemeinsamen
+Punkt starten. Unabhängig von der Reihenfolge der Vektoren wird der <em>kleinere</em>
+Winkel zwischen den beiden Vektoren <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span> als
+<strong>eingeschlossener Winkel</strong> bezeichnet. Er  liegt somit zwischen 0 und 180°
+(Gradmaß) bzw. zwischen 0 und <span class="math notranslate nohighlight">\(\pi\)</span> (Bogenmaß). Wir verwenden für den
+eingeschlossenen Winkel das Symbol <span class="math notranslate nohighlight">\(\angle (\vec{a},\vec{b})\)</span> oder den
+griechischen Buchstaben Phi <span class="math notranslate nohighlight">\(\varphi\)</span>.</p>
+<figure class="align-default" id="eingeschlossener-winkel">
+<a class="reference internal image-reference" href="../_images/eingeschlossener_winkel.png"><img alt="../_images/eingeschlossener_winkel.png" src="../_images/eingeschlossener_winkel.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Eingeschlossener Winkel <span class="math notranslate nohighlight">\(\varphi = \angle (\vec{a},\vec{b})\)</span> zwischen den Vektoren <span class="math notranslate nohighlight">\(\vec{a}\)</span>
+und <span class="math notranslate nohighlight">\(\vec{b}\)</span>;
+Quelle: eigene Darstellung,
+Lizenz: <a class="reference external" href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></span><a class="headerlink" href="#eingeschlossener-winkel" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Wenn die beiden Vektoren <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span> die gleiche Richtung haben und
+gleich orientiert sind, ist <span class="math notranslate nohighlight">\(\varphi = 0^{\circ}\)</span> (bzw. <span class="math notranslate nohighlight">\(\varphi=0\)</span> im Bogenmaß).
+Falls sie die gleiche Richtung haben, aber entgegengesetzt orientiert sind, gilt
+für den eingeschlossenen Winkel <span class="math notranslate nohighlight">\(\varphi = 180^{\circ}\)</span> (bzw. <span class="math notranslate nohighlight">\(\varphi = \pi\)</span> im
+Bogenmaß).</p>
+<p>Als nächstes führen wir noch einen Vektor <span class="math notranslate nohighlight">\(\vec{c}\)</span> als Differenz der beiden
+Vektoren <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span> ein, also</p>
+<div class="math notranslate nohighlight">
+\[\vec{c} = \vec{b} - \vec{a}.\]</div>
+<p>Da <span class="math notranslate nohighlight">\(\vec{a} + \vec{b} + \vec{c} = \vec{a} + \vec{b} + (\vec{b}-\vec{a}) =
+\vec{0}\)</span> der Nullvektor ist, liegt ein Polygonzug bzw. eine Vektorkette vor. Die
+drei Vektoren sind die gerichteten Seiten eines Dreiecks, wie die folgende
+Abbildung zeigt.</p>
+<figure class="align-default" id="kosinussatz">
+<a class="reference internal image-reference" href="../_images/kosinussatz.png"><img alt="../_images/kosinussatz.png" src="../_images/kosinussatz.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Kosinussatz; Quelle: eigene Darstellung,
+Lizenz: <a class="reference external" href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></span><a class="headerlink" href="#kosinussatz" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Für das Dreieck gilt der <strong>Kosinussatz</strong>:</p>
+<div class="math notranslate nohighlight" id="equation-chap08sec03eq01">
+<span class="eqno">(1)<a class="headerlink" href="#equation-chap08sec03eq01" title="Link to this equation">#</a></span>\[|\vec{c}|^2 = |\vec{a}|^2 + |\vec{b}|^2 - 2\cdot |\vec{a}| \cdot
+|\vec{b}|\cdot\cos(\varphi).\]</div>
+<p>Da aber <span class="math notranslate nohighlight">\(\vec{c} = \vec{a} - \vec{b}\)</span> gilt, können wir mit Hilfe der 2.
+binomischen Formel den Term <span class="math notranslate nohighlight">\(|\vec{c}|^2\)</span> durch das Skalarprodukt von
+<span class="math notranslate nohighlight">\((\vec{a}-\vec{b})\)</span> mit sich selbst ersetzen:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+|\vec{c}|^2 &amp;= |\vec{a}-\vec{b}|^2 = \\
+&amp;= (\vec{a}-\vec{b}) \cdot (\vec{a}-\vec{b}) = \\
+&amp;= \vec{a}\cdot\vec{a} - 2\cdot\vec{a}\cdot\vec{b} + \vec{b}\cdot\vec{b}.
+\end{align*}\]</div>
+<p>Letzteres setzen wir nun auf der linken Seite von Gleichung
+<a class="reference internal" href="#equation-chap08sec03eq01">(1)</a> ein:</p>
+<div class="math notranslate nohighlight">
+\[\vec{a}\cdot\vec{a} - 2\cdot\vec{a}\cdot\vec{b} + \vec{b}\cdot\vec{b} =
+|\vec{a}|^2 + |\vec{b}|^2 - 2\cdot |\vec{a}| \cdot |\vec{b}|\cdot\cos(\varphi).\]</div>
+<p>Jetzt können wir ausnutzen, dass <span class="math notranslate nohighlight">\(\vec{a}\cdot\vec{a} = |\vec{a}|^2\)</span> gilt und
+<span class="math notranslate nohighlight">\(\vec{b}\cdot\vec{b} = |\vec{b}|^2\)</span> und die Terme auf beiden Seiten der
+Gleichung subtrahieren. Es bleibt die Gleichung</p>
+<div class="math notranslate nohighlight">
+\[- 2\cdot\vec{a}\cdot\vec{b} =
+- 2\cdot |\vec{a}| \cdot |\vec{b}|\cdot\cos(\varphi)\]</div>
+<p>übrig. Zuletzt teilen wir noch auf beiden Seiten durch <span class="math notranslate nohighlight">\((-2)\)</span> und erhalten</p>
 <div class="math notranslate nohighlight">
 \[\vec{a}\cdot\vec{b} = |\vec{a}|\cdot|\vec{b}| \cdot \cos(\varphi).\]</div>
+<p>Das ist die geometrische Interpretation des Skalarproduktes im <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>.</p>
+<div class="note admonition">
+<p class="admonition-title">Was ist die geometrische Interpretation des Skalarproduktes?</p>
+<p>Im <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> kann das Skalarprodukt der beiden Vektoren
+<span class="math notranslate nohighlight">\(\vec{a}\in\mathbb{R}^3\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\in\mathbb{R}^3\)</span> über die Längen der
+Vektoren und den eingeschlossenen Winkel <span class="math notranslate nohighlight">\(\varphi = \angle (\vec{a}, \vec{b})\)</span>
+gemäß der Formel</p>
+<div class="math notranslate nohighlight">
+\[\vec{a}\cdot\vec{b} = |\vec{a}|\cdot|\vec{b}| \cdot \cos(\varphi)\]</div>
+<p>berechnet werden.</p>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Herleitung Skalarprodukt”von Mathehoch13</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RQ_7laap-rM?si=AZQR6LYFfESZBuoy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="winkelberechnungen-mit-dem-skalarprodukt">
+<h2>Winkelberechnungen mit dem Skalarprodukt<a class="headerlink" href="#winkelberechnungen-mit-dem-skalarprodukt" title="Link to this heading">#</a></h2>
 <p>Das Skalarprodukt der Vektoren <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span> kann über die
 Beträge/Längen der Vektoren <span class="math notranslate nohighlight">\(|\vec{a}|\)</span> und <span class="math notranslate nohighlight">\(|\vec{b}|\)</span> sowie dem Kosinus-Wert
 des eingeschlossenen Winkels <span class="math notranslate nohighlight">\(\varphi = \angle (\vec{a},\vec{b})\)</span> berechnet
-werden. Das ermöglicht direkt einige Aussagen über die Orientierung der Vektoren
-zueinander. Darüber hinaus können wir, sofern die beiden Vektoren <span class="math notranslate nohighlight">\(\vec{a}\)</span> und
-<span class="math notranslate nohighlight">\(\vec{b}\)</span> nicht der Nullvektor sind, auch mit der Arkuskosinus-Funktion den
-Winkel <span class="math notranslate nohighlight">\(\varphi\)</span> aus dem Skalarprodukt berechnen:</p>
+werden. Sofern die beiden Vektoren <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span> nicht der Nullvektor
+sind, also <span class="math notranslate nohighlight">\(\vec{a}\neq\vec{0}\)</span> bzw. <span class="math notranslate nohighlight">\(\vec{b}\neq\vec{0}\)</span> gelten, können wir die
+obige Formel auch umkehren. Aus dem Skalarprodukt kann dann mit Hilfe der
+Arkuskosinus-Funktion der Winkel <span class="math notranslate nohighlight">\(\varphi\)</span> berechnet werden:</p>
 <div class="math notranslate nohighlight">
 \[\varphi =
-\arccos\left(\frac{\vec{a}\cdot\vec{b}}{|\vec{a}|\cdot|\vec{b}|}\right).\]</div>
+\arccos\left(\frac{\vec{a}\cdot\vec{b}}{|\vec{a}|\cdot|\vec{b}|}\right),
+\quad \vec{a}\neq\vec{0}, \vec{b}\neq\vec{0}.
+\]</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Mini-Übung</p>
+<p>Gehen Sie auf die Seite
+<a class="reference external" href="https://o-mathe.de/analytische-geometrie/skalarprodukt/skalarprodukt/untersuchungen/lernstrecke">https://o-mathe.de/analytische-geometrie/skalarprodukt/skalarprodukt/untersuchungen/lernstrecke</a>
+und machen Sie Aufgabe 1.</p>
+</div>
 <p>Aus dieser Beziehung können einige Schlussfolgerungen gezogen werden:</p>
-<ul class="simple">
+<ul>
 <li><p>Sind <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span> parallel und gleichorientiert, ist also der
-eingeschlossene Winkel <span class="math notranslate nohighlight">\(\varphi = 0\)</span>, dann gilt</p></li>
-</ul>
+eingeschlossene Winkel <span class="math notranslate nohighlight">\(\varphi = 0\)</span>, dann gilt</p>
 <div class="math notranslate nohighlight">
 \[\vec{a}\cdot\vec{b} = |\vec{a}| \cdot |\vec{b}|.\]</div>
-<ul class="simple">
+</li>
 <li><p>Sind <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span> parallel und entgegengesetzt orientiert, gilt
-also für den eingeschlossenen Winkel <span class="math notranslate nohighlight">\(\varphi = \pi\)</span>, dann gilt</p></li>
-</ul>
+also für den eingeschlossenen Winkel <span class="math notranslate nohighlight">\(\varphi = \pi\)</span>, dann gilt</p>
 <div class="math notranslate nohighlight">
 \[\vec{a}\cdot\vec{b} = - |\vec{a}| \cdot |\vec{b}|.\]</div>
-<ul class="simple">
+</li>
 <li><p>Sind die beiden Vektoren <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span> orthogonal (stehen senkrecht
-aufeinander), dann gilt</p></li>
-</ul>
+aufeinander), dann gilt</p>
 <div class="math notranslate nohighlight">
 \[\vec{a}\cdot\vec{b} = 0.\]</div>
-<ul class="simple">
-<li><p>Ist <span class="math notranslate nohighlight">\(\varphi\)</span> ein spitzer Winkel, so gilt</p></li>
-</ul>
+</li>
+<li><p>Ist <span class="math notranslate nohighlight">\(\varphi\)</span> ein spitzer Winkel, so gilt</p>
 <div class="math notranslate nohighlight">
 \[\vec{a}\cdot\vec{b} &gt; 0.\]</div>
-<ul class="simple">
-<li><p>Ist <span class="math notranslate nohighlight">\(\varphi\)</span> ein stumpfer Winkel, so gilt</p></li>
-</ul>
+</li>
+<li><p>Ist <span class="math notranslate nohighlight">\(\varphi\)</span> ein stumpfer Winkel, so gilt</p>
 <div class="math notranslate nohighlight">
 \[\vec{a}\cdot\vec{b} &lt; 0.\]</div>
-<p>Es gilt</p>
-<div class="math notranslate nohighlight">
-\[|\vec{a}\cdot\vec{b}| \leq |\vec{a}| \cdot |\vec{b}|.\]</div>
-<p>Es gilt</p>
-<div class="math notranslate nohighlight">
-\[|\vec{a}\cdot\vec{b}| = |\vec{a}| \cdot |\vec{b}| \Leftrightarrow \vec{a},
-\vec{b} \text{ linear abhängig}.\]</div>
-<p>Die große Bedeutung des Skalarproduktes in der Geometrie erkennen Sie daran, dass es sehr viele Erklärvideos zu diesem Thema gibt. Einige Videos zu dem Thema sind im Folgenden gelistet.</p>
+</li>
+</ul>
+<p>Die große Bedeutung des Skalarproduktes in der Geometrie erkennen Sie daran,
+dass es sehr viele Erklärvideos zu diesem Thema gibt. Einige Videos zu dem Thema
+sind im Folgenden gelistet.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Video “geometrische Interpretation Skalarprodukt” von Visual X</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/swMhAjkoCm0?si=XPKYIezPvpQ7HqKf" 
 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
 encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Mit Skalarprodukt Winkel berechnen” von Mathehoch13</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/B96OVZR0F6A?si=18KQzQG_bBQww8Dc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+ encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -705,8 +805,9 @@ Technische Mechanik) weiter vertiefen.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skalarprodukt-und-betrag-von-vektoren">Skalarprodukt und Betrag von Vektoren</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skalarprodukt-und-betrag-lange-von-vektoren">Skalarprodukt und Betrag/Länge von Vektoren</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skalarprodukt-und-eingeschlossener-winkel">Skalarprodukt und eingeschlossener Winkel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#winkelberechnungen-mit-dem-skalarprodukt">Winkelberechnungen mit dem Skalarprodukt</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>

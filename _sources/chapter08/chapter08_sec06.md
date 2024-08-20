@@ -4,27 +4,25 @@ Auf die komplexen Zahlen stießen wir, indem wir versuchten, die Gleichung $z^2 
 -1$ zu lösen. In diesem Kapitel beschäftigen wir uns nun mit dem Potenzieren und
 Wurzelziehen für komplexe Zahlen.
 
-
 ## Lernziele
 
-```{admonition} Lernziele 
+```{admonition} Lernziele
 :class: goals
 * Sie können eine komplexe Zahl potenzieren.
 * Sie können aus einer komplexen Zahl die Wurzel ziehen.
 ```
 
-
 ## Potenzen von komplexen Zahlen
 
 Die Potenz einer komplexen Zahl ist – genau wie bei den reellen Zahlen – eine
-Abkürzung für das wiederholte Multiplizieren einer Zahl mit sich selbst. 
+Abkürzung für das wiederholte Multiplizieren einer Zahl mit sich selbst.
 
 \begin{align*}
 z^2 &= z\cdot z \\
 z^3 &= z \cdot z \cdot z \\
 z^4 &= z \cdot z \cdot z \cdot z \\
 z^5 &= z \cdot z \cdot z \cdot z \cdot z\\
-\vdots 
+\vdots
 \end{align*}
 
 Die Zahl $z$ heißt Basis und die Anzahl, wie oft die Basis mit sich selbst
@@ -35,7 +33,7 @@ z^{-2} &= \frac{1}{z\cdot z} \\
 z^{-3} &= \frac{1}{z \cdot z \cdot z} \\
 z^{-4} &= \frac{1}{z \cdot z \cdot z \cdot z} \\
 z^{-5} &= \frac{1}{z \cdot z \cdot z \cdot z \cdot z}\\
-\vdots 
+\vdots
 \end{align*}
 
 Wenn nun konkret eine Potenz einer komplexen Zahl ausgerechnet werden soll, ist
@@ -47,7 +45,7 @@ Für die 2. Potenz erhalten wir zufälligerweise eine rein imaginäre Zahl, wie 
 folgende Rechnung zeigt:
 
 \begin{align*}
-z^2 
+z^2
 &= \left( 3e^{\frac{\pi}{4}\mathrm{i}} \right) \cdot \left( 3e^{\frac{\pi}{4}\mathrm{i}} \right)\\
 &= 3^2 \cdot e^{\left(\frac{\pi}{4}+\frac{\pi}{4}\right)\mathrm{i}} \\
 &= 9 \, e^{\frac{\pi}{2} \mathrm{i}} \\
@@ -57,7 +55,7 @@ z^2
 Für die 3. Potenz erhalten wir
 
 \begin{align*}
-z^3 
+z^3
 &= \left( 3e^{\frac{\pi}{4}\mathrm{i}} \right) \cdot \left( 3e^{\frac{\pi}{4}\mathrm{i}} \right)\cdot \left( 3e^{\frac{\pi}{4}\mathrm{i}} \right)\\
 &= 3^3 \cdot e^{\left(\frac{\pi}{4}+\frac{\pi}{4}+\frac{\pi}{4}\right)\mathrm{i}} \\
 &= 27 \, e^{\frac{3}{4}\pi \mathrm{i}} \\
@@ -67,7 +65,7 @@ z^3
 Und die 4. Potenz ist zufälligerweise rein reell:
 
 \begin{align*}
-z^4 
+z^4
 &= \left( 3e^{\frac{\pi}{4}\mathrm{i}} \right) \cdot \left( 3e^{\frac{\pi}{4}\mathrm{i}} \right) \cdot \left( 3e^{\frac{\pi}{4}\mathrm{i}} \right) \cdot \left( 3e^{\frac{\pi}{4}\mathrm{i}} \right)\\
 &= 3^4 \cdot e^{\left(\frac{\pi}{4}+\frac{\pi}{4}+\frac{\pi}{4}+\frac{\pi}{4}\right)\mathrm{i}} \\
 &= 81 \cdot e^{\pi \mathrm{i}} \\
@@ -92,7 +90,7 @@ Form vorliegt? In Normalform können die Klammern einfach ausmultipliziert
 werden. Bei höhereren Potenzen ist es nur etwas schwierig, den Überblick über
 die einzelnen Terme zu behalten. Für die trigonometrische Form gibt es den [Satz
 von de Moivre](https://de.wikipedia.org/wiki/Moivrescher_Satz), auf die wir hier
-aber nicht weiter eingehen. 
+aber nicht weiter eingehen.
 
 ```{dropdown} Video "Komplexe Zahlen potenzieren" von MathePeter
 <iframe width="560" height="315" src="https://www.youtube.com/embed/G_FRNyHpzrk" 
@@ -106,7 +104,7 @@ title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; cli
 encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ```
 
-```{admonition} interaktives Applet "Potenzen von komplexen Zahlen" von Hart und Trocken 
+```{admonition} interaktives Applet "Potenzen von komplexen Zahlen" von Hart und Trocken
 :class: seealso
 https://www.hartundtrocken.de/my-product/interaktiv-potenzen-komplexer-zahlen/
 ```
@@ -114,7 +112,7 @@ https://www.hartundtrocken.de/my-product/interaktiv-potenzen-komplexer-zahlen/
 ## Wurzelziehen von komplexen Zahlen
 
 Von den Potenzen ist der Schritt zu den Wurzeln recht kurz. Sie treten auf, wenn
-wir beispielsweise die quadratische Gleichung 
+wir beispielsweise die quadratische Gleichung
 
 $$z^2 = 3 + 4\, \mathrm{i}$$
 
@@ -163,7 +161,7 @@ Dieses Vorgehen zur Berechnung der Wurzeln behalten wir bei. Wenn die fünfte
 Wurzel gezogen werden soll, ziehen wir zuerst die 5.-te Wurzel aus dem Betrag
 und teilen das Argument durch 5. Die anderen vier Wurzeln berechnen wir dann,
 indem wir $360^{\circ}$ durch 5 teilen und jetzt viermal hintereinander auf das
-Argument der ersten berechneten Wurzel $72^{\circ}$ addieren. 
+Argument der ersten berechneten Wurzel $72^{\circ}$ addieren.
 
 Die n-ten Wurzeln einer komplexen Zahl $r\, e^{\varphi \, \mathrm{i}}$ lassen
 sich folgendermaßen berechnen. Die erste n-te Wurzel erhalten wir, indem wir die
@@ -224,7 +222,7 @@ title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
 clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 
-```{admonition} interaktives Applet "Wurzeln von komplexen Zahlen" von Hart und Trocken 
+```{admonition} interaktives Applet "Wurzeln von komplexen Zahlen" von Hart und Trocken
 :class: seealso
 https://www.hartundtrocken.de/my-product/interaktiv-wurzeln-komplexer-zahlen/
 ```

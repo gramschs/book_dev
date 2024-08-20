@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=fcc42dec" />
@@ -205,7 +205,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Vektoren und ihre Anwendungen</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter03/sec00.html">3. Vektorrechnung (Teil 1)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter03/sec00.html">3. Vektorräume</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter03/sec01.html">3.1 Koordinaten und Koordinatensysteme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter03/sec02.html">3.2 Vektoren und Vektorräume</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter03/sec03.html">3.3 Vektoren in der Geometrie</a></li>
@@ -214,13 +214,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter03/sec06.html">3.6 Linearkombination und lineare Unabhängigkeit</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter04/chapter04_sec00.html">Vektorrechnung (Teil 2)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter04/chapter04_sec00.html">4. Vektorrechnung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec01.html">4.1 Basis und Dimension</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec02.html">4.2 Skalarprodukt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec03.html">4.3 Geometrische Interpretation Skalarprodukt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec04.html">4.4 Anwendungen Skalarprodukt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec05.html">Vektorprodukt in Komponentendarstellung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec06.html">Spatprodukt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec05.html">4.5 Vektorprodukt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter04/chapter04_sec06.html">4.6 Spatprodukt</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter05/chapter05_sec00.html">Punkte, Geraden und Ebenen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -507,7 +507,7 @@ z^2 &amp;= z\cdot z \\
 z^3 &amp;= z \cdot z \cdot z \\
 z^4 &amp;= z \cdot z \cdot z \cdot z \\
 z^5 &amp;= z \cdot z \cdot z \cdot z \cdot z\\
-\vdots 
+\vdots
 \end{align*}\]</div>
 <p>Die Zahl <span class="math notranslate nohighlight">\(z\)</span> heißt Basis und die Anzahl, wie oft die Basis mit sich selbst
 multipliziert wird, heißt Exponent oder Hochzahl. Es gibt auch negative Potenzen:</p>
@@ -517,7 +517,7 @@ z^{-2} &amp;= \frac{1}{z\cdot z} \\
 z^{-3} &amp;= \frac{1}{z \cdot z \cdot z} \\
 z^{-4} &amp;= \frac{1}{z \cdot z \cdot z \cdot z} \\
 z^{-5} &amp;= \frac{1}{z \cdot z \cdot z \cdot z \cdot z}\\
-\vdots 
+\vdots
 \end{align*}\]</div>
 <p>Wenn nun konkret eine Potenz einer komplexen Zahl ausgerechnet werden soll, ist
 die Exponentialform am besten geeignet, wie das folgende Beispiel zeigt. Wir
@@ -527,7 +527,7 @@ bis 4 bilden.</p>
 folgende Rechnung zeigt:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-z^2 
+z^2
 &amp;= \left( 3e^{\frac{\pi}{4}\mathrm{i}} \right) \cdot \left( 3e^{\frac{\pi}{4}\mathrm{i}} \right)\\
 &amp;= 3^2 \cdot e^{\left(\frac{\pi}{4}+\frac{\pi}{4}\right)\mathrm{i}} \\
 &amp;= 9 \, e^{\frac{\pi}{2} \mathrm{i}} \\
@@ -536,7 +536,7 @@ z^2
 <p>Für die 3. Potenz erhalten wir</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-z^3 
+z^3
 &amp;= \left( 3e^{\frac{\pi}{4}\mathrm{i}} \right) \cdot \left( 3e^{\frac{\pi}{4}\mathrm{i}} \right)\cdot \left( 3e^{\frac{\pi}{4}\mathrm{i}} \right)\\
 &amp;= 3^3 \cdot e^{\left(\frac{\pi}{4}+\frac{\pi}{4}+\frac{\pi}{4}\right)\mathrm{i}} \\
 &amp;= 27 \, e^{\frac{3}{4}\pi \mathrm{i}} \\
@@ -545,7 +545,7 @@ z^3
 <p>Und die 4. Potenz ist zufälligerweise rein reell:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-z^4 
+z^4
 &amp;= \left( 3e^{\frac{\pi}{4}\mathrm{i}} \right) \cdot \left( 3e^{\frac{\pi}{4}\mathrm{i}} \right) \cdot \left( 3e^{\frac{\pi}{4}\mathrm{i}} \right) \cdot \left( 3e^{\frac{\pi}{4}\mathrm{i}} \right)\\
 &amp;= 3^4 \cdot e^{\left(\frac{\pi}{4}+\frac{\pi}{4}+\frac{\pi}{4}+\frac{\pi}{4}\right)\mathrm{i}} \\
 &amp;= 81 \cdot e^{\pi \mathrm{i}} \\

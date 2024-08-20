@@ -6,8 +6,7 @@ Linearkombination von Vektoren, die wir im letzten Kapitel kennengelernt haben.
 
 ## Lernziele
 
-```{admonition} Lernziele 
-:class: goals
+```{admonition} Lernziele
 * Sie wissen, was ein **Erzeugendensystem** ist.
 * Sie wissen, was eine **Basis** ist.
 * Sie wissen, was die **Dimension** eines Vektorraumes ist.
@@ -72,9 +71,9 @@ $$\vec{v} = \begin{pmatrix} 0 \\ 5 \end{pmatrix} + \begin{pmatrix} 3 \\ 0
 
 Allgemein können wir jede Bewegung der Spielfigur folgendermaßen zusammensetzen:
 
-$$\vec{v} = W \cdot \begin{pmatrix} 0 \\ 1 \end{pmatrix} 
-+ A \cdot \begin{pmatrix} -1 \\ 0 \end{pmatrix} 
-+ S \cdot \begin{pmatrix} 0 \\ -1 \end{pmatrix} 
+$$\vec{v} = W \cdot \begin{pmatrix} 0 \\ 1 \end{pmatrix}
++ A \cdot \begin{pmatrix} -1 \\ 0 \end{pmatrix}
++ S \cdot \begin{pmatrix} 0 \\ -1 \end{pmatrix}
 + D\cdot \begin{pmatrix} 1 \\ 0 \end{pmatrix}.$$
 
 Diese *vier* Bewegungsvektoren erzeugen alle Bewegungen, um jede Position des
@@ -110,9 +109,9 @@ Bei dem obigen Beispiel des Erzeugendensystems für ein 2D-Computerspiel haben
 wir vier Vektoren benutzt, um die Bewegungen der Spielfigur auf dem Spielfeld zu
 beschreiben:
 
-$$\vec{v} = W \cdot \begin{pmatrix} 0 \\ 1 \end{pmatrix} 
-+ A \cdot \begin{pmatrix} -1 \\ 0 \end{pmatrix} 
-+ S \cdot \begin{pmatrix} 0 \\ -1 \end{pmatrix} 
+$$\vec{v} = W \cdot \begin{pmatrix} 0 \\ 1 \end{pmatrix}
++ A \cdot \begin{pmatrix} -1 \\ 0 \end{pmatrix}
++ S \cdot \begin{pmatrix} 0 \\ -1 \end{pmatrix}
 + D\cdot \begin{pmatrix} 1 \\ 0 \end{pmatrix}.$$
 
 Wenn wir als Spieler beobachten wollen, wie die Figur läuft, ist es sinnvoll
@@ -155,22 +154,21 @@ haben. Das minimale Erzeugendensystem, mit dem durch Linearkombination alle
 Vektoren eines Vektorraums dargestellt werden können, nennt man **Basis**. Für
 unser 2D-Computerspiel bildet die Menge
 
-$$E = \left\{ 
+$$E = \left\{
 \begin{pmatrix} 0 \\ 1 \end{pmatrix},
 \begin{pmatrix} -1 \\ 0 \end{pmatrix},
-\begin{pmatrix} 0 \\ -1 \end{pmatrix}, 
+\begin{pmatrix} 0 \\ -1 \end{pmatrix},
 \begin{pmatrix} 1 \\ 0 \end{pmatrix}
-\right\} $$ 
+\right\} $$
 
-ein Erzeugendensystem. Die Menge 
+ein Erzeugendensystem. Die Menge
 
-$$B = \left\{ 
+$$B = \left\{
 \begin{pmatrix} 1 \\ 0 \end{pmatrix},
 \begin{pmatrix} 0 \\ 0 \end{pmatrix}
-\right\} $$ 
+\right\} $$
 
 bildet eine Basis der Bewegungen auf dem Spielfeld.
-
 
 ```{admonition} Was ist ... eine Basis?
 :class: note
@@ -212,7 +210,7 @@ Vektorräumen ist, hat sie einen eigenen Namen. Die Anzahl der Basisvektoren wir
 **Dimension** genannt. Sie ändert sich auch nicht, wenn die Basis gewechselt
 wird.
 
-```{admonition} Was ist ... die Dimension eines Vektorraumes? 
+```{admonition} Was ist ... die Dimension eines Vektorraumes?
 Die Anzahl der Basisvektoren eines Vektorraumes $V$ wird **Dimension** genannt. Oft
 wird sie mit dem mathematischen Symbol $\dim(V)$ abgekürzt.
 ```
