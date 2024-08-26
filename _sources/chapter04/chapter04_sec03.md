@@ -94,11 +94,10 @@ Quelle: eigene Darstellung,
 Lizenz: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)
 ```
 
-Wenn die beiden Vektoren $\vec{a}$ und $\vec{b}$ die gleiche Richtung haben und
-gleich orientiert sind, ist $\varphi = 0^{\circ}$ (bzw. $\varphi=0$ im Bogenmaß).
-Falls sie die gleiche Richtung haben, aber entgegengesetzt orientiert sind, gilt
-für den eingeschlossenen Winkel $\varphi = 180^{\circ}$ (bzw. $\varphi = \pi$ im
-Bogenmaß).
+Wenn die beiden Vektoren $\vec{a}$ und $\vec{b}$ die gleiche Richtung haben, ist
+$\varphi = 0^{\circ}$ (bzw. $\varphi=0$ im Bogenmaß). Falls sie die
+entgegengesetzte Richtung haben, gilt für den eingeschlossenen Winkel $\varphi =
+180^{\circ}$ (bzw. $\varphi = \pi$ im Bogenmaß).
 
 Als nächstes führen wir noch einen Vektor $\vec{c}$ als Differenz der beiden
 Vektoren $\vec{a}$ und $\vec{b}$ ein, also
@@ -122,7 +121,7 @@ Lizenz: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)
 Für das Dreieck gilt der **Kosinussatz**:
 
 ```{math}
-:label: chap08sec03eq01
+:label: chap04sec03eq01
 |\vec{c}|^2 = |\vec{a}|^2 + |\vec{b}|^2 - 2\cdot |\vec{a}| \cdot
 |\vec{b}|\cdot\cos(\varphi).
 ```
@@ -138,7 +137,7 @@ $(\vec{a}-\vec{b})$ mit sich selbst ersetzen:
 \end{align*}
 
 Letzteres setzen wir nun auf der linken Seite von Gleichung
-{eq}`chap08sec03eq01` ein:
+{eq}`chap04sec03eq01` ein:
 
 $$\vec{a}\cdot\vec{a} - 2\cdot\vec{a}\cdot\vec{b} + \vec{b}\cdot\vec{b} =
 |\vec{a}|^2 + |\vec{b}|^2 - 2\cdot |\vec{a}| \cdot |\vec{b}|\cdot\cos(\varphi).$$
@@ -195,14 +194,15 @@ https://o-mathe.de/analytische-geometrie/skalarprodukt/skalarprodukt/untersuchun
 und machen Sie Aufgabe 1.
 ```
 
-Aus dieser Beziehung können einige Schlussfolgerungen gezogen werden:
+Aus dieser Beziehung können einige Schlussfolgerungen gezogen werden, die wir
+auch im nächsten Kapitel erneut aufgreifen und vertiefen werden.
 
-- Sind $\vec{a}$ und $\vec{b}$ parallel und gleichorientiert, ist also der
+- Sind $\vec{a}$ und $\vec{b}$ parallel, ist also der
   eingeschlossene Winkel $\varphi = 0$, dann gilt
 
    $$\vec{a}\cdot\vec{b} = |\vec{a}| \cdot |\vec{b}|.$$
 
-- Sind $\vec{a}$ und $\vec{b}$ parallel und entgegengesetzt orientiert, gilt
+- Sind $\vec{a}$ und $\vec{b}$ antiparallel, gilt
   also für den eingeschlossenen Winkel $\varphi = \pi$, dann gilt
 
   $$\vec{a}\cdot\vec{b} = - |\vec{a}| \cdot |\vec{b}|.$$

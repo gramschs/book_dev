@@ -468,7 +468,11 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonalitat-und-orthogonale-projektion">Orthogonalität und orthogonale Projektion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kollinearitat">Kollinearität</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonalitat">Orthogonalität</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#senkrechte-projektion-eines-vektors-auf-einen-anderen-vektor">Senkrechte Projektion eines Vektors auf einen anderen Vektor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#richtungswinkel-und-richtungkosinus">Richtungswinkel und Richtungkosinus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
         </div>
@@ -482,31 +486,205 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="anwendungen-skalarprodukt">
 <h1>4.4 Anwendungen Skalarprodukt<a class="headerlink" href="#anwendungen-skalarprodukt" title="Link to this heading">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Warnung</p>
-<p>Dieser Teil des Vorlesungsskriptes wird gerade überarbeitet.</p>
-</div>
+<p>In Physik und Technischer Mechanik wird das Skalarprodukt häufig in seiner
+geometrischen Interpretation genutzt, da es zahlreiche Anwendungen hat. Im
+Folgenden beschäftigen wir uns mit den wichtigsten Anwendungen davon.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Sie kennen den Begriff <strong>Orthogonalität</strong> und können mit dem Skalarprodukt
+<li><p>Sie können überprüfen, ob zwei Vektoren <strong>kollinear</strong> sind.</p></li>
+<li><p>Sie kennen das <strong>Orthogonalitätskriterium</strong> und können mit dem Skalarprodukt
 überpüfen, ob zwei Vektoren orthogonal <span class="math notranslate nohighlight">\(\perp\)</span> (= senkrecht zueinander) sind.</p></li>
+<li><p>Sie können die <strong>senkrechte Projektion</strong> eines Vektors auf einen anderen
+Vektor berechnen.</p></li>
+<li><p>Sie können die <strong>Richtungswinkel</strong> eines Vektors mit den Koordinatenachsen
+berechnen.</p></li>
 </ul>
 </div>
 </section>
-<section id="orthogonalitat-und-orthogonale-projektion">
-<h2>Orthogonalität und orthogonale Projektion<a class="headerlink" href="#orthogonalitat-und-orthogonale-projektion" title="Link to this heading">#</a></h2>
-<p>Zwei Vektoren <span class="math notranslate nohighlight">\(\vec{a}\in\mathbb{R}^n\)</span> und <span class="math notranslate nohighlight">\(b\in\mathbb{R}^n\)</span> sind genau dann
-orthogonal, wenn ihr Skalarprodukt Null ist:</p>
+<section id="kollinearitat">
+<h2>Kollinearität<a class="headerlink" href="#kollinearitat" title="Link to this heading">#</a></h2>
+<p>Eine wichtige Anwendung des Skalarproduktes in der Geometrie ist zu überprüfen,
+ob zwei Vektoren orthogonal sind. Bevor uns der Orthogonalität widmen,
+betrachten wir zunächst parallele und antiparallele Vektoren. Geometrisch
+interpretiert sind zwei Vektoren zueinander <strong>parallel</strong>, wenn sie die gleiche
+Richtung haben. Liegen beide Vektoren auf derselben Geraden, aber haben sie
+entgegengesetzte Richtungen, so sagt man, die beiden Vektoren sind
+<strong>antiparallel</strong>. Beides fasst man als <strong>kollinear</strong> zusammen. Kollineare
+Vektoren sind also entweder parallel oder antiparallel. Oder anders formuliert,
+kollineare Vektoren liegen immer auf einer Geraden, nur die Richtung ist ggf.
+entgegengesetzt.</p>
+<div class="note admonition">
+<p class="admonition-title">Wann sind … zwei Vektoren kollinear?</p>
+<p>Zwei Vektoren sind kollinear, wenn ein Vektor ein Vielfaches vom anderen Vektor
+ist:</p>
 <div class="math notranslate nohighlight">
-\[\vec{a}\perp\vec{b} \Leftrightarrow \vec{a}\cdot\vec{b}=0.\]</div>
-<p>Die orthogonale Projektion von <span class="math notranslate nohighlight">\(\vec{b}\)</span> auf die durch den Vektor
-<span class="math notranslate nohighlight">\(\vec{a}\neq\vec{0}\)</span> gegebene Richtung ist der Vektor</p>
+\[\vec{a} = s\cdot\vec{b}, \quad s\neq 0.\]</div>
+<p>Ist der Skalar <span class="math notranslate nohighlight">\(s &lt; 0\)</span>, so sind die beiden Vektoren <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span>
+antiparallel. Ist hingegen <span class="math notranslate nohighlight">\(s &gt; 0\)</span>, sind die beiden Vektoren parallel.</p>
+</div>
+<p>Zusammen mit dem Skalarprodukt ergeben sich dann die folgende
+Schlussfolgerungen. Sind zwei Vektoren <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span>, die beide nicht
+der Nullvektor sind, parallel, dann gilt</p>
+<div class="math notranslate nohighlight">
+\[\vec{a}\cdot\vec{b} = |\vec{a}|\cdot|\vec{b}|.\]</div>
+<p>Das ergibt sich aus der geometrischen Interpretation des Skalarproduktes, denn
+der eingeschlossene Winkel ist bei parallelen Vektoren <span class="math notranslate nohighlight">\(\varphi =
+\angle(\vec{a}, \vec{b}) = 0^{\circ}\)</span> und <span class="math notranslate nohighlight">\(\cos(0^{\circ})=1\)</span>. Also gilt:</p>
+<div class="math notranslate nohighlight">
+\[\vec{a}\cdot\vec{b} = |\vec{a}|\cdot|\vec{b}| \cdot
+\underbrace{\cos(0^{\circ})}_{= 1}.\]</div>
+<p>Sind die beiden Vektoren <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span> antiparallel, dann ist der
+zwischen ihnen eingeschlossene Winkel <span class="math notranslate nohighlight">\(\varphi = \angle(\vec{a},\vec{b}) =
+180^{\circ}\)</span> und es gilt <span class="math notranslate nohighlight">\(\cos(180^{\circ})=-1\)</span>. Damit erhalten wir wiederum aus
+der geometrischen Interpreation des Skalarproduktes</p>
+<div class="math notranslate nohighlight">
+\[\vec{a}\cdot\vec{b} = \textcolor{red}{-}|\vec{a}|\cdot|\vec{b}|.\]</div>
+</section>
+<section id="orthogonalitat">
+<h2>Orthogonalität<a class="headerlink" href="#orthogonalitat" title="Link to this heading">#</a></h2>
+<p>In der Geometrie nennt man Geraden <strong>orthogonal</strong>, wenn sie einen rechten Winkel
+<span class="math notranslate nohighlight">\(\varphi=90^{\circ}\)</span> einschließen. Der Kosinus von <span class="math notranslate nohighlight">\(90^{\circ}\)</span> ist aber Null,
+also <span class="math notranslate nohighlight">\(\cos(90^{\circ})=0\)</span>. Damit gilt für die geometrische Interpretation des
+Skalarproduktes für die beiden Vektoren <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\vec{a}\cdot\vec{b} = |\vec{a}|\cdot|\vec{b}| \cdot
+\underbrace{\cos(0^{\circ})}_{= 0} = 0.\]</div>
+<p>Wir halten also das folgende <strong>Orthogonalitätskriterium</strong> fest.</p>
+<div class="note admonition">
+<p class="admonition-title">Wann sind … zwei Vektoren orthogonal?</p>
+<p>Zwei Vektoren <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span> sind genau dann orthogonal, wenn ihr
+Skalarprodukt Null ist:</p>
+<div class="math notranslate nohighlight">
+\[\vec{a}\perp\vec{b} \; \Leftrightarrow \; \vec{a}\cdot\vec{b}=0.\]</div>
+</div>
+</section>
+<section id="senkrechte-projektion-eines-vektors-auf-einen-anderen-vektor">
+<h2>Senkrechte Projektion eines Vektors auf einen anderen Vektor<a class="headerlink" href="#senkrechte-projektion-eines-vektors-auf-einen-anderen-vektor" title="Link to this heading">#</a></h2>
+<p>Die senkrechte Projektion eines Vektors auf einen anderen Vektor wird häufig in
+der Technischen Mechanik benötigt, wenn es darum geht, Kräfte zu zerlegen. Bei
+der <strong>senkrechten Projektion</strong> betrachten wir zwei Vektoren <span class="math notranslate nohighlight">\(\vec{a}\)</span> und
+<span class="math notranslate nohighlight">\(\vec{b}\)</span> und lassen beide von demselben Startpunkt <span class="math notranslate nohighlight">\(S\)</span> starten. Der Punkt <span class="math notranslate nohighlight">\(P\)</span>
+ist die Pfeilspitze des Vektors <span class="math notranslate nohighlight">\(\vec{b}\)</span>, also <span class="math notranslate nohighlight">\(P = S + \vec{a}\)</span>. Wir suchen
+dann denjenigen Punkt <span class="math notranslate nohighlight">\(L\)</span>, so dass die Verbindung von <span class="math notranslate nohighlight">\(P\)</span> zu <span class="math notranslate nohighlight">\(L\)</span> (also
+<span class="math notranslate nohighlight">\(\overrightarrow{PL}\)</span>) senkrecht auf dem Vektor <span class="math notranslate nohighlight">\(\vec{b}\)</span> steht. Diese
+Verbindung zwischen <span class="math notranslate nohighlight">\(P\)</span> und <span class="math notranslate nohighlight">\(L\)</span> wird <strong>Lot</strong> genannt. Der Punkt wird
+<strong>Lotfußpunkt</strong> genannt. Oft sagt man umgangssprachlich auch <strong>»das Lot
+fällen«</strong>, wenn man den Lotfußpunkt bzw. das Lot konstruiert. Im Kontext der
+Vektorrechnung sagt man, man projiziert den Vektor <span class="math notranslate nohighlight">\(\vec{b}\)</span> senkrecht auf den
+Vektor <span class="math notranslate nohighlight">\(\vec{a}\)</span>.</p>
+<p>Wir wollen nun den Vektor berechnen, der durch senkrechte Projektion von
+<span class="math notranslate nohighlight">\(\vec{b}\)</span> auf <span class="math notranslate nohighlight">\(\vec{a}\)</span> entsteht. Dieser Vektor ist der Verbindungsvektor vom
+Startpunkt <span class="math notranslate nohighlight">\(S\)</span> zum Lotfußpunkt <span class="math notranslate nohighlight">\(L\)</span>. Er wird üblicherweise mit</p>
+<div class="math notranslate nohighlight">
+\[\vec{b}_{\vec{a}}\]</div>
+<p>bezeichnet. Ohne weitere Berechnungen können wir die Richtung dieses Vektors
+angeben, denn es ist die gleiche Richtung wie die des Vektors <span class="math notranslate nohighlight">\(\vec{a}\)</span>. Wir
+wissen daher schon, dass <span class="math notranslate nohighlight">\(\vec{b}_{\vec{a}}\)</span> in der Form</p>
+<div class="math notranslate nohighlight">
+\[\vec{b}_{\vec{a}} = x \cdot \frac{\vec{a}}{|\vec{a}|} = x \cdot
+\vec{e}_{\vec{a}}\]</div>
+<p>dargestellt werden kann. Zur Erinnerung, Richtungen werden normalerweise
+normiert, d.h. als Einheitsvektoren angegeben. Wir haben daher den Vektor
+<span class="math notranslate nohighlight">\(\vec{a}\)</span> noch durch seine Länge <span class="math notranslate nohighlight">\(|\vec{a}|\)</span> geteilt und ihn mit
+<span class="math notranslate nohighlight">\(\vec{e}_{\vec{a}}\)</span> abgekürzt.</p>
+<p>Was jetzt noch fehlt ist die Länge des Vektors <span class="math notranslate nohighlight">\(x = |\vec{b}_{\vec{a}}|\)</span>. Dazu
+nutzen wir aus, dass durch das Lot ein rechtwinkliges Dreieck entstanden ist,
+für das gilt:</p>
+<div class="math notranslate nohighlight" id="equation-chap04sec04eq01">
+<span class="eqno">(2)<a class="headerlink" href="#equation-chap04sec04eq01" title="Link to this equation">#</a></span>\[x = \cos(\varphi) \cdot |\vec{b}|.\]</div>
+<p>Den Kosinus des eingeschlossenen Winkels <span class="math notranslate nohighlight">\(\varphi = \angle(\vec{a},\vec{b})\)</span>
+können wir wiederum über die geometrische Interpretation des Skalarproduktes
+bestimmen. Setzen wir</p>
+<div class="math notranslate nohighlight">
+\[\cos(\varphi) = \frac{\vec{a}\cdot\vec{b}}{|\vec{a}|\cdot|\vec{b}|}\]</div>
+<p>in die Gleichung <a class="reference internal" href="#equation-chap04sec04eq01">(2)</a> ein, dann erhalten wir</p>
+<div class="math notranslate nohighlight">
+\[x = \cos(\varphi) \cdot |\vec{b}| =
+\frac{\vec{a}\cdot\vec{b}}{|\vec{a}|\cdot|\vec{b}|} \cdot |\vec{b}| =
+\frac{\vec{a}}{|\vec{a}|}\cdot\vec{b}.\]</div>
+<p>Insgesamt lässt sich die senkrechte Projektion <span class="math notranslate nohighlight">\(\vec{b}_{\vec{a}}\)</span> des Vektors
+<span class="math notranslate nohighlight">\(\vec{b}\)</span> auf den Vektor <span class="math notranslate nohighlight">\(\vec{a}\)</span> also berechnen als</p>
+<div class="math notranslate nohighlight">
+\[\vec{b}_{\vec{a}} = \left( \frac{\vec{a}}{|\vec{a}|}\cdot\vec{b}\right) \cdot
+\vec{e}_{\vec{a}}.\]</div>
+<p>Für den senkrecht projizierten Vektor <span class="math notranslate nohighlight">\(\vec{b}_{\vec{a}}\)</span> gilt also</p>
 <div class="math notranslate nohighlight">
 \[\vec{b}_{\vec{a}} =
-\left(\frac{\vec{b}\cdot\vec{a}}{|\vec{a}|^2}\right)\vec{a}.\]</div>
+\left(\vec{e}_{\vec{a}}\cdot\vec{b}\right) \cdot \vec{e}_{\vec{a}}.\]</div>
+<div class="note admonition">
+<p class="admonition-title">Wie wird die senkrechte Projektion berechnet?</p>
+<p>Soll die senkrechte Projektion <span class="math notranslate nohighlight">\(\vec{b}_{\vec{a}}\)</span> des Vektors <span class="math notranslate nohighlight">\(\vec{b}\)</span> auf den
+Vektor <span class="math notranslate nohighlight">\(\vec{a}\)</span> berechnet werden, normiert man als erstes den Vektor <span class="math notranslate nohighlight">\(\vec{a}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\vec{e}_{\vec{a}} = \frac{\vec{a}}{|\vec{a}|}.\]</div>
+<p>Dann berechnet man das Skalarprodukt von dem Einheitsvektor <span class="math notranslate nohighlight">\(\vec{e}_{\vec{a}}\)</span>
+mit <span class="math notranslate nohighlight">\(\vec{b}\)</span> und baut den Vektor als</p>
+<div class="math notranslate nohighlight">
+\[\vec{b}_{\vec{a}} = \left(\vec{e}_{\vec{a}} \cdot \vec{b}\right) \cdot
+\vec{e}_{\vec{a}}\]</div>
+<p>zusammen.</p>
+</div>
+</section>
+<section id="richtungswinkel-und-richtungkosinus">
+<h2>Richtungswinkel und Richtungkosinus<a class="headerlink" href="#richtungswinkel-und-richtungkosinus" title="Link to this heading">#</a></h2>
+<p>In der geometrischen Interpretation eines Vektors besteht dieser aus einer
+Richtung und einer Länge (Betrag). Als nächstes wollen wir die Richtung des
+Vektors durch die drei Winkel beschreiben, der Vektor mit den Koordinatenachsen
+eines dreidimensionalen kartesischen Koordinatensystems bildet.</p>
+<p>Die drei Vektoren, die die Richtungen der drei Koordinatenachsen beschreiben,
+nennen wir <span class="math notranslate nohighlight">\(\vec{e}_1\)</span>, <span class="math notranslate nohighlight">\(\vec{e}_2\)</span> und <span class="math notranslate nohighlight">\(\vec{e}_3\)</span>. In Komponentenschreibweise
+lauten sie:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\vec{e}_1 = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}, \quad
+\vec{e}_2 = \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}, \quad
+\vec{e}_3 = \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}, \quad.\end{split}\]</div>
+<p>Der Vektor <span class="math notranslate nohighlight">\(\vec{a}\)</span> lautet in Komponentenschreibweise</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\vec{a}= \begin{pmatrix} a_1 \\ a_2 \\ a_3 \end{pmatrix}\end{split}\]</div>
+<p>und hat die Länge bzw. den Betrag</p>
+<div class="math notranslate nohighlight">
+\[a = |\vec{a}| = \sqrt{a_1^2 + a_2^2 + a_3^2}.\]</div>
+<p>Für den eingeschlossenen Winkel <span class="math notranslate nohighlight">\(\alpha = \angle(\vec{a},\vec{e}_1)\)</span> des Vektors
+<span class="math notranslate nohighlight">\(\vec{a}\)</span> mit der 1. Koordinatenachse <span class="math notranslate nohighlight">\(\vec{e}_1\)</span> erhalten wir über die
+geometrische Interpretation des Skalarproduktes</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\cos(\alpha) = \frac{\vec{a}\cdot\vec{e}_1}{|\vec{a}|\cdot|\vec{e}_1|} =
+\frac{\begin{pmatrix} a_1 \\ a_2 \\ a_3 \end{pmatrix}\cdot
+\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}}{a \cdot 1} = \frac{a_1}{a}.\end{split}\]</div>
+<p>Dieser Wert wird als <strong>Richtungskosinus</strong> von <span class="math notranslate nohighlight">\(\vec{a}\)</span> mit der 1.
+Koordinatenachse bezeichnet. Wir können nun daraus den <strong>Richtungswinkel</strong>
+<span class="math notranslate nohighlight">\(\alpha\)</span> berechnen:</p>
+<div class="math notranslate nohighlight">
+\[\alpha = \arccos\left(\frac{a_1}{a}\right).\]</div>
+<p>Die gleiche Rechnungen können wir auch für die beiden anderen Koordinatenachsen
+durchführen. Insgesamt erhalten wir die folgenden Formeln.</p>
+<div class="note admonition">
+<p class="admonition-title">Was sind … die Richtungswinkel?</p>
+<p>Die Winkel, die ein Vektor <span class="math notranslate nohighlight">\(\vec{a}=(a_1,a_2,a_3)\)</span> mit den Koordinatenachsen
+bildet, werden als Richtungswinkel bezeichnet. Sie können über die Formeln</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\cos(\alpha) &amp;= \frac{a_1}{|\vec{a}|},\\
+\cos(\beta)  &amp;= \frac{a_2}{|\vec{a}|},\\
+\cos(\gamma) &amp;= \frac{a_3}{|\vec{a}|}
+\end{align*}\]</div>
+<p>berechnet werden.</p>
+</div>
+</section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>Kollineare und orthogonale Vektoren, speziell die senkrechten
+Projektionsvektoren, haben eine große Bedeutung in Physik und Technischer
+Mechanik, beispielsweise bei der Zerlegung von Kräften. Auch die Berechnung der
+Richtungswinkel hat direkte Anwendungen beispielsweise in der Beschreibung der
+Richtung eines Roboterarmes. Daher spielt das Skalarprodukt eine herausrgende
+Rolle bei solchen Anwendungen. Speziell für den dreidimensionalen Raum wurde
+zusätzlich das Vektorprodukt entwickelt, um weitere Phänomene in Physik und
+Technik mathematisch einfach beschreiben zu können. Das Vektorprodukt lernen wir
+im nächsten Kapitel kennen.</p>
 </section>
 </section>
 
@@ -575,7 +753,11 @@ orthogonal, wenn ihr Skalarprodukt Null ist:</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonalitat-und-orthogonale-projektion">Orthogonalität und orthogonale Projektion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kollinearitat">Kollinearität</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonalitat">Orthogonalität</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#senkrechte-projektion-eines-vektors-auf-einen-anderen-vektor">Senkrechte Projektion eines Vektors auf einen anderen Vektor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#richtungswinkel-und-richtungkosinus">Richtungswinkel und Richtungkosinus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>
 

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=fcc42dec" />
@@ -573,11 +573,10 @@ Quelle: eigene Darstellung,
 Lizenz: <a class="reference external" href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></span><a class="headerlink" href="#eingeschlossener-winkel" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Wenn die beiden Vektoren <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span> die gleiche Richtung haben und
-gleich orientiert sind, ist <span class="math notranslate nohighlight">\(\varphi = 0^{\circ}\)</span> (bzw. <span class="math notranslate nohighlight">\(\varphi=0\)</span> im Bogenmaß).
-Falls sie die gleiche Richtung haben, aber entgegengesetzt orientiert sind, gilt
-für den eingeschlossenen Winkel <span class="math notranslate nohighlight">\(\varphi = 180^{\circ}\)</span> (bzw. <span class="math notranslate nohighlight">\(\varphi = \pi\)</span> im
-Bogenmaß).</p>
+<p>Wenn die beiden Vektoren <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span> die gleiche Richtung haben, ist
+<span class="math notranslate nohighlight">\(\varphi = 0^{\circ}\)</span> (bzw. <span class="math notranslate nohighlight">\(\varphi=0\)</span> im Bogenmaß). Falls sie die
+entgegengesetzte Richtung haben, gilt für den eingeschlossenen Winkel <span class="math notranslate nohighlight">\(\varphi =
+180^{\circ}\)</span> (bzw. <span class="math notranslate nohighlight">\(\varphi = \pi\)</span> im Bogenmaß).</p>
 <p>Als nächstes führen wir noch einen Vektor <span class="math notranslate nohighlight">\(\vec{c}\)</span> als Differenz der beiden
 Vektoren <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span> ein, also</p>
 <div class="math notranslate nohighlight">
@@ -594,8 +593,8 @@ Lizenz: <a class="reference external" href="https://creativecommons.org/licenses
 </figcaption>
 </figure>
 <p>Für das Dreieck gilt der <strong>Kosinussatz</strong>:</p>
-<div class="math notranslate nohighlight" id="equation-chap08sec03eq01">
-<span class="eqno">(1)<a class="headerlink" href="#equation-chap08sec03eq01" title="Link to this equation">#</a></span>\[|\vec{c}|^2 = |\vec{a}|^2 + |\vec{b}|^2 - 2\cdot |\vec{a}| \cdot
+<div class="math notranslate nohighlight" id="equation-chap04sec03eq01">
+<span class="eqno">(1)<a class="headerlink" href="#equation-chap04sec03eq01" title="Link to this equation">#</a></span>\[|\vec{c}|^2 = |\vec{a}|^2 + |\vec{b}|^2 - 2\cdot |\vec{a}| \cdot
 |\vec{b}|\cdot\cos(\varphi).\]</div>
 <p>Da aber <span class="math notranslate nohighlight">\(\vec{c} = \vec{a} - \vec{b}\)</span> gilt, können wir mit Hilfe der 2.
 binomischen Formel den Term <span class="math notranslate nohighlight">\(|\vec{c}|^2\)</span> durch das Skalarprodukt von
@@ -607,7 +606,7 @@ binomischen Formel den Term <span class="math notranslate nohighlight">\(|\vec{c
 &amp;= \vec{a}\cdot\vec{a} - 2\cdot\vec{a}\cdot\vec{b} + \vec{b}\cdot\vec{b}.
 \end{align*}\]</div>
 <p>Letzteres setzen wir nun auf der linken Seite von Gleichung
-<a class="reference internal" href="#equation-chap08sec03eq01">(1)</a> ein:</p>
+<a class="reference internal" href="#equation-chap04sec03eq01">(1)</a> ein:</p>
 <div class="math notranslate nohighlight">
 \[\vec{a}\cdot\vec{a} - 2\cdot\vec{a}\cdot\vec{b} + \vec{b}\cdot\vec{b} =
 |\vec{a}|^2 + |\vec{b}|^2 - 2\cdot |\vec{a}| \cdot |\vec{b}|\cdot\cos(\varphi).\]</div>
@@ -658,14 +657,15 @@ Arkuskosinus-Funktion der Winkel <span class="math notranslate nohighlight">\(\v
 <a class="reference external" href="https://o-mathe.de/analytische-geometrie/skalarprodukt/skalarprodukt/untersuchungen/lernstrecke">https://o-mathe.de/analytische-geometrie/skalarprodukt/skalarprodukt/untersuchungen/lernstrecke</a>
 und machen Sie Aufgabe 1.</p>
 </div>
-<p>Aus dieser Beziehung können einige Schlussfolgerungen gezogen werden:</p>
+<p>Aus dieser Beziehung können einige Schlussfolgerungen gezogen werden, die wir
+auch im nächsten Kapitel erneut aufgreifen und vertiefen werden.</p>
 <ul>
-<li><p>Sind <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span> parallel und gleichorientiert, ist also der
+<li><p>Sind <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span> parallel, ist also der
 eingeschlossene Winkel <span class="math notranslate nohighlight">\(\varphi = 0\)</span>, dann gilt</p>
 <div class="math notranslate nohighlight">
 \[\vec{a}\cdot\vec{b} = |\vec{a}| \cdot |\vec{b}|.\]</div>
 </li>
-<li><p>Sind <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span> parallel und entgegengesetzt orientiert, gilt
+<li><p>Sind <span class="math notranslate nohighlight">\(\vec{a}\)</span> und <span class="math notranslate nohighlight">\(\vec{b}\)</span> antiparallel, gilt
 also für den eingeschlossenen Winkel <span class="math notranslate nohighlight">\(\varphi = \pi\)</span>, dann gilt</p>
 <div class="math notranslate nohighlight">
 \[\vec{a}\cdot\vec{b} = - |\vec{a}| \cdot |\vec{b}|.\]</div>
