@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Creator: fig2dev Version 3.2 Patchlevel 5e -->
+
+<!-- CreationDate: Sun Nov 14 17:36:51 2021 -->
+
+<!-- Magnification: 1.050 -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="327.76276"
+   height="209.43425"
+   viewBox="-46 2464 4338.8101 2743.8922"
+   id="svg3052"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="parallelep-0.svg">
+  <metadata
+     id="metadata3098">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3096" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1172"
+     inkscape:window-height="571"
+     id="namedview3094"
+     showgrid="false"
+     units="mm"
+     fit-margin-top="1"
+     fit-margin-left="1"
+     fit-margin-right="1"
+     fit-margin-bottom="1"
+     inkscape:zoom="1.821256"
+     inkscape:cx="163.88138"
+     inkscape:cy="105.11781"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg3052" />
+  <g
+     style="fill:none;stroke-width:0.025in"
+     id="g3054"
+     transform="translate(24.905074,10.807852)">
+    <!-- Line -->
+    <polygon
+       points="1985,2507 1985,2507 1061,2906 3259,3182 4187,2784 "
+       style="fill:#d9ddff;stroke:#ffffff;stroke-width:8;stroke-linecap:butt;stroke-linejoin:miter"
+       id="polygon3056" />
+    <!-- Line -->
+    <polygon
+       points="934,4329 934,4329 10,4728 2208,5004 3137,4606 "
+       style="fill:#d9ddff;stroke:#ffffff;stroke-width:8;stroke-linecap:butt;stroke-linejoin:miter"
+       id="polygon3058" />
+    <!-- Line -->
+    <polygon
+       points="1980,2514 1980,2514 1048,2913 16,4718 931,4320 "
+       style="fill:#d2ffd9;stroke:#ffffff;stroke-width:8;stroke-linecap:butt;stroke-linejoin:miter"
+       id="polygon3060" />
+    <!-- Line -->
+    <polygon
+       points="928,4327 928,4327 3143,4597 4194,2787 1971,2509 "
+       style="fill:#ffe0e0;stroke:#ffffff;stroke-width:8;stroke-linecap:butt;stroke-linejoin:miter"
+       id="polygon3062" />
+    <!-- Line -->
+    <!--  polyline  -->
+    <polyline
+       points="2218,5002 0,4726 "
+       style="stroke:#00b000;stroke-width:48;stroke-linecap:butt;stroke-linejoin:round"
+       id="polyline3064" />
+    <!-- Line -->
+    <!--  polyline  -->
+    <polyline
+       points="1048,2910 0,4726 "
+       style="stroke:#0000ff;stroke-width:48;stroke-linecap:butt;stroke-linejoin:round"
+       id="polyline3066" />
+    <!-- Line -->
+    <!--  polyline  -->
+    <polyline
+       points="3147,4602 2218,5002 "
+       style="stroke:#d10000;stroke-width:48;stroke-linecap:butt;stroke-linejoin:round"
+       id="polyline3068" />
+    <!-- Line -->
+    <!--  polyline  -->
+    <polyline
+       points="3147,4602 4197,2786 "
+       style="stroke:#0000ff;stroke-width:48;stroke-linecap:butt;stroke-linejoin:round"
+       id="polyline3070" />
+    <!-- Line -->
+    <!--  polyline  -->
+    <polyline
+       points="1977,2510 4197,2786 "
+       style="stroke:#00b000;stroke-width:48;stroke-linecap:butt;stroke-linejoin:round"
+       id="polyline3072" />
+    <!-- Line -->
+    <!--  polyline  -->
+    <polyline
+       points="1048,2910 1977,2510 "
+       style="stroke:#d10000;stroke-width:48;stroke-linecap:butt;stroke-linejoin:round"
+       id="polyline3074" />
+    <!-- Line -->
+    <!--  polyline  -->
+    <polyline
+       points="928,4326 3147,4602 "
+       style="stroke:#00b000;stroke-width:16;stroke-linecap:butt;stroke-linejoin:round"
+       id="polyline3076" />
+    <!-- Line -->
+    <!--  polyline  -->
+    <polyline
+       points="0,4726 928,4326 "
+       style="stroke:#d10000;stroke-width:16;stroke-linecap:butt;stroke-linejoin:round"
+       id="polyline3078" />
+    <!-- Line -->
+    <!--  polyline  -->
+    <polyline
+       points="928,4326 1977,2510 "
+       style="stroke:#0000ff;stroke-width:16;stroke-linecap:butt;stroke-linejoin:round"
+       id="polyline3080" />
+    <!-- Line -->
+    <!--  polyline  -->
+    <polyline
+       points="3268,3186 1048,2910 "
+       style="stroke:#00b000;stroke-width:48;stroke-linecap:butt;stroke-linejoin:round"
+       id="polyline3082" />
+    <!-- Line -->
+    <!--  polyline  -->
+    <polyline
+       points="2218,5002 3268,3186 "
+       style="stroke:#0000ff;stroke-width:48;stroke-linecap:butt;stroke-linejoin:round"
+       id="polyline3084" />
+    <!-- Text -->
+    <text
+       xml:space="preserve"
+       x="922"
+       y="5161"
+       font-style="italic"
+       font-weight="normal"
+       font-size="328"
+       id="text3086"
+       style="font-size:328px;font-style:italic;font-weight:normal;text-anchor:start;fill:#00b000;font-family:Times">a</text>
+    <!-- Text -->
+    <text
+       xml:space="preserve"
+       x="497"
+       y="4340"
+       font-style="italic"
+       font-weight="normal"
+       font-size="328"
+       id="text3088"
+       style="font-size:328px;font-style:italic;font-weight:normal;text-anchor:start;fill:#d10000;font-family:Times">b</text>
+    <!-- Text -->
+    <text
+       xml:space="preserve"
+       x="305"
+       y="3749"
+       font-style="italic"
+       font-weight="normal"
+       font-size="328"
+       id="text3090"
+       style="font-size:328px;font-style:italic;font-weight:normal;text-anchor:start;fill:#0000b0;font-family:Times">c</text>
+    <!-- Line -->
+    <!--  polyline  -->
+    <polyline
+       points="4197,2786 3268,3186 "
+       style="stroke:#d10000;stroke-width:48;stroke-linecap:butt;stroke-linejoin:round"
+       id="polyline3092" />
+  </g>
+</svg>
