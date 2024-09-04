@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Geraden &#8212; Mathematik 1 Maschinenbau</title>
+    <title>Ebenen &#8212; Mathematik 1 Maschinenbau</title>
   
   
   
@@ -61,8 +61,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter05/chapter05_sec02';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Ebenen" href="chapter05_sec03.html" />
-    <link rel="prev" title="Koordinatensystem" href="chapter05_sec01.html" />
+    <link rel="next" title="Lineare Gleichungssysteme" href="chapter05_sec03.html" />
+    <link rel="prev" title="5.1 Geraden" href="chapter05_sec01.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -222,10 +222,10 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter05_sec00.html">Punkte, Geraden und Ebenen</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="chapter05_sec01.html">Koordinatensystem</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Geraden</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter05_sec03.html">Ebenen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter05_sec04.html">Schnitt Gerade – Ebene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter05_sec01.html">5.1 Geraden</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Ebenen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter05_sec03.html">Lineare Gleichungssysteme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter05_sec04.html">Lagebeziehungen Gerade – Ebene</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter05_sec05.html">Abstände</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter05_sec06.html">Winkel</a></li>
 </ul>
@@ -455,7 +455,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Geraden</h1>
+    <h1>Ebenen</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -478,22 +478,31 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="geraden">
-<h1>Geraden<a class="headerlink" href="#geraden" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="ebenen">
+<h1>Ebenen<a class="headerlink" href="#ebenen" title="Link to this heading">#</a></h1>
+<div class="warning admonition">
+<p class="admonition-title">Warnung</p>
+<p>Dieser Abschnitt wird gerade überarbeitet.</p>
+</div>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Sie können eine Geradengleichung aufstellen, wenn <em>ein Punkt und ein Richtungsvektor</em> gegeben sind: <strong>Punkt-Richtungsform</strong>.</p></li>
-<li><p>Sie können eine Geradengleichung aufstellen, wenn <em>zwei Punkte</em> gegeben sind: <strong>Zwei-Punkte-Form</strong>.</p></li>
+<li><p>Sie können eine Ebenengleichung aufstellen, wenn ein Punkt und zwei Richtungsvektoren/Spannvektoren in der Ebene gegeben sind (<strong>Parameterdarstellung</strong>).</p></li>
+<li><p>Sie können eine Ebenengleichung aufstellen, wenn drei Punkte gegeben sind.</p></li>
+<li><p>Sie können eine Ebenengleichung aufstellen, wenn ein Punkt und ein Normalenvektor gegeben sind (<strong>Normalendarstellung</strong>).</p></li>
 </ul>
 </div>
 </section>
 <section id="videos">
 <h2>Videos<a class="headerlink" href="#videos" title="Link to this heading">#</a></h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VN3cdQBKvho" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CdteROMqiIQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xgn1c3SAKZI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aUohWmcs3Dc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GoqI8uG6PYI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0Hg56BoiHq0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TsyHJ2P4qOA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xv1UOakv3XI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </section>
 </section>
 
@@ -533,7 +542,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Koordinatensystem</p>
+        <p class="prev-next-title">5.1 Geraden</p>
       </div>
     </a>
     <a class="right-next"
@@ -541,7 +550,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Ebenen</p>
+        <p class="prev-next-title">Lineare Gleichungssysteme</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

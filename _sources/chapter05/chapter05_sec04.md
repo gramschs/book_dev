@@ -1,4 +1,4 @@
-# Schnitt Gerade -- Ebene
+# Lagebeziehungen Gerade -- Ebene
 
 ## Lernziele
 
