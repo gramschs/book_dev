@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Ebenen &#8212; Mathematik 1 Maschinenbau</title>
+    <title>5.2 Ebenen &#8212; Mathematik 1 Maschinenbau</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=fcc42dec" />
@@ -58,6 +58,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter05/chapter05_sec02';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -223,7 +225,7 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter05_sec00.html">Punkte, Geraden und Ebenen</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="chapter05_sec01.html">5.1 Geraden</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Ebenen</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.2 Ebenen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter05_sec03.html">Lineare Gleichungssysteme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter05_sec04.html">Lagebeziehungen Gerade – Ebene</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter05_sec05.html">Abstände</a></li>
@@ -455,7 +457,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Ebenen</h1>
+    <h1>5.2 Ebenen</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -466,7 +468,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametergleichung-der-ebene">Parametergleichung der Ebene</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalengleichung-der-ebene">Normalengleichung der Ebene</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
         </div>
@@ -479,30 +484,142 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ebenen">
-<h1>Ebenen<a class="headerlink" href="#ebenen" title="Link to this heading">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Warnung</p>
-<p>Dieser Abschnitt wird gerade überarbeitet.</p>
-</div>
+<h1>5.2 Ebenen<a class="headerlink" href="#ebenen" title="Link to this heading">#</a></h1>
+<p>Eine Ebene ist ein zweidimensionales, flaches Gebilde im Raum, das unendlich
+ausgedehnt ist. In diesem Kapitel werden wir zwei Varianten kennenlernen, Ebenen
+mathematisch zu beschreiben, nämlich die Parametergleichung und die
+Normalengleichung.</p>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Sie können eine Ebenengleichung aufstellen, wenn ein Punkt und zwei Richtungsvektoren/Spannvektoren in der Ebene gegeben sind (<strong>Parameterdarstellung</strong>).</p></li>
-<li><p>Sie können eine Ebenengleichung aufstellen, wenn drei Punkte gegeben sind.</p></li>
-<li><p>Sie können eine Ebenengleichung aufstellen, wenn ein Punkt und ein Normalenvektor gegeben sind (<strong>Normalendarstellung</strong>).</p></li>
+<li><p>Sie können eine Ebene durch ihre <strong>Parametergleichung</strong> beschreiben.</p></li>
+<li><p>Sie können eine Ebene durch ihre <strong>Normalengleichung</strong> beschreiben.</p></li>
 </ul>
+</div>
+</section>
+<section id="parametergleichung-der-ebene">
+<h2>Parametergleichung der Ebene<a class="headerlink" href="#parametergleichung-der-ebene" title="Link to this heading">#</a></h2>
+<p>Die Lage einer Ebene im dreidimenionalen Raum <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> kann man durch
+verschiedene Angaben eindeutig festlegen. Beispielsweise genügt es drei Punkte
+anzugeben, wobei der dritte Punkt nicht auf der Geraden durch die ersten beiden
+Punkte liegen darf. Wir nennen diese Punkte im Folgenden <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(Q\)</span> und <span class="math notranslate nohighlight">\(R\)</span>. Wir
+können den Verbindungsvektor <span class="math notranslate nohighlight">\(\vec{u} := \overrightarrow{PQ}\)</span> zwischen <span class="math notranslate nohighlight">\(P\)</span> und
+<span class="math notranslate nohighlight">\(Q\)</span> bilden und den Verbindungsvektor <span class="math notranslate nohighlight">\(\vec{v}:=\overrightarrow{PR}\)</span> zwischen <span class="math notranslate nohighlight">\(P\)</span>
+und <span class="math notranslate nohighlight">\(R\)</span>. Jeder Punkt der Ebene kann dann erreicht werden, indem wir den Punkt
+<span class="math notranslate nohighlight">\(P\)</span> um Vielfache in die erste Richtung <span class="math notranslate nohighlight">\(\vec{u}\)</span> und um Vielfache in die zweite
+Richtung <span class="math notranslate nohighlight">\(\vec{v}\)</span> verschieben. Formal aufgeschrieben erhalten wir</p>
+<div class="math notranslate nohighlight">
+\[X = s\cdot\vec{u} + t\cdot\vec{v}.\]</div>
+<p>Wie bei der Parametergleichung der Ebene nennen wir die beiden reellen Zahlen
+<span class="math notranslate nohighlight">\(s\)</span> und <span class="math notranslate nohighlight">\(t\)</span> <strong>Parameter der Ebenengleichung</strong>. Für jede Kombination von Werten
+<span class="math notranslate nohighlight">\(s\in\mathbb{R}\)</span> und <span class="math notranslate nohighlight">\(t\in\mathbb{R}\)</span> erhalten wir einen anderen Punkt in der
+Ebene und umgekehrt gehört zu jedem Punkt der Ebene ein eindeutiges Paar von
+Parametern <span class="math notranslate nohighlight">\((s,t)\)</span>. Manchmal wird die Ebenengleichung daher auch als</p>
+<div class="math notranslate nohighlight">
+\[X(s,t) = s\cdot\vec{u} + t\cdot\vec{v}\]</div>
+<p>notiert.</p>
+<div class="admonition">
+<p class="admonition-title">Wie lautet … die Parametergleichung der Ebene?</p>
+<p>Eine Ebene ist eine Menge von Punkten <span class="math notranslate nohighlight">\(X\in\mathbb{R}^3\)</span>, die sich schreiben
+lässt als</p>
+<div class="math notranslate nohighlight">
+\[E = \{ X \in\mathbb{R}^3 \,|\, X = s\cdot\vec{u} + t\cdot\vec{v}\}.\]</div>
+<p>Die Skalare <span class="math notranslate nohighlight">\(s\in\mathbb{R}\)</span> und <span class="math notranslate nohighlight">\(t\in\mathbb{R}\)</span> werden Parameter genannt und
+die beiden Vektoren <span class="math notranslate nohighlight">\(\vec{u}\in\mathbb{R}^3\)</span> und <span class="math notranslate nohighlight">\(\vec{v}\in\mathbb{R}^3\)</span>
+Richtungsvektoren. Wir schreiben auch kurz <span class="math notranslate nohighlight">\(E: X = s\cdot\vec{u} +
+t\cdot\vec{v}\)</span> und nennen diese Darstellung Parametergleichung der Ebene.</p>
+</div>
+</section>
+<section id="normalengleichung-der-ebene">
+<h2>Normalengleichung der Ebene<a class="headerlink" href="#normalengleichung-der-ebene" title="Link to this heading">#</a></h2>
+<p>Alternativ kann eine Ebene auch durch einen Punkt <span class="math notranslate nohighlight">\(P\)</span>, der in der Ebene liegt,
+und den sogenannten <strong>Normalenvektor</strong> beschrieben werden. Ein Normalenvektor
+ist ein Vektor, der senkrecht auf der Ebene steht. Damit ist gemeint, dass zwei
+beliebige Punkte der Ebene verbunden werden können und dieser Verbindungsvektor
+orthogonal zum Normalenvektor ist.</p>
+<p>Wir nennen jetzt allgemein irgendeinen Punkt der Ebene <span class="math notranslate nohighlight">\(X\)</span>. Laut obiger
+Überlegung ist also der Verbindungsvektor <span class="math notranslate nohighlight">\(\overrightarrow{PX} = X - P\)</span>
+orthogonal zum Normalenvektor <span class="math notranslate nohighlight">\(\vec{n}\)</span>. Zwei Vektoren sind orthogonal
+zueinander, wenn ihr Skalarprodukt Null ist. In mathematischer Notation gilt
+also:</p>
+<div class="math notranslate nohighlight">
+\[\vec{n}\perp\overrightarrow{PX}  \; \Leftrightarrow \;
+\vec{n}\cdot\overrightarrow{PX}=0.\]</div>
+<p>Drücken wir den Verbindungsvektor <span class="math notranslate nohighlight">\(\overrightarrow{PX}\)</span> als Differenz der beiden
+Punkte <span class="math notranslate nohighlight">\(X\)</span> und <span class="math notranslate nohighlight">\(P\)</span> aus, erhalten wir die <strong>Normalengleichung der Ebene</strong></p>
+<div class="math notranslate nohighlight">
+\[\vec{n}\cdot (X-P)=0.\]</div>
+<p>Diese Gleichung lässt sich nicht explizit nach <span class="math notranslate nohighlight">\(X\)</span> auflösen. Die Punkte der
+Ebene werden also nur indirekt charakterisiert.</p>
+<div class="note admonition">
+<p class="admonition-title">Was ist … die Normalengleichung der Ebene?</p>
+<p>Eine Ebene ist eine Menge von Punkten <span class="math notranslate nohighlight">\(X\in\mathbb{R}^3\)</span>, die sich schreiben
+lässt als</p>
+<div class="math notranslate nohighlight">
+\[E = \{X \,|\, \vec{n}\cdot (X-P) = 0\}.\]</div>
+<p>Der Vektor <span class="math notranslate nohighlight">\(\vec{n}\in\mathbb{R}^3\)</span> wird Normalenvektor genannt und
+<span class="math notranslate nohighlight">\(P\in\mathbb{R}^3\)</span> ist ein Punkt, der in der Ebene liegt. Wir schreiben auch
+kurz <span class="math notranslate nohighlight">\(E: \vec{n}\cdot (X-P) = 0\)</span> und nennen diese Darstellung Normalengleichung
+der Ebene.</p>
 </div>
 </section>
 <section id="videos">
 <h2>Videos<a class="headerlink" href="#videos" title="Link to this heading">#</a></h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xgn1c3SAKZI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/aUohWmcs3Dc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GoqI8uG6PYI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0Hg56BoiHq0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/TsyHJ2P4qOA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xv1UOakv3XI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Die folgenden Videos erklären die beiden Darstellungsformen erneut. Meist wird
+nicht strikt zwischen Punkten und Vektoren unterschieden.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Parameterdarstellung Ebene” von Prof. Hoever</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xgn1c3SAKZI"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Parameterdarstellung Ebene drei Punkte” von Prof. Hoever</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aUohWmcs3Dc"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Normalendarstellung Ebene” von Prof. Hoever</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GoqI8uG6PYI"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Umwandlung Parameter- zur Normalendarstellung” von Prof. Hoever</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0Hg56BoiHq0"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Ebenengleichung aus drei Punkten” von MathePeter</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TsyHJ2P4qOA"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Parameterform Koordinatenform” von MathePeter</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xv1UOakv3XI"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>Nachdem wir nun die Gleichungen für Geraden und Ebenen gelernt haben, möchten
+wir als nächstes untersuchen, wie die Lage der Geraden und Ébenen zueinander
+ist. Bevor wir uns dieses Thema im übernächsten Kapitel erarbeiten, beschäftigen
+wir uns aber zunächst mit dem systematischen Lösen von linearen
+Gleichungssystemen. Das werden wir brauchen, um beispielsweise Schnittpunkte von
+Geraden und Ebenen berechnen zu können.</p>
 </section>
 </section>
 
@@ -571,7 +688,10 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametergleichung-der-ebene">Parametergleichung der Ebene</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalengleichung-der-ebene">Normalengleichung der Ebene</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>
 
