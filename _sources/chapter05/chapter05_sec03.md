@@ -1,4 +1,4 @@
-# Lineare Gleichungssysteme
+# 5.3 Lineare Gleichungssysteme
 
 Lineare Gleichungssysteme kommen in vielen Anwendungen vor. Ein typisches
 Anwendungsszenario sind Kräfteberechnungen in der Technischen Mechanik. Wir
