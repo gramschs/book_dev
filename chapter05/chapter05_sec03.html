@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=fcc42dec" />
@@ -58,6 +58,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter05/chapter05_sec03';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -442,7 +444,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -458,6 +462,18 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gausz-algorithmus">Gauß-Algorithmus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unendliche-viele-losungen">Unendliche viele Lösungen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keine-losung">Keine Lösung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -469,10 +485,246 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lineare-gleichungssysteme">
 <h1>Lineare Gleichungssysteme<a class="headerlink" href="#lineare-gleichungssysteme" title="Link to this heading">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Warnung</p>
-<p>Dieser Abschnitt wird gerade überarbeitet.</p>
+<p>Lineare Gleichungssysteme kommen in vielen Anwendungen vor. Ein typisches
+Anwendungsszenario sind Kräfteberechnungen in der Technischen Mechanik. Wir
+werden im nächsten Kapitel lineare Gleichungssysteme benötigen, um die Lage von
+Geraden und Ebenen zu untersuchen. Daher beschäftigen wir uns in diesem Kapitel
+mit linearen Gleichungssytemen, die aus drei Gleichungen mit drei Unbekannten
+bestehen.</p>
+<section id="lernziele">
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
+<div class="goals admonition">
+<p class="admonition-title">Lernziele</p>
+<ul class="simple">
+<li><p>Sie wissen, dass ein lineares Gleichungssystem eine <strong>eindeutige Lösung</strong>,
+<strong>unendlich viele Lösungen</strong> oder <strong>keine Lösung</strong> haben kann.</p></li>
+<li><p>Sie können mit dem <strong>Gauß-Algorithmus</strong> für alle drei Fälle die Lösung(en)
+berechnen.</p></li>
+</ul>
 </div>
+</section>
+<section id="gausz-algorithmus">
+<h2>Gauß-Algorithmus<a class="headerlink" href="#gausz-algorithmus" title="Link to this heading">#</a></h2>
+<p>Für zwei Gleichungen mit zwei Unbekannten gibt es mehrere Verfahren, das
+Gleichungssytem zu lösen. In der Schule lernt man beispielsweise das
+Additionsverfahren oder das Gleichsetzungsverfahren. Bei drei Gleichungen mit
+drei Unbekannten oder noch größeren Gleichungssystemen ist es sinnvoll, eine
+festgelegte Strategie zu verfolgen, da man sonst leicht den Überblick verliert.
+Ein bewährtes Verfahren zum Lösen von linearen Gleichungssytemen mit drei und
+mehr Gleichungen ist der <strong>Gauß-Algorithmus</strong>.</p>
+<p>Beim Gauß-Algorithmus wird das lineare Gleichungssytem zunächst in eine
+<strong>Dreiecksform</strong> gebracht. Anstatt Dreiecksform wird auch der Begriff
+<strong>Zeilen-Stufenform</strong> verwendet. Danach werden die Unbekannten durch
+<strong>Rückwärtseinsetzen</strong> berechnet. Im Folgenden wird der Gauß-Algorithmus an
+einem Beispiel demonstriert.</p>
+<p>Gegeben ist das folgende lineare Gleichungssystem:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+3x_1  - 4x_2 - 4x_3 &amp;= -4  \\
+6x_1  - 6x_2 - 7x_3 &amp;= -11 \\
+-3x_1 + 6x_2 + 7x_3 &amp;= 11 \\
+\end{align*}\]</div>
+<p>Wir wollen das lineare Gleichungssystem in die Dreiecksform bringen. Um einen
+besseren Überblick zu behalten, welche Umformungen dabei vorgenommen werden,
+nummerieren wir die Gleichungen mit (Z1), (Z2) und (Z3) für Zeile 1, Zeile 2 und
+Zeile 3.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{alignat*}{2}
+3x_1 - 4x_2 - 4x_3   &amp;= -4  &amp; &amp;\quad (\text{Z1}) &amp;\\
+6x_1 - 6x_2 - 7x_3   &amp;= -11 &amp; &amp;\quad (\text{Z2}) &amp;\\
+-3x_1 + 6x_2 + 7x_3  &amp;= 11 &amp; &amp;\quad (\text{Z3}) &amp;\\
+\end{alignat*}\]</div>
+<p>Jetzt formen wir die zweite Gleichung um. Ziel der Umformung ist es, geschickt
+Vielfache der ersten Gleichung zu Vielfachen der zweiten Gleichung zu addieren,
+so dass de Term <span class="math notranslate nohighlight">\(6x_1\)</span> zu Null wird. Dazu multiplizieren wir die 1. Zeile mit 2
+und subtrahieren dann die 2. Zeile. Diesen Schritt führen wir in einer
+Zwischenrechnung aus:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{crrrrr}
+2\cdot (\text{Z1})              \quad &amp; 6x_1  &amp; -8x_2 &amp; - 8x_3 &amp;=&amp; -8 \\
+-(\text{Z2})                    \quad &amp; -6x_1 &amp; +6x_2 &amp; + 7x_3 &amp;=&amp; 11 \\ \hline
+2\cdot (\text{Z1})-(\text{Z2})  \quad &amp;  &amp; -2x_2 &amp; - x_3  &amp;=&amp; 3\\
+\end{array}\end{split}\]</div>
+<p>Jetzt wird die dritte Gleichung umgeformt. Diesmal ist das Ziel, <span class="math notranslate nohighlight">\(-3x_1\)</span> auf
+Null zu bringen. Dazu brauchen wir nur 1. Zeile und 3. Zeile zu addieren. Die
+Zwischenrechnung lautet wie folgt:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{crrrrr}
+(\text{Z1})             \quad &amp;  3x_1 &amp; -4x_2 &amp; -4x_3 &amp;=&amp; -4 \\
++(\text{Z3})            \quad &amp; -3x_1 &amp; +6x_2 &amp; +7x_3 &amp;=&amp; 11 \\ \hline
+(\text{Z1})+(\text{Z3}) \quad &amp;       &amp;  2x_2 &amp; +3x_3 &amp;=&amp; 7 \\
+\end{array}\end{split}\]</div>
+<p>Nachdem wir diese Zwischenrechnungen durchgeführt haben, können wir die alten
+Gleichungen (Z2) und (Z3) durch die neuen Gleichungen ersetzen. Auf der linken
+Seite schreiben wir uns zur Erinnerung auf, welche Umformungen durchgeführt
+wurden. Auf der rechten Seite nummerieren wir neu durch.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{alignat*}{2}
+    &amp;&amp; \quad 3x_1 - 4x_2 - 4x_3 &amp;=-4 &amp;&amp;\quad (\text{Z1})\\
+\textcolor{lightgray}{2\cdot (\text{Z1})-(\text{Z2})}  
+    &amp;&amp; \quad  -2x_2 -x_3        &amp;=3  &amp;&amp;\quad (\text{Z2})\\
+\textcolor{lightgray}{(\text{Z1})+(\text{Z3})}
+    &amp;&amp; \quad  2x_2 + 3x_3       &amp;=7 &amp;&amp;\quad (\text{Z3})\\
+\end{alignat*}\]</div>
+<p>Der letzte Schritt zur Dreiecksform ist, die neue 3. Gleichung zo umzuformen,
+dass der Term <span class="math notranslate nohighlight">\(2x_2\)</span> verschwindet. Dazu brauchen wir aber nur die neue 2.
+Gleichung und die neue 3. Gleichung addieren. Wir lassen diesmal die
+ausführliche Zwischenrechnung weg und schreiben gleich das neue Gleichungssystem
+auf:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{alignat*}{2}
+    &amp;&amp; \quad 3x_1 - 4x_2 - 4x_3 &amp;=-4 &amp;&amp;\quad (\text{Z1})\\
+    &amp;&amp; \quad  -2x_2 -x_3        &amp;=3  &amp;&amp;\quad (\text{Z2})\\
+\textcolor{lightgray}{(\text{Z2})+(\text{Z3})}
+    &amp;&amp; \quad   2x_3             &amp;=10 &amp;&amp;\quad (\text{Z3})\\
+\end{alignat*}\]</div>
+<p>Damit liegt das lineare Gleichungssystem in Dreiecksform vor. Nun lösen wir das
+Gleichungssystem durch <strong>Rückwärtseinsetzen</strong>. Wir nehmen uns die unterste
+Gleichung. Sie lautet</p>
+<div class="math notranslate nohighlight">
+\[(\text{Z3}) \quad 2x_3 = 10.\]</div>
+<p>Daraus folgt sofort <span class="math notranslate nohighlight">\(x_3 = 5\)</span>. Nun wird <span class="math notranslate nohighlight">\(x_3 = 5\)</span> in Gleichung <span class="math notranslate nohighlight">\((\text{Z2})\)</span>
+eingesetzt und dann nach <span class="math notranslate nohighlight">\(x_2\)</span> aufgelöst:</p>
+<div class="math notranslate nohighlight">
+\[(\text{Z2}) \quad -2x_2 - 5 = 3 \quad \Rightarrow \quad x_2 = -4.\]</div>
+<p>Nun werden <span class="math notranslate nohighlight">\(x_3 = 5\)</span> und <span class="math notranslate nohighlight">\(x_2 = -4\)</span> in Gleichung <span class="math notranslate nohighlight">\((\text{Z1})\)</span> eingesetzt und
+dann nach <span class="math notranslate nohighlight">\(x_1\)</span> aufgelöst:</p>
+<div class="math notranslate nohighlight">
+\[(\text{Z1}) \quad 3x_1 - 4\cdot(-4) - 4\cdot 5 = -4 \quad \Rightarrow \quad x_1
+= 0.\]</div>
+<p>Die Lösung des linearen Gleichungssystems ist eindeutig, die Lösungsmenge ist</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{L} = \{(0 \vert -4 \vert 5)\}.\]</div>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung</p>
+<p>Lösen Sie auf der Internetseite
+<a class="reference external" href="https://mathebattle.de/edu_randomtasks/training_show/39">https://mathebattle.de/edu_randomtasks/training_show/39</a> solange lineare Gleichungssysteme mit dem Gauß-Verfahren, bis Sie dreimal
+hintereinander eine Aufgabe korrekt gelöst haben.</p>
+</div>
+</section>
+<section id="unendliche-viele-losungen">
+<h2>Unendliche viele Lösungen<a class="headerlink" href="#unendliche-viele-losungen" title="Link to this heading">#</a></h2>
+<p>Auch wenn die Gleichungen nicht zueinander passen, liefert der Gauß-Algorithmus
+eine passende Berechnungsvorschrift. In dem folgenden Beispiel ist eine
+Gleichung überflüssig. Das lineare Gleichungssytem hat unendlich viele Lösungen.
+Wir schauen uns an, wie dieser Fall mit dme Gauß-Algorithmus detektiert wird und
+wie die unendlich vielen Lösungen berechnet und beschrieben werden.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{alignat*}{2}
+x_1 + 9x_2 - 8x_3  &amp;= 0  &amp; &amp;\quad (\text{Z1}) &amp;\\
+-2x_1 + 9x_2 + 7x_3   &amp;= -27 &amp; &amp;\quad (\text{Z2}) &amp;\\
+3x_1 \phantom{+ 9x_2} - 15x_3  &amp;= 27 &amp; &amp;\quad (\text{Z3}) &amp;\\
+\end{alignat*}\]</div>
+<p>Eliminieren der ersten Terme der 2. und 3. Gleichung liefert:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{alignat*}{2}
+    &amp;&amp; \quad x_1 + 9x_2 - 8x_3 &amp;= 0 &amp;&amp;\quad (\text{Z1})\\
+\textcolor{lightgray}{2\cdot (\text{Z1})+(\text{Z2})}  
+    &amp;&amp; \quad  27x_2 -9x_3        &amp;=-27  &amp;&amp;\quad (\text{Z2})\\
+\textcolor{lightgray}{3\cdot(\text{Z1})-(\text{Z3})}
+    &amp;&amp; \quad  27x_2 -9x_3       &amp;=-27 &amp;&amp;\quad (\text{Z3})\\
+\end{alignat*}\]</div>
+<p>Eliminieren des zweiten Terms der 3. Gleichung ergibt:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{alignat*}{2}
+    &amp;&amp; \quad x_1 + 9x_2 - 8x_3 &amp;= 0 &amp;&amp;\quad (\text{Z1})\\
+    &amp;&amp; \quad  27x_2 -9x_3        &amp;=-27  &amp;&amp;\quad (\text{Z2})\\
+\textcolor{lightgray}{3\cdot(\text{Z1})-(\text{Z3})}
+    &amp;&amp; \quad  0     &amp;=0 &amp;&amp;\quad (\text{Z3})\\
+\end{alignat*}\]</div>
+<p>Diesmal liegt kein Widerspruch vor. Leider haben wir zwar mit der 3. Zeile <span class="math notranslate nohighlight">\(0=0\)</span>
+eine wahre Aussage, aber diese Aussage hat keinen Informationsgehalt für unser
+Gleichungssystem. Es gibt nur noch zwei Gleichungen mit Informationen darüber,
+wie die drei Variablen <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span> und <span class="math notranslate nohighlight">\(x_3\)</span> zusammenhängen. Ein solches
+Gleichungssystem, bei dem es weniger Gleichungen als Unbekannte gibt, wird
+<strong>unterbestimmtes Gleichungssytem</strong> genannt.</p>
+<p>Da es keinen Konflikt in 3. Gleichung, wenn wir annehmen, dass <span class="math notranslate nohighlight">\(x_3\)</span> eine
+beliebige Zahl ist, es gibt also unendliche viele Lösungen. Um formal auch
+kenntlich zu machen, dass jede bleibige Zahl für <span class="math notranslate nohighlight">\(x_3\)</span> verwendet werden darf,
+führen wir den sogenannten <strong>Parameter</strong> <span class="math notranslate nohighlight">\(t\)</span> ein und setzen die gescuhte Lösung
+auf <span class="math notranslate nohighlight">\(t\)</span>, also</p>
+<div class="math notranslate nohighlight">
+\[(\text{Z3}) \quad x_3 = t.\]</div>
+<p>Diese »Lösung« setzen wir dann in die 2. Gleichung ein und lösen nach <span class="math notranslate nohighlight">\(x_2\)</span> auf:</p>
+<div class="math notranslate nohighlight">
+\[(\text{Z2})\quad 27x_2 -9t = -27 \quad\Rightarrow\quad x_2 = -1 + \frac{1}{3}t.\]</div>
+<p>Nun setzen wir <span class="math notranslate nohighlight">\(x_3 = t\)</span> und <span class="math notranslate nohighlight">\(x_2 = -1 + \frac{1}{3}t\)</span> in die 1. Gleichung ein
+und lösen nach <span class="math notranslate nohighlight">\(x_1\)</span> auf:</p>
+<div class="math notranslate nohighlight">
+\[(\text{Z1})\quad x_1 + 9\cdot (-1 + \frac{1}{3}t)-8t = 0 \quad\Rightarrow\quad
+x_1 = 9 + 5t.\]</div>
+<p>Die Lösungsmenge ist also</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{L} = \left\{\left( 9+5t \Big| -1 + \frac{1}{3}t \Big| t \right)\right\}.\]</div>
+<p>Das kann mann auch in Vektorschreibweise notieren:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\vec{x}=\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} =
+\begin{pmatrix} 9+5t \\ -1 + \frac{1}{3}t\\ 0 + t \end{pmatrix} =
+\begin{pmatrix} 9 \\ -1 \\ 0 \end{pmatrix} + t\cdot
+\begin{pmatrix} 5 \\ \frac{1}{3}\\ 1 \end{pmatrix}.\end{split}\]</div>
+<p>Dabei haben wir in der dritten Komponente den Trick <span class="math notranslate nohighlight">\(t = 0 + t\)</span> verwendet.</p>
+<p>Es gibt also unendliche viele Lösungen.</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung</p>
+<p>Lösen Sie auf der Internetseite
+<a class="reference external" href="https://mathebattle.de/edu_randomtasks/training_show/457">https://mathebattle.de/edu_randomtasks/training_show/457</a> solange lineare Gleichungssysteme mit dem Gauß-Verfahren, bis Sie dreimal
+hintereinander eine Aufgabe korrekt gelöst haben.</p>
+</div>
+</section>
+<section id="keine-losung">
+<h2>Keine Lösung<a class="headerlink" href="#keine-losung" title="Link to this heading">#</a></h2>
+<p>Ein lineares Gleichungssytem kann auch keine Lösung haben, wenn Gleichungen
+zueinander im Konflikt stehen. Der Gauß-Algorithmus zeigt uns, ob ein solcher
+Fall vorliegt. Wir nehmen das Beispiel</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{alignat*}{2}
+-2x_1 + 9x_2 - 10x_3  &amp;= -68  &amp; &amp;\quad (\text{Z1}) &amp;\\
+-8x_1 + 2x_2 + 3x_3   &amp;= 204 &amp; &amp;\quad (\text{Z2}) &amp;\\
+14x_1 + 5x_2 - 16x_3  &amp;= -475 &amp; &amp;\quad (\text{Z3}) &amp;\\
+\end{alignat*}\]</div>
+<p>Eliminieren der ersten Terme der 2. und 3. Gleichung liefert:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{alignat*}{2}
+    &amp;&amp; \quad -2x_1 + 9x_2 - 10x_3 &amp;=-68 &amp;&amp;\quad (\text{Z1})\\
+\textcolor{lightgray}{4\cdot (\text{Z1})-(\text{Z2})}  
+    &amp;&amp; \quad  34x_2 -43x_3        &amp;=-476  &amp;&amp;\quad (\text{Z2})\\
+\textcolor{lightgray}{7\cdot(\text{Z1})+(\text{Z3})}
+    &amp;&amp; \quad  68x_2 -86 x_3       &amp;=-951 &amp;&amp;\quad (\text{Z3})\\
+\end{alignat*}\]</div>
+<p>Eliminieren des zweiten Terms der 3. Gleichung ergibt:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{alignat*}{2}
+    &amp;&amp; \quad -2x_1 + 9x_2 - 10x_3 &amp;=-68 &amp;&amp;\quad (\text{Z1})\\
+    &amp;&amp; \quad  34x_2 -43x_3        &amp;=-476  &amp;&amp;\quad (\text{Z2})\\
+\textcolor{lightgray}{2\cdot(\text{Z2})-(\text{Z3})}
+    &amp;&amp; \quad 0   &amp;=-1 &amp;&amp;\quad (\text{Z3})\\
+\end{alignat*}\]</div>
+<p>In der 3. Gleichung liegt ein Widerspruch vor. Die Aussage <span class="math notranslate nohighlight">\(0=-1\)</span> ist falsch.
+Damit kann das lineare Gleichungssystem keine Lösung haben. Wir schreiben</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{L} = \{\,\}.\]</div>
+<p>für die Lösungsmenge die leere Menge hin.</p>
+<div class="miniexercise admonition">
+<p class="admonition-title">Übung</p>
+<p>Lösen Sie auf der Internetseite
+<a class="reference external" href="https://mathebattle.de/edu_randomtasks/training_show/863">https://mathebattle.de/edu_randomtasks/training_show/863</a> solange lineare Gleichungssysteme mit dem Gauß-Verfahren, bis Sie dreimal
+hintereinander eine Aufgabe korrekt gelöst haben.</p>
+</div>
+<p>In dem folgenden Video werden alle drei Möglichkeiten noch einmal ausführlich
+vorgerechnet.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Gauß Algorithmus – Lineare Gleichungssysteme lösen” von Mathematrick</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aosbq7Ci7Ec?si=rMF-Fqs1W_xRivC3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>Im nächsten Kapitel werden wir lineare Gleichungssyteme aufstellen, um zu
+untersuchen, ob sich Geraden und Ebenen schneiden. Mit Hilfe des
+Gauß-Algorithmus werden wir Schnittpunkte und Schnittgeraden berechnen.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -529,6 +781,25 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gausz-algorithmus">Gauß-Algorithmus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unendliche-viele-losungen">Unendliche viele Lösungen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keine-losung">Keine Lösung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
