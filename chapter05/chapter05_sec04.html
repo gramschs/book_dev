@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Lagebeziehungen Gerade – Ebene &#8212; Mathematik 1 Maschinenbau</title>
+    <title>5.4 Lagebeziehungen Geraden und Ebenen &#8212; Mathematik 1 Maschinenbau</title>
   
   
   
@@ -58,6 +58,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter05/chapter05_sec04';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -225,7 +227,7 @@
 <li class="toctree-l2"><a class="reference internal" href="chapter05_sec01.html">5.1 Geraden</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter05_sec02.html">5.2 Ebenen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter05_sec03.html">5.3 Lineare Gleichungssysteme</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Lagebeziehungen Gerade – Ebene</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.4 Lagebeziehungen Geraden und Ebenen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter05_sec05.html">Abstände</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter05_sec06.html">Winkel</a></li>
 </ul>
@@ -455,7 +457,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Lagebeziehungen Gerade – Ebene</h1>
+    <h1>5.4 Lagebeziehungen Geraden und Ebenen</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -466,7 +468,11 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gerade-gerade">Gerade — Gerade</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gerade-ebene">Gerade — Ebene</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ebene-ebene">Ebene — Ebene</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weiteres-lernmaterial">Weiteres Lernmaterial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
             </nav>
         </div>
@@ -478,24 +484,173 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="lagebeziehungen-gerade-ebene">
-<h1>Lagebeziehungen Gerade – Ebene<a class="headerlink" href="#lagebeziehungen-gerade-ebene" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="lagebeziehungen-geraden-und-ebenen">
+<h1>5.4 Lagebeziehungen Geraden und Ebenen<a class="headerlink" href="#lagebeziehungen-geraden-und-ebenen" title="Link to this heading">#</a></h1>
+<p>Nun werden wir uns mit der Lagebeziehung von Geraden und Ebenen beschäftigen.
+DAbei berückscihtigen wir die drei möglichen Kombinationen:</p>
+<ul class="simple">
+<li><p>Gerade zu Gerade</p></li>
+<li><p>Gerade zu Ebene und</p></li>
+<li><p>Ebene zu Ebene.</p></li>
+</ul>
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <div class="goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Sie können den Schnitt zweier Geraden bestimmen.</p></li>
-<li><p>Sie können den Schnitt einer Gerade mit einer Ebene bestimmen.</p></li>
-<li><p>Sie können den Schnitt zweier Ebenen bestimmen.</p></li>
+<li><p>Sie können berechnen, ob zwei Geraden</p>
+<ul>
+<li><p>identisch sind,</p></li>
+<li><p>parallel sind,</p></li>
+<li><p>sich schneiden oder</p></li>
+<li><p>windschief sind.</p></li>
+</ul>
+</li>
+<li><p>Falls sich zwei Geraden schneiden, können Sie den Schnittpunkt der beiden
+Geraden bestimmen.</p></li>
+<li><p>Sie können berechnen, ob eine Gerade</p>
+<ul>
+<li><p>in einer Ebene liegt,</p></li>
+<li><p>parallel zur Ebene liegt oder</p></li>
+<li><p>die Ebene schneidet.</p></li>
+</ul>
+</li>
+<li><p>Falls eine Gerade eine Ebene schneidet, können Sie den Schnittpunkt von der
+Geraden mit der Ebenen bestimmen.</p></li>
+<li><p>Sie können berechnen, ob zwei Ebenen</p>
+<ul>
+<li><p>identisch sind,</p></li>
+<li><p>parallel sind oder</p></li>
+<li><p>sich schneiden.</p></li>
+</ul>
+</li>
+<li><p>Falls zwei Ebenen sich schneiden, können Sie die Schnittgerade der beiden
+Ebenen bestimmen.</p></li>
 </ul>
 </div>
 </section>
-<section id="videos">
-<h2>Videos<a class="headerlink" href="#videos" title="Link to this heading">#</a></h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/S9m44EDVQ6M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CqBSmBOd4xM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/q3V_ZRtx-Yc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<section id="gerade-gerade">
+<h2>Gerade — Gerade<a class="headerlink" href="#gerade-gerade" title="Link to this heading">#</a></h2>
+<p>Im euklidischen Raum <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>, also in der Ebene, gibt es drei
+Möglichkeiten, wie zwei Geraden zueinander liegen. Sie können identisch sein,
+sie können parallel verlaufen und sie können sich schneiden. Im
+dreidimensionalen Raum <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> gibt es noch eine neue, vierte
+Möglichkeit. Die Geraden können <strong>windschief</strong> sein. Dabei haben sie <em>keinen
+Schnittpunkt</em>, sind aber trotzdem nicht parallel.</p>
+<p>Eine erste Unterscheidungsmöglichkeit zwischen den Fällen identisch/parallel und
+schneiden/windschief bietet die Analyse der Richtungsvektoren. Sind die beiden
+Richtungsvektoren linear abhängig, dann sind die Geraden entweder identisch oder
+echt parallel zueinander. Mit Hilfe einer Punktprobe kann dann leicht überprüft
+werden, welcher der beiden Fälle vorliegt.</p>
+<p>Sind die beiden Richtungsvektoren linear unabhängig, dann sind die beiden
+Geraden entweder windschief oder sie schneiden sich. Welcher der beiden Fälle
+vorliegt, lässt sich dann durch Gleichsetzen der beiden Parametergleichungen
+entscheiden.</p>
+<p>Wenn die erste Gerade in Parameterdarstellung <span class="math notranslate nohighlight">\(g_1: X = P_1 + s\cdot\vec{v_1}, \;
+s\in\mathbb{R},\)</span> lautet und die zweite Gerade <span class="math notranslate nohighlight">\(g_2: X = P_2 + t\cdot\vec{v_2}, \;
+t\in\mathbb{R},\)</span> dann bedeutet Gleichsetzen, dass die vektorielle Gleichung</p>
+<div class="math notranslate nohighlight">
+\[P_1 + s\cdot\vec{v_1} = P_2 + t\cdot\vec{v_2}\]</div>
+<p>gelöst werden soll. Lesen wir diese vektorielle Gleichung komponentenweise,
+erhalten wir drei Gleichungen für zwei Parameter <span class="math notranslate nohighlight">\(s\)</span> und <span class="math notranslate nohighlight">\(t\)</span>. Es liegt also ein
+überbestimmtes lineares Gleichungssystem vor. Wir lösen das Gleichungssystem.
+Die drei Möglichkeiten entsprechen den folgenden Lagebeziehungen:</p>
+<ol class="arabic simple">
+<li><p>Das Gleichungssystem hat keine Lösung. Dann sind die beiden Geraden parallel
+oder windschief. Wenn bereits der Test auf lineare Abhängigkeit durchgeführt
+wurde und gezeigt hat, dass die Richtungsvektoren linear abhängig sind, dann
+sind die Geraden parallel und ansonsten windschief.</p></li>
+<li><p>Das Gleichungssystem hat unendlich viele Lösungen. Dann sind die beiden
+Geraden identisch.</p></li>
+<li><p>Das Gleichungssystem hat eine eindeutige Lösung. Dann schneiden sich die
+beiden Geraden. Der Schnittpunkt kann dann berechnet werden, indem entweder
+die Lösung für <span class="math notranslate nohighlight">\(s\)</span> in <span class="math notranslate nohighlight">\(g_1\)</span> oder die Lösung für <span class="math notranslate nohighlight">\(t\)</span> in <span class="math notranslate nohighlight">\(g_2\)</span> eingesetzt wird.</p></li>
+</ol>
+<p>Das folgende Video haben wir bereits eingeführt. Diesmal können Sie bei
+Zeitmarke 3:20 min starten.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Geraden” von Flip the Classroom</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qCRN2Qsm0D0?si=h1t4YF-klJKZKv57"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="gerade-ebene">
+<h2>Gerade — Ebene<a class="headerlink" href="#gerade-ebene" title="Link to this heading">#</a></h2>
+<p>Bei der Lagebeziehung Gerade zu Ebene gibt es drei Fälle:</p>
+<ol class="arabic simple">
+<li><p>Die Gerade liegt in der Ebene.</p></li>
+<li><p>Die Gerade ist parallel zu der Ebene.</p></li>
+<li><p>Die Gerade schneidet die Ebene, es gibt einen Schnittpunkt (Durchstoßpunkt).</p></li>
+</ol>
+<p>Um zu bestimmen, welcher der drei Fälle vorliegt, setzen wir die
+Geradengleichung und die Ebenengleichung gleich. Hat das entstehende
+Gleichungssystem unendlich viele Lösungen, dann liegt die Gerade in der Ebene.
+Hat das Gleichungssystem keine Lösung, so sind die beiden Objekte parallel
+zueinander. Bei einer eindeutigen Lösung des linearen Gleichungssystems haben
+Gerade und Ebene einen Schnittpunkt. Die lösung des Gleichungssystems werden
+entweder in die Geradengleichung oder in die Ebenengleichung eingesetzt, um den
+Schnittpunkt zu berechnen.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Gegenseitige Lage von Ebenen und Geraden” von Flip the Classroom</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dd1rzxF29Yw?si=luwsLswXcC6ZL41K"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="ebene-ebene">
+<h2>Ebene — Ebene<a class="headerlink" href="#ebene-ebene" title="Link to this heading">#</a></h2>
+<p>Auch bei der Lagebeziehung zwischen zwei Ebenen gibt es drei Möglichkeiten. Hier
+ist es sinnvoll, die beiden Ebenengleichungen als Normalengleichung zu benutzen.
+Liegt eine oder beide Ebenengleichungen noch in der Parameterform vor, sollten
+sie umgewandelt werden. Dann können wir die Normalenvektoren untersuchen.</p>
+<ul class="simple">
+<li><p>Sind die beiden Normalenvektoren linear abhängig. Dann sind die Ebenen
+entweder parallel oder identisch. Welcher der beiden Fälle vorliegt, kann mit
+der Punktprobe überprüft werden.</p></li>
+<li><p>Sind die beiden Normalenvektoren linear unabhängig, dann schneiden sich die
+Ebenen. Die Schnittgerade kann durch Gleichsetzen der beiden Ebenengleichung
+bestimmt werden.</p></li>
+</ul>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Gegenseitige Lagen von Ebenen” von Flip the Classroom</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PzgF1Z99dyo?si=OLL1rJtSUn5SLza-"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="weiteres-lernmaterial">
+<h2>Weiteres Lernmaterial<a class="headerlink" href="#weiteres-lernmaterial" title="Link to this heading">#</a></h2>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Lage von Geraden” von Mathematrick</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/S9m44EDVQ6M"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Schnitt und Winkel Gerade und Ebene” von Mathe Peter</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CqBSmBOd4xM"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Video “Lagebeziehung Ebene - Ebene” von Mathe Peter</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/q3V_ZRtx-Yc"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</details></section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Link to this heading">#</a></h2>
+<p>In diesem Kapitel haben wir die Lage von Gerade zu Gerade, Geraden zu Ebenen und
+Ebenen zu Ebenen untersucht. Im nächsten Kapitel werden wir den Abstand von
+Geraden und Ebenen zueinander untersuchen.</p>
 </section>
 </section>
 
@@ -564,7 +719,11 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gerade-gerade">Gerade — Gerade</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gerade-ebene">Gerade — Ebene</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ebene-ebene">Ebene — Ebene</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weiteres-lernmaterial">Weiteres Lernmaterial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a></li>
 </ul>
   </nav></div>
 

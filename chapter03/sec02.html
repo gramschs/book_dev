@@ -227,7 +227,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec01.html">5.1 Geraden</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec02.html">5.2 Ebenen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec03.html">5.3 Lineare Gleichungssysteme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec04.html">Lagebeziehungen Gerade – Ebene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec04.html">5.4 Lagebeziehungen Geraden und Ebenen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec05.html">Abstände</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter05/chapter05_sec06.html">Winkel</a></li>
 </ul>
@@ -494,26 +494,30 @@ Vektorraumes, den wir in diesem Kapitel behandeln werden.</p>
 <div class="goals admonition">
 <p class="admonition-title">Lernziele</p>
 <ul class="simple">
-<li><p>Sie wissen, wie der <strong>reelle Standardvektorraum</strong> definiert ist, d.h. Sie können die</p>
+<li><p>Sie wissen, wie der <strong>reelle Standardvektorraum</strong> definiert ist, d.h. Sie
+können die</p>
 <ul>
 <li><p><strong>Vektoraddition</strong> und</p></li>
-<li><p><strong>Skalarmultiplikation</strong>
-für n-Tupels anwenden.</p></li>
+<li><p><strong>Skalarmultiplikation</strong> für n-Tupels anwenden.</p></li>
 </ul>
 </li>
 <li><p>Sie wissen, dass ein Element eines Vektorraumes <strong>Vektor</strong> genannt wird.</p></li>
-<li><p>Sie wissen, wie ein allgemeiner, reeller <strong>Vektorraum</strong> definiert ist. Insbesondere können Sie die vier Eigenschaften der Vektoraddition und die vier Eigenschaften der Skalarmultiplikation nachprüfen.</p></li>
+<li><p>Sie wissen, wie ein allgemeiner, reeller <strong>Vektorraum</strong> definiert ist.
+Insbesondere können Sie die vier Eigenschaften der Vektoraddition und die vier
+Eigenschaften der Skalarmultiplikation nachprüfen.</p></li>
 <li><p><strong>Eigenschaften der Vektoraddition</strong>:</p>
 <ul>
 <li><p>Assoziativgesetz: <span class="math notranslate nohighlight">\(u\oplus(v\oplus w) = (u\oplus v)\oplus w\)</span></p></li>
 <li><p>Existenz eines neutralen Elements <span class="math notranslate nohighlight">\(0\in V\)</span> mit <span class="math notranslate nohighlight">\(v\oplus 0 = 0\oplus v = v\)</span></p></li>
-<li><p>Existenz eines zu <span class="math notranslate nohighlight">\(v\in V\)</span> inversen Elements <span class="math notranslate nohighlight">\(-v\in V\)</span> mit <span class="math notranslate nohighlight">\(v\oplus (-v)= (-v)\oplus v = 0\)</span></p></li>
+<li><p>Existenz eines zu <span class="math notranslate nohighlight">\(v\in V\)</span> inversen Elements <span class="math notranslate nohighlight">\(-v\in V\)</span> mit <span class="math notranslate nohighlight">\(v\oplus (-v)=
+(-v)\oplus v = 0\)</span></p></li>
 <li><p>Kommutativgesetz: <span class="math notranslate nohighlight">\(v\oplus u = u \oplus v\)</span></p></li>
 </ul>
 </li>
 <li><p><strong>Eigenschaften der Skalarmultiplikation</strong>:</p>
 <ul>
-<li><p>Vektorielles Distributivgesetz: <span class="math notranslate nohighlight">\(s\odot(u\oplus v) = (s\odot u) \oplus (s\odot v)\)</span></p></li>
+<li><p>Vektorielles Distributivgesetz: <span class="math notranslate nohighlight">\(s\odot(u\oplus v) = (s\odot u) \oplus
+(s\odot v)\)</span></p></li>
 <li><p>Skalares Distributivgesetz: <span class="math notranslate nohighlight">\((s+t)\odot v = (s\odot v) \oplus (t\odot v)\)</span></p></li>
 <li><p>Assoziativgesetz für Skalare: <span class="math notranslate nohighlight">\((s\cdot t)\odot v = s\odot (t \odot v)\)</span></p></li>
 <li><p>Existenz eines neutralen Elements: <span class="math notranslate nohighlight">\(1\odot v = v\)</span></p></li>
@@ -655,29 +659,29 @@ den folgenden Videos wird daher nicht zwischen beiden Begriffen unterschieden.</
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Video “n-dimensionaler euklidischer Raum” von Mathematische Methoden</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/uh14yOb_0VY" 
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uh14yOb_0VY"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
 clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Video “Addition von Vektoren” von Mathematische Methoden</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/IN_21Zd8tcE" 
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IN_21Zd8tcE"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
 clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Video “Skalarmultiplikation” von Mathematische Methoden</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dz3ccb5cqxQ" 
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dz3ccb5cqxQ"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
 clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Video “Subtraktion von Vektoren” von Mathematische Methoden</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9oQzrH0x434" 
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9oQzrH0x434"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
 clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 </details></section>
