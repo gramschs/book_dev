@@ -1,4 +1,4 @@
-# Funktionen
+# Videos zu Funktionen
 
 ## Lernziele
 
@@ -9,7 +9,7 @@
 * Sie wissen, was eine **Umkehrfunktion** ist und können prüfen, ob eine gegebene Funktion umkehrbar ist und ggf. die Umkehrfunktion ausrechnen.
 ```
 
-## Funktion und Graph der Funktion     
+## Funktion und Graph der Funktion
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9HiHcxXhYn4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

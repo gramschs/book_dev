@@ -1,4 +1,4 @@
-# Exponential- und Logarithmusfunktion
+# Videos zu Exponential- und Logarithmusfunktionen
 
 ## Lernziele
 

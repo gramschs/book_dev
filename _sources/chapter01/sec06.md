@@ -1,4 +1,4 @@
-# Trigonometrie
+# Videos zu Trigonometrie
 
 ## Lernziele
 
