@@ -11,10 +11,19 @@
 
 ## Funktion und Graph der Funktion
 
+```{admonition} Video
+:class: seealso
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9HiHcxXhYn4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
 
 ## Umkehrfunktion
 
+```{admonition} Video
+:class: seealso
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bs2mZdidL6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
 
+```{admonition} Video
+:class: seealso
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3Bq2dVjJvzg?si=GlNKL46c3koFCOmv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```

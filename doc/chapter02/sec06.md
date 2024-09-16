@@ -24,12 +24,21 @@ $$\tan(x)=\frac{\sin(x)}{\cos(x)}$$
 
 ## Sinus, Kosinus und Tangens
 
+```{admonition} Video
+:class: seealso
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ELM2Fn9Wup4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
 
 ## Trigonometrischer Pythagoras
 
+```{admonition} Video
+:class: seealso
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ve4VeTK_bJI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
 
 ## Additionstheoreme
 
+```{admonition} Video
+:class: seealso
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ooB6OzWiwis" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
