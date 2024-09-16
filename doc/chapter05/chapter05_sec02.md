@@ -84,8 +84,7 @@ Skalarprodukt explizit:
 
 $$\vec{n}\perp\overrightarrow{PX} =0 \quad \Rightarrow \quad
 \begin{pmatrix} n_1 \\ n_2 \\ n_3 \end{pmatrix} \cdot
-\begin{pmatrix} x_1 - p_1 \\ x_2 - p_2 \\ x_3 - p_3 \end{pmatrix} = 0 
-$$
+\begin{pmatrix} x_1 - p_1 \\ x_2 - p_2 \\ x_3 - p_3 \end{pmatrix} = 0.$$
 
 Ausmultiplizieren liefert
 
@@ -94,7 +93,7 @@ $$n_1\cdot(x_1-p_1) + n_2 \cdot (x_2 - p_2) + \cdot n_3\cdot(x_3-p_3) = 0.$$
 Normalerweise werden die Terme ohne "X" auf die rechte Seite gebracht und mit
 $d$ bezeichnet:
 
-$$n_1\cdot x_1 + n_2\cdot x_2 + n_3\cdot x_3 = 
+$$n_1\cdot x_1 + n_2\cdot x_2 + n_3\cdot x_3 =
 \underbrace{n_1\cdot p_1 + n_2 \cdot p_2 + n_3 \cdot p_3}_{=:d}$$
 
 Diese Darstellung ist nach wie vor eine Normalengleichung. In manchen Büchern
@@ -110,8 +109,8 @@ $$E = \{X \,|\, \vec{n}\cdot (X-P) = 0\}.$$
 Der Vektor $\vec{n}\in\mathbb{R}^3$ wird Normalenvektor genannt und
 $P\in\mathbb{R}^3$ ist ein Punkt, der in der Ebene liegt. Wir schreiben auch
 kurz $E: \vec{n}\cdot (X-P) = 0$ und nennen diese Darstellung Normalengleichung
-der Ebene. Ist der Normalenvektor normiert, nennt man die Darstellung **hessesche 
-Normalengleichung**.
+der Ebene. Ist der Normalenvektor normiert, nennt man die Darstellung
+**hessesche Normalengleichung**.
 ```
 
 ## Videos
