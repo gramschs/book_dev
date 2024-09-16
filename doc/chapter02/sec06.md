@@ -1,4 +1,4 @@
-# Beziehungen zwischen trigonometrischen Funktionen
+# Videos zu Beziehungen zwischen trigonometrischen Funktionen
 
 ## Lernziele
 

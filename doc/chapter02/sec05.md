@@ -1,4 +1,4 @@
-# Trigonometrische Funktionen
+# Videos zu Trigonometrische Funktionen
 
 ## Lernziele
 

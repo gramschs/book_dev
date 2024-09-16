@@ -1,4 +1,4 @@
-# Eigenschaften von Funktionen
+# Videos zu Eigenschaften von Funktionen
 
 ## Lernziele
 

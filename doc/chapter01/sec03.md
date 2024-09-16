@@ -1,4 +1,4 @@
-# Potenzen, Wurzeln und Logarithmen
+# Videos zu Potenzen, Wurzeln und Logarithmen
 
 ## Lernziele
 
