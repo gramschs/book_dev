@@ -10,12 +10,24 @@
 
 ## Trigonometrische Funktionen im Einheitskreis
 
+```{admonition} Video
+:class: seealso
 <iframe width="560" height="315" src="https://www.youtube.com/embed/zvPer8SiFfo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
 
+```{admonition} Video
+:class: seealso
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Vde-dVw7H4I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
 
+```{admonition} Video
+:class: seealso
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rsLt5VoX-fc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
 
 ## Eigenschaften
 
+```{admonition} Video
+:class: seealso
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pjEOotpcZiM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```

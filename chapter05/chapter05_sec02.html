@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=fcc42dec" />
@@ -551,8 +551,28 @@ also:</p>
 Punkte <span class="math notranslate nohighlight">\(X\)</span> und <span class="math notranslate nohighlight">\(P\)</span> aus, erhalten wir die <strong>Normalengleichung der Ebene</strong></p>
 <div class="math notranslate nohighlight">
 \[\vec{n}\cdot (X-P)=0.\]</div>
+<p>Der Normalenvektor braucht dabei nicht normiert sein. Ist er jedoch normiert,
+d.h. gilt <span class="math notranslate nohighlight">\(|\vec{n}|=1\)</span>, dann bezeichnet man die Normalengleichung auch als
+<strong>hessesche Normalenform</strong>.</p>
 <p>Diese Gleichung lässt sich nicht explizit nach <span class="math notranslate nohighlight">\(X\)</span> auflösen. Die Punkte der
-Ebene werden also nur indirekt charakterisiert.</p>
+Ebene werden also nur indirekt charakterisiert. Wir können allerdings die
+Gleichung noch weiter umformen, was die Analyse von Lagebeziehungen und die
+Berechnung von Abaständen und Winkeln vereinfachen kann. Dazu berechnen wir das
+Skalarprodukt explizit:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\vec{n}\perp\overrightarrow{PX} =0 \quad \Rightarrow \quad
+\begin{pmatrix} n_1 \\ n_2 \\ n_3 \end{pmatrix} \cdot
+\begin{pmatrix} x_1 - p_1 \\ x_2 - p_2 \\ x_3 - p_3 \end{pmatrix} = 0.\end{split}\]</div>
+<p>Ausmultiplizieren liefert</p>
+<div class="math notranslate nohighlight">
+\[n_1\cdot(x_1-p_1) + n_2 \cdot (x_2 - p_2) + \cdot n_3\cdot(x_3-p_3) = 0.\]</div>
+<p>Normalerweise werden die Terme ohne “X” auf die rechte Seite gebracht und mit
+<span class="math notranslate nohighlight">\(d\)</span> bezeichnet:</p>
+<div class="math notranslate nohighlight">
+\[n_1\cdot x_1 + n_2\cdot x_2 + n_3\cdot x_3 =
+\underbrace{n_1\cdot p_1 + n_2 \cdot p_2 + n_3 \cdot p_3}_{=:d}\]</div>
+<p>Diese Darstellung ist nach wie vor eine Normalengleichung. In manchen Büchern
+wird diese Form jedoch speziell <strong>Koordinatengleichung</strong> genannt.</p>
 <div class="note admonition">
 <p class="admonition-title">Was ist … die Normalengleichung der Ebene?</p>
 <p>Eine Ebene ist eine Menge von Punkten <span class="math notranslate nohighlight">\(X\in\mathbb{R}^3\)</span>, die sich schreiben
@@ -562,7 +582,8 @@ lässt als</p>
 <p>Der Vektor <span class="math notranslate nohighlight">\(\vec{n}\in\mathbb{R}^3\)</span> wird Normalenvektor genannt und
 <span class="math notranslate nohighlight">\(P\in\mathbb{R}^3\)</span> ist ein Punkt, der in der Ebene liegt. Wir schreiben auch
 kurz <span class="math notranslate nohighlight">\(E: \vec{n}\cdot (X-P) = 0\)</span> und nennen diese Darstellung Normalengleichung
-der Ebene.</p>
+der Ebene. Ist der Normalenvektor normiert, nennt man die Darstellung
+<strong>hessesche Normalengleichung</strong>.</p>
 </div>
 </section>
 <section id="videos">
