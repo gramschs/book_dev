@@ -1,8 +1,8 @@
-# Ableitung von elementaren Funktionen
+# Videos Ableitung von elementaren Funktionen
 
 ## Lernziele
 
-```{admonition} Lernziele 
+```{admonition} Lernziele
 :class: goals
 * Sie können eine konstante Funktion ableiten, d.h. 
 
@@ -34,5 +34,7 @@ $$f(x)=\ln(x) \Rightarrow f'(x)=\frac{1}{x}.$$
 
 ## Videos
 
+```{admonition} Video
+:class: seealso
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Jf7-EVLjpZg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+```
