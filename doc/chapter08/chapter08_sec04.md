@@ -90,8 +90,8 @@ Argument.
 
 Die Umrechnung von der trigonometrischen Form in die Normalform ist einfach.
 Tatsächlich müssen wir ja nur die Kosinus- und Sinuswerte konkret ausrechnen und
-jeweils mit dem Betrag multiplizieren. Die komplexe Zahl $z = 2 \cos(30^{\circ})
-* 2 \sin(\varphi) \mathrm{i}$ hat den Realteil
+jeweils mit dem Betrag multiplizieren. Die komplexe Zahl $z = 2\cos(30^{\circ})+
+2 \sin(\varphi) \mathrm{i}$ hat den Realteil
 
 $$\text{Re}(z) = 2 \cos(30^{\circ}) = 2 \cdot \frac{\sqrt{3}}{2}
 = \sqrt{3}$$

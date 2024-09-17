@@ -55,10 +55,10 @@ entspricht die Addition der komplexen Zahlen der Addition von zwei Vektoren.
 
 ```{admonition} Interaktiv: Addition komplexe Zahlen von "Hart und Trocken"
 :class: seealso, toggle
-Starten Sie das 
+Starten Sie das
 
 [Applet "Addition komplexe
-Zahlen"](https://www.hartundtrocken.de/my-product/interaktiv-addition-komplexer-zahlen/) 
+Zahlen"](https://www.hartundtrocken.de/my-product/interaktiv-addition-komplexer-zahlen/)
 
 von "Hart und Trocken". Dort können Sie zwei komplexe Zahlen in der Gaußschen
 Zahlenebene wählen, indem Sie die beiden blauen Punkte bewegen. Die Summe dieser
@@ -66,7 +66,7 @@ beiden komplexen Zahlen wird orange dargestellt.
 ```
 
 ```{dropdown} Video "Komplexe Zahlen - Gaußsche Zahlenebene Addition" von Prof. Hoever
-<iframe width="560" height="315" src="https://www.youtube.com/embed/i6-cZfAquxQ?si=9uskfEIUMUBTwfm9" title="YouTube video player" frameborder="0" allow="accelerometer; 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/i6-cZfAquxQ?si=9uskfEIUMUBTwfm9" title="YouTube video player" frameborder="0" allow="accelerometer;
 autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
 
@@ -134,7 +134,7 @@ von $z_1$ und $z_2$.
 
 ```{admonition} Interaktiv: Multiplikation komplexe Zahlen von "Hart und Trocken"
 :class: seealso, toggle
-Starten Sie das 
+Starten Sie das
 
 [Applet Multiplikation komplexe Zahlen](https://www.hartundtrocken.de/my-product/interaktiv-multiplikation-komplexer-zahlen/)
 
@@ -144,7 +144,7 @@ beiden komplexen Zahlen wird orange dargestellt.
 ```
 
 ```{dropdown} Video "Komplexe Zahlen - Gaußsche Zahlenebene Multiplikation" von Prof. Hoever
-<iframe width="560" height="315" src="https://www.youtube.com/embed/EdCqr-TDJgE?si=KomK36ZQY_ARAPLe" title="YouTube video player" frameborder="0" allow="accelerometer; 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EdCqr-TDJgE?si=KomK36ZQY_ARAPLe" title="YouTube video player" frameborder="0" allow="accelerometer;
 autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
 
