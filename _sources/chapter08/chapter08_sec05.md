@@ -121,20 +121,20 @@ Kosinus- und Sinus-Funktion.
 Der Kosinus und der Sinus lässt sich folgendermaßen durch komplexe Exponentialfunktionen darstellen:
 \begin{align*}
 \cos(\varphi) &= \frac{1}{2} \big( e^{\varphi \, \mathrm{i}} + e^{-\varphi \, \mathrm{i}} \big), \\
-\sin(\varphi) &= \frac{1}{2\mathrm{i}} \big( e^{\varphi \, \mathrm{i}} - e^{-\varphi \, \mathrm{i}} \big). 
+\sin(\varphi) &= \frac{1}{2\mathrm{i}} \big( e^{\varphi \, \mathrm{i}} - e^{-\varphi \, \mathrm{i}} \big).
 \end{align*}
 ```
 
 ## Weiteres Lernmaterial
 
 ```{dropdown} Video "Eulersche Formel" von MathePeter
-<iframe width="560" height="315" src="https://www.youtube.com/embed/TGJHnQY9cjA" 
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TGJHnQY9cjA"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
 encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 
 ```{dropdown} Video "Exponentialform" von Daniel Jung
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CwxhwTRv65Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CwxhwTRv65Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
 picture-in-picture" allowfullscreen></iframe>
 ```
 

@@ -234,13 +234,13 @@ Ist $z$ eine komplexe Zahl in der Normalform $z = a + b\mathrm{i}$, dann nennt
 man die reelle Zahl $a$ den Realteil von $z$. Als Abkürzung wird das Symbol
 $\mathrm{Re}$ benutzt und als Formel schreibt man
 
-$$\mathrm{Re}(z) = \mathrm{Re}(a+b\mathrm{i}) = a.$$ 
+$$\mathrm{Re}(z) = \mathrm{Re}(a+b\mathrm{i}) = a.$$
 
 Die reelle Zahl $b$, die zusammen mit der imaginären Einheit $\mathrm{i}$ die
 imaginäre Zahl $b\mathrm{i}$ bildet, heißt Imaginärteil von $z$. Der
 Imaginärteil wird mit $\mathrm{Im}$ abgekürzt. Als Formel schreibt man
 
-$$\mathrm{Im}(z) = \mathrm{Im}(a+b\mathrm{i}) = b.$$ 
+$$\mathrm{Im}(z) = \mathrm{Im}(a+b\mathrm{i}) = b.$$
 ```
 
 Für die beiden obigen Beispiele gilt also:
@@ -257,7 +257,7 @@ $$\mathrm{Re}\left(-\frac{5}{2} - \sqrt{3}\mathrm{i}\right) = -\frac{5}{2}
 Das folgende Video fasst die oben eingeführten Begriffe zusammen.
 
 ```{dropdown} Video "Komplexe Zahlen z=x+iy" von MathePeter
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LxPUwlQ2wn0" 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LxPUwlQ2wn0"
 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 
@@ -266,7 +266,7 @@ Zahlen. Das Video zeigt auch schon die ersten Grundrechenoperationen, die aber
 erst im nächsten Kapitel eingeführt werden.
 
 ```{dropdown} Video "Komplexe Zahlen - Einführung" von Prof. Hoever
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ql5wpNTHXOo?si=XcFWE1tdYWQnykmw" title="YouTube video player" frameborder="0" allow="accelerometer; 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ql5wpNTHXOo?si=XcFWE1tdYWQnykmw" title="YouTube video player" frameborder="0" allow="accelerometer;
 autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
 

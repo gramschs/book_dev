@@ -170,10 +170,10 @@ Zahlenebene interpretiert werden. Probieren Sie dazu das folgende Applet aus.
 
 ```{admonition} Interaktiv: Division komplexer Zahlen von "Hart und Trocken"
 :class: seealso, toggle
-Starten Sie das 
+Starten Sie das
 
 [Applet "Division komplexer
-Zahlen"](https://www.hartundtrocken.de/my-product/interaktiv-division-komplexer-zahlen/) 
+Zahlen"](https://www.hartundtrocken.de/my-product/interaktiv-division-komplexer-zahlen/)
 
 von "Hart und Trocken". Dort können Sie zwei komplexe Zahlen in der Gaußschen
 Zahlenebene wählen, indem Sie die beiden blauen Punkte bewegen. Der Quotient dieser
@@ -181,7 +181,7 @@ beiden komplexen Zahlen wird orange dargestellt.
 ```
 
 ```{dropdown} Video "Komplexe Zahlen - Kehrwert einer komplexen Zahl" von Prof. Hoever
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Rxq-4o1eFNA?si=yUlycavP-smHAGAP" title="YouTube video player" frameborder="0" allow="accelerometer; 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Rxq-4o1eFNA?si=yUlycavP-smHAGAP" title="YouTube video player" frameborder="0" allow="accelerometer;
 autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
 

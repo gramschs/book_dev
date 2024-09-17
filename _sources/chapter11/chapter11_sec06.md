@@ -1,8 +1,8 @@
-# Wendepunkte
+# Videos Wendepunkte
 
 ## Lernziele
 
-```{admonition} Lernziele 
+```{admonition} Lernziele
 :class: goals
 * Sie wissen, was ein **Wendepunkt** ist.
 * Sie kennen die Bedingungen, unter denen eine Funktion einen Wendepunkt hat.
@@ -13,4 +13,7 @@
 
 ## Videos
 
+```{admonition} Video
+:class: seealso
 <iframe width="560" height="315" src="https://www.youtube.com/embed/lUstL3M42Ec" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```

@@ -1,8 +1,8 @@
-# Rechnen mit Grenzwerten von Folgen 
+# Videos Rechnen mit Grenzwerten von Folgen
 
 ## Lernziele
 
-```{admonition} Lernziele 
+```{admonition} Lernziele
 :class: goals
 Sie kennen die folgenden Rechenregeln für das Rechnen mit Grenzwerten von Zahlenfolgen und können Sie anwenden:
 * Addition: 
@@ -32,8 +32,12 @@ $$ a \leq \lim_{k\rightarrow\infty} c_k \leq b.$$
 
 ## Videos
 
+```{admonition} Video
+:class: seealso
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vPA8cas-RpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
 
+```{admonition} Video
+:class: seealso
 <iframe width="560" height="315" src="https://www.youtube.com/embed/oQK8-u1zjdQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
+```
