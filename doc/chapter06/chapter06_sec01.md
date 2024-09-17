@@ -1,8 +1,8 @@
-# Was ist eine Matrix?
+# Videos: Was ist eine Matrix?
 
 ## Lernziele
 
-```{admonition} Lernziele 
+```{admonition} Lernziele
 :class: goals
 * Sie wissen, was eine **Matrix** ist.
 * Sie kennen den Unterschied zwischen einem **Zeilenvektor** und einem **Spaltenvektor**. 
@@ -17,5 +17,7 @@
 
 ## Videos
 
+```{admonition} Video
+:class: seealso
 <iframe width="560" height="315" src="https://www.youtube.com/embed/voCDFoBxvC8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+```
