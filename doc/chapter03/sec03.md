@@ -152,7 +152,7 @@ Verschiebungen in die gleiche Richtung hintereinander auszuführen.
 width: 75%
 name: skalarmultiplikation_verschiebung
 ---
-Skalarmultiplikation als Verschiebung geometrisch interpretiert; Quelle: eigene Darstellung; 
+Skalarmultiplikation als Verschiebung geometrisch interpretiert; Quelle: eigene Darstellung;
 Lizenz: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)
 ```
 
