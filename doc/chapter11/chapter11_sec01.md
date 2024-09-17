@@ -1,8 +1,8 @@
-# Linearisierung
+# Videos Linearisierung
 
 ## Lernziele
 
-```{admonition} Lernziele 
+```{admonition} Lernziele
 :class: goals
 * Sie wissen, dass eine nichtlineare Funktion **linearisiert** werden kann. Damit ist gemeint, dass die nichtlineare Funktion $y=f(x)$ näherungsweise durch die lineare Funktion
 
@@ -13,4 +13,7 @@ ersetzt werden kann. Das stimmt nur in der Nähe des sogenannten **Arbeitspunkte
 
 ## Videos
 
+```{admonition} Video
+:class: seealso
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9-sYXAkbJQQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```
